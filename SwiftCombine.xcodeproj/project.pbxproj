@@ -33,6 +33,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		780D09AE28016C4F00454705 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				78CBE26D27F31DA500DF1667 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		780D09AF28016C5900454705 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				780D09B028016C6400454705 /* Launch */,
+				780D09B228016C7400454705 /* Main */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		780D09B028016C6400454705 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				78CBE26F27F31DA500DF1667 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		780D09B128016C6D00454705 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				78CBE26427F31DA200DF1667 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		780D09B228016C7400454705 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				78CBE26827F31DA200DF1667 /* ViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		78CBE25827F31DA200DF1667 = {
 			isa = PBXGroup;
 			children = (
@@ -52,10 +93,9 @@
 		78CBE26327F31DA200DF1667 /* SwiftCombine */ = {
 			isa = PBXGroup;
 			children = (
-				78CBE26427F31DA200DF1667 /* AppDelegate.swift */,
-				78CBE26827F31DA200DF1667 /* ViewController.swift */,
-				78CBE26D27F31DA500DF1667 /* Assets.xcassets */,
-				78CBE26F27F31DA500DF1667 /* LaunchScreen.storyboard */,
+				780D09B128016C6D00454705 /* App */,
+				780D09AE28016C4F00454705 /* Resource */,
+				780D09AF28016C5900454705 /* Screen */,
 				78CBE27227F31DA500DF1667 /* Info.plist */,
 			);
 			path = SwiftCombine;
