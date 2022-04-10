@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		780D09B528028B7000454705 /* Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D09B428028B7000454705 /* Combine.swift */; };
-		780D09B82802908C00454705 /* Basic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D09B72802908C00454705 /* Basic.swift */; };
+		780D09B82802908C00454705 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D09B72802908C00454705 /* Publisher.swift */; };
 		78CBE26527F31DA200DF1667 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBE26427F31DA200DF1667 /* AppDelegate.swift */; };
 		78CBE26927F31DA200DF1667 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBE26827F31DA200DF1667 /* ViewController.swift */; };
 		78CBE26E27F31DA500DF1667 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78CBE26D27F31DA500DF1667 /* Assets.xcassets */; };
@@ -17,7 +17,7 @@
 
 /* Begin PBXFileReference section */
 		780D09B428028B7000454705 /* Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combine.swift; sourceTree = "<group>"; };
-		780D09B72802908C00454705 /* Basic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basic.swift; sourceTree = "<group>"; };
+		780D09B72802908C00454705 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		78CBE26127F31DA200DF1667 /* SwiftCombine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCombine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78CBE26427F31DA200DF1667 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78CBE26827F31DA200DF1667 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,9 +90,16 @@
 		780D09B62802907300454705 /* HowToUse */ = {
 			isa = PBXGroup;
 			children = (
-				780D09B72802908C00454705 /* Basic.swift */,
+				780D09B72802908C00454705 /* Publisher.swift */,
 			);
 			path = HowToUse;
+			sourceTree = "<group>";
+		};
+		780D09B92802BE2A00454705 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		78CBE25827F31DA200DF1667 = {
@@ -114,6 +121,7 @@
 		78CBE26327F31DA200DF1667 /* SwiftCombine */ = {
 			isa = PBXGroup;
 			children = (
+				780D09B92802BE2A00454705 /* API */,
 				780D09B128016C6D00454705 /* App */,
 				780D09B328028B6500454705 /* Combine */,
 				780D09AE28016C4F00454705 /* Resource */,
@@ -193,7 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				780D09B82802908C00454705 /* Basic.swift in Sources */,
+				780D09B82802908C00454705 /* Publisher.swift in Sources */,
 				780D09B528028B7000454705 /* Combine.swift in Sources */,
 				78CBE26927F31DA200DF1667 /* ViewController.swift in Sources */,
 				78CBE26527F31DA200DF1667 /* AppDelegate.swift in Sources */,

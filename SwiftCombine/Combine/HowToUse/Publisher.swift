@@ -1,8 +1,8 @@
 import Combine
 import Foundation
 
-/** 基礎編
- * Combineの基礎編としてまずは以下の３つのPublisher(値の発行者)について確認していきます
+/**
+ * Combineの基本としてまずは以下の３つのPublisher(値の発行者)について確認していきます
  * 1. 「Subject」
  * 2. 「Future」
  * 3. 「Just」
@@ -20,28 +20,33 @@ import Foundation
 
 final class SubjectModel {
 
+    /* 複数のAnyCancellable(イベントの購読をキャンセル処理)を一括で管理 */
+    private var cancellables: Set<AnyCancellable> = .init()
+
     /** CurrentValueSubject
      * 1つの値をラップしてその値が変更されるたびに新しい要素を公開するSubject
      * Combine側で値を保持したい時に利用します。
      */
-    private var currentCancellable: AnyCancellable?
 
     /* Subject(Publisher)の定義*/
     private let currentSubject = CurrentValueSubject<[Int], Never>([]) // Neverはエラーを発生させない
 
     func executeCurrentSubject() {
-        /* sinkメソッドを使用してPublisherを購読する */
-        currentCancellable = currentSubject.sink { print($0) }
 
         /* 値を送る */
         currentSubject.value.append(1)
         currentSubject.value.append(2)
         currentSubject.value.append(3)
 
-        /* 購読をキャンセルすることでその後の処理(currentSubject.value.append(4))は実行させません */
-        currentCancellable?.cancel()
+        currentSubject.send(completion: .finished)
 
+        /* completionを投げた後はSubjectに対してsendメソッドを投げても実行されません */
         currentSubject.value.append(4)
+
+        currentSubject.sink {
+            print($0)
+        }
+        .store(in: &cancellables)
 
         /** 実行結果:
          * []
@@ -55,14 +60,21 @@ final class SubjectModel {
      * 異なる値を保持しないSubject
      * 値を保持する必要がなく毎回データを更新(上書き)する時に利用します。
      */
-    private var passthroughCancellable: AnyCancellable?
 
     /* Subject(Publisher)の定義*/
     private let passthroughSubject = PassthroughSubject<Int, Never>()
 
     func executePassthroughSubject() {
+
+        /* 値を送る */
+        passthroughSubject.send(1)
+        passthroughSubject.send(completion: .finished)
+
+        /* completionを投げた後はSubjectに対してsendメソッドを投げても実行されません */
+        passthroughSubject.send(2)
+
         /* sinkメソッドを使用してPublisherを購読する */
-        passthroughCancellable = passthroughSubject.sink { completion in
+        passthroughSubject.sink { completion in
             switch completion {
                 case .finished:
                     print("finished")
@@ -73,14 +85,7 @@ final class SubjectModel {
         } receiveValue: { value in
             print(value)
         }
-
-        passthroughSubject.send(1)
-        passthroughSubject.send(completion: .finished)
-
-        /* completionを投げた後はSubjectに対してsendメソッドを投げても実行されません */
-        passthroughSubject.send(2)
-
-        passthroughCancellable?.cancel()
+        .store(in: &cancellables)
 
         /** 実行結果:
          * 1
