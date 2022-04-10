@@ -18,72 +18,75 @@ import Foundation
  *  2. PassthroughSubject
  */
 
-/** CurrentValueSubject
- * 1つの値をラップしてその値が変更されるたびに新しい要素を公開するSubject
- * Combine側で値を保持したい時に利用します。
- */
-private var currentCancellable: AnyCancellable?
+final class SubjectModel {
 
-/* Subject(Publisher)の定義*/
-private let currentSubject = CurrentValueSubject<[Int], Never>([]) // Neverはエラーを発生させない
-
-func executeCurrentSubject() {
-    /* sinkメソッドを使用してPublisherを購読する */
-    currentCancellable = currentSubject.sink { print($0) }
-
-    /* 値を送る */
-    currentSubject.value.append(1)
-    currentSubject.value.append(2)
-    currentSubject.value.append(3)
-
-    /* 購読をキャンセルすることでその後の処理(currentSubject.value.append(4))は実行させません */
-    currentCancellable?.cancel()
-
-    currentSubject.value.append(4)
-
-    /** 実行結果:
-     * []
-     * [1]
-     * [1, 2]
-     * [1, 2, 3]
+    /** CurrentValueSubject
+     * 1つの値をラップしてその値が変更されるたびに新しい要素を公開するSubject
+     * Combine側で値を保持したい時に利用します。
      */
-}
+    private var currentCancellable: AnyCancellable?
 
-/** PassthroughSubject
- * 異なる値を保持しないSubject
- * 値を保持する必要がなく毎回データを更新(上書き)する時に利用します。
- */
-private var passthroughCancellable: AnyCancellable?
+    /* Subject(Publisher)の定義*/
+    private let currentSubject = CurrentValueSubject<[Int], Never>([]) // Neverはエラーを発生させない
 
-/* Subject(Publisher)の定義*/
-private let passthroughSubject = PassthroughSubject<Int, Never>()
+    func executeCurrentSubject() {
+        /* sinkメソッドを使用してPublisherを購読する */
+        currentCancellable = currentSubject.sink { print($0) }
 
-func executePassthroughSubject() {
-    /* sinkメソッドを使用してPublisherを購読する */
-    passthroughCancellable = passthroughSubject.sink { completion in
-        switch completion {
-            case .finished:
-                print("finished")
+        /* 値を送る */
+        currentSubject.value.append(1)
+        currentSubject.value.append(2)
+        currentSubject.value.append(3)
 
-            case .failure: // Neverはエラーを発生させないため本来は不要
-                print("failure")
-        }
-    } receiveValue: { value in
-        print(value)
+        /* 購読をキャンセルすることでその後の処理(currentSubject.value.append(4))は実行させません */
+        currentCancellable?.cancel()
+
+        currentSubject.value.append(4)
+
+        /** 実行結果:
+         * []
+         * [1]
+         * [1, 2]
+         * [1, 2, 3]
+         */
     }
 
-    passthroughSubject.send(1)
-    passthroughSubject.send(completion: .finished)
-
-    /* completionを投げた後はSubjectに対してsendメソッドを投げても実行されません */
-    passthroughSubject.send(2)
-
-    passthroughCancellable?.cancel()
-
-    /** 実行結果:
-     * 1
-     * finished
+    /** PassthroughSubject
+     * 異なる値を保持しないSubject
+     * 値を保持する必要がなく毎回データを更新(上書き)する時に利用します。
      */
+    private var passthroughCancellable: AnyCancellable?
+
+    /* Subject(Publisher)の定義*/
+    private let passthroughSubject = PassthroughSubject<Int, Never>()
+
+    func executePassthroughSubject() {
+        /* sinkメソッドを使用してPublisherを購読する */
+        passthroughCancellable = passthroughSubject.sink { completion in
+            switch completion {
+                case .finished:
+                    print("finished")
+
+                case .failure: // Neverはエラーを発生させないため本来は不要
+                    print("failure")
+            }
+        } receiveValue: { value in
+            print(value)
+        }
+
+        passthroughSubject.send(1)
+        passthroughSubject.send(completion: .finished)
+
+        /* completionを投げた後はSubjectに対してsendメソッドを投げても実行されません */
+        passthroughSubject.send(2)
+
+        passthroughCancellable?.cancel()
+
+        /** 実行結果:
+         * 1
+         * finished
+         */
+    }
 }
 
 // MARK: - 「Future」

@@ -19,6 +19,7 @@ final class ViewController: UIViewController {
         return label
     }()
 
+    private let subjectModel: SubjectModel = .init()
     private let futureModel: FutureModel = .init()
     private let justModel: JustModel = .init()
 
@@ -43,6 +44,9 @@ final class ViewController: UIViewController {
         setupView()
         setupEvent()
         bindValue()
+
+        subjectModel.executeCurrentSubject()
+        subjectModel.executePassthroughSubject()
 
         justModel.executeNoJust()
         justModel.executeJust()
