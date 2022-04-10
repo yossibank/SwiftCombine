@@ -20,6 +20,7 @@ final class ViewController: UIViewController {
     }()
 
     private let futureModel: FutureModel = .init()
+    private let justModel: JustModel = .init()
 
     private var cancellables: Set<AnyCancellable> = .init()
 
@@ -42,6 +43,9 @@ final class ViewController: UIViewController {
         setupView()
         setupEvent()
         bindValue()
+
+        justModel.executeNoJust()
+        justModel.executeJust()
     }
 
     private func setupView() {

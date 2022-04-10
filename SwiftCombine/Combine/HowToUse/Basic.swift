@@ -89,7 +89,7 @@ func executePassthroughSubject() {
 // MARK: - 「Future」
 
 /** Future
- * 1つの値を非同期で生成して出力するか失敗するPublisherです。
+ * 1つの値を非同期で生成して出力するか、失敗するPublisherです。
  * 「Aの処理が完了したらBの処理を実行する」という、これまで通信処理などで利用していたコールバック処理に使用できます。
  *
  * 例) 「20までカウントアップしたら特定の処理を実行する」というメソッドを作成します
@@ -137,5 +137,58 @@ final class FutureModel {
                 }
                 .store(in: &self.cancellables)
         }
+    }
+}
+
+// MARK: - 「Just」
+
+/** Just
+ * 1つの値を即時出力し、終了するPublisherです。
+ * 失敗することができず、必ず値を送信(発行)する特徴があります。
+ *
+ * 使い所:
+ * → Catchを使って値を置き換える時
+ *  https://developer.apple.com/documentation/combine/fail/catch(_:)
+ *
+ * → tryMapの処理がエラーとなった時
+ *  https://developer.apple.com/documentation/combine/fail/trycatch(_:)
+ */
+
+final class JustModel {
+    
+    private let sample = "Hello World"
+
+    private var cancellables: Set<AnyCancellable> = .init()
+
+    func executeNoJust() {
+        sample.publisher
+            .compactMap { String($0) }
+            .sink { print($0) }
+            .store(in: &cancellables)
+
+        /** 出力結果:
+         * H
+         * e
+         * l
+         * l
+         * o
+         *
+         * W
+         * o
+         * r
+         * l
+         * d
+         */
+    }
+
+    func executeJust() {
+        Just(sample)
+            .compactMap { String($0) }
+            .sink { print($0) }
+            .store(in: &cancellables)
+
+        /** 出力結果:
+         * Hello World
+         */
     }
 }
