@@ -38,11 +38,13 @@ final class SubjectModel {
         currentSubject.value.append(2)
         currentSubject.value.append(3)
 
+        /* 処理が終了したことを伝える */
         currentSubject.send(completion: .finished)
 
         /* completionを投げた後はSubjectに対してsendメソッドを投げても実行されません */
         currentSubject.value.append(4)
 
+        /* sinkメソッドを使用してPublisherを購読する(sinkメソッドについてはSubscriber.swiftで説明します) */
         currentSubject.sink {
             print($0)
         }
@@ -68,6 +70,8 @@ final class SubjectModel {
 
         /* 値を送る */
         passthroughSubject.send(1)
+
+        /* 処理が終了したことを伝える */
         passthroughSubject.send(completion: .finished)
 
         /* completionを投げた後はSubjectに対してsendメソッドを投げても実行されません */
@@ -113,9 +117,12 @@ final class FutureModel {
 
     /* コールバック処理にCombineを使わない場合 */
     func startCounting(completionHandler: @escaping () -> Void) {
+        /* every: 何秒毎にイベントを発行するか on: RunLoopを実行するスレッド in: RunLoop Modeの設定 */
         Timer.publish(every: 0.1, on: .main, in: .common)
+            /* subscribeした時点で自動で処理を開始し、値の出力を始める */
             .autoconnect()
-            .receive(on: DispatchQueue.main)
+            /* 「いつ」(DispatchQueue, RunLoop...)「どこで」(main, global...)処理をするかを決める */
+            .receive(on: RunLoop.main) /* RunLoop ← 入力系のスレッドを処理する機構(スクロール中に発火しない？) */
             .sink { [weak self] _ in
                 guard let self = self else { return }
 
@@ -133,7 +140,7 @@ final class FutureModel {
         Future() { promise in
             Timer.publish(every: 0.1, on: .main, in: .common)
                 .autoconnect()
-                .receive(on: DispatchQueue.main)
+                .receive(on: RunLoop.main)
                 .sink { _ in
                     if self.count < self.endCount {
                         self.count += 1
@@ -170,7 +177,7 @@ final class JustModel {
 
     func executeNoJust() {
         sample.publisher
-            .compactMap { String($0) }
+            .compactMap { String($0) } /* compactMap(_:)はCombineのOperatorの1つです(Operator.swiftで説明します) */
             .sink { print($0) }
             .store(in: &cancellables)
 
