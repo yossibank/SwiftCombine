@@ -1,4 +1,5 @@
 import Combine
+import Foundation
 
 /** 基礎編
  * Combineの基礎編としてまずは以下の３つのPublisher(値の発行者)について確認していきます
@@ -21,10 +22,10 @@ import Combine
  * 1つの値をラップしてその値が変更されるたびに新しい要素を公開するSubject
  * Combine側で値を保持したい時に利用します。
  */
-var currentCancellable: AnyCancellable?
+private var currentCancellable: AnyCancellable?
 
 /* Subject(Publisher)の定義*/
-let currentSubject = CurrentValueSubject<[Int], Never>([]) // Neverはエラーを発生させない
+private let currentSubject = CurrentValueSubject<[Int], Never>([]) // Neverはエラーを発生させない
 
 func executeCurrentSubject() {
     /* sinkメソッドを使用してPublisherを購読する */
@@ -52,10 +53,10 @@ func executeCurrentSubject() {
  * 異なる値を保持しないSubject
  * 値を保持する必要がなく毎回データを更新(上書き)する時に利用します。
  */
-var passthroughCancellable: AnyCancellable?
+private var passthroughCancellable: AnyCancellable?
 
 /* Subject(Publisher)の定義*/
-let passthroughSubject = PassthroughSubject<Int, Never>()
+private let passthroughSubject = PassthroughSubject<Int, Never>()
 
 func executePassthroughSubject() {
     /* sinkメソッドを使用してPublisherを購読する */
@@ -83,4 +84,58 @@ func executePassthroughSubject() {
      * 1
      * finished
      */
+}
+
+// MARK: - 「Future」
+
+/** Future
+ * 1つの値を非同期で生成して出力するか失敗するPublisherです。
+ * 「Aの処理が完了したらBの処理を実行する」という、これまで通信処理などで利用していたコールバック処理に使用できます。
+ *
+ * 例) 「20までカウントアップしたら特定の処理を実行する」というメソッドを作成します
+ */
+
+final class FutureModel {
+
+    @Published var count = 0
+
+    private let endCount = 20
+
+    private var cancellables: Set<AnyCancellable> = .init()
+
+    /* コールバック処理にCombineを使わない場合 */
+    func startCounting(completionHandler: @escaping () -> Void) {
+        Timer.publish(every: 0.1, on: .main, in: .common)
+            .autoconnect()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                guard let self = self else { return }
+
+                if self.count < self.endCount {
+                    self.count += 1
+                } else {
+                    completionHandler()
+                }
+            }
+            .store(in: &self.cancellables)
+    }
+
+    /* コールバック処理にCombineのFutureを使った場合 */
+    func startCounting() -> Future<Void, Never> {
+        Future() { promise in
+            Timer.publish(every: 0.1, on: .main, in: .common)
+                .autoconnect()
+                .receive(on: DispatchQueue.main)
+                .sink { _ in
+                    if self.count < self.endCount {
+                        self.count += 1
+                    } else {
+                        /* カウントアップが完了した時点でpromiseを実行する */
+                        /* promiseを実行するとFutureは値を発行(公開)する */
+                        promise(.success(()))
+                    }
+                }
+                .store(in: &self.cancellables)
+        }
+    }
 }
