@@ -14,8 +14,10 @@ struct ModelImpl<R>: ModelProtocol {
     func toPublisher<T: Equatable, E: Error>(
         closure: @escaping (@escaping Future<T, E>.Promise) -> Void
     ) -> AnyPublisher<T, E> {
-        Future { promise in
-            closure(promise)
+        Deferred {
+            Future { promise in
+                closure(promise)
+            }
         }.eraseToAnyPublisher()
     }
 }
