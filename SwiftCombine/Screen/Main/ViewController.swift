@@ -63,6 +63,16 @@ final class ViewController: UIViewController {
             print(value) /* Deferred 実行, Hello */
         }
         .store(in: &cancellables)
+
+        APIClient().request(item: JokeGetRequest()) { result in
+            switch result {
+            case .success(let response):
+                print(response)
+
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 
     private func setupView() {
