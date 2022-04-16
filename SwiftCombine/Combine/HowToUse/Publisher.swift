@@ -260,7 +260,6 @@ func sink(_ receiveValue: String) {
      */
 }
 
-
 /** sink(receiveCompletion:receiveValue:)
  * - receiveCompletionでPublisherが正常に終了したか、エラーで失敗したかの結果を受け取ることができます
  * - recieveValueでPublisherから要素を受け取った時に実行されます
