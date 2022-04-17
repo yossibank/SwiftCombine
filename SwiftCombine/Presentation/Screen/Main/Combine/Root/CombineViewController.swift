@@ -56,15 +56,6 @@ extension CombineViewController {
 // MARK: - private methods
 
 private extension CombineViewController {
-    func bindValue() {
-        futureModel.$count
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] value in
-                self?.ui.setCountText(String(value))
-            }
-            .store(in: &cancellables)
-    }
-
     func setupEvent() {
         ui.countButtonTapPublisher.sink { [weak self] _ in
             guard let self = self else { return }
@@ -82,5 +73,14 @@ private extension CombineViewController {
                 .store(in: &self.cancellables)
         }
         .store(in: &cancellables)
+    }
+
+    func bindValue() {
+        futureModel.$count
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] value in
+                self?.ui.setCountText(String(value))
+            }
+            .store(in: &cancellables)
     }
 }

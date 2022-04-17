@@ -37,6 +37,7 @@ extension CombineUI {
 
 extension CombineUI: UserInterface {
     func setupView(rootView: UIView) {
+        rootView.backgroundColor = .systemBackground
         rootView.addSubview(countButton)
         rootView.addSubview(countLabel)
 
