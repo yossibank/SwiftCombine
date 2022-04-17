@@ -1,8 +1,8 @@
 import UIKit
 
-// MARK: - stored properties & init
+// MARK: - stored properties
 
-final class HomeFlowController: UIViewController {
+final class DEBUG_FlowController: UIViewController {
     private let navVC = NavigationController()
 
     init() {
@@ -17,7 +17,7 @@ final class HomeFlowController: UIViewController {
 
 // MARK: - override methods
 
-extension HomeFlowController {
+extension DEBUG_FlowController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         children.first?.view.frame = tabBarController?.view.bounds ?? .zero
@@ -26,11 +26,12 @@ extension HomeFlowController {
 
 // MARK: - protocol
 
-extension HomeFlowController: FlowController {
+extension DEBUG_FlowController: FlowController {
     func start() {
-        let vc = AppControllers.home()
-        tabBarItem.title = "Home"
-        tabBarItem.image = UIImage(systemName: "house")
+        let vc = AppControllers.debug()
+
+        tabBarItem.title = "DEBUG"
+        tabBarItem.image = UIImage(systemName: "gamecontroller")
 
         navVC.viewControllers = [vc]
     }

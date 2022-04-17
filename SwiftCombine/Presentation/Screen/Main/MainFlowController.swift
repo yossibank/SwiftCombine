@@ -27,7 +27,7 @@ extension MainFlowController {
 extension MainFlowController: FlowController {
     func start() {
         let flows: [FlowController]
-        flows = [HomeFlowController(), APIFlowController(), CombineFlowController()]
+        flows = [HomeFlowController(), DEBUG_FlowController()]
 
         tabController.setViewControllers(flows, animated: false)
 

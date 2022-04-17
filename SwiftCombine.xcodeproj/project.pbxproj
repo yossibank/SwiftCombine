@@ -54,6 +54,10 @@
 		78EC5F8D280BC7B500C18DF5 /* APIUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F8C280BC7B500C18DF5 /* APIUI.swift */; };
 		78EC5F8F280BC8C700C18DF5 /* APIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F8E280BC8C700C18DF5 /* APIViewModel.swift */; };
 		78EC5F91280BC90300C18DF5 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F90280BC90300C18DF5 /* LoadingState.swift */; };
+		78EC5F93280C25D200C18DF5 /* DEBUG_Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F92280C25D200C18DF5 /* DEBUG_Item.swift */; };
+		78EC5F97280C272200C18DF5 /* DEBUG_FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F96280C272200C18DF5 /* DEBUG_FlowController.swift */; };
+		78EC5F99280C272F00C18DF5 /* DEBUG_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F98280C272F00C18DF5 /* DEBUG_UI.swift */; };
+		78EC5F9B280C273800C18DF5 /* DEBUG_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F9A280C273800C18DF5 /* DEBUG_ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +110,10 @@
 		78EC5F8C280BC7B500C18DF5 /* APIUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUI.swift; sourceTree = "<group>"; };
 		78EC5F8E280BC8C700C18DF5 /* APIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIViewModel.swift; sourceTree = "<group>"; };
 		78EC5F90280BC90300C18DF5 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
+		78EC5F92280C25D200C18DF5 /* DEBUG_Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_Item.swift; sourceTree = "<group>"; };
+		78EC5F96280C272200C18DF5 /* DEBUG_FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_FlowController.swift; sourceTree = "<group>"; };
+		78EC5F98280C272F00C18DF5 /* DEBUG_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_UI.swift; sourceTree = "<group>"; };
+		78EC5F9A280C273800C18DF5 /* DEBUG_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +169,7 @@
 				78EC5F60280BB49E00C18DF5 /* MainFlowController.swift */,
 				78EC5F6E280BB65600C18DF5 /* API */,
 				78EC5F80280BBC4300C18DF5 /* Combine */,
+				78EC5F94280C26FF00C18DF5 /* DEBUG */,
 				78EC5F62280BB4AE00C18DF5 /* Home */,
 			);
 			path = Main;
@@ -406,6 +415,25 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
+		78EC5F94280C26FF00C18DF5 /* DEBUG */ = {
+			isa = PBXGroup;
+			children = (
+				78EC5F96280C272200C18DF5 /* DEBUG_FlowController.swift */,
+				78EC5F95280C271500C18DF5 /* Root */,
+			);
+			path = DEBUG;
+			sourceTree = "<group>";
+		};
+		78EC5F95280C271500C18DF5 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				78EC5F92280C25D200C18DF5 /* DEBUG_Item.swift */,
+				78EC5F98280C272F00C18DF5 /* DEBUG_UI.swift */,
+				78EC5F9A280C273800C18DF5 /* DEBUG_ViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -498,6 +526,7 @@
 				78EC5F7F280BBB2300C18DF5 /* ViewControllers.swift in Sources */,
 				78AAF077280AFAFC00BF0E3B /* JokeGetRequest.swift in Sources */,
 				78AAF068280AD88E00BF0E3B /* UserDefaultsStorage.swift in Sources */,
+				78EC5F9B280C273800C18DF5 /* DEBUG_ViewController.swift in Sources */,
 				78AAF082280B100C00BF0E3B /* Model.swift in Sources */,
 				78AAF084280B121B00BF0E3B /* Repos.swift in Sources */,
 				78EC5F83280BBC5700C18DF5 /* CombineFlowController.swift in Sources */,
@@ -509,6 +538,7 @@
 				78EC5F78280BB7C400C18DF5 /* AppFlowController.swift in Sources */,
 				78EC5F6B280BB50000C18DF5 /* FlowController.swift in Sources */,
 				78EC5F89280BBF3700C18DF5 /* CombineUI.swift in Sources */,
+				78EC5F93280C25D200C18DF5 /* DEBUG_Item.swift in Sources */,
 				78EC5F6D280BB57B00C18DF5 /* UIViewController+Container.swift in Sources */,
 				78EC5F73280BB6AA00C18DF5 /* HomeFlowController.swift in Sources */,
 				78AAF073280ADA4800BF0E3B /* SetOnboardingFinishedRequest.swift in Sources */,
@@ -520,7 +550,9 @@
 				78EC5F61280BB49E00C18DF5 /* MainFlowController.swift in Sources */,
 				78EC5F91280BC90300C18DF5 /* LoadingState.swift in Sources */,
 				78EC5F69280BB4F800C18DF5 /* UserInterface.swift in Sources */,
+				78EC5F99280C272F00C18DF5 /* DEBUG_UI.swift in Sources */,
 				78AAF071280ADA3B00BF0E3B /* GetOnboardingFinishedRequest.swift in Sources */,
+				78EC5F97280C272200C18DF5 /* DEBUG_FlowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

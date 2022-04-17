@@ -8,6 +8,13 @@ struct AppControllers {
         return instance
     }
 
+    static func debug() -> DEBUG_ViewController {
+        let instance = DEBUG_ViewController()
+        instance.inject(ui: .init())
+        instance.title = "DEBUG"
+        return instance
+    }
+
     static func combine() -> CombineViewController {
         let instance = CombineViewController()
         instance.inject(viewModel: .init(), ui: .init())
