@@ -68,12 +68,13 @@ private extension CombineViewController {
     func setupEvent() {
         ui.countButtonTapPublisher.sink { [weak self] _ in
             guard let self = self else { return }
-            /* コールバック処理にCombineを使わない場合の呼び出し */
-    //        futureModel.startCounting { [weak self] in
-    //            self?.view.backgroundColor = .green
-    //        }
 
-            /* コールバック処理にCombineのFutureを使った場合の呼び出し */
+            // コールバック処理にCombineを使わない場合の呼び出し
+//            futureModel.startCounting { [weak self] in
+//                self?.view.backgroundColor = .green
+//            }
+
+            // コールバック処理にCombineのFutureを使った場合の呼び出し
             self.futureModel.startCounting()
                 .sink { [weak self] _ in
                     self?.view.backgroundColor = .green
