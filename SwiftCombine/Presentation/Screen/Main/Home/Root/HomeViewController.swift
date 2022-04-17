@@ -1,7 +1,7 @@
 import Combine
 import UIKit
 
-final class ViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
     private let countButton: UIButton = {
         let button = UIButton()

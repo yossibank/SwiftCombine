@@ -2,8 +2,9 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
+
+    private let appFlowController = AppFlowController()
 
     func application(
         _ application: UIApplication,
@@ -11,8 +12,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
 
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = ViewController()
+        window?.rootViewController = appFlowController
         window?.makeKeyAndVisible()
+        appFlowController.start()
 
         return true
     }
