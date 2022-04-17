@@ -49,6 +49,7 @@
 		78EC5F83280BBC5700C18DF5 /* CombineFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F82280BBC5700C18DF5 /* CombineFlowController.swift */; };
 		78EC5F85280BBC6000C18DF5 /* CombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F84280BBC6000C18DF5 /* CombineViewController.swift */; };
 		78EC5F87280BBD8B00C18DF5 /* AppDataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F86280BBD8B00C18DF5 /* AppDataHolder.swift */; };
+		78EC5F89280BBF3700C18DF5 /* CombineUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F88280BBF3700C18DF5 /* CombineUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		78EC5F82280BBC5700C18DF5 /* CombineFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineFlowController.swift; sourceTree = "<group>"; };
 		78EC5F84280BBC6000C18DF5 /* CombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineViewController.swift; sourceTree = "<group>"; };
 		78EC5F86280BBD8B00C18DF5 /* AppDataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataHolder.swift; sourceTree = "<group>"; };
+		78EC5F88280BBF3700C18DF5 /* CombineUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -386,6 +388,7 @@
 		78EC5F81280BBC4F00C18DF5 /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				78EC5F88280BBF3700C18DF5 /* CombineUI.swift */,
 				78EC5F84280BBC6000C18DF5 /* CombineViewController.swift */,
 			);
 			path = Root;
@@ -492,6 +495,7 @@
 				78AAF07C280B04F200BF0E3B /* Repository.swift in Sources */,
 				78EC5F78280BB7C400C18DF5 /* AppFlowController.swift in Sources */,
 				78EC5F6B280BB50000C18DF5 /* FlowController.swift in Sources */,
+				78EC5F89280BBF3700C18DF5 /* CombineUI.swift in Sources */,
 				78EC5F6D280BB57B00C18DF5 /* UIViewController+Container.swift in Sources */,
 				78EC5F73280BB6AA00C18DF5 /* HomeFlowController.swift in Sources */,
 				78AAF073280ADA4800BF0E3B /* SetOnboardingFinishedRequest.swift in Sources */,

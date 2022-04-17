@@ -1,24 +1,18 @@
 import Combine
 import UIKit
 
+// MARK: - inject
+
+extension CombineViewController: VCInjectable {
+    typealias VM = NoViewModel
+    typealias UI = CombineUI
+}
+
 // MARK: - stored properties & init
 
 final class CombineViewController: UIViewController {
-    private let countButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("20カウントで背景色変わる", for: .normal)
-        button.backgroundColor = .red
-        button.layer.cornerRadius = 8
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-
-    private let countLabel: UILabel = {
-        let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 16)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    var viewModel: VM!
+    var ui: UI!
 
     private let subjectModel: SubjectModel = .init()
     private let futureModel: FutureModel = .init()
@@ -32,8 +26,10 @@ final class CombineViewController: UIViewController {
 extension CombineViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
-        setupEvent()
+
+        ui.setupView(rootView: view)
+        ui.delegate = self
+
         bindValue()
 
         subjectModel.executeCurrentSubject()
@@ -60,39 +56,20 @@ extension CombineViewController {
 // MARK: - private methods
 
 private extension CombineViewController {
-    func setupView() {
-        view.addSubview(countButton)
-        view.addSubview(countLabel)
-
-        NSLayoutConstraint.activate([
-            countButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            countButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            countButton.widthAnchor.constraint(equalToConstant: 220),
-            countButton.heightAnchor.constraint(equalToConstant: 40),
-
-            countLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            countLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100)
-        ])
-    }
-
-    func setupEvent() {
-        countButton.addTarget(
-            self,
-            action: #selector(tappedButton),
-            for: .touchUpInside
-        )
-    }
-
     func bindValue() {
         futureModel.$count
             .receive(on: DispatchQueue.main)
             .sink { [weak self] value in
-                self?.countLabel.text = String(value)
+                self?.ui.setCountText(String(value))
             }
             .store(in: &cancellables)
     }
+}
 
-    @objc func tappedButton() {
+// MARK: - delegate
+
+extension CombineViewController: CombineDelegate {
+    func tappedCountButton() {
         /* コールバック処理にCombineを使わない場合の呼び出し */
 //        futureModel.startCounting { [weak self] in
 //            self?.view.backgroundColor = .green

@@ -2,20 +2,23 @@ import UIKit
 
 struct AppControllers {
     static func api() -> APIViewController {
-        let vc = APIViewController()
-        vc.title = "API"
-        return vc
+        let instance = APIViewController()
+        instance.inject(viewModel: .init(), ui: .init())
+        instance.title = "API"
+        return instance
     }
 
     static func combine() -> CombineViewController {
-        let vc = CombineViewController()
-        vc.title = "Combine"
-        return vc
+        let instance = CombineViewController()
+        instance.inject(viewModel: .init(), ui: .init())
+        instance.title = "Combine"
+        return instance
     }
 
     static func home() -> HomeViewController {
-        let vc = HomeViewController()
-        vc.title = "Home"
-        return vc
+        let instance = HomeViewController()
+        instance.inject(viewModel: .init(), ui: .init())
+        instance.title = "Home"
+        return instance
     }
 }
