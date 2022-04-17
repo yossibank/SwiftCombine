@@ -1,12 +1,6 @@
 import Combine
 import UIKit
 
-// MARK: - delegate
-
-protocol CombineDelegate: AnyObject {
-    func tappedCountButton()
-}
-
 // MARK: - stored properties
 
 final class CombineUI {
@@ -16,11 +10,6 @@ final class CombineUI {
         button.backgroundColor = .red
         button.layer.cornerRadius = 8
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(
-            self,
-            action: #selector(tappedButton),
-            for: .touchUpInside
-        )
         return button
     }()
 
@@ -31,7 +20,9 @@ final class CombineUI {
         return label
     }()
 
-    weak var delegate: CombineDelegate?
+    lazy var countButtonTapPublisher: UIControl.Publisher<UIButton> = {
+        countButton.publisher(for: .touchUpInside)
+    }()
 }
 
 // MARK: - internal methods
@@ -39,14 +30,6 @@ final class CombineUI {
 extension CombineUI {
     func setCountText(_ text: String?) {
         countLabel.text = text
-    }
-}
-
-// MARK: private methods
-
-private extension CombineUI {
-    @objc func tappedButton() {
-        delegate?.tappedCountButton()
     }
 }
 

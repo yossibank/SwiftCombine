@@ -50,6 +50,7 @@
 		78EC5F85280BBC6000C18DF5 /* CombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F84280BBC6000C18DF5 /* CombineViewController.swift */; };
 		78EC5F87280BBD8B00C18DF5 /* AppDataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F86280BBD8B00C18DF5 /* AppDataHolder.swift */; };
 		78EC5F89280BBF3700C18DF5 /* CombineUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F88280BBF3700C18DF5 /* CombineUI.swift */; };
+		78EC5F8B280BC2FE00C18DF5 /* UIControl+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F8A280BC2FE00C18DF5 /* UIControl+Publisher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,7 @@
 		78EC5F84280BBC6000C18DF5 /* CombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineViewController.swift; sourceTree = "<group>"; };
 		78EC5F86280BBD8B00C18DF5 /* AppDataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataHolder.swift; sourceTree = "<group>"; };
 		78EC5F88280BBF3700C18DF5 /* CombineUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineUI.swift; sourceTree = "<group>"; };
+		78EC5F8A280BC2FE00C18DF5 /* UIControl+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Publisher.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +317,7 @@
 		78EC5F5F280BB43D00C18DF5 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				78EC5F8A280BC2FE00C18DF5 /* UIControl+Publisher.swift */,
 				78EC5F6C280BB57B00C18DF5 /* UIViewController+Container.swift */,
 				780D09B328028B6500454705 /* Combine */,
 				78AAF063280AD6F200BF0E3B /* Logger */,
@@ -470,6 +473,7 @@
 				78AAF07E280B0B2700BF0E3B /* ModelProtocol.swift in Sources */,
 				78AAF058280ABEE600BF0E3B /* URLRequest+Extension.swift in Sources */,
 				780D09B528028B7000454705 /* Combine.swift in Sources */,
+				78EC5F8B280BC2FE00C18DF5 /* UIControl+Publisher.swift in Sources */,
 				78EC5F65280BB4E700C18DF5 /* ViewModel.swift in Sources */,
 				78EC5F85280BBC6000C18DF5 /* CombineViewController.swift in Sources */,
 				78AAF062280AD6E200BF0E3B /* APIClient.swift in Sources */,
