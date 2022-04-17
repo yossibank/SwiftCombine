@@ -3,7 +3,7 @@ import UIKit
 // MARK: - stored properties & init
 
 final class APIFlowController: UIViewController {
-    private let navVC = UINavigationController()
+    private let navVC = NavigationController()
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -28,8 +28,9 @@ extension APIFlowController {
 
 extension APIFlowController: FlowController {
     func start() {
-        let vc = APIViewController()
-        tabBarItem.title = "home"
+        let vc = AppControllers.api()
+        tabBarItem.title = "API"
+        tabBarItem.image = UIImage(systemName: "network")
 
         navVC.viewControllers = [vc]
     }

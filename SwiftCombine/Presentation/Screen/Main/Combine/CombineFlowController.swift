@@ -2,7 +2,7 @@ import UIKit
 
 // MARK: - stored properties & init
 
-final class HomeFlowController: UIViewController {
+final class CombineFlowController: UIViewController {
     private let navVC = NavigationController()
 
     init() {
@@ -17,7 +17,7 @@ final class HomeFlowController: UIViewController {
 
 // MARK: - override methods
 
-extension HomeFlowController {
+extension CombineFlowController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         children.first?.view.frame = tabBarController?.view.bounds ?? .zero
@@ -26,11 +26,11 @@ extension HomeFlowController {
 
 // MARK: - protocol
 
-extension HomeFlowController: FlowController {
+extension CombineFlowController: FlowController {
     func start() {
-        let vc = AppControllers.home()
-        tabBarItem.title = "Home"
-        tabBarItem.image = UIImage(systemName: "house.circle")
+        let vc = AppControllers.combine()
+        tabBarItem.title = "Combine"
+        tabBarItem.image = UIImage(systemName: "swift")
 
         navVC.viewControllers = [vc]
     }

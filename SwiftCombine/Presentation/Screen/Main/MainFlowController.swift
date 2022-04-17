@@ -3,7 +3,7 @@ import UIKit
 // MARK: - stored properties & init
 
 final class MainFlowController: UIViewController {
-    private let tabController = UITabBarController()
+    private let tabController = TabBarController()
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -27,7 +27,7 @@ extension MainFlowController {
 extension MainFlowController: FlowController {
     func start() {
         let flows: [FlowController]
-        flows = [HomeFlowController(), APIFlowController()]
+        flows = [HomeFlowController(), APIFlowController(), CombineFlowController()]
 
         tabController.setViewControllers(flows, animated: false)
 
