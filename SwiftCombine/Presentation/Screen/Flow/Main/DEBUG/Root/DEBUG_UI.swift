@@ -64,31 +64,29 @@ private extension DEBUG_UI {
         indexPath: IndexPath,
         item: DEBUG_Item
     ) -> UITableViewCell? {
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: String(describing: UITableViewCell.self),
+            for: indexPath
+        )
+
         switch item {
         case let .controller(content):
             switch content {
             case .api:
-                let cell = tableView.dequeueReusableCell(
-                    withIdentifier: String(describing: UITableViewCell.self),
-                    for: indexPath
-                )
                 cell.textLabel?.text = "API ViewController"
-
-                return cell
             }
             
         case let .combine(content):
             switch content {
-            case .future:
-                let cell = tableView.dequeueReusableCell(
-                    withIdentifier: String(describing: UITableViewCell.self),
-                    for: indexPath
-                )
-                cell.textLabel?.text = "Future"
+            case .subject:
+                cell.textLabel?.text = "Subject"
 
-                return cell
+            case .future:
+                cell.textLabel?.text = "Future"
             }
         }
+
+        return cell
     }
 }
 

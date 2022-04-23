@@ -22,11 +22,8 @@ final class APIViewController: UIViewController {
 extension APIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-
         ui.setupView(rootView: view)
-
         viewModel.fetch()
-
         bindToView()
     }
 }

@@ -51,8 +51,12 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
 
     func didCombineSelected(item: DEBUG_Combine) {
         switch item {
+        case .subject:
+            let vc = AppControllers.Combine.subject()
+            navVC.pushViewController(vc, animated: true)
+
         case .future:
-            let vc = AppControllers.future()
+            let vc = AppControllers.Combine.future()
             navVC.pushViewController(vc, animated: true)
         }
     }

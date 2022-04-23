@@ -14,7 +14,6 @@ final class FutureViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
 
-    private let subjectModel: SubjectModel = .init()
     private let justModel: JustModel = .init()
 
     private var cancellables: Set<AnyCancellable> = .init()
@@ -25,14 +24,9 @@ final class FutureViewController: UIViewController {
 extension FutureViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-
         ui.setupView(rootView: view)
-
         setupEvent()
-        bindValue()
-
-        subjectModel.executeCurrentSubject()
-        subjectModel.executePassthroughSubject()
+        bindToView()
 
         justModel.executeNoJust()
         justModel.executeJust()
@@ -74,7 +68,7 @@ private extension FutureViewController {
         .store(in: &cancellables)
     }
 
-    func bindValue() {
+    func bindToView() {
         viewModel.$count
             .receive(on: DispatchQueue.main)
             .sink { [weak self] value in

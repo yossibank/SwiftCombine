@@ -1,10 +1,10 @@
 import UIKit
 
 struct AppControllers {
-    static func api() -> APIViewController {
-        let instance = APIViewController()
+    static func home() -> HomeViewController {
+        let instance = HomeViewController()
         instance.inject(viewModel: .init(), ui: .init())
-        instance.title = "API"
+        instance.title = "Home"
         return instance
     }
 
@@ -15,17 +15,26 @@ struct AppControllers {
         return instance
     }
 
-    static func future() -> FutureViewController {
-        let instance = FutureViewController()
+    static func api() -> APIViewController {
+        let instance = APIViewController()
         instance.inject(viewModel: .init(), ui: .init())
-        instance.title = "Future"
+        instance.title = "API"
         return instance
     }
 
-    static func home() -> HomeViewController {
-        let instance = HomeViewController()
-        instance.inject(viewModel: .init(), ui: .init())
-        instance.title = "Home"
-        return instance
+    struct Combine {
+        static func subject() -> SubjectViewController {
+            let instance = SubjectViewController()
+            instance.inject(viewModel: .init(), ui: .init())
+            instance.title = "Subject"
+            return instance
+        }
+
+        static func future() -> FutureViewController {
+            let instance = FutureViewController()
+            instance.inject(viewModel: .init(), ui: .init())
+            instance.title = "Future"
+            return instance
+        }
     }
 }
