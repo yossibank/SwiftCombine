@@ -6,14 +6,13 @@ final class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.shadowColor = .lightGray.withAlphaComponent(0.5)
+        tabBar.standardAppearance = appearance
+
         if #available(iOS 15.0, *) {
-            let appearance = UITabBarAppearance()
-            appearance.backgroundColor = .systemBackground
-            tabBar.standardAppearance = appearance
             tabBar.scrollEdgeAppearance = appearance
-        } else {
-            tabBar.isTranslucent = false
-            tabBar.barTintColor = .systemBackground
         }
     }
 }

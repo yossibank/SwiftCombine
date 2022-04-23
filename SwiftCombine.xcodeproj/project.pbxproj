@@ -167,10 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				78EC5F60280BB49E00C18DF5 /* MainFlowController.swift */,
-				78EC5F6E280BB65600C18DF5 /* API */,
-				78EC5F80280BBC4300C18DF5 /* Combine */,
-				78EC5F94280C26FF00C18DF5 /* DEBUG */,
 				78EC5F62280BB4AE00C18DF5 /* Home */,
+				78EC5F94280C26FF00C18DF5 /* DEBUG */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -203,6 +201,15 @@
 				78AAF06F280ADA1500BF0E3B /* LocalRequest */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		786071DC28139E970074ECB8 /* Contents */ = {
+			isa = PBXGroup;
+			children = (
+				78EC5F6E280BB65600C18DF5 /* API */,
+				78EC5F80280BBC4300C18DF5 /* Combine */,
+			);
+			path = Contents;
 			sourceTree = "<group>";
 		};
 		78AAF054280AB3F700BF0E3B /* Core */ = {
@@ -308,8 +315,8 @@
 		78CBE26327F31DA200DF1667 /* SwiftCombine */ = {
 			isa = PBXGroup;
 			children = (
-				780D09B92802BE2A00454705 /* API */,
 				780D09B128016C6D00454705 /* App */,
+				780D09B92802BE2A00454705 /* API */,
 				78AAF07A280B047600BF0E3B /* Model */,
 				78EC5F5E280BB42200C18DF5 /* Presentation */,
 				780D09AE28016C4F00454705 /* Resource */,
@@ -420,6 +427,7 @@
 			children = (
 				78EC5F96280C272200C18DF5 /* DEBUG_FlowController.swift */,
 				78EC5F95280C271500C18DF5 /* Root */,
+				786071DC28139E970074ECB8 /* Contents */,
 			);
 			path = DEBUG;
 			sourceTree = "<group>";

@@ -20,5 +20,6 @@ final class HomeViewController: UIViewController {
 extension HomeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
     }
 }
