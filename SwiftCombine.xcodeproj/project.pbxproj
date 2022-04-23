@@ -19,6 +19,8 @@
 		788407D02814146700641E27 /* DeferredUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788407CF2814146700641E27 /* DeferredUI.swift */; };
 		788407D22814147100641E27 /* DeferredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788407D12814147100641E27 /* DeferredViewController.swift */; };
 		788407D42814147A00641E27 /* DeferredViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788407D32814147A00641E27 /* DeferredViewModel.swift */; };
+		788407D7281423DE00641E27 /* GetJoke.json in Resources */ = {isa = PBXBuildFile; fileRef = 788407D6281423DE00641E27 /* GetJoke.json */; };
+		788407E7281424CA00641E27 /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788407E6281424CA00641E27 /* RequestTests.swift */; };
 		78AAF056280AB40300BF0E3B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AAF055280AB40300BF0E3B /* Request.swift */; };
 		78AAF058280ABEE600BF0E3B /* URLRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AAF057280ABEE600BF0E3B /* URLRequest+Extension.swift */; };
 		78AAF05A280ABFCD00BF0E3B /* TestDataFetchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AAF059280ABFCD00BF0E3B /* TestDataFetchRequest.swift */; };
@@ -68,6 +70,16 @@
 		78EC5F9B280C273800C18DF5 /* DEBUG_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F9A280C273800C18DF5 /* DEBUG_ViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		788407E02814247D00641E27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78CBE25927F31DA200DF1667 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78CBE26027F31DA200DF1667;
+			remoteInfo = SwiftCombine;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		780D09B428028B7000454705 /* Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combine.swift; sourceTree = "<group>"; };
 		780D09B72802908C00454705 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
@@ -81,6 +93,9 @@
 		788407CF2814146700641E27 /* DeferredUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeferredUI.swift; sourceTree = "<group>"; };
 		788407D12814147100641E27 /* DeferredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeferredViewController.swift; sourceTree = "<group>"; };
 		788407D32814147A00641E27 /* DeferredViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeferredViewModel.swift; sourceTree = "<group>"; };
+		788407D6281423DE00641E27 /* GetJoke.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetJoke.json; sourceTree = "<group>"; };
+		788407DC2814247D00641E27 /* SwiftCombineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCombineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		788407E6281424CA00641E27 /* RequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTests.swift; sourceTree = "<group>"; };
 		78AAF055280AB40300BF0E3B /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		78AAF057280ABEE600BF0E3B /* URLRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extension.swift"; sourceTree = "<group>"; };
 		78AAF059280ABFCD00BF0E3B /* TestDataFetchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataFetchRequest.swift; sourceTree = "<group>"; };
@@ -133,6 +148,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		788407D92814247D00641E27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		78CBE25E27F31DA200DF1667 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -207,6 +229,7 @@
 				78AAF054280AB3F700BF0E3B /* Core */,
 				78AAF06C280AD94E00BF0E3B /* DataHolder */,
 				78AAF06F280ADA1500BF0E3B /* LocalRequest */,
+				788407D52814239E00641E27 /* TestData */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -291,6 +314,30 @@
 				7871EFFD2813DD45004E477D /* JustViewModel.swift */,
 			);
 			path = Just;
+			sourceTree = "<group>";
+		};
+		788407D52814239E00641E27 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				788407D6281423DE00641E27 /* GetJoke.json */,
+			);
+			path = TestData;
+			sourceTree = "<group>";
+		};
+		788407DD2814247D00641E27 /* SwiftCombineTests */ = {
+			isa = PBXGroup;
+			children = (
+				788407E5281424AE00641E27 /* API */,
+			);
+			path = SwiftCombineTests;
+			sourceTree = "<group>";
+		};
+		788407E5281424AE00641E27 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				788407E6281424CA00641E27 /* RequestTests.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		78AAF054280AB3F700BF0E3B /* Core */ = {
@@ -381,6 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				78CBE26327F31DA200DF1667 /* SwiftCombine */,
+				788407DD2814247D00641E27 /* SwiftCombineTests */,
 				78CBE26227F31DA200DF1667 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -389,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				78CBE26127F31DA200DF1667 /* SwiftCombine.app */,
+				788407DC2814247D00641E27 /* SwiftCombineTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -493,6 +542,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		788407DB2814247D00641E27 /* SwiftCombineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 788407E22814247D00641E27 /* Build configuration list for PBXNativeTarget "SwiftCombineTests" */;
+			buildPhases = (
+				788407D82814247D00641E27 /* Sources */,
+				788407D92814247D00641E27 /* Frameworks */,
+				788407DA2814247D00641E27 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				788407E12814247D00641E27 /* PBXTargetDependency */,
+			);
+			name = SwiftCombineTests;
+			productName = SwiftCombineTests;
+			productReference = 788407DC2814247D00641E27 /* SwiftCombineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		78CBE26027F31DA200DF1667 /* SwiftCombine */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78CBE27527F31DA500DF1667 /* Build configuration list for PBXNativeTarget "SwiftCombine" */;
@@ -520,6 +587,11 @@
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					788407DB2814247D00641E27 = {
+						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1330;
+						TestTargetID = 78CBE26027F31DA200DF1667;
+					};
 					78CBE26027F31DA200DF1667 = {
 						CreatedOnToolsVersion = 13.3;
 					};
@@ -539,15 +611,24 @@
 			projectRoot = "";
 			targets = (
 				78CBE26027F31DA200DF1667 /* SwiftCombine */,
+				788407DB2814247D00641E27 /* SwiftCombineTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		788407DA2814247D00641E27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		78CBE25F27F31DA200DF1667 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				788407D7281423DE00641E27 /* GetJoke.json in Resources */,
 				78CBE27127F31DA500DF1667 /* LaunchScreen.storyboard in Resources */,
 				78CBE26E27F31DA500DF1667 /* Assets.xcassets in Resources */,
 			);
@@ -556,6 +637,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		788407D82814247D00641E27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				788407E7281424CA00641E27 /* RequestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		78CBE25D27F31DA200DF1667 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -622,6 +711,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		788407E12814247D00641E27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78CBE26027F31DA200DF1667 /* SwiftCombine */;
+			targetProxy = 788407E02814247D00641E27 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		78CBE26F27F31DA500DF1667 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -634,6 +731,55 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		788407E32814247D00641E27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yossibank.SwiftCombineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftCombine.app/SwiftCombine";
+			};
+			name = Debug;
+		};
+		788407E42814247D00641E27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yossibank.SwiftCombineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftCombine.app/SwiftCombine";
+			};
+			name = Release;
+		};
 		78CBE27327F31DA500DF1667 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -805,6 +951,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		788407E22814247D00641E27 /* Build configuration list for PBXNativeTarget "SwiftCombineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				788407E32814247D00641E27 /* Debug */,
+				788407E42814247D00641E27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		78CBE25C27F31DA200DF1667 /* Build configuration list for PBXProject "SwiftCombine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

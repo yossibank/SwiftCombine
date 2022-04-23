@@ -8,7 +8,9 @@ struct JokeGetRequest: Request {
     let parameters: Parameters
     var method: HTTPMethod { .get }
     var path: String { "" }
-    var testDataPath: URL? { nil }
+    var testDataPath: URL? {
+        Bundle.main.url(forResource: "GetJoke", withExtension: "json")
+    }
 
     var body: Data?
 
