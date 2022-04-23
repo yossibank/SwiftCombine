@@ -32,7 +32,7 @@ struct AppControllers {
 
         static func subject() -> SubjectViewController {
             let instance = SubjectViewController()
-            instance.inject(viewModel: .init(), ui: .init())
+            instance.inject(viewModel: .init())
             instance.title = "Subject"
             return instance
         }

@@ -21,24 +21,9 @@ final class JustViewModel: ViewModel {
 
     func executeNoJust() {
         sample.publisher
-            /* compactMap(_:)はCombineのOperatorの1つです(Operator.swiftで説明します) */
             .compactMap { String($0) }
             .sink { print($0) }
             .store(in: &cancellables)
-
-        /** 出力結果:
-         * H
-         * e
-         * l
-         * l
-         * o
-         *
-         * W
-         * o
-         * r
-         * l
-         * d
-         */
     }
 
     func executeJust() {
@@ -46,9 +31,5 @@ final class JustViewModel: ViewModel {
             .compactMap { String($0) }
             .sink { print($0) }
             .store(in: &cancellables)
-
-        /** 出力結果:
-         * Hello World
-         */
     }
 }

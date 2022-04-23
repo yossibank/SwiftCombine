@@ -32,6 +32,23 @@ extension JustViewController {
 private extension JustViewController {
     func observation() {
         viewModel.executeNoJust()
+        /** 出力結果:
+         * H
+         * e
+         * l
+         * l
+         * o
+         *
+         * W
+         * o
+         * r
+         * l
+         * d
+         */
+
         viewModel.executeJust()
+        /** 出力結果:
+         * Hello World
+         */
     }
 }

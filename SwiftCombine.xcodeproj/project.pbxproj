@@ -12,7 +12,6 @@
 		786071DE2813AA5C0074ECB8 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */; };
 		7871EFE82813B308004E477D /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871EFE72813B308004E477D /* String+Util.swift */; };
 		7871EFF12813CDB7004E477D /* FutureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871EFF02813CDB7004E477D /* FutureViewModel.swift */; };
-		7871EFF42813D1BD004E477D /* SubjectUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871EFF32813D1BD004E477D /* SubjectUI.swift */; };
 		7871EFF62813D1C6004E477D /* SubjuctViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871EFF52813D1C6004E477D /* SubjuctViewController.swift */; };
 		7871EFF82813D1CC004E477D /* SubjctViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871EFF72813D1CC004E477D /* SubjctViewModel.swift */; };
 		7871EFFC2813DD3E004E477D /* JustViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871EFFB2813DD3E004E477D /* JustViewController.swift */; };
@@ -72,7 +71,6 @@
 		786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		7871EFE72813B308004E477D /* String+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
 		7871EFF02813CDB7004E477D /* FutureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureViewModel.swift; sourceTree = "<group>"; };
-		7871EFF32813D1BD004E477D /* SubjectUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectUI.swift; sourceTree = "<group>"; };
 		7871EFF52813D1C6004E477D /* SubjuctViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjuctViewController.swift; sourceTree = "<group>"; };
 		7871EFF72813D1CC004E477D /* SubjctViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjctViewModel.swift; sourceTree = "<group>"; };
 		7871EFFB2813DD3E004E477D /* JustViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustViewController.swift; sourceTree = "<group>"; };
@@ -264,7 +262,6 @@
 		7871EFF22813D05D004E477D /* Subject */ = {
 			isa = PBXGroup;
 			children = (
-				7871EFF32813D1BD004E477D /* SubjectUI.swift */,
 				7871EFF52813D1C6004E477D /* SubjuctViewController.swift */,
 				7871EFF72813D1CC004E477D /* SubjctViewModel.swift */,
 			);
@@ -599,7 +596,6 @@
 				78AAF073280ADA4800BF0E3B /* SetOnboardingFinishedRequest.swift in Sources */,
 				78AAF079280AFB5E00BF0E3B /* JokeResponse.swift in Sources */,
 				78CBE26527F31DA200DF1667 /* AppDelegate.swift in Sources */,
-				7871EFF42813D1BD004E477D /* SubjectUI.swift in Sources */,
 				78EC5F8D280BC7B500C18DF5 /* APIUI.swift in Sources */,
 				78EC5F8F280BC8C700C18DF5 /* APIViewModel.swift in Sources */,
 				78EC5F67280BB4EE00C18DF5 /* VCInjectable.swift in Sources */,

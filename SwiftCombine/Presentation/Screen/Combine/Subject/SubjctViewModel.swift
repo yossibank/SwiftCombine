@@ -31,6 +31,12 @@ final class SubjectViewModel: ViewModel {
     private var cancellables: Set<AnyCancellable> = .init()
 
     func executeCurrentSubject() {
+        /* sinkメソッドを使用してPublisherを購読する */
+        currentSubject.sink {
+            print($0)
+        }
+        .store(in: &cancellables)
+
         /* 値を送る */
         currentSubject.value.append(1)
         currentSubject.value.append(2)
@@ -41,16 +47,23 @@ final class SubjectViewModel: ViewModel {
 
         /* completionを投げた後はSubjectに対してsendメソッドを投げても実行されません */
         currentSubject.value.append(4)
-
-        /** 実行結果:
-         * []
-         * [1]
-         * [1, 2]
-         * [1, 2, 3]
-         */
     }
 
     func executePassthroughSubject() {
+        /* sinkメソッドを使用してPublisherを購読する */
+        passthroughSubject.sink { completion in
+            switch completion {
+                case .finished:
+                    print("finished")
+
+                case .failure: // Neverはエラーを発生させないため本来は不要
+                    print("failure")
+            }
+        } receiveValue: {
+            print($0)
+        }
+        .store(in: &cancellables)
+
         /* 値を送る */
         passthroughSubject.send(1)
 
@@ -59,10 +72,5 @@ final class SubjectViewModel: ViewModel {
 
         /* completionを投げた後はSubjectに対してsendメソッドを投げても実行されません */
         passthroughSubject.send(2)
-
-        /** 実行結果:
-         * 1
-         * finished
-         */
     }
 }
