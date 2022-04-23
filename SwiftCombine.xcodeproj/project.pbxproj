@@ -15,6 +15,8 @@
 		7871EFF42813D1BD004E477D /* SubjectUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871EFF32813D1BD004E477D /* SubjectUI.swift */; };
 		7871EFF62813D1C6004E477D /* SubjuctViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871EFF52813D1C6004E477D /* SubjuctViewController.swift */; };
 		7871EFF82813D1CC004E477D /* SubjctViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871EFF72813D1CC004E477D /* SubjctViewModel.swift */; };
+		7871EFFC2813DD3E004E477D /* JustViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871EFFB2813DD3E004E477D /* JustViewController.swift */; };
+		7871EFFE2813DD45004E477D /* JustViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871EFFD2813DD45004E477D /* JustViewModel.swift */; };
 		78AAF056280AB40300BF0E3B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AAF055280AB40300BF0E3B /* Request.swift */; };
 		78AAF058280ABEE600BF0E3B /* URLRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AAF057280ABEE600BF0E3B /* URLRequest+Extension.swift */; };
 		78AAF05A280ABFCD00BF0E3B /* TestDataFetchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AAF059280ABFCD00BF0E3B /* TestDataFetchRequest.swift */; };
@@ -73,6 +75,8 @@
 		7871EFF32813D1BD004E477D /* SubjectUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectUI.swift; sourceTree = "<group>"; };
 		7871EFF52813D1C6004E477D /* SubjuctViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjuctViewController.swift; sourceTree = "<group>"; };
 		7871EFF72813D1CC004E477D /* SubjctViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjctViewModel.swift; sourceTree = "<group>"; };
+		7871EFFB2813DD3E004E477D /* JustViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustViewController.swift; sourceTree = "<group>"; };
+		7871EFFD2813DD45004E477D /* JustViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustViewModel.swift; sourceTree = "<group>"; };
 		78AAF055280AB40300BF0E3B /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		78AAF057280ABEE600BF0E3B /* URLRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extension.swift"; sourceTree = "<group>"; };
 		78AAF059280ABFCD00BF0E3B /* TestDataFetchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataFetchRequest.swift; sourceTree = "<group>"; };
@@ -267,6 +271,22 @@
 			path = Subject;
 			sourceTree = "<group>";
 		};
+		7871EFF92813DB19004E477D /* Deferred */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Deferred;
+			sourceTree = "<group>";
+		};
+		7871EFFA2813DD32004E477D /* Just */ = {
+			isa = PBXGroup;
+			children = (
+				7871EFFB2813DD3E004E477D /* JustViewController.swift */,
+				7871EFFD2813DD45004E477D /* JustViewModel.swift */,
+			);
+			path = Just;
+			sourceTree = "<group>";
+		};
 		78AAF054280AB3F700BF0E3B /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,8 +467,10 @@
 		78EC5F80280BBC4300C18DF5 /* Combine */ = {
 			isa = PBXGroup;
 			children = (
+				7871EFFA2813DD32004E477D /* Just */,
 				7871EFF22813D05D004E477D /* Subject */,
 				7871EFEF2813BD64004E477D /* Future */,
+				7871EFF92813DB19004E477D /* Deferred */,
 			);
 			path = Combine;
 			sourceTree = "<group>";
@@ -548,6 +570,7 @@
 				78AAF06B280AD8FE00BF0E3B /* UserDefaultKey.swift in Sources */,
 				78EC5F7B280BB9E700C18DF5 /* NavigationController.swift in Sources */,
 				78EC5F70280BB66000C18DF5 /* APIViewController.swift in Sources */,
+				7871EFFE2813DD45004E477D /* JustViewModel.swift in Sources */,
 				78EC5F87280BBD8B00C18DF5 /* AppDataHolder.swift in Sources */,
 				78AAF06E280AD95E00BF0E3B /* PersistedDataHolder.swift in Sources */,
 				78AAF05C280AC00400BF0E3B /* APIError.swift in Sources */,
@@ -564,6 +587,7 @@
 				78EC5F7D280BB9EF00C18DF5 /* TabBarController.swift in Sources */,
 				78AAF060280AC47500BF0E3B /* DataStructure.swift in Sources */,
 				78CBE26927F31DA200DF1667 /* HomeViewController.swift in Sources */,
+				7871EFFC2813DD3E004E477D /* JustViewController.swift in Sources */,
 				78AAF07C280B04F200BF0E3B /* Repository.swift in Sources */,
 				78EC5F78280BB7C400C18DF5 /* AppFlowController.swift in Sources */,
 				78EC5F6B280BB50000C18DF5 /* FlowController.swift in Sources */,

@@ -27,11 +27,15 @@ enum DEBUG_Controller: String, CaseIterable, Hashable {
 }
 
 enum DEBUG_Combine: String, CaseIterable, Hashable {
+    case just
     case subject
     case future
 
     var component: DEBUG_Item {
         switch self {
+        case .just:
+            return .combine(.just)
+
         case .subject:
             return .combine(.subject)
 

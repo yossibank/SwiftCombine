@@ -78,6 +78,9 @@ private extension DEBUG_UI {
             
         case let .combine(content):
             switch content {
+            case .just:
+                cell.textLabel?.text = "Just"
+
             case .subject:
                 cell.textLabel?.text = "Subject"
 

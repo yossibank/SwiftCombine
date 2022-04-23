@@ -14,8 +14,6 @@ final class FutureViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
 
-    private let justModel: JustModel = .init()
-
     private var cancellables: Set<AnyCancellable> = .init()
 }
 
@@ -27,9 +25,6 @@ extension FutureViewController {
         ui.setupView(rootView: view)
         setupEvent()
         bindToView()
-
-        justModel.executeNoJust()
-        justModel.executeJust()
 
         /* この時点でFutureのインスタンスのクロージャ処理が実行されます */
         let deferredModel = DeferredModel() /* Future 実行 */

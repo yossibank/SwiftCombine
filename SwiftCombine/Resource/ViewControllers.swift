@@ -23,6 +23,13 @@ struct AppControllers {
     }
 
     struct Combine {
+        static func just() -> JustViewController {
+            let instance = JustViewController()
+            instance.inject(viewModel: .init())
+            instance.title = "Just"
+            return instance
+        }
+
         static func subject() -> SubjectViewController {
             let instance = SubjectViewController()
             instance.inject(viewModel: .init(), ui: .init())
