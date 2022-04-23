@@ -3,7 +3,6 @@ import UIKit
 final class APIUI {
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [textView])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
 
@@ -11,7 +10,6 @@ final class APIUI {
         let textView = UITextView()
         textView.font = .italicSystemFont(ofSize: 16)
         textView.textColor = .red
-        textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
 

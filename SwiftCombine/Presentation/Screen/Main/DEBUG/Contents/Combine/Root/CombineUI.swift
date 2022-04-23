@@ -9,14 +9,12 @@ final class CombineUI {
         button.setTitle("20カウントで背景色変わる", for: .normal)
         button.backgroundColor = .red
         button.layer.cornerRadius = 8
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
     private let countLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 16)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
