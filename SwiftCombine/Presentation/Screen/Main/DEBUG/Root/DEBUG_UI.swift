@@ -98,15 +98,14 @@ extension DEBUG_UI: UserInterface {
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .systemBackground
 
-        rootView.addSubview(tableView)
+        rootView.addSubViews(
+            tableView,
 
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: rootView.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor)
-        ])
+            constraints:
+                tableView.topAnchor.constraint(equalTo: rootView.topAnchor),
+                tableView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor),
+                tableView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
+                tableView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor)
+        )
     }
 }

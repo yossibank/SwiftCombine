@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		780D09B528028B7000454705 /* Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D09B428028B7000454705 /* Combine.swift */; };
 		780D09B82802908C00454705 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D09B72802908C00454705 /* Publisher.swift */; };
+		786071DE2813AA5C0074ECB8 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */; };
 		78AAF056280AB40300BF0E3B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AAF055280AB40300BF0E3B /* Request.swift */; };
 		78AAF058280ABEE600BF0E3B /* URLRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AAF057280ABEE600BF0E3B /* URLRequest+Extension.swift */; };
 		78AAF05A280ABFCD00BF0E3B /* TestDataFetchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AAF059280ABFCD00BF0E3B /* TestDataFetchRequest.swift */; };
@@ -41,12 +42,10 @@
 		78EC5F6D280BB57B00C18DF5 /* UIViewController+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F6C280BB57B00C18DF5 /* UIViewController+Container.swift */; };
 		78EC5F70280BB66000C18DF5 /* APIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F6F280BB66000C18DF5 /* APIViewController.swift */; };
 		78EC5F73280BB6AA00C18DF5 /* HomeFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F72280BB6AA00C18DF5 /* HomeFlowController.swift */; };
-		78EC5F76280BB6BB00C18DF5 /* APIFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F75280BB6BB00C18DF5 /* APIFlowController.swift */; };
 		78EC5F78280BB7C400C18DF5 /* AppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F77280BB7C400C18DF5 /* AppFlowController.swift */; };
 		78EC5F7B280BB9E700C18DF5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F7A280BB9E700C18DF5 /* NavigationController.swift */; };
 		78EC5F7D280BB9EF00C18DF5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F7C280BB9EF00C18DF5 /* TabBarController.swift */; };
 		78EC5F7F280BBB2300C18DF5 /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F7E280BBB2300C18DF5 /* ViewControllers.swift */; };
-		78EC5F83280BBC5700C18DF5 /* CombineFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F82280BBC5700C18DF5 /* CombineFlowController.swift */; };
 		78EC5F85280BBC6000C18DF5 /* CombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F84280BBC6000C18DF5 /* CombineViewController.swift */; };
 		78EC5F87280BBD8B00C18DF5 /* AppDataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F86280BBD8B00C18DF5 /* AppDataHolder.swift */; };
 		78EC5F89280BBF3700C18DF5 /* CombineUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F88280BBF3700C18DF5 /* CombineUI.swift */; };
@@ -63,6 +62,7 @@
 /* Begin PBXFileReference section */
 		780D09B428028B7000454705 /* Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combine.swift; sourceTree = "<group>"; };
 		780D09B72802908C00454705 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
+		786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		78AAF055280AB40300BF0E3B /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		78AAF057280ABEE600BF0E3B /* URLRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extension.swift"; sourceTree = "<group>"; };
 		78AAF059280ABFCD00BF0E3B /* TestDataFetchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataFetchRequest.swift; sourceTree = "<group>"; };
@@ -97,12 +97,10 @@
 		78EC5F6C280BB57B00C18DF5 /* UIViewController+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Container.swift"; sourceTree = "<group>"; };
 		78EC5F6F280BB66000C18DF5 /* APIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIViewController.swift; sourceTree = "<group>"; };
 		78EC5F72280BB6AA00C18DF5 /* HomeFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlowController.swift; sourceTree = "<group>"; };
-		78EC5F75280BB6BB00C18DF5 /* APIFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFlowController.swift; sourceTree = "<group>"; };
 		78EC5F77280BB7C400C18DF5 /* AppFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowController.swift; sourceTree = "<group>"; };
 		78EC5F7A280BB9E700C18DF5 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		78EC5F7C280BB9EF00C18DF5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		78EC5F7E280BBB2300C18DF5 /* ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
-		78EC5F82280BBC5700C18DF5 /* CombineFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineFlowController.swift; sourceTree = "<group>"; };
 		78EC5F84280BBC6000C18DF5 /* CombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineViewController.swift; sourceTree = "<group>"; };
 		78EC5F86280BBD8B00C18DF5 /* AppDataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataHolder.swift; sourceTree = "<group>"; };
 		78EC5F88280BBF3700C18DF5 /* CombineUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineUI.swift; sourceTree = "<group>"; };
@@ -342,6 +340,7 @@
 				78EC5F90280BC90300C18DF5 /* LoadingState.swift */,
 				78EC5F8A280BC2FE00C18DF5 /* UIControl+Publisher.swift */,
 				78EC5F6C280BB57B00C18DF5 /* UIViewController+Container.swift */,
+				786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */,
 				780D09B328028B6500454705 /* Combine */,
 				78AAF063280AD6F200BF0E3B /* Logger */,
 			);
@@ -371,7 +370,6 @@
 		78EC5F6E280BB65600C18DF5 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				78EC5F75280BB6BB00C18DF5 /* APIFlowController.swift */,
 				78EC5F74280BB6B100C18DF5 /* Root */,
 			);
 			path = API;
@@ -407,7 +405,6 @@
 		78EC5F80280BBC4300C18DF5 /* Combine */ = {
 			isa = PBXGroup;
 			children = (
-				78EC5F82280BBC5700C18DF5 /* CombineFlowController.swift */,
 				78EC5F81280BBC4F00C18DF5 /* Root */,
 			);
 			path = Combine;
@@ -523,7 +520,6 @@
 				78EC5F85280BBC6000C18DF5 /* CombineViewController.swift in Sources */,
 				78AAF062280AD6E200BF0E3B /* APIClient.swift in Sources */,
 				78AAF056280AB40300BF0E3B /* Request.swift in Sources */,
-				78EC5F76280BB6BB00C18DF5 /* APIFlowController.swift in Sources */,
 				78AAF065280AD70800BF0E3B /* Logger.swift in Sources */,
 				78AAF06B280AD8FE00BF0E3B /* UserDefaultKey.swift in Sources */,
 				78EC5F7B280BB9E700C18DF5 /* NavigationController.swift in Sources */,
@@ -537,7 +533,6 @@
 				78EC5F9B280C273800C18DF5 /* DEBUG_ViewController.swift in Sources */,
 				78AAF082280B100C00BF0E3B /* Model.swift in Sources */,
 				78AAF084280B121B00BF0E3B /* Repos.swift in Sources */,
-				78EC5F83280BBC5700C18DF5 /* CombineFlowController.swift in Sources */,
 				78AAF080280B0D1F00BF0E3B /* JokeModel.swift in Sources */,
 				78EC5F7D280BB9EF00C18DF5 /* TabBarController.swift in Sources */,
 				78AAF060280AC47500BF0E3B /* DataStructure.swift in Sources */,
@@ -546,6 +541,7 @@
 				78EC5F78280BB7C400C18DF5 /* AppFlowController.swift in Sources */,
 				78EC5F6B280BB50000C18DF5 /* FlowController.swift in Sources */,
 				78EC5F89280BBF3700C18DF5 /* CombineUI.swift in Sources */,
+				786071DE2813AA5C0074ECB8 /* UIView+Layout.swift in Sources */,
 				78EC5F93280C25D200C18DF5 /* DEBUG_Item.swift in Sources */,
 				78EC5F6D280BB57B00C18DF5 /* UIViewController+Container.swift in Sources */,
 				78EC5F73280BB6AA00C18DF5 /* HomeFlowController.swift in Sources */,

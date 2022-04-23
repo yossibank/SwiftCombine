@@ -38,17 +38,19 @@ extension CombineUI {
 extension CombineUI: UserInterface {
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .systemBackground
-        rootView.addSubview(countButton)
-        rootView.addSubview(countLabel)
 
-        NSLayoutConstraint.activate([
-            countButton.centerXAnchor.constraint(equalTo: rootView.centerXAnchor),
-            countButton.centerYAnchor.constraint(equalTo: rootView.centerYAnchor),
-            countButton.widthAnchor.constraint(equalToConstant: 220),
-            countButton.heightAnchor.constraint(equalToConstant: 40),
+        rootView.addSubViews(
+            countButton,
+            countLabel,
 
-            countLabel.centerXAnchor.constraint(equalTo: rootView.centerXAnchor),
-            countLabel.centerYAnchor.constraint(equalTo: rootView.centerYAnchor, constant: 100)
-        ])
+            constraints:
+                countButton.centerXAnchor.constraint(equalTo: rootView.centerXAnchor),
+                countButton.centerYAnchor.constraint(equalTo: rootView.centerYAnchor),
+                countButton.widthAnchor.constraint(equalToConstant: 220),
+                countButton.heightAnchor.constraint(equalToConstant: 40),
+
+                countLabel.centerXAnchor.constraint(equalTo: rootView.centerXAnchor),
+                countLabel.centerYAnchor.constraint(equalTo: rootView.centerYAnchor, constant: 100)
+        )
     }
 }

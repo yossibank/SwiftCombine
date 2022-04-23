@@ -27,13 +27,15 @@ final class APIUI {
 extension APIUI: UserInterface {
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .systemBackground
-        rootView.addSubview(stackView)
+        
+        rootView.addSubViews(
+            stackView,
 
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.topAnchor, constant: 20),
-            stackView.bottomAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.bottomAnchor),
-            stackView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor, constant: 16),
-            stackView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor, constant: -16)
-        ])
+            constraints:
+                stackView.topAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.topAnchor, constant: 20),
+                stackView.bottomAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.bottomAnchor),
+                stackView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor, constant: 16),
+                stackView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor, constant: -16)
+        )
     }
 }
