@@ -3,7 +3,7 @@ import UIKit
 
 // MARK: - stored properties
 
-final class CombineUI {
+final class FutureUI {
     private lazy var countButton: UIButton = {
         let button = UIButton()
         button.setTitle("20カウントで背景色変わる", for: .normal)
@@ -25,7 +25,7 @@ final class CombineUI {
 
 // MARK: - internal methods
 
-extension CombineUI {
+extension FutureUI {
     func setCountText(_ text: String?) {
         countLabel.text = text
     }
@@ -33,7 +33,7 @@ extension CombineUI {
 
 // MARK: - protocol
 
-extension CombineUI: UserInterface {
+extension FutureUI: UserInterface {
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .systemBackground
 

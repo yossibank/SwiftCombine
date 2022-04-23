@@ -3,14 +3,14 @@ import UIKit
 
 // MARK: - inject
 
-extension CombineViewController: VCInjectable {
+extension FutureViewController: VCInjectable {
     typealias VM = NoViewModel
-    typealias UI = CombineUI
+    typealias UI = FutureUI
 }
 
 // MARK: - stored properties & init
 
-final class CombineViewController: UIViewController {
+final class FutureViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
 
@@ -23,7 +23,7 @@ final class CombineViewController: UIViewController {
 
 // MARK: - override methods
 
-extension CombineViewController {
+extension FutureViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -55,7 +55,7 @@ extension CombineViewController {
 
 // MARK: - private methods
 
-private extension CombineViewController {
+private extension FutureViewController {
     func setupEvent() {
         ui.countButtonTapPublisher.sink { [weak self] _ in
             guard let self = self else { return }

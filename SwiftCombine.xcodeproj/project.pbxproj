@@ -47,9 +47,9 @@
 		78EC5F7B280BB9E700C18DF5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F7A280BB9E700C18DF5 /* NavigationController.swift */; };
 		78EC5F7D280BB9EF00C18DF5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F7C280BB9EF00C18DF5 /* TabBarController.swift */; };
 		78EC5F7F280BBB2300C18DF5 /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F7E280BBB2300C18DF5 /* ViewControllers.swift */; };
-		78EC5F85280BBC6000C18DF5 /* CombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F84280BBC6000C18DF5 /* CombineViewController.swift */; };
+		78EC5F85280BBC6000C18DF5 /* FutureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F84280BBC6000C18DF5 /* FutureViewController.swift */; };
 		78EC5F87280BBD8B00C18DF5 /* AppDataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F86280BBD8B00C18DF5 /* AppDataHolder.swift */; };
-		78EC5F89280BBF3700C18DF5 /* CombineUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F88280BBF3700C18DF5 /* CombineUI.swift */; };
+		78EC5F89280BBF3700C18DF5 /* FutureUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F88280BBF3700C18DF5 /* FutureUI.swift */; };
 		78EC5F8B280BC2FE00C18DF5 /* UIControl+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F8A280BC2FE00C18DF5 /* UIControl+Publisher.swift */; };
 		78EC5F8D280BC7B500C18DF5 /* APIUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F8C280BC7B500C18DF5 /* APIUI.swift */; };
 		78EC5F8F280BC8C700C18DF5 /* APIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F8E280BC8C700C18DF5 /* APIViewModel.swift */; };
@@ -103,9 +103,9 @@
 		78EC5F7A280BB9E700C18DF5 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		78EC5F7C280BB9EF00C18DF5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		78EC5F7E280BBB2300C18DF5 /* ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
-		78EC5F84280BBC6000C18DF5 /* CombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineViewController.swift; sourceTree = "<group>"; };
+		78EC5F84280BBC6000C18DF5 /* FutureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureViewController.swift; sourceTree = "<group>"; };
 		78EC5F86280BBD8B00C18DF5 /* AppDataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataHolder.swift; sourceTree = "<group>"; };
-		78EC5F88280BBF3700C18DF5 /* CombineUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineUI.swift; sourceTree = "<group>"; };
+		78EC5F88280BBF3700C18DF5 /* FutureUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureUI.swift; sourceTree = "<group>"; };
 		78EC5F8A280BC2FE00C18DF5 /* UIControl+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Publisher.swift"; sourceTree = "<group>"; };
 		78EC5F8C280BC7B500C18DF5 /* APIUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUI.swift; sourceTree = "<group>"; };
 		78EC5F8E280BC8C700C18DF5 /* APIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIViewModel.swift; sourceTree = "<group>"; };
@@ -237,6 +237,13 @@
 				7871EFEB2813BB8F004E477D /* Main */,
 			);
 			path = Flow;
+			sourceTree = "<group>";
+		};
+		7871EFEF2813BD64004E477D /* Future */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Future;
 			sourceTree = "<group>";
 		};
 		78AAF054280AB3F700BF0E3B /* Core */ = {
@@ -419,8 +426,9 @@
 		78EC5F80280BBC4300C18DF5 /* Combine */ = {
 			isa = PBXGroup;
 			children = (
-				78EC5F88280BBF3700C18DF5 /* CombineUI.swift */,
-				78EC5F84280BBC6000C18DF5 /* CombineViewController.swift */,
+				7871EFEF2813BD64004E477D /* Future */,
+				78EC5F88280BBF3700C18DF5 /* FutureUI.swift */,
+				78EC5F84280BBC6000C18DF5 /* FutureViewController.swift */,
 			);
 			path = Combine;
 			sourceTree = "<group>";
@@ -512,7 +520,7 @@
 				780D09B528028B7000454705 /* Combine.swift in Sources */,
 				78EC5F8B280BC2FE00C18DF5 /* UIControl+Publisher.swift in Sources */,
 				78EC5F65280BB4E700C18DF5 /* ViewModel.swift in Sources */,
-				78EC5F85280BBC6000C18DF5 /* CombineViewController.swift in Sources */,
+				78EC5F85280BBC6000C18DF5 /* FutureViewController.swift in Sources */,
 				78AAF062280AD6E200BF0E3B /* APIClient.swift in Sources */,
 				78AAF056280AB40300BF0E3B /* Request.swift in Sources */,
 				78AAF065280AD70800BF0E3B /* Logger.swift in Sources */,
@@ -536,7 +544,7 @@
 				78AAF07C280B04F200BF0E3B /* Repository.swift in Sources */,
 				78EC5F78280BB7C400C18DF5 /* AppFlowController.swift in Sources */,
 				78EC5F6B280BB50000C18DF5 /* FlowController.swift in Sources */,
-				78EC5F89280BBF3700C18DF5 /* CombineUI.swift in Sources */,
+				78EC5F89280BBF3700C18DF5 /* FutureUI.swift in Sources */,
 				786071DE2813AA5C0074ECB8 /* UIView+Layout.swift in Sources */,
 				78EC5F93280C25D200C18DF5 /* DEBUG_Item.swift in Sources */,
 				78EC5F6D280BB57B00C18DF5 /* UIViewController+Container.swift in Sources */,

@@ -15,10 +15,10 @@ struct AppControllers {
         return instance
     }
 
-    static func combine() -> CombineViewController {
-        let instance = CombineViewController()
+    static func future() -> FutureViewController {
+        let instance = FutureViewController()
         instance.inject(viewModel: .init(), ui: .init())
-        instance.title = "Combine"
+        instance.title = "Future"
         return instance
     }
 
