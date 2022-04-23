@@ -1,11 +1,11 @@
 enum DEBUG_Section: String, CaseIterable {
-    case api
+    case viewController
     case combine
 
     var items: [DEBUG_Item] {
         switch self {
-        case .api:
-            return DEBUG_API.allCases.map { $0.component }
+        case .viewController:
+            return DEBUG_Controller.allCases.map { $0.component }
 
         case .combine:
             return DEBUG_Combine.allCases.map { $0.component }
@@ -14,15 +14,15 @@ enum DEBUG_Section: String, CaseIterable {
 }
 
 enum DEBUG_Item: Hashable {
-    case api(DEBUG_API)
+    case controller(DEBUG_Controller)
     case combine(DEBUG_Combine)
 }
 
-enum DEBUG_API: String, CaseIterable, Hashable {
-    case joke
+enum DEBUG_Controller: String, CaseIterable, Hashable {
+    case api
 
     var component: DEBUG_Item {
-        .api(.joke)
+        .controller(.api)
     }
 }
 

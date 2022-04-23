@@ -29,10 +29,31 @@ extension DEBUG_FlowController {
 extension DEBUG_FlowController: FlowController {
     func start() {
         let vc = AppControllers.debug()
+        vc.delegate = self
 
         tabBarItem.title = "DEBUG"
         tabBarItem.image = UIImage(systemName: "gamecontroller")
 
         navVC.viewControllers = [vc]
+    }
+}
+
+// MARK: - delegate
+
+extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
+    func didControllerSelected(item: DEBUG_Controller) {
+        switch item {
+        case .api:
+            let vc = AppControllers.api()
+            navVC.pushViewController(vc, animated: true)
+        }
+    }
+
+    func didCombineSelected(item: DEBUG_Combine) {
+        switch item {
+        case .future:
+            let vc = AppControllers.combine()
+            navVC.pushViewController(vc, animated: true)
+        }
     }
 }

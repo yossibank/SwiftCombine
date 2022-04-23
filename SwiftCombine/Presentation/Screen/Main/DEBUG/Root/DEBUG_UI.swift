@@ -65,14 +65,14 @@ private extension DEBUG_UI {
         item: DEBUG_Item
     ) -> UITableViewCell? {
         switch item {
-        case let .api(content):
+        case let .controller(content):
             switch content {
-            case .joke:
+            case .api:
                 let cell = tableView.dequeueReusableCell(
                     withIdentifier: String(describing: UITableViewCell.self),
                     for: indexPath
                 )
-                cell.textLabel?.text = "JOKEのAPI"
+                cell.textLabel?.text = "API ViewController"
 
                 return cell
             }
