@@ -39,11 +39,8 @@ final class SubjectViewModel: ViewModel {
         /* 処理が終了したことを伝える */
         currentSubject.send(completion: .finished)
 
-        /* sinkメソッドを使用してPublisherを購読する */
-        currentSubject.sink {
-            print($0)
-        }
-        .store(in: &cancellables)
+        /* completionを投げた後はSubjectに対してsendメソッドを投げても実行されません */
+        currentSubject.value.append(4)
 
         /** 実行結果:
          * []
@@ -51,9 +48,6 @@ final class SubjectViewModel: ViewModel {
          * [1, 2]
          * [1, 2, 3]
          */
-
-        /* completionを投げた後はSubjectに対してsendメソッドを投げても実行されません */
-        currentSubject.value.append(4)
     }
 
     func executePassthroughSubject() {
@@ -63,26 +57,12 @@ final class SubjectViewModel: ViewModel {
         /* 処理が終了したことを伝える */
         passthroughSubject.send(completion: .finished)
 
-        /* sinkメソッドを使用してPublisherを購読する */
-        passthroughSubject.sink { completion in
-            switch completion {
-                case .finished:
-                    print("finished")
-
-                case .failure: // Neverはエラーを発生させないため本来は不要
-                    print("failure")
-            }
-        } receiveValue: { value in
-            print(value)
-        }
-        .store(in: &cancellables)
+        /* completionを投げた後はSubjectに対してsendメソッドを投げても実行されません */
+        passthroughSubject.send(2)
 
         /** 実行結果:
          * 1
          * finished
          */
-
-        /* completionを投げた後はSubjectに対してsendメソッドを投げても実行されません */
-        passthroughSubject.send(2)
     }
 }

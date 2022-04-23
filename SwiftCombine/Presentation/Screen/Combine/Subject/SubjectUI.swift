@@ -4,16 +4,30 @@ import UIKit
 // MARK: - stored properties
 
 final class SubjectUI {
-    private let subjectLabel: UILabel = {
+    private let subjectCurrentLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 16)
         return label
     }()
 
-    var text: String? {
+    private let subjectPassthoughLabel: UILabel = {
+        let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 16)
+        return label
+    }()
+
+    var subjectCurrentText: String? {
         didSet {
-            if let text = text {
-                subjectLabel.text = "output: \(text)"
+            if let text = subjectCurrentText {
+                subjectCurrentLabel.text = "output: \(text)"
+            }
+        }
+    }
+
+    var subjectPassthoughText: String? {
+        didSet {
+            if let text = subjectPassthoughText {
+                subjectPassthoughLabel.text = "output: \(text)"
             }
         }
     }
@@ -26,11 +40,14 @@ extension SubjectUI: UserInterface {
         rootView.backgroundColor = .systemBackground
 
         rootView.addSubViews(
-            subjectLabel,
+            subjectCurrentLabel,
+            subjectPassthoughLabel,
 
             constraints:
-                subjectLabel.centerXAnchor.constraint(equalTo: rootView.centerXAnchor),
-                subjectLabel.centerYAnchor.constraint(equalTo: rootView.centerYAnchor)
+                subjectCurrentLabel.centerXAnchor.constraint(equalTo: rootView.centerXAnchor),
+                subjectCurrentLabel.centerYAnchor.constraint(equalTo: rootView.centerYAnchor),
+                subjectPassthoughLabel.centerXAnchor.constraint(equalTo: rootView.centerXAnchor),
+                subjectPassthoughLabel.centerYAnchor.constraint(equalTo: rootView.centerYAnchor, constant: 100)
         )
     }
 }
