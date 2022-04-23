@@ -140,7 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				780D09B028016C6400454705 /* Launch */,
-				780D09B228016C7400454705 /* Main */,
+				7871EFE92813B863004E477D /* Root */,
+				7871EFEA2813B882004E477D /* Contents */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -161,16 +162,6 @@
 				78EC5F77280BB7C400C18DF5 /* AppFlowController.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		780D09B228016C7400454705 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				78EC5F60280BB49E00C18DF5 /* MainFlowController.swift */,
-				78EC5F62280BB4AE00C18DF5 /* Home */,
-				78EC5F94280C26FF00C18DF5 /* DEBUG */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		780D09B328028B6500454705 /* Combine */ = {
@@ -203,21 +194,31 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		786071DC28139E970074ECB8 /* Contents */ = {
-			isa = PBXGroup;
-			children = (
-				78EC5F6E280BB65600C18DF5 /* API */,
-				78EC5F80280BBC4300C18DF5 /* Combine */,
-			);
-			path = Contents;
-			sourceTree = "<group>";
-		};
 		7871EFE62813B2F8004E477D /* AppUtil */ = {
 			isa = PBXGroup;
 			children = (
 				7871EFE72813B308004E477D /* String+Util.swift */,
 			);
 			path = AppUtil;
+			sourceTree = "<group>";
+		};
+		7871EFE92813B863004E477D /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				78EC5F60280BB49E00C18DF5 /* MainFlowController.swift */,
+				78EC5F62280BB4AE00C18DF5 /* Home */,
+				78EC5F94280C26FF00C18DF5 /* DEBUG */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		7871EFEA2813B882004E477D /* Contents */ = {
+			isa = PBXGroup;
+			children = (
+				78EC5F6E280BB65600C18DF5 /* API */,
+				78EC5F80280BBC4300C18DF5 /* Combine */,
+			);
+			path = Contents;
 			sourceTree = "<group>";
 		};
 		78AAF054280AB3F700BF0E3B /* Core */ = {
@@ -362,7 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				78EC5F72280BB6AA00C18DF5 /* HomeFlowController.swift */,
-				78EC5F71280BB69400C18DF5 /* Root */,
+				78CBE26827F31DA200DF1667 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -381,27 +382,11 @@
 		78EC5F6E280BB65600C18DF5 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				78EC5F74280BB6B100C18DF5 /* Root */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		78EC5F71280BB69400C18DF5 /* Root */ = {
-			isa = PBXGroup;
-			children = (
-				78CBE26827F31DA200DF1667 /* HomeViewController.swift */,
-			);
-			path = Root;
-			sourceTree = "<group>";
-		};
-		78EC5F74280BB6B100C18DF5 /* Root */ = {
-			isa = PBXGroup;
-			children = (
 				78EC5F8C280BC7B500C18DF5 /* APIUI.swift */,
 				78EC5F6F280BB66000C18DF5 /* APIViewController.swift */,
 				78EC5F8E280BC8C700C18DF5 /* APIViewModel.swift */,
 			);
-			path = Root;
+			path = API;
 			sourceTree = "<group>";
 		};
 		78EC5F79280BB9D800C18DF5 /* Container */ = {
@@ -416,38 +401,21 @@
 		78EC5F80280BBC4300C18DF5 /* Combine */ = {
 			isa = PBXGroup;
 			children = (
-				78EC5F81280BBC4F00C18DF5 /* Root */,
-			);
-			path = Combine;
-			sourceTree = "<group>";
-		};
-		78EC5F81280BBC4F00C18DF5 /* Root */ = {
-			isa = PBXGroup;
-			children = (
 				78EC5F88280BBF3700C18DF5 /* CombineUI.swift */,
 				78EC5F84280BBC6000C18DF5 /* CombineViewController.swift */,
 			);
-			path = Root;
+			path = Combine;
 			sourceTree = "<group>";
 		};
 		78EC5F94280C26FF00C18DF5 /* DEBUG */ = {
 			isa = PBXGroup;
 			children = (
 				78EC5F96280C272200C18DF5 /* DEBUG_FlowController.swift */,
-				78EC5F95280C271500C18DF5 /* Root */,
-				786071DC28139E970074ECB8 /* Contents */,
-			);
-			path = DEBUG;
-			sourceTree = "<group>";
-		};
-		78EC5F95280C271500C18DF5 /* Root */ = {
-			isa = PBXGroup;
-			children = (
 				78EC5F92280C25D200C18DF5 /* DEBUG_Item.swift */,
 				78EC5F98280C272F00C18DF5 /* DEBUG_UI.swift */,
 				78EC5F9A280C273800C18DF5 /* DEBUG_ViewController.swift */,
 			);
-			path = Root;
+			path = DEBUG;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
