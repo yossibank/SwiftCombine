@@ -16,6 +16,9 @@
 		7871EFF82813D1CC004E477D /* SubjctViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871EFF72813D1CC004E477D /* SubjctViewModel.swift */; };
 		7871EFFC2813DD3E004E477D /* JustViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871EFFB2813DD3E004E477D /* JustViewController.swift */; };
 		7871EFFE2813DD45004E477D /* JustViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871EFFD2813DD45004E477D /* JustViewModel.swift */; };
+		788407D02814146700641E27 /* DeferredUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788407CF2814146700641E27 /* DeferredUI.swift */; };
+		788407D22814147100641E27 /* DeferredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788407D12814147100641E27 /* DeferredViewController.swift */; };
+		788407D42814147A00641E27 /* DeferredViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788407D32814147A00641E27 /* DeferredViewModel.swift */; };
 		78AAF056280AB40300BF0E3B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AAF055280AB40300BF0E3B /* Request.swift */; };
 		78AAF058280ABEE600BF0E3B /* URLRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AAF057280ABEE600BF0E3B /* URLRequest+Extension.swift */; };
 		78AAF05A280ABFCD00BF0E3B /* TestDataFetchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AAF059280ABFCD00BF0E3B /* TestDataFetchRequest.swift */; };
@@ -75,6 +78,9 @@
 		7871EFF72813D1CC004E477D /* SubjctViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjctViewModel.swift; sourceTree = "<group>"; };
 		7871EFFB2813DD3E004E477D /* JustViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustViewController.swift; sourceTree = "<group>"; };
 		7871EFFD2813DD45004E477D /* JustViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustViewModel.swift; sourceTree = "<group>"; };
+		788407CF2814146700641E27 /* DeferredUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeferredUI.swift; sourceTree = "<group>"; };
+		788407D12814147100641E27 /* DeferredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeferredViewController.swift; sourceTree = "<group>"; };
+		788407D32814147A00641E27 /* DeferredViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeferredViewModel.swift; sourceTree = "<group>"; };
 		78AAF055280AB40300BF0E3B /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		78AAF057280ABEE600BF0E3B /* URLRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extension.swift"; sourceTree = "<group>"; };
 		78AAF059280ABFCD00BF0E3B /* TestDataFetchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataFetchRequest.swift; sourceTree = "<group>"; };
@@ -271,6 +277,9 @@
 		7871EFF92813DB19004E477D /* Deferred */ = {
 			isa = PBXGroup;
 			children = (
+				788407CF2814146700641E27 /* DeferredUI.swift */,
+				788407D12814147100641E27 /* DeferredViewController.swift */,
+				788407D32814147A00641E27 /* DeferredViewModel.swift */,
 			);
 			path = Deferred;
 			sourceTree = "<group>";
@@ -601,10 +610,13 @@
 				78EC5F67280BB4EE00C18DF5 /* VCInjectable.swift in Sources */,
 				78EC5F61280BB49E00C18DF5 /* MainFlowController.swift in Sources */,
 				78EC5F91280BC90300C18DF5 /* LoadingState.swift in Sources */,
+				788407D02814146700641E27 /* DeferredUI.swift in Sources */,
 				78EC5F69280BB4F800C18DF5 /* UserInterface.swift in Sources */,
 				78EC5F99280C272F00C18DF5 /* DEBUG_UI.swift in Sources */,
 				78AAF071280ADA3B00BF0E3B /* GetOnboardingFinishedRequest.swift in Sources */,
+				788407D42814147A00641E27 /* DeferredViewModel.swift in Sources */,
 				78EC5F97280C272200C18DF5 /* DEBUG_FlowController.swift in Sources */,
+				788407D22814147100641E27 /* DeferredViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -86,6 +86,9 @@ private extension DEBUG_UI {
 
             case .future:
                 cell.textLabel?.text = "Future"
+
+            case .deferred:
+                cell.textLabel?.text = "Deferred"
             }
         }
 

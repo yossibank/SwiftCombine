@@ -62,6 +62,10 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
         case .future:
             let vc = AppControllers.Combine.future()
             navVC.pushViewController(vc, animated: true)
+
+        case .deferred:
+            let vc = AppControllers.Combine.deferred()
+            navVC.pushViewController(vc, animated: true)
         }
     }
 }

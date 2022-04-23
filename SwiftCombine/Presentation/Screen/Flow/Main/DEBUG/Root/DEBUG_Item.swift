@@ -30,6 +30,7 @@ enum DEBUG_Combine: String, CaseIterable, Hashable {
     case just
     case subject
     case future
+    case deferred
 
     var component: DEBUG_Item {
         switch self {
@@ -41,6 +42,9 @@ enum DEBUG_Combine: String, CaseIterable, Hashable {
 
         case .future:
             return .combine(.future)
+
+        case .deferred:
+            return .combine(.deferred)
         }
     }
 }

@@ -25,19 +25,6 @@ extension FutureViewController {
         ui.setupView(rootView: view)
         setupEvent()
         bindToView()
-
-        /* この時点でFutureのインスタンスのクロージャ処理が実行されます */
-        let deferredModel = DeferredModel() /* Future 実行 */
-
-        deferredModel.futurePublisher.sink { value in
-            print(value) /* Hello */
-        }
-        .store(in: &cancellables)
-
-        deferredModel.deferredPublisher.sink { value in
-            print(value) /* Deferred 実行, Hello */
-        }
-        .store(in: &cancellables)
     }
 }
 

@@ -43,5 +43,12 @@ struct AppControllers {
             instance.title = "Future"
             return instance
         }
+
+        static func deferred() -> DeferredViewController {
+            let instance = DeferredViewController()
+            instance.inject(viewModel: .init(), ui: .init())
+            instance.title = "Deferred"
+            return instance
+        }
     }
 }
