@@ -139,9 +139,10 @@
 		780D09AF28016C5900454705 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				7871EFEE2813BBEB004E477D /* Flow */,
 				780D09B028016C6400454705 /* Launch */,
-				7871EFE92813B863004E477D /* Root */,
-				7871EFEA2813B882004E477D /* Contents */,
+				78EC5F6E280BB65600C18DF5 /* API */,
+				78EC5F80280BBC4300C18DF5 /* Combine */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -202,23 +203,40 @@
 			path = AppUtil;
 			sourceTree = "<group>";
 		};
-		7871EFE92813B863004E477D /* Root */ = {
+		7871EFEB2813BB8F004E477D /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				78EC5F60280BB49E00C18DF5 /* MainFlowController.swift */,
 				78EC5F62280BB4AE00C18DF5 /* Home */,
 				78EC5F94280C26FF00C18DF5 /* DEBUG */,
 			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7871EFEC2813BBAB004E477D /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				78CBE26827F31DA200DF1667 /* HomeViewController.swift */,
+			);
 			path = Root;
 			sourceTree = "<group>";
 		};
-		7871EFEA2813B882004E477D /* Contents */ = {
+		7871EFED2813BBB5004E477D /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				78EC5F6E280BB65600C18DF5 /* API */,
-				78EC5F80280BBC4300C18DF5 /* Combine */,
+				78EC5F92280C25D200C18DF5 /* DEBUG_Item.swift */,
+				78EC5F98280C272F00C18DF5 /* DEBUG_UI.swift */,
+				78EC5F9A280C273800C18DF5 /* DEBUG_ViewController.swift */,
 			);
-			path = Contents;
+			path = Root;
+			sourceTree = "<group>";
+		};
+		7871EFEE2813BBEB004E477D /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				7871EFEB2813BB8F004E477D /* Main */,
+			);
+			path = Flow;
 			sourceTree = "<group>";
 		};
 		78AAF054280AB3F700BF0E3B /* Core */ = {
@@ -363,7 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				78EC5F72280BB6AA00C18DF5 /* HomeFlowController.swift */,
-				78CBE26827F31DA200DF1667 /* HomeViewController.swift */,
+				7871EFEC2813BBAB004E477D /* Root */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -411,9 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				78EC5F96280C272200C18DF5 /* DEBUG_FlowController.swift */,
-				78EC5F92280C25D200C18DF5 /* DEBUG_Item.swift */,
-				78EC5F98280C272F00C18DF5 /* DEBUG_UI.swift */,
-				78EC5F9A280C273800C18DF5 /* DEBUG_ViewController.swift */,
+				7871EFED2813BBB5004E477D /* Root */,
 			);
 			path = DEBUG;
 			sourceTree = "<group>";
