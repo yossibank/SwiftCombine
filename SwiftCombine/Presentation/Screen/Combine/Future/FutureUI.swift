@@ -21,13 +21,11 @@ final class FutureUI {
     lazy var countButtonTapPublisher: UIControl.Publisher<UIButton> = {
         countButton.publisher(for: .touchUpInside)
     }()
-}
 
-// MARK: - internal methods
-
-extension FutureUI {
-    func setCountText(_ text: String?) {
-        countLabel.text = text
+    var text: String? {
+        didSet {
+            countLabel.text = text
+        }
     }
 }
 

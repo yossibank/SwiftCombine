@@ -4,7 +4,7 @@ import UIKit
 // MARK: - inject
 
 extension FutureViewController: VCInjectable {
-    typealias VM = NoViewModel
+    typealias VM = FutureViewModel
     typealias UI = FutureUI
 }
 
@@ -15,7 +15,6 @@ final class FutureViewController: UIViewController {
     var ui: UI!
 
     private let subjectModel: SubjectModel = .init()
-    private let futureModel: FutureModel = .init()
     private let justModel: JustModel = .init()
 
     private var cancellables: Set<AnyCancellable> = .init()
@@ -61,12 +60,12 @@ private extension FutureViewController {
             guard let self = self else { return }
 
             // コールバック処理にCombineを使わない場合の呼び出し
-//            futureModel.startCounting { [weak self] in
+//            self.viewModel.startCounting { [weak self] in
 //                self?.view.backgroundColor = .green
 //            }
 
             // コールバック処理にCombineのFutureを使った場合の呼び出し
-            self.futureModel.startCounting()
+            self.viewModel.startCounting()
                 .sink { [weak self] _ in
                     self?.view.backgroundColor = .green
                 }
@@ -76,10 +75,10 @@ private extension FutureViewController {
     }
 
     func bindValue() {
-        futureModel.$count
+        viewModel.$count
             .receive(on: DispatchQueue.main)
             .sink { [weak self] value in
-                self?.ui.setCountText(String(value))
+                self?.ui.text = String(value)
             }
             .store(in: &cancellables)
     }
