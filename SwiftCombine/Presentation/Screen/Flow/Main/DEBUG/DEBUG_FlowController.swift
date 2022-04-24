@@ -49,6 +49,14 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
         }
     }
 
+    func didCoreDataSelected(item: DEBUG_CoreData) {
+        switch item {
+        case .sample:
+            let vc = AppControllers.coreData()
+            navVC.pushViewController(vc, animated: true)
+        }
+    }
+
     func didCombineSelected(item: DEBUG_Combine) {
         switch item {
         case .just:

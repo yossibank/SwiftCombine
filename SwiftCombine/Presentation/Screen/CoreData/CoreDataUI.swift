@@ -1,17 +1,24 @@
-import Combine
 import UIKit
 
-final class DEBUG_UI {
+final class CoreDataUI {
+    private let inputTextField = UITextField()
+    private let saveButton = UIButton()
     private let tableView = UITableView()
 
-    private var dataSourceSnapshot = NSDiffableDataSourceSnapshot<DEBUG_Section, DEBUG_Item>()
-    private var dataSource: UITableViewDiffableDataSource<DEBUG_Section, DEBUG_Item>!
+    private lazy var stackView: UIStackView = {
+        $0.axis = .vertical
+        $0.spacing = 10
+        return $0
+    }(UIStackView(arrangedSubviews: [inputTextField, saveButton]))
+
+    private var dataSourceSnapshot = NSDiffableDataSourceSnapshot<CoreDataSection, CoreDataItem>()
+    private var dataSource: UITableViewDiffableDataSource<CoreDataSection, CoreDataItem>!
 }
 
 // MARK: - internal methods
 
-extension DEBUG_UI {
-    func setupTableView(delegate: UITableViewDelegate) {
+extension CoreDataUI {
+    func setupTableView(delegate: UITableViewDelegate, items: [CoreDataItem]) {
         dataSource = configureDataSource()
 
         tableView.register(
@@ -21,18 +28,15 @@ extension DEBUG_UI {
 
         tableView.dataSource = dataSource
         tableView.delegate = delegate
-        tableView.rowHeight = 60
+        tableView.rowHeight = 50
         tableView.tableFooterView = UIView()
 
         if #available(iOS 15.0, *) {
             tableView.sectionHeaderTopPadding = 0
         }
 
-        dataSourceSnapshot.appendSections(DEBUG_Section.allCases)
-
-        DEBUG_Section.allCases.forEach {
-            dataSourceSnapshot.appendItems($0.items, toSection: $0)
-        }
+        dataSourceSnapshot.appendSections(CoreDataSection.allCases)
+        dataSourceSnapshot.appendItems(items, toSection: .main)
 
         dataSource.apply(
             dataSourceSnapshot,
@@ -43,8 +47,8 @@ extension DEBUG_UI {
 
 // MARK: - private methods
 
-private extension DEBUG_UI {
-    func configureDataSource() -> UITableViewDiffableDataSource<DEBUG_Section, DEBUG_Item> {
+private extension CoreDataUI {
+    func configureDataSource() -> UITableViewDiffableDataSource<CoreDataSection, CoreDataItem> {
         .init(tableView: tableView) { [weak self] tableView, indexPath, item in
             guard let self = self else {
                 return .init()
@@ -61,57 +65,36 @@ private extension DEBUG_UI {
     func makeCell(
         tableView: UITableView,
         indexPath: IndexPath,
-        item: DEBUG_Item
+        item: CoreDataItem
     ) -> UITableViewCell? {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: String(describing: UITableViewCell.self),
             for: indexPath
         )
-
-        switch item {
-        case let .controller(content):
-            switch content {
-            case .api:
-                cell.textLabel?.text = "API ViewController"
-            }
-
-        case let .coreData(content):
-            switch content {
-            case .sample:
-                cell.textLabel?.text = "Sample Entity"
-            }
-
-        case let .combine(content):
-            switch content {
-            case .just:
-                cell.textLabel?.text = "Just"
-
-            case .subject:
-                cell.textLabel?.text = "Subject"
-
-            case .future:
-                cell.textLabel?.text = "Future"
-
-            case .deferred:
-                cell.textLabel?.text = "Deferred"
-            }
-        }
-
+        cell.textLabel?.text = item.title
         return cell
     }
 }
 
 // MARK: - protocol
 
-extension DEBUG_UI: UserInterface {
+extension CoreDataUI: UserInterface {
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .systemBackground
 
         rootView.addSubViews(
+            stackView,
             tableView,
 
             constraints:
-                tableView.topAnchor.constraint(equalTo: rootView.topAnchor),
+                stackView.topAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.topAnchor, constant: 16),
+                stackView.centerXAnchor.constraint(equalTo: rootView.centerXAnchor),
+
+                inputTextField.heightAnchor.constraint(equalToConstant: 40),
+                saveButton.widthAnchor.constraint(equalToConstant: 200),
+                saveButton.heightAnchor.constraint(equalToConstant: 56),
+
+                tableView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16),
                 tableView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor),
                 tableView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
                 tableView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor)

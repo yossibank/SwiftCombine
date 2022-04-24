@@ -5,6 +5,7 @@ import UIKit
 
 protocol DEBUG_ViewControllerDelegate: AnyObject {
     func didControllerSelected(item: DEBUG_Controller)
+    func didCoreDataSelected(item: DEBUG_CoreData)
     func didCombineSelected(item: DEBUG_Combine)
 }
 
@@ -69,6 +70,10 @@ extension DEBUG_ViewController: UITableViewDelegate {
         case .viewController:
             let item = DEBUG_Controller.allCases[indexPath.row]
             delegate.didControllerSelected(item: item)
+
+        case .coreData:
+            let item = DEBUG_CoreData.allCases[indexPath.row]
+            delegate.didCoreDataSelected(item: item)
 
         case .combine:
             let item = DEBUG_Combine.allCases[indexPath.row]

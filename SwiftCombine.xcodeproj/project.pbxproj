@@ -16,6 +16,10 @@
 		783A480A28154D8C00DE244A /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A480928154D8C00DE244A /* CoreDataRepository.swift */; };
 		783A480D28154FFF00DE244A /* SampleEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A480B28154FFF00DE244A /* SampleEntity+CoreDataClass.swift */; };
 		783A480E28154FFF00DE244A /* SampleEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A480C28154FFF00DE244A /* SampleEntity+CoreDataProperties.swift */; };
+		783A4813281551DC00DE244A /* CoreDataUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4812281551DC00DE244A /* CoreDataUI.swift */; };
+		783A4815281551E500DE244A /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4814281551E500DE244A /* CoreDataViewController.swift */; };
+		783A4817281551EB00DE244A /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4816281551EB00DE244A /* CoreDataViewModel.swift */; };
+		783A4819281552F200DE244A /* CoreDataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4818281552F200DE244A /* CoreDataItem.swift */; };
 		786071DE2813AA5C0074ECB8 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */; };
 		7871EFE82813B308004E477D /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871EFE72813B308004E477D /* String+Util.swift */; };
 		7871EFF12813CDB7004E477D /* FutureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871EFF02813CDB7004E477D /* FutureViewModel.swift */; };
@@ -97,6 +101,10 @@
 		783A480928154D8C00DE244A /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 		783A480B28154FFF00DE244A /* SampleEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SampleEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		783A480C28154FFF00DE244A /* SampleEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SampleEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		783A4812281551DC00DE244A /* CoreDataUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataUI.swift; sourceTree = "<group>"; };
+		783A4814281551E500DE244A /* CoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
+		783A4816281551EB00DE244A /* CoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
+		783A4818281552F200DE244A /* CoreDataItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataItem.swift; sourceTree = "<group>"; };
 		786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		7871EFE72813B308004E477D /* String+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
 		7871EFF02813CDB7004E477D /* FutureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureViewModel.swift; sourceTree = "<group>"; };
@@ -194,6 +202,7 @@
 				7871EFEE2813BBEB004E477D /* Flow */,
 				780D09B028016C6400454705 /* Launch */,
 				78EC5F6E280BB65600C18DF5 /* API */,
+				783A4811281551C400DE244A /* CoreData */,
 				78EC5F80280BBC4300C18DF5 /* Combine */,
 			);
 			path = Screen;
@@ -268,10 +277,10 @@
 		783A47FC281548F800DE244A /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				783A47FD2815491400DE244A /* SampleEntity.xcdatamodeld */,
-				783A480828154A0A00DE244A /* Sample */,
 				783A47FA2815417B00DE244A /* CoreData.swift */,
 				783A480928154D8C00DE244A /* CoreDataRepository.swift */,
+				783A480828154A0A00DE244A /* Sample */,
+				783A47FD2815491400DE244A /* SampleEntity.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -283,6 +292,33 @@
 				783A480C28154FFF00DE244A /* SampleEntity+CoreDataProperties.swift */,
 			);
 			path = Sample;
+			sourceTree = "<group>";
+		};
+		783A480F2815519800DE244A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				78AAF07D280B0B2700BF0E3B /* ModelProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		783A4810281551A100DE244A /* Impl */ = {
+			isa = PBXGroup;
+			children = (
+				78AAF07F280B0D1F00BF0E3B /* JokeModel.swift */,
+			);
+			path = Impl;
+			sourceTree = "<group>";
+		};
+		783A4811281551C400DE244A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				783A4818281552F200DE244A /* CoreDataItem.swift */,
+				783A4812281551DC00DE244A /* CoreDataUI.swift */,
+				783A4814281551E500DE244A /* CoreDataViewController.swift */,
+				783A4816281551EB00DE244A /* CoreDataViewModel.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		7871EFE62813B2F8004E477D /* AppUtil */ = {
@@ -470,9 +506,9 @@
 		78AAF07A280B047600BF0E3B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				78AAF07F280B0D1F00BF0E3B /* JokeModel.swift */,
 				78AAF081280B100C00BF0E3B /* Model.swift */,
-				78AAF07D280B0B2700BF0E3B /* ModelProtocol.swift */,
+				783A4810281551A100DE244A /* Impl */,
+				783A480F2815519800DE244A /* Protocol */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -731,6 +767,7 @@
 				78EC5F7F280BBB2300C18DF5 /* ViewControllers.swift in Sources */,
 				7871EFF82813D1CC004E477D /* SubjctViewModel.swift in Sources */,
 				7871EFF12813CDB7004E477D /* FutureViewModel.swift in Sources */,
+				783A4819281552F200DE244A /* CoreDataItem.swift in Sources */,
 				78AAF077280AFAFC00BF0E3B /* JokeGetRequest.swift in Sources */,
 				78AAF068280AD88E00BF0E3B /* UserDefaultsStorage.swift in Sources */,
 				78EC5F9B280C273800C18DF5 /* DEBUG_ViewController.swift in Sources */,
@@ -740,6 +777,7 @@
 				78AAF080280B0D1F00BF0E3B /* JokeModel.swift in Sources */,
 				783A47FB2815417B00DE244A /* CoreData.swift in Sources */,
 				78EC5F7D280BB9EF00C18DF5 /* TabBarController.swift in Sources */,
+				783A4813281551DC00DE244A /* CoreDataUI.swift in Sources */,
 				78AAF060280AC47500BF0E3B /* DataStructure.swift in Sources */,
 				78CBE26927F31DA200DF1667 /* HomeViewController.swift in Sources */,
 				7871EFFC2813DD3E004E477D /* JustViewController.swift in Sources */,
@@ -748,6 +786,7 @@
 				78EC5F6B280BB50000C18DF5 /* FlowController.swift in Sources */,
 				78EC5F89280BBF3700C18DF5 /* FutureUI.swift in Sources */,
 				786071DE2813AA5C0074ECB8 /* UIView+Layout.swift in Sources */,
+				783A4817281551EB00DE244A /* CoreDataViewModel.swift in Sources */,
 				78EC5F93280C25D200C18DF5 /* DEBUG_Item.swift in Sources */,
 				78EC5F6D280BB57B00C18DF5 /* UIViewController+Container.swift in Sources */,
 				78EC5F73280BB6AA00C18DF5 /* HomeFlowController.swift in Sources */,
@@ -760,6 +799,7 @@
 				78EC5F61280BB49E00C18DF5 /* MainFlowController.swift in Sources */,
 				78EC5F91280BC90300C18DF5 /* LoadingState.swift in Sources */,
 				788407D02814146700641E27 /* DeferredUI.swift in Sources */,
+				783A4815281551E500DE244A /* CoreDataViewController.swift in Sources */,
 				78EC5F69280BB4F800C18DF5 /* UserInterface.swift in Sources */,
 				78EC5F99280C272F00C18DF5 /* DEBUG_UI.swift in Sources */,
 				78AAF071280ADA3B00BF0E3B /* GetOnboardingFinishedRequest.swift in Sources */,

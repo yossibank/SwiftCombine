@@ -22,6 +22,13 @@ struct AppControllers {
         return instance
     }
 
+    static func coreData() -> CoreDataViewController {
+        let instance = CoreDataViewController()
+        instance.inject(viewModel: .init(), ui: .init())
+        instance.title = "CoreData"
+        return instance
+    }
+
     struct Combine {
         static func just() -> JustViewController {
             let instance = JustViewController()
