@@ -20,7 +20,7 @@ final class HomeFlowController: UIViewController {
 extension HomeFlowController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        children.first?.view.frame = tabBarController?.view.bounds ?? .zero
+        children.first?.view.frame = view.bounds
     }
 }
 

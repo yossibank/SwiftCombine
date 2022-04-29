@@ -20,7 +20,7 @@ final class DEBUG_FlowController: UIViewController {
 extension DEBUG_FlowController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        children.first?.view.frame = tabBarController?.view.bounds ?? .zero
+        children.first?.view.frame = view.bounds
     }
 }
 
@@ -35,6 +35,19 @@ extension DEBUG_FlowController: FlowController {
         tabBarItem.image = UIImage(systemName: "gamecontroller")
 
         navVC.viewControllers = [vc]
+    }
+
+    func popOver(sourceView: UIView, sourceRect: CGRect) {
+        start()
+        modalPresentationStyle = .popover
+        preferredContentSize = .init(
+            width: sourceView.frame.width,
+            height: sourceView.frame.height / 2
+        )
+        popoverPresentationController?.sourceView = sourceView
+        popoverPresentationController?.sourceRect = sourceRect
+        popoverPresentationController?.permittedArrowDirections = .down
+        popoverPresentationController?.delegate = self
     }
 }
 
@@ -75,5 +88,14 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
             let vc = AppControllers.Combine.deferred()
             navVC.pushViewController(vc, animated: true)
         }
+    }
+}
+
+extension DEBUG_FlowController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(
+        for controller: UIPresentationController,
+        traitCollection: UITraitCollection
+    ) -> UIModalPresentationStyle {
+        .none
     }
 }

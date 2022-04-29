@@ -14,5 +14,21 @@ final class TabBarController: UITabBarController {
         if #available(iOS 15.0, *) {
             tabBar.scrollEdgeAppearance = appearance
         }
+
+        let longPressGesture: UILongPressGestureRecognizer = .init(
+            target: self,
+            action: #selector(longPressTabbar)
+        )
+        tabBar.addGestureRecognizer(longPressGesture)
+    }
+
+    @objc private func longPressTabbar(_ sender: UILongPressGestureRecognizer) {
+        #if DEBUG
+        if sender.state == .ended {
+            let flow = DEBUG_FlowController()
+            flow.popOver(sourceView: view, sourceRect: tabBar.frame)
+            present(flow, animated: true)
+        }
+        #endif
     }
 }
