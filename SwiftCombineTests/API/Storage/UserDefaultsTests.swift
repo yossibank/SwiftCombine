@@ -22,7 +22,7 @@ final class UserDefaultsTests: XCTestCase {
         XCTAssertFalse(PersistedDataHolder.onboardingFinished)
     }
 
-    func testGetServerType() {
+    func testServerType() {
         @UserDefaultsEnumStorage(UserDefaultKey.serverType.rawValue, defaultValue: .stage, type: .mock)
         var serverType: UserDefaultEnumKey.ServerType
 

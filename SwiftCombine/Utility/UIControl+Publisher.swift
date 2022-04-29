@@ -74,6 +74,15 @@ extension CombineCompatible where Self: UIControl {
     }
 }
 
+extension CombineCompatible where Self: UISwitch {
+    var isOnPublisher: AnyPublisher<Bool, Never> {
+        publisher(for: [.allEditingEvents, .valueChanged]).map {
+            $0.isOn
+        }
+        .eraseToAnyPublisher()
+    }
+}
+
 extension CombineCompatible where Self: UISegmentedControl {
     var selectedIndexPublisher: AnyPublisher<Int, Never> {
         publisher(for: [.allEditingEvents, .valueChanged]).map {

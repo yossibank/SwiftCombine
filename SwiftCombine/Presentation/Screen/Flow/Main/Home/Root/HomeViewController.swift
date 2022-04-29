@@ -4,7 +4,7 @@ import UIKit
 // MARK: - inject
 
 extension HomeViewController: VCInjectable {
-    typealias VM = NoViewModel
+    typealias VM = HomeViewModel
     typealias UI = NoUserInterface
 }
 
@@ -13,6 +13,13 @@ extension HomeViewController: VCInjectable {
 final class HomeViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
+
+    private let switcher: UISwitch = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+       return $0
+    }(UISwitch())
+
+    private var cancellables: Set<AnyCancellable> = .init()
 }
 
 // MARK: - override methods
@@ -20,6 +27,17 @@ final class HomeViewController: UIViewController {
 extension HomeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+
+        view.addSubview(switcher)
+
+        NSLayoutConstraint.activate([
+            switcher.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            switcher.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
+}
+
+// MARK: - private methods
+
+private extension HomeViewController {
 }

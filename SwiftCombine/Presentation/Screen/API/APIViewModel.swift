@@ -17,7 +17,6 @@ final class APIViewModel: ViewModel {
 // MARK: - internal methods
 
 extension APIViewModel {
-
     func fetch() {
         state = .loading
 
