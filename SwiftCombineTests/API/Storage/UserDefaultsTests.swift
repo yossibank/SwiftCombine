@@ -2,6 +2,11 @@
 import XCTest
 
 final class UserDefaultsTests: XCTestCase {
+    override func tearDown() {
+        super.tearDown()
+        UserDefaults(suiteName: "mock")?.removePersistentDomain(forName: "mock")
+    }
+
     func testGetIsFinished() {
         XCTAssertFalse(Repos.Onboarding.GetIsFinished().request()!)
 

@@ -1,7 +1,7 @@
 import Foundation
 
 @propertyWrapper
-class UserDefaultsStorage<T: Equatable> {
+final class UserDefaultsStorage<T: Equatable> {
     enum UserDefaultsType {
         case `default`
         case mock
@@ -42,7 +42,7 @@ class UserDefaultsStorage<T: Equatable> {
 }
 
 @propertyWrapper
-class UserDefaultsEnumStorage<T: RawRepresentable & Equatable> {
+final class UserDefaultsEnumStorage<T: RawRepresentable & Equatable> {
     enum UserDefaultsType {
         case `default`
         case mock
