@@ -12,14 +12,15 @@
 		783A47F6281502A100DE244A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47F5281502A100DE244A /* Utility.swift */; };
 		783A47F9281503F500DE244A /* JokeModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47F8281503F500DE244A /* JokeModelTests.swift */; };
 		783A47FB2815417B00DE244A /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47FA2815417B00DE244A /* CoreData.swift */; };
-		783A47FF2815491400DE244A /* SampleEntity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 783A47FD2815491400DE244A /* SampleEntity.xcdatamodeld */; };
 		783A480A28154D8C00DE244A /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A480928154D8C00DE244A /* CoreDataRepository.swift */; };
-		783A480D28154FFF00DE244A /* SampleEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A480B28154FFF00DE244A /* SampleEntity+CoreDataClass.swift */; };
-		783A480E28154FFF00DE244A /* SampleEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A480C28154FFF00DE244A /* SampleEntity+CoreDataProperties.swift */; };
 		783A4813281551DC00DE244A /* CoreDataUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4812281551DC00DE244A /* CoreDataUI.swift */; };
 		783A4815281551E500DE244A /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4814281551E500DE244A /* CoreDataViewController.swift */; };
 		783A4817281551EB00DE244A /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4816281551EB00DE244A /* CoreDataViewModel.swift */; };
 		783A4819281552F200DE244A /* CoreDataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4818281552F200DE244A /* CoreDataItem.swift */; };
+		7859A2282815912200E0F08C /* UITextField+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7859A2272815912200E0F08C /* UITextField+Publisher.swift */; };
+		7859A23328159F6100E0F08C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7859A23128159F6100E0F08C /* Model.xcdatamodeld */; };
+		7859A23628159FA800E0F08C /* FruitEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7859A23428159FA800E0F08C /* FruitEntity+CoreDataClass.swift */; };
+		7859A23728159FA800E0F08C /* FruitEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7859A23528159FA800E0F08C /* FruitEntity+CoreDataProperties.swift */; };
 		786071DE2813AA5C0074ECB8 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */; };
 		7871EFE82813B308004E477D /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871EFE72813B308004E477D /* String+Util.swift */; };
 		7871EFF12813CDB7004E477D /* FutureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871EFF02813CDB7004E477D /* FutureViewModel.swift */; };
@@ -97,14 +98,15 @@
 		783A47F5281502A100DE244A /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		783A47F8281503F500DE244A /* JokeModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModelTests.swift; sourceTree = "<group>"; };
 		783A47FA2815417B00DE244A /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
-		783A47FE2815491400DE244A /* Sample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sample.xcdatamodel; sourceTree = "<group>"; };
 		783A480928154D8C00DE244A /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
-		783A480B28154FFF00DE244A /* SampleEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SampleEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		783A480C28154FFF00DE244A /* SampleEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SampleEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		783A4812281551DC00DE244A /* CoreDataUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataUI.swift; sourceTree = "<group>"; };
 		783A4814281551E500DE244A /* CoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
 		783A4816281551EB00DE244A /* CoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
 		783A4818281552F200DE244A /* CoreDataItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataItem.swift; sourceTree = "<group>"; };
+		7859A2272815912200E0F08C /* UITextField+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Publisher.swift"; sourceTree = "<group>"; };
+		7859A23228159F6100E0F08C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		7859A23428159FA800E0F08C /* FruitEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FruitEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		7859A23528159FA800E0F08C /* FruitEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FruitEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		7871EFE72813B308004E477D /* String+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
 		7871EFF02813CDB7004E477D /* FutureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureViewModel.swift; sourceTree = "<group>"; };
@@ -216,16 +218,6 @@
 			path = Launch;
 			sourceTree = "<group>";
 		};
-		780D09B128016C6D00454705 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				78EC5F86280BBD8B00C18DF5 /* AppDataHolder.swift */,
-				78CBE26427F31DA200DF1667 /* AppDelegate.swift */,
-				78EC5F77280BB7C400C18DF5 /* AppFlowController.swift */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
 		780D09B328028B6500454705 /* Combine */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,19 +271,10 @@
 			children = (
 				783A47FA2815417B00DE244A /* CoreData.swift */,
 				783A480928154D8C00DE244A /* CoreDataRepository.swift */,
-				783A480828154A0A00DE244A /* Sample */,
-				783A47FD2815491400DE244A /* SampleEntity.xcdatamodeld */,
+				7859A22C28159AC600E0F08C /* Fruit */,
+				7859A23128159F6100E0F08C /* Model.xcdatamodeld */,
 			);
 			path = CoreData;
-			sourceTree = "<group>";
-		};
-		783A480828154A0A00DE244A /* Sample */ = {
-			isa = PBXGroup;
-			children = (
-				783A480B28154FFF00DE244A /* SampleEntity+CoreDataClass.swift */,
-				783A480C28154FFF00DE244A /* SampleEntity+CoreDataProperties.swift */,
-			);
-			path = Sample;
 			sourceTree = "<group>";
 		};
 		783A480F2815519800DE244A /* Protocol */ = {
@@ -319,6 +302,15 @@
 				783A4816281551EB00DE244A /* CoreDataViewModel.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		7859A22C28159AC600E0F08C /* Fruit */ = {
+			isa = PBXGroup;
+			children = (
+				7859A23428159FA800E0F08C /* FruitEntity+CoreDataClass.swift */,
+				7859A23528159FA800E0F08C /* FruitEntity+CoreDataProperties.swift */,
+			);
+			path = Fruit;
 			sourceTree = "<group>";
 		};
 		7871EFE62813B2F8004E477D /* AppUtil */ = {
@@ -534,7 +526,9 @@
 		78CBE26327F31DA200DF1667 /* SwiftCombine */ = {
 			isa = PBXGroup;
 			children = (
-				780D09B128016C6D00454705 /* App */,
+				78EC5F86280BBD8B00C18DF5 /* AppDataHolder.swift */,
+				78CBE26427F31DA200DF1667 /* AppDelegate.swift */,
+				78EC5F77280BB7C400C18DF5 /* AppFlowController.swift */,
 				780D09B92802BE2A00454705 /* API */,
 				78AAF07A280B047600BF0E3B /* Model */,
 				78EC5F5E280BB42200C18DF5 /* Presentation */,
@@ -560,6 +554,7 @@
 			children = (
 				78EC5F90280BC90300C18DF5 /* LoadingState.swift */,
 				78EC5F8A280BC2FE00C18DF5 /* UIControl+Publisher.swift */,
+				7859A2272815912200E0F08C /* UITextField+Publisher.swift */,
 				78EC5F6C280BB57B00C18DF5 /* UIViewController+Container.swift */,
 				786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */,
 				7871EFE62813B2F8004E477D /* AppUtil */,
@@ -741,14 +736,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				78AAF05E280AC43B00BF0E3B /* LocalRequest.swift in Sources */,
-				783A480D28154FFF00DE244A /* SampleEntity+CoreDataClass.swift in Sources */,
 				7871EFF62813D1C6004E477D /* SubjuctViewController.swift in Sources */,
 				780D09B82802908C00454705 /* Publisher.swift in Sources */,
 				78AAF05A280ABFCD00BF0E3B /* TestDataFetchRequest.swift in Sources */,
 				78AAF07E280B0B2700BF0E3B /* ModelProtocol.swift in Sources */,
 				78AAF058280ABEE600BF0E3B /* URLRequest+Extension.swift in Sources */,
 				780D09B528028B7000454705 /* Combine.swift in Sources */,
-				783A480E28154FFF00DE244A /* SampleEntity+CoreDataProperties.swift in Sources */,
 				78EC5F8B280BC2FE00C18DF5 /* UIControl+Publisher.swift in Sources */,
 				78EC5F65280BB4E700C18DF5 /* ViewModel.swift in Sources */,
 				78EC5F85280BBC6000C18DF5 /* FutureViewController.swift in Sources */,
@@ -763,9 +756,9 @@
 				78EC5F87280BBD8B00C18DF5 /* AppDataHolder.swift in Sources */,
 				78AAF06E280AD95E00BF0E3B /* PersistedDataHolder.swift in Sources */,
 				78AAF05C280AC00400BF0E3B /* APIError.swift in Sources */,
-				783A47FF2815491400DE244A /* SampleEntity.xcdatamodeld in Sources */,
 				78EC5F7F280BBB2300C18DF5 /* ViewControllers.swift in Sources */,
 				7871EFF82813D1CC004E477D /* SubjctViewModel.swift in Sources */,
+				7859A2282815912200E0F08C /* UITextField+Publisher.swift in Sources */,
 				7871EFF12813CDB7004E477D /* FutureViewModel.swift in Sources */,
 				783A4819281552F200DE244A /* CoreDataItem.swift in Sources */,
 				78AAF077280AFAFC00BF0E3B /* JokeGetRequest.swift in Sources */,
@@ -774,11 +767,13 @@
 				78AAF082280B100C00BF0E3B /* Model.swift in Sources */,
 				78AAF084280B121B00BF0E3B /* Repos.swift in Sources */,
 				7871EFE82813B308004E477D /* String+Util.swift in Sources */,
+				7859A23728159FA800E0F08C /* FruitEntity+CoreDataProperties.swift in Sources */,
 				78AAF080280B0D1F00BF0E3B /* JokeModel.swift in Sources */,
 				783A47FB2815417B00DE244A /* CoreData.swift in Sources */,
 				78EC5F7D280BB9EF00C18DF5 /* TabBarController.swift in Sources */,
 				783A4813281551DC00DE244A /* CoreDataUI.swift in Sources */,
 				78AAF060280AC47500BF0E3B /* DataStructure.swift in Sources */,
+				7859A23328159F6100E0F08C /* Model.xcdatamodeld in Sources */,
 				78CBE26927F31DA200DF1667 /* HomeViewController.swift in Sources */,
 				7871EFFC2813DD3E004E477D /* JustViewController.swift in Sources */,
 				78AAF07C280B04F200BF0E3B /* Repository.swift in Sources */,
@@ -788,6 +783,7 @@
 				786071DE2813AA5C0074ECB8 /* UIView+Layout.swift in Sources */,
 				783A4817281551EB00DE244A /* CoreDataViewModel.swift in Sources */,
 				78EC5F93280C25D200C18DF5 /* DEBUG_Item.swift in Sources */,
+				7859A23628159FA800E0F08C /* FruitEntity+CoreDataClass.swift in Sources */,
 				78EC5F6D280BB57B00C18DF5 /* UIViewController+Container.swift in Sources */,
 				78EC5F73280BB6AA00C18DF5 /* HomeFlowController.swift in Sources */,
 				78AAF073280ADA4800BF0E3B /* SetOnboardingFinishedRequest.swift in Sources */,
@@ -1081,13 +1077,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		783A47FD2815491400DE244A /* SampleEntity.xcdatamodeld */ = {
+		7859A23128159F6100E0F08C /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				783A47FE2815491400DE244A /* Sample.xcdatamodel */,
+				7859A23228159F6100E0F08C /* Model.xcdatamodel */,
 			);
-			currentVersion = 783A47FE2815491400DE244A /* Sample.xcdatamodel */;
-			path = SampleEntity.xcdatamodeld;
+			currentVersion = 7859A23228159F6100E0F08C /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

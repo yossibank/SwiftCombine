@@ -2,7 +2,7 @@ import CoreData
 
 final class CoreDataRepository {
     private static var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Sample")
+        let container = NSPersistentContainer(name: "Model")
         container.loadPersistentStores { _, error in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")

@@ -1,24 +1,45 @@
+import Combine
 import UIKit
 
 final class CoreDataUI {
-    private let inputTextField = UITextField()
-    private let saveButton = UIButton()
+    private let inputTextField: UITextField = {
+        $0.placeholder = "名前入力"
+        $0.borderStyle = .roundedRect
+        return $0
+    }(UITextField())
+
+    private let saveButton: UIButton = {
+        $0.setTitle("保存する", for: .normal)
+        $0.setTitleColor(.red, for: .normal)
+        $0.layer.cornerRadius = 8
+        $0.layer.borderWidth = 1.0
+        $0.layer.borderColor = UIColor.blue.cgColor
+        return $0
+    }(UIButton())
+
     private let tableView = UITableView()
 
     private lazy var stackView: UIStackView = {
         $0.axis = .vertical
-        $0.spacing = 10
+        $0.spacing = 32
         return $0
     }(UIStackView(arrangedSubviews: [inputTextField, saveButton]))
 
-    private var dataSourceSnapshot = NSDiffableDataSourceSnapshot<CoreDataSection, CoreDataItem>()
     private var dataSource: UITableViewDiffableDataSource<CoreDataSection, CoreDataItem>!
+
+    lazy var nameTextFieldPublisher: AnyPublisher<String, Never> = {
+        inputTextField.textDidChangePublisher
+    }()
+
+    lazy var saveButtonTapPublisher: UIControl.Publisher<UIButton> = {
+        saveButton.publisher(for: .touchUpInside)
+    }()
 }
 
 // MARK: - internal methods
 
 extension CoreDataUI {
-    func setupTableView(delegate: UITableViewDelegate, items: [CoreDataItem]) {
+    func setupTableView(delegate: UITableViewDelegate) {
         dataSource = configureDataSource()
 
         tableView.register(
@@ -34,14 +55,17 @@ extension CoreDataUI {
         if #available(iOS 15.0, *) {
             tableView.sectionHeaderTopPadding = 0
         }
+    }
 
+    func updateDataSource(items: [CoreDataItem]) {
+        var dataSourceSnapshot = NSDiffableDataSourceSnapshot<CoreDataSection, CoreDataItem>()
         dataSourceSnapshot.appendSections(CoreDataSection.allCases)
         dataSourceSnapshot.appendItems(items, toSection: .main)
+        dataSource.apply(dataSourceSnapshot, animatingDifferences: false)
+    }
 
-        dataSource.apply(
-            dataSourceSnapshot,
-            animatingDifferences: false
-        )
+    func clearText() {
+        inputTextField.text = nil
     }
 }
 
@@ -87,7 +111,7 @@ extension CoreDataUI: UserInterface {
             tableView,
 
             constraints:
-                stackView.topAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.topAnchor, constant: 16),
+                stackView.topAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.topAnchor, constant: 40),
                 stackView.centerXAnchor.constraint(equalTo: rootView.centerXAnchor),
 
                 inputTextField.heightAnchor.constraint(equalToConstant: 40),
