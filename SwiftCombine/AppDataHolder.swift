@@ -1,4 +1,4 @@
 struct AppDataHolder {
-    @UserDefaultsStorage(key: "is_Finished_StartUp")
-    static var isFinishedStartUp: Bool?
+    @UserDefaultsEnumStorage(UserDefaultKey.serverType.rawValue, defaultValue: .stage)
+    static var serverType: UserDefaultEnumKey.ServerType
 }

@@ -1,19 +1,91 @@
 import Foundation
 
 @propertyWrapper
-class UserDefaultsStorage<T: LosslessStringConvertible> {
-    private let key: String
-
-    init(key: String) {
-        self.key = key
+class UserDefaultsStorage<T: Equatable> {
+    enum UserDefaultsType {
+        case `default`
+        case mock
     }
 
-    var wrappedValue: T? {
+    private var userDefaults: UserDefaults? {
+        switch type {
+        case .default:
+            return UserDefaults.standard
+
+        case .mock:
+            return UserDefaults(suiteName: "mock")
+        }
+    }
+
+    private let key: String
+    private let defaultValue: T
+    private let type: UserDefaultsType
+
+    init(_ key: String, defaultValue: T, type: UserDefaultsType = .default) {
+        self.key = key
+        self.defaultValue = defaultValue
+        self.type = type
+    }
+
+    var wrappedValue: T {
         get {
-            UserDefaults.standard.object(forKey: key) as? T
+            userDefaults?.object(forKey: key) as? T ?? defaultValue
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: key)
+            if newValue == defaultValue {
+                userDefaults?.removeObject(forKey: key)
+            }
+
+            userDefaults?.set(newValue, forKey: key)
+        }
+    }
+}
+
+@propertyWrapper
+class UserDefaultsEnumStorage<T: RawRepresentable & Equatable> {
+    enum UserDefaultsType {
+        case `default`
+        case mock
+    }
+
+    private var userDefaults: UserDefaults? {
+        switch type {
+        case .default:
+            return UserDefaults.standard
+
+        case .mock:
+            return UserDefaults(suiteName: "mock")
+        }
+    }
+
+    private let key: String
+    private let defaultValue: T
+    private let type: UserDefaultsType
+
+    init(_ key: String, defaultValue: T, type: UserDefaultsType = .default) {
+        self.key = key
+        self.defaultValue = defaultValue
+        self.type = type
+    }
+
+    var wrappedValue: T {
+        get {
+            guard
+                let object = userDefaults?.object(forKey: key) as? T.RawValue,
+                let value = T(rawValue: object)
+            else {
+                return defaultValue
+            }
+
+            return value
+        }
+        set {
+            if newValue == defaultValue {
+                userDefaults?.removeObject(forKey: key)
+                return
+            }
+
+            userDefaults?.set(newValue.rawValue, forKey: key)
         }
     }
 }

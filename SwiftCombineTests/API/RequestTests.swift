@@ -3,7 +3,7 @@ import XCTest
 
 final class RequestTests: XCTestCase {
     override func setUpWithError() throws {
-        PersistedDataHolder.onboardingFinished = nil
+        PersistedDataHolder.onboardingFinished = false
     }
 
     func testGetJoke() {
@@ -26,29 +26,5 @@ final class RequestTests: XCTestCase {
         }
 
         wait(for: [expectation], timeout: 3.0)
-    }
-
-    func testGetIsFinished() {
-        XCTAssertNil(Repos.Onboarding.GetIsFinished().request())
-
-        PersistedDataHolder.onboardingFinished = true
-
-        XCTAssertTrue(Repos.Onboarding.GetIsFinished().request()!)
-
-        PersistedDataHolder.onboardingFinished = false
-
-        XCTAssertFalse(Repos.Onboarding.GetIsFinished().request()!)
-    }
-
-    func testSetIsFinished() {
-        XCTAssertNil(PersistedDataHolder.onboardingFinished)
-
-        Repos.Onboarding.SetIsFinished().request(parameters: true)
-
-        XCTAssertTrue(PersistedDataHolder.onboardingFinished!)
-
-        Repos.Onboarding.SetIsFinished().request(parameters: false)
-
-        XCTAssertFalse(PersistedDataHolder.onboardingFinished!)
     }
 }

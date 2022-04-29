@@ -67,6 +67,9 @@ extension DEBUG_ViewController: UITableViewDelegate {
         let section = DEBUG_Section.allCases[indexPath.section]
 
         switch section {
+        case .development:
+            break
+
         case .viewController:
             let item = DEBUG_Controller.allCases[indexPath.row]
             delegate.didControllerSelected(item: item)

@@ -6,6 +6,7 @@ final class DEBUG_UI {
 
     private var dataSourceSnapshot = NSDiffableDataSourceSnapshot<DEBUG_Section, DEBUG_Item>()
     private var dataSource: UITableViewDiffableDataSource<DEBUG_Section, DEBUG_Item>!
+    private var cancellables: Set<AnyCancellable> = .init()
 }
 
 // MARK: - internal methods
@@ -69,6 +70,27 @@ private extension DEBUG_UI {
         )
 
         switch item {
+        case let .development(content):
+            switch content {
+            case .server:
+                let segment = UISegmentedControl(
+                    frame: .init(x: 20, y: 0, width: tableView.frame.width - 40, height: 40)
+                )
+
+                DEBUG_Development.ServerItem.allCases.enumerated().forEach { index, type in
+                    segment.insertSegment(withTitle: type.rawValue, at: index, animated: false)
+                }
+
+                segment.selectedIndexPublisher.sink { index in
+                    AppDataHolder.serverType = .init(rawValue: index) ?? .stage
+                }
+                .store(in: &cancellables)
+
+                segment.selectedSegmentIndex = AppDataHolder.serverType.rawValue
+
+                cell.accessoryView = segment
+            }
+
         case let .controller(content):
             switch content {
             case .api:

@@ -73,3 +73,12 @@ extension CombineCompatible where Self: UIControl {
         UIControl.Publisher(control: self, events: events)
     }
 }
+
+extension CombineCompatible where Self: UISegmentedControl {
+    var selectedIndexPublisher: AnyPublisher<Int, Never> {
+        publisher(for: [.allEditingEvents, .valueChanged]).map {
+            $0.selectedSegmentIndex
+        }
+        .eraseToAnyPublisher()
+    }
+}
