@@ -7,24 +7,17 @@ final class UserDefaultsTests: XCTestCase {
         UserDefaults(suiteName: "mock")?.removePersistentDomain(forName: "mock")
     }
 
-    func testGetIsFinished() {
-        XCTAssertFalse(Repos.Onboarding.GetIsFinished().request()!)
+    func testOnboardingFinished() {
+        @UserDefaultsStorage(UserDefaultKey.onboardingFinished.rawValue, defaultValue: false, type: .mock)
+        var onboardingFinished: Bool
 
-        PersistedDataHolder.onboardingFinished = true
-        XCTAssertTrue(Repos.Onboarding.GetIsFinished().request()!)
+        XCTAssertFalse(onboardingFinished)
 
-        PersistedDataHolder.onboardingFinished = false
-        XCTAssertFalse(Repos.Onboarding.GetIsFinished().request()!)
-    }
+        onboardingFinished = true
+        XCTAssertTrue(onboardingFinished)
 
-    func testSetIsFinished() {
-        XCTAssertFalse(PersistedDataHolder.onboardingFinished)
-
-        Repos.Onboarding.SetIsFinished().request(parameters: true)
-        XCTAssertTrue(PersistedDataHolder.onboardingFinished)
-
-        Repos.Onboarding.SetIsFinished().request(parameters: false)
-        XCTAssertFalse(PersistedDataHolder.onboardingFinished)
+        onboardingFinished = false
+        XCTAssertFalse(onboardingFinished)
     }
 
     func testServerType() {

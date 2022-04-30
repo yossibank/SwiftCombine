@@ -34,10 +34,35 @@ extension HomeViewController {
             switcher.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             switcher.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
+
+        viewModel.fetch()
+
+        bindToViewModel()
+        bindToView()
     }
 }
 
 // MARK: - private methods
 
 private extension HomeViewController {
+    func bindToViewModel() {
+        switcher.isOnPublisher
+            .assign(to: \.isOn, on: viewModel)
+            .store(in: &cancellables)
+    }
+
+    func bindToView() {
+        viewModel.$isOn
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] value in
+                self?.switcher.isOn = value
+                self?.view.backgroundColor = value ? .red : . green
+            }
+            .store(in: &cancellables)
+
+        switcher.isOnPublisher.sink { [weak self] value in
+            self?.viewModel.set()
+        }
+        .store(in: &cancellables)
+    }
 }

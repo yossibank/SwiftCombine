@@ -35,6 +35,8 @@
 		788407D42814147A00641E27 /* DeferredViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788407D32814147A00641E27 /* DeferredViewModel.swift */; };
 		788407D7281423DE00641E27 /* GetJoke.json in Resources */ = {isa = PBXBuildFile; fileRef = 788407D6281423DE00641E27 /* GetJoke.json */; };
 		788407E7281424CA00641E27 /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788407E6281424CA00641E27 /* RequestTests.swift */; };
+		78A11E14281CF56C00790D24 /* GetOnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A11E13281CF56C00790D24 /* GetOnboardingModel.swift */; };
+		78A11E16281CF57400790D24 /* SetOnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A11E15281CF57400790D24 /* SetOnboardingModel.swift */; };
 		78AAF056280AB40300BF0E3B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AAF055280AB40300BF0E3B /* Request.swift */; };
 		78AAF058280ABEE600BF0E3B /* URLRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AAF057280ABEE600BF0E3B /* URLRequest+Extension.swift */; };
 		78AAF05A280ABFCD00BF0E3B /* TestDataFetchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AAF059280ABFCD00BF0E3B /* TestDataFetchRequest.swift */; };
@@ -124,6 +126,8 @@
 		788407D6281423DE00641E27 /* GetJoke.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetJoke.json; sourceTree = "<group>"; };
 		788407DC2814247D00641E27 /* SwiftCombineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCombineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		788407E6281424CA00641E27 /* RequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTests.swift; sourceTree = "<group>"; };
+		78A11E13281CF56C00790D24 /* GetOnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOnboardingModel.swift; sourceTree = "<group>"; };
+		78A11E15281CF57400790D24 /* SetOnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetOnboardingModel.swift; sourceTree = "<group>"; };
 		78AAF055280AB40300BF0E3B /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		78AAF057280ABEE600BF0E3B /* URLRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extension.swift"; sourceTree = "<group>"; };
 		78AAF059280ABFCD00BF0E3B /* TestDataFetchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataFetchRequest.swift; sourceTree = "<group>"; };
@@ -205,8 +209,8 @@
 		780D09AF28016C5900454705 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				7871EFEE2813BBEB004E477D /* Flow */,
 				780D09B028016C6400454705 /* Launch */,
+				7871EFEE2813BBEB004E477D /* Flow */,
 				78EC5F6E280BB65600C18DF5 /* API */,
 				783A4811281551C400DE244A /* CoreData */,
 				78EC5F80280BBC4300C18DF5 /* Combine */,
@@ -273,9 +277,9 @@
 		783A47FC281548F800DE244A /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				7859A22C28159AC600E0F08C /* Fruit */,
 				783A47FA2815417B00DE244A /* CoreData.swift */,
 				783A480928154D8C00DE244A /* CoreDataRepository.swift */,
-				7859A22C28159AC600E0F08C /* Fruit */,
 				7859A23128159F6100E0F08C /* Model.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -285,6 +289,8 @@
 			isa = PBXGroup;
 			children = (
 				78AAF07F280B0D1F00BF0E3B /* JokeModel.swift */,
+				78A11E13281CF56C00790D24 /* GetOnboardingModel.swift */,
+				78A11E15281CF57400790D24 /* SetOnboardingModel.swift */,
 			);
 			path = Impl;
 			sourceTree = "<group>";
@@ -755,6 +761,7 @@
 				78AAF062280AD6E200BF0E3B /* APIClient.swift in Sources */,
 				78AAF056280AB40300BF0E3B /* Request.swift in Sources */,
 				783A480A28154D8C00DE244A /* CoreDataRepository.swift in Sources */,
+				78A11E14281CF56C00790D24 /* GetOnboardingModel.swift in Sources */,
 				78AAF065280AD70800BF0E3B /* Logger.swift in Sources */,
 				78AAF06B280AD8FE00BF0E3B /* UserDefaultKey.swift in Sources */,
 				78EC5F7B280BB9E700C18DF5 /* NavigationController.swift in Sources */,
@@ -804,6 +811,7 @@
 				78EC5F91280BC90300C18DF5 /* LoadingState.swift in Sources */,
 				788407D02814146700641E27 /* DeferredUI.swift in Sources */,
 				783A4815281551E500DE244A /* CoreDataViewController.swift in Sources */,
+				78A11E16281CF57400790D24 /* SetOnboardingModel.swift in Sources */,
 				78EC5F69280BB4F800C18DF5 /* UserInterface.swift in Sources */,
 				78EC5F99280C272F00C18DF5 /* DEBUG_UI.swift in Sources */,
 				78AAF071280ADA3B00BF0E3B /* GetOnboardingFinishedRequest.swift in Sources */,
