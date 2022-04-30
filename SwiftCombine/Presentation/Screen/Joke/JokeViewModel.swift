@@ -1,6 +1,6 @@
 import Combine
 
-final class APIViewModel: ViewModel {
+final class JokeViewModel: ViewModel {
     typealias State = LoadingState<JokeResponse, APIError>
 
     @Published private(set) var state: State = .standby
@@ -16,7 +16,7 @@ final class APIViewModel: ViewModel {
 
 // MARK: - internal methods
 
-extension APIViewModel {
+extension JokeViewModel {
     func fetch() {
         state = .loading
 

@@ -104,14 +104,14 @@ private extension DEBUG_UI {
 
         case let .controller(content):
             switch content {
-            case .api:
-                cell.textLabel?.text = "API ViewController"
+            case .joke:
+                cell.textLabel?.text = "Joke ViewController"
             }
 
         case let .coreData(content):
             switch content {
-            case .sample:
-                cell.textLabel?.text = "Sample Entity"
+            case .fruit:
+                cell.textLabel?.text = "Fruit Entity"
             }
 
         case let .combine(content):

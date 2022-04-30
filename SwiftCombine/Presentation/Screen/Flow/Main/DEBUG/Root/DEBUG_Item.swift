@@ -43,18 +43,18 @@ enum DEBUG_Development: String, CaseIterable, Hashable {
 }
 
 enum DEBUG_Controller: String, CaseIterable, Hashable {
-    case api
+    case joke
 
     var component: DEBUG_Item {
-        .controller(.api)
+        .controller(.joke)
     }
 }
 
 enum DEBUG_CoreData: String, CaseIterable, Hashable {
-    case sample
+    case fruit
 
     var component: DEBUG_Item {
-        .coreData(.sample)
+        .coreData(.fruit)
     }
 }
 

@@ -15,8 +15,8 @@ struct AppControllers {
         return instance
     }
 
-    static func api() -> APIViewController {
-        let instance = APIViewController()
+    static func joke() -> JokeViewController {
+        let instance = JokeViewController()
         instance.inject(viewModel: .init(), ui: .init())
         instance.title = "API"
         return instance

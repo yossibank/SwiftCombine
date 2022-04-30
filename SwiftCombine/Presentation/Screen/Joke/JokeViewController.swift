@@ -3,14 +3,14 @@ import UIKit
 
 // MARK: - inject
 
-extension APIViewController: VCInjectable {
-    typealias VM = APIViewModel
-    typealias UI = APIUI
+extension JokeViewController: VCInjectable {
+    typealias VM = JokeViewModel
+    typealias UI = JokeUI
 }
 
 // MARK: - stored properties & init
 
-final class APIViewController: UIViewController {
+final class JokeViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
 
@@ -19,7 +19,7 @@ final class APIViewController: UIViewController {
 
 // MARK: - override methods
 
-extension APIViewController {
+extension JokeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ui.setupView(rootView: view)
@@ -30,7 +30,7 @@ extension APIViewController {
 
 // MARK: - private methods
 
-private extension APIViewController {
+private extension JokeViewController {
     func bindToView() {
         viewModel.$state
             .receive(on: DispatchQueue.main)

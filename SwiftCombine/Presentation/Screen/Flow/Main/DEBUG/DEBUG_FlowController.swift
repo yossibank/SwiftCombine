@@ -59,15 +59,15 @@ extension DEBUG_FlowController: FlowController {
 extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
     func didControllerSelected(item: DEBUG_Controller) {
         switch item {
-        case .api:
-            let vc = AppControllers.api()
+        case .joke:
+            let vc = AppControllers.joke()
             navVC.pushViewController(vc, animated: true)
         }
     }
 
     func didCoreDataSelected(item: DEBUG_CoreData) {
         switch item {
-        case .sample:
+        case .fruit:
             let vc = AppControllers.coreData()
             navVC.pushViewController(vc, animated: true)
         }

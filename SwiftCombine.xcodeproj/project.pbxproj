@@ -68,7 +68,7 @@
 		78EC5F69280BB4F800C18DF5 /* UserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F68280BB4F800C18DF5 /* UserInterface.swift */; };
 		78EC5F6B280BB50000C18DF5 /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F6A280BB50000C18DF5 /* FlowController.swift */; };
 		78EC5F6D280BB57B00C18DF5 /* UIViewController+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F6C280BB57B00C18DF5 /* UIViewController+Container.swift */; };
-		78EC5F70280BB66000C18DF5 /* APIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F6F280BB66000C18DF5 /* APIViewController.swift */; };
+		78EC5F70280BB66000C18DF5 /* JokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F6F280BB66000C18DF5 /* JokeViewController.swift */; };
 		78EC5F73280BB6AA00C18DF5 /* HomeFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F72280BB6AA00C18DF5 /* HomeFlowController.swift */; };
 		78EC5F78280BB7C400C18DF5 /* AppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F77280BB7C400C18DF5 /* AppFlowController.swift */; };
 		78EC5F7B280BB9E700C18DF5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F7A280BB9E700C18DF5 /* NavigationController.swift */; };
@@ -78,8 +78,8 @@
 		78EC5F87280BBD8B00C18DF5 /* AppDataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F86280BBD8B00C18DF5 /* AppDataHolder.swift */; };
 		78EC5F89280BBF3700C18DF5 /* FutureUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F88280BBF3700C18DF5 /* FutureUI.swift */; };
 		78EC5F8B280BC2FE00C18DF5 /* UIControl+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F8A280BC2FE00C18DF5 /* UIControl+Publisher.swift */; };
-		78EC5F8D280BC7B500C18DF5 /* APIUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F8C280BC7B500C18DF5 /* APIUI.swift */; };
-		78EC5F8F280BC8C700C18DF5 /* APIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F8E280BC8C700C18DF5 /* APIViewModel.swift */; };
+		78EC5F8D280BC7B500C18DF5 /* JokeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F8C280BC7B500C18DF5 /* JokeUI.swift */; };
+		78EC5F8F280BC8C700C18DF5 /* JokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F8E280BC8C700C18DF5 /* JokeViewModel.swift */; };
 		78EC5F91280BC90300C18DF5 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F90280BC90300C18DF5 /* LoadingState.swift */; };
 		78EC5F93280C25D200C18DF5 /* DEBUG_Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F92280C25D200C18DF5 /* DEBUG_Item.swift */; };
 		78EC5F97280C272200C18DF5 /* DEBUG_FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F96280C272200C18DF5 /* DEBUG_FlowController.swift */; };
@@ -162,7 +162,7 @@
 		78EC5F68280BB4F800C18DF5 /* UserInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterface.swift; sourceTree = "<group>"; };
 		78EC5F6A280BB50000C18DF5 /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 		78EC5F6C280BB57B00C18DF5 /* UIViewController+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Container.swift"; sourceTree = "<group>"; };
-		78EC5F6F280BB66000C18DF5 /* APIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIViewController.swift; sourceTree = "<group>"; };
+		78EC5F6F280BB66000C18DF5 /* JokeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewController.swift; sourceTree = "<group>"; };
 		78EC5F72280BB6AA00C18DF5 /* HomeFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlowController.swift; sourceTree = "<group>"; };
 		78EC5F77280BB7C400C18DF5 /* AppFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowController.swift; sourceTree = "<group>"; };
 		78EC5F7A280BB9E700C18DF5 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -172,8 +172,8 @@
 		78EC5F86280BBD8B00C18DF5 /* AppDataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataHolder.swift; sourceTree = "<group>"; };
 		78EC5F88280BBF3700C18DF5 /* FutureUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureUI.swift; sourceTree = "<group>"; };
 		78EC5F8A280BC2FE00C18DF5 /* UIControl+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Publisher.swift"; sourceTree = "<group>"; };
-		78EC5F8C280BC7B500C18DF5 /* APIUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUI.swift; sourceTree = "<group>"; };
-		78EC5F8E280BC8C700C18DF5 /* APIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIViewModel.swift; sourceTree = "<group>"; };
+		78EC5F8C280BC7B500C18DF5 /* JokeUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeUI.swift; sourceTree = "<group>"; };
+		78EC5F8E280BC8C700C18DF5 /* JokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewModel.swift; sourceTree = "<group>"; };
 		78EC5F90280BC90300C18DF5 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
 		78EC5F92280C25D200C18DF5 /* DEBUG_Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_Item.swift; sourceTree = "<group>"; };
 		78EC5F96280C272200C18DF5 /* DEBUG_FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_FlowController.swift; sourceTree = "<group>"; };
@@ -213,7 +213,7 @@
 			children = (
 				780D09B028016C6400454705 /* Launch */,
 				7871EFEE2813BBEB004E477D /* Flow */,
-				78EC5F6E280BB65600C18DF5 /* API */,
+				78EC5F6E280BB65600C18DF5 /* Joke */,
 				783A4811281551C400DE244A /* CoreData */,
 				78EC5F80280BBC4300C18DF5 /* Combine */,
 			);
@@ -607,14 +607,14 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		78EC5F6E280BB65600C18DF5 /* API */ = {
+		78EC5F6E280BB65600C18DF5 /* Joke */ = {
 			isa = PBXGroup;
 			children = (
-				78EC5F8C280BC7B500C18DF5 /* APIUI.swift */,
-				78EC5F6F280BB66000C18DF5 /* APIViewController.swift */,
-				78EC5F8E280BC8C700C18DF5 /* APIViewModel.swift */,
+				78EC5F8C280BC7B500C18DF5 /* JokeUI.swift */,
+				78EC5F6F280BB66000C18DF5 /* JokeViewController.swift */,
+				78EC5F8E280BC8C700C18DF5 /* JokeViewModel.swift */,
 			);
-			path = API;
+			path = Joke;
 			sourceTree = "<group>";
 		};
 		78EC5F79280BB9D800C18DF5 /* Container */ = {
@@ -777,7 +777,7 @@
 				78AAF065280AD70800BF0E3B /* Logger.swift in Sources */,
 				78AAF06B280AD8FE00BF0E3B /* UserDefaultKey.swift in Sources */,
 				78EC5F7B280BB9E700C18DF5 /* NavigationController.swift in Sources */,
-				78EC5F70280BB66000C18DF5 /* APIViewController.swift in Sources */,
+				78EC5F70280BB66000C18DF5 /* JokeViewController.swift in Sources */,
 				7871EFFE2813DD45004E477D /* JustViewModel.swift in Sources */,
 				78EC5F87280BBD8B00C18DF5 /* AppDataHolder.swift in Sources */,
 				78AAF06E280AD95E00BF0E3B /* PersistedDataHolder.swift in Sources */,
@@ -815,8 +815,8 @@
 				78AAF073280ADA4800BF0E3B /* SetOnboardingFinishedRequest.swift in Sources */,
 				78AAF079280AFB5E00BF0E3B /* JokeResponse.swift in Sources */,
 				78CBE26527F31DA200DF1667 /* AppDelegate.swift in Sources */,
-				78EC5F8D280BC7B500C18DF5 /* APIUI.swift in Sources */,
-				78EC5F8F280BC8C700C18DF5 /* APIViewModel.swift in Sources */,
+				78EC5F8D280BC7B500C18DF5 /* JokeUI.swift in Sources */,
+				78EC5F8F280BC8C700C18DF5 /* JokeViewModel.swift in Sources */,
 				78EC5F67280BB4EE00C18DF5 /* VCInjectable.swift in Sources */,
 				78EC5F61280BB49E00C18DF5 /* MainFlowController.swift in Sources */,
 				78EC5F91280BC90300C18DF5 /* LoadingState.swift in Sources */,
