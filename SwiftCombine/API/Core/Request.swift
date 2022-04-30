@@ -66,9 +66,17 @@ protocol Request {
 }
 
 extension Request {
-
     var baseURL: String {
-        "https://icanhazdadjoke.com"
+        switch AppDataHolder.serverType {
+        case .production:
+            return "https://icanhazdadjoke.com"
+
+        case .stage:
+            return "https://icanhazdadjoke.com.stage"
+
+        case .prestage:
+            return "https://icanhazdadjoke.com.prestage"
+        }
     }
 
     var queryItems: [URLQueryItem]? {
