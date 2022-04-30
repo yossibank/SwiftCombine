@@ -10,7 +10,6 @@ final class DEBUG_UI {
 
     private let tableView = UITableView()
 
-    private var dataSourceSnapshot = NSDiffableDataSourceSnapshot<DEBUG_Section, DEBUG_Item>()
     private var dataSource: UITableViewDiffableDataSource<DEBUG_Section, DEBUG_Item>!
     private var cancellables: Set<AnyCancellable> = .init()
 }
@@ -35,6 +34,11 @@ extension DEBUG_UI {
             tableView.sectionHeaderTopPadding = 0
         }
 
+        updateDataSource()
+    }
+
+    func updateDataSource() {
+        var dataSourceSnapshot = NSDiffableDataSourceSnapshot<DEBUG_Section, DEBUG_Item>()
         dataSourceSnapshot.appendSections(DEBUG_Section.allCases)
 
         DEBUG_Section.allCases.forEach {

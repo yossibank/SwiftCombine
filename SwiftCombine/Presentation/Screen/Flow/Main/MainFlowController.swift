@@ -38,8 +38,9 @@ extension MainFlowController: FlowController {
         flows = [HomeFlowController(), DEBUG_FlowController()]
 
         tabController.setViewControllers(flows, animated: false)
-        updateTab(AppDataHolder.serverType)
 
         flows.forEach { $0.start() }
+
+        updateTab(AppDataHolder.serverType)
     }
 }

@@ -3,6 +3,8 @@ import UIKit
 // MARK: - stored properties
 
 final class DEBUG_FlowController: UIViewController {
+    private var serverType: UserDefaultEnumKey.ServerType?
+
     private let navVC = NavigationController()
 
     init() {
@@ -31,6 +33,7 @@ extension DEBUG_FlowController: FlowController {
         let vc = AppControllers.debug()
         vc.delegate = self
 
+        tabBarItem.title = "DEBUG"
         tabBarItem.image = UIImage(systemName: "gamecontroller")
 
         navVC.viewControllers = [vc]
@@ -47,6 +50,7 @@ extension DEBUG_FlowController: FlowController {
         popoverPresentationController?.sourceRect = sourceRect
         popoverPresentationController?.permittedArrowDirections = .down
         popoverPresentationController?.delegate = self
+        serverType = AppDataHolder.serverType
     }
 }
 
@@ -96,5 +100,17 @@ extension DEBUG_FlowController: UIPopoverPresentationControllerDelegate {
         traitCollection: UITraitCollection
     ) -> UIModalPresentationStyle {
         .none
+    }
+
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        guard AppDataHolder.serverType != serverType else {
+            return
+        }
+
+        let window = UIApplication.shared.windows.first { $0.isKeyWindow }
+        let appFlowController = AppFlowController()
+        window?.rootViewController = appFlowController
+        window?.makeKeyAndVisible()
+        appFlowController.start()
     }
 }
