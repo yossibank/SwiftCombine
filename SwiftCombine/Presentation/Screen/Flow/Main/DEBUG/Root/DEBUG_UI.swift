@@ -1,7 +1,13 @@
 import Combine
 import UIKit
 
+protocol DEBUG_UI_Delegate: AnyObject {
+    func changedServerType(_ type: UserDefaultEnumKey.ServerType)
+}
+
 final class DEBUG_UI {
+    weak var delegate: DEBUG_UI_Delegate!
+
     private let tableView = UITableView()
 
     private var dataSourceSnapshot = NSDiffableDataSourceSnapshot<DEBUG_Section, DEBUG_Item>()
@@ -81,8 +87,9 @@ private extension DEBUG_UI {
                     segment.insertSegment(withTitle: type.rawValue, at: index, animated: false)
                 }
 
-                segment.selectedIndexPublisher.sink { index in
+                segment.selectedIndexPublisher.sink { [weak self] index in
                     AppDataHolder.serverType = .init(rawValue: index) ?? .stage
+                    self?.delegate.changedServerType(AppDataHolder.serverType)
                 }
                 .store(in: &cancellables)
 

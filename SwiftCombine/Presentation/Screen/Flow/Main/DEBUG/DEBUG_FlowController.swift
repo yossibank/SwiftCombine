@@ -31,7 +31,6 @@ extension DEBUG_FlowController: FlowController {
         let vc = AppControllers.debug()
         vc.delegate = self
 
-        tabBarItem.title = "DEBUG"
         tabBarItem.image = UIImage(systemName: "gamecontroller")
 
         navVC.viewControllers = [vc]

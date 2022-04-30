@@ -30,6 +30,7 @@ final class DEBUG_ViewController: UIViewController {
 extension DEBUG_ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        ui.delegate = self
         ui.setupView(rootView: view)
         ui.setupTableView(delegate: self)
     }
@@ -82,5 +83,11 @@ extension DEBUG_ViewController: UITableViewDelegate {
             let item = DEBUG_Combine.allCases[indexPath.row]
             delegate.didCombineSelected(item: item)
         }
+    }
+}
+
+extension DEBUG_ViewController: DEBUG_UI_Delegate {
+    func changedServerType(_ type: UserDefaultEnumKey.ServerType) {
+        (rootViewController as? AppFlowController)?.updateTab(type)
     }
 }

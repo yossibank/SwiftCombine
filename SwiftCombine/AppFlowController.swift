@@ -23,6 +23,14 @@ extension AppFlowController {
     }
 }
 
+// MARK: - internal methods
+
+extension AppFlowController {
+    func updateTab(_ type: UserDefaultEnumKey.ServerType) {
+        mainFlowController.updateTab(type)
+    }
+}
+
 // MARK: - protocol
 
 extension AppFlowController: FlowController {

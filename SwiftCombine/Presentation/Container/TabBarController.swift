@@ -3,6 +3,11 @@ import UIKit
 // MARK: - override methods
 
 final class TabBarController: UITabBarController {
+    enum TabType: Int {
+        case home
+        case debug
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,5 +35,31 @@ final class TabBarController: UITabBarController {
             present(flow, animated: true)
         }
         #endif
+    }
+
+    func updateTab(_ type: UserDefaultEnumKey.ServerType) {
+        let debugTab = viewControllers?[TabType.debug.rawValue]
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+
+        switch type {
+        case .production:
+            debugTab?.tabBarItem.title = "DEBUG(本番)"
+            appearance.backgroundColor = .systemBackground
+
+        case .stage:
+            debugTab?.tabBarItem.title = "DEBUG(ステージ)"
+            appearance.backgroundColor = .blue.withAlphaComponent(0.5)
+
+        case .prestage:
+            debugTab?.tabBarItem.title = "DEBUG(プレステージ)"
+            appearance.backgroundColor = .red.withAlphaComponent(0.5)
+        }
+
+        tabBar.standardAppearance = appearance
+
+        if #available(iOS 15.0, *) {
+            tabBar.scrollEdgeAppearance = appearance
+        }
     }
 }

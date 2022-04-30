@@ -24,12 +24,21 @@ extension MainFlowController {
     }
 }
 
+// MARK: - internal methods
+
+extension MainFlowController {
+    func updateTab(_ type: UserDefaultEnumKey.ServerType) {
+        tabController.updateTab(type)
+    }
+}
+
 extension MainFlowController: FlowController {
     func start() {
         let flows: [FlowController]
         flows = [HomeFlowController(), DEBUG_FlowController()]
 
         tabController.setViewControllers(flows, animated: false)
+        updateTab(AppDataHolder.serverType)
 
         flows.forEach { $0.start() }
     }
