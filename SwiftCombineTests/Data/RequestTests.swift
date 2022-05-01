@@ -2,10 +2,6 @@
 import XCTest
 
 final class RequestTests: XCTestCase {
-    override func setUpWithError() throws {
-        PersistedDataHolder.onboardingFinished = false
-    }
-
     func testGetJoke() {
         let expectation = XCTestExpectation(description: "get joke")
 
