@@ -32,21 +32,8 @@ final class HomeViewController: UIViewController {
 extension HomeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.addSubview(mainView)
-        view.addSubview(switcher)
-
-        NSLayoutConstraint.activate([
-            mainView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            mainView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            mainView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            mainView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            switcher.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            switcher.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
-
         viewModel.fetch()
-
+        setupView()
         bindToViewModel()
         bindToView()
     }
@@ -55,6 +42,22 @@ extension HomeViewController {
 // MARK: - private methods
 
 private extension HomeViewController {
+    func setupView() {
+        view.addSubViews(
+            mainView,
+            switcher,
+
+            constraints:
+                mainView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                mainView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+                mainView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                mainView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+
+                switcher.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                switcher.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        )
+    }
+    
     func bindToViewModel() {
         switcher.isOnPublisher
             .assign(to: \.isOn, on: viewModel)

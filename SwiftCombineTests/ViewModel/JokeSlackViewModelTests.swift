@@ -7,7 +7,7 @@ final class JokeSlackViewModelTests: XCTestCase {
     override func setUpWithError() throws {
         viewModel = JokeSlackViewModel(model: Model.Joke.Slack(useTestData: true))
     }
-    
+
     func testFetch() throws {
         let publisher = viewModel.$state.collect(1).first()
 

@@ -232,7 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				780D09B028016C6400454705 /* Launch */,
-				7871EFEE2813BBEB004E477D /* Flow */,
+				7871EFEB2813BB8F004E477D /* Main */,
 				78EC5F6E280BB65600C18DF5 /* Joke */,
 				783A4811281551C400DE244A /* CoreData */,
 				78EC5F80280BBC4300C18DF5 /* Combine */,
@@ -418,14 +418,6 @@
 				78EC5F9A280C273800C18DF5 /* DEBUG_ViewController.swift */,
 			);
 			path = Root;
-			sourceTree = "<group>";
-		};
-		7871EFEE2813BBEB004E477D /* Flow */ = {
-			isa = PBXGroup;
-			children = (
-				7871EFEB2813BB8F004E477D /* Main */,
-			);
-			path = Flow;
 			sourceTree = "<group>";
 		};
 		7871EFEF2813BD64004E477D /* Future */ = {
