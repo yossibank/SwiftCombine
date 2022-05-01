@@ -22,6 +22,13 @@ struct AppControllers {
         return instance
     }
 
+    static func jokeSlack() -> JokeSlackViewController {
+        let instance = JokeSlackViewController()
+        instance.inject(viewModel: .init(), ui: .init())
+        instance.title = "Joke Slack"
+        return instance
+    }
+
     static func coreData() -> CoreDataViewController {
         let instance = CoreDataViewController()
         instance.inject(viewModel: .init(), ui: .init())

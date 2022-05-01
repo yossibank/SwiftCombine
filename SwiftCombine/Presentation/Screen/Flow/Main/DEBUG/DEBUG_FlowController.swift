@@ -62,6 +62,10 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
         case .joke:
             let vc = AppControllers.joke()
             navVC.pushViewController(vc, animated: true)
+
+        case .jokeSlack:
+            let vc = AppControllers.jokeSlack()
+            navVC.pushViewController(vc, animated: true)
         }
     }
 

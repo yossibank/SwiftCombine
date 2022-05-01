@@ -44,9 +44,16 @@ enum DEBUG_Development: String, CaseIterable, Hashable {
 
 enum DEBUG_Controller: String, CaseIterable, Hashable {
     case joke
+    case jokeSlack
 
     var component: DEBUG_Item {
-        .controller(.joke)
+        switch self {
+        case .joke:
+            return .controller(.joke)
+
+        case .jokeSlack:
+            return .controller(.jokeSlack)
+        }
     }
 }
 

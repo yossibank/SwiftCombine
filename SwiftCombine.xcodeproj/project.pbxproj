@@ -12,6 +12,9 @@
 		782477AC281E7D33004DEEE5 /* JokeSlackGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477AB281E7D33004DEEE5 /* JokeSlackGetRequest.swift */; };
 		782477AE281E7D56004DEEE5 /* JokeSlackResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477AD281E7D56004DEEE5 /* JokeSlackResponse.swift */; };
 		782477B0281E81DA004DEEE5 /* JokeSlackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477AF281E81DA004DEEE5 /* JokeSlackModel.swift */; };
+		782477B3281E8560004DEEE5 /* JokeSlackUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477B2281E8560004DEEE5 /* JokeSlackUI.swift */; };
+		782477B5281E8568004DEEE5 /* JokeSlackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477B4281E8568004DEEE5 /* JokeSlackViewModel.swift */; };
+		782477B7281E8571004DEEE5 /* JokeSlackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477B6281E8571004DEEE5 /* JokeSlackViewController.swift */; };
 		783A47F6281502A100DE244A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47F5281502A100DE244A /* Utility.swift */; };
 		783A47F9281503F500DE244A /* JokeModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47F8281503F500DE244A /* JokeModelTests.swift */; };
 		783A47FB2815417B00DE244A /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47FA2815417B00DE244A /* CoreData.swift */; };
@@ -107,6 +110,9 @@
 		782477AB281E7D33004DEEE5 /* JokeSlackGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackGetRequest.swift; sourceTree = "<group>"; };
 		782477AD281E7D56004DEEE5 /* JokeSlackResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackResponse.swift; sourceTree = "<group>"; };
 		782477AF281E81DA004DEEE5 /* JokeSlackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackModel.swift; sourceTree = "<group>"; };
+		782477B2281E8560004DEEE5 /* JokeSlackUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackUI.swift; sourceTree = "<group>"; };
+		782477B4281E8568004DEEE5 /* JokeSlackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackViewModel.swift; sourceTree = "<group>"; };
+		782477B6281E8571004DEEE5 /* JokeSlackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackViewController.swift; sourceTree = "<group>"; };
 		783A47F5281502A100DE244A /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		783A47F8281503F500DE244A /* JokeModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModelTests.swift; sourceTree = "<group>"; };
 		783A47FA2815417B00DE244A /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
@@ -266,6 +272,16 @@
 				788407D52814239E00641E27 /* TestData */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		782477B1281E8551004DEEE5 /* Slack */ = {
+			isa = PBXGroup;
+			children = (
+				782477B2281E8560004DEEE5 /* JokeSlackUI.swift */,
+				782477B6281E8571004DEEE5 /* JokeSlackViewController.swift */,
+				782477B4281E8568004DEEE5 /* JokeSlackViewModel.swift */,
+			);
+			path = Slack;
 			sourceTree = "<group>";
 		};
 		783A47F42815028F00DE244A /* Utility */ = {
@@ -622,6 +638,7 @@
 		78EC5F6E280BB65600C18DF5 /* Joke */ = {
 			isa = PBXGroup;
 			children = (
+				782477B1281E8551004DEEE5 /* Slack */,
 				78EC5F8C280BC7B500C18DF5 /* JokeUI.swift */,
 				78EC5F6F280BB66000C18DF5 /* JokeViewController.swift */,
 				78EC5F8E280BC8C700C18DF5 /* JokeViewModel.swift */,
@@ -808,6 +825,7 @@
 				78AAF082280B100C00BF0E3B /* Model.swift in Sources */,
 				78AAF084280B121B00BF0E3B /* Repos.swift in Sources */,
 				7871EFE82813B308004E477D /* String+Util.swift in Sources */,
+				782477B7281E8571004DEEE5 /* JokeSlackViewController.swift in Sources */,
 				78AAF080280B0D1F00BF0E3B /* JokeModel.swift in Sources */,
 				783A47FB2815417B00DE244A /* CoreData.swift in Sources */,
 				78EC5F7D280BB9EF00C18DF5 /* TabBarController.swift in Sources */,
@@ -823,6 +841,7 @@
 				78EC5F89280BBF3700C18DF5 /* FutureUI.swift in Sources */,
 				786071DE2813AA5C0074ECB8 /* UIView+Layout.swift in Sources */,
 				783A4817281551EB00DE244A /* CoreDataViewModel.swift in Sources */,
+				782477B3281E8560004DEEE5 /* JokeSlackUI.swift in Sources */,
 				78EC5F93280C25D200C18DF5 /* DEBUG_Item.swift in Sources */,
 				78EC5F6D280BB57B00C18DF5 /* UIViewController+Container.swift in Sources */,
 				78EC5F73280BB6AA00C18DF5 /* HomeFlowController.swift in Sources */,
@@ -845,6 +864,7 @@
 				78AAF071280ADA3B00BF0E3B /* GetOnboardingFinishedRequest.swift in Sources */,
 				788407D42814147A00641E27 /* DeferredViewModel.swift in Sources */,
 				78EC5F97280C272200C18DF5 /* DEBUG_FlowController.swift in Sources */,
+				782477B5281E8568004DEEE5 /* JokeSlackViewModel.swift in Sources */,
 				788407D22814147100641E27 /* DeferredViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -106,6 +106,9 @@ private extension DEBUG_UI {
             switch content {
             case .joke:
                 cell.textLabel?.text = "Joke ViewController"
+
+            case .jokeSlack:
+                cell.textLabel?.text = "JokeSlack ViewController"
             }
 
         case let .coreData(content):
