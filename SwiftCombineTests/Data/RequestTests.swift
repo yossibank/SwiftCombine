@@ -23,4 +23,26 @@ final class RequestTests: XCTestCase {
 
         wait(for: [expectation], timeout: 3.0)
     }
+
+    func testGetJokeSlack() {
+        let expectation = XCTestExpectation(description: "Get Joke Slack")
+
+        Repos.Joke.Slack().request(
+            useTestData: true,
+            parameters: .init(),
+            pathComponent: .init()
+        ) { result in
+            switch result {
+            case let .success(response):
+                XCTAssertNotNil(response)
+                XCTAssertEqual(response.username, "icanhazdadjoke")
+                expectation.fulfill()
+
+            case let .failure(error):
+                XCTFail(error.localizedDescription)
+            }
+        }
+
+        wait(for: [expectation], timeout: 3.0)
+    }
 }

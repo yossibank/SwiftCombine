@@ -2,7 +2,7 @@
 import XCTest
 
 final class JokeRandomModelTests: XCTestCase {
-    func testJokeModel() throws {
+    func testJokeRandomModel() throws {
         let result = try awaitPublisher(
             Model.Joke.Random(useTestData: true).fetch()
         )

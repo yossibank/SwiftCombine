@@ -1,0 +1,11 @@
+{
+  "attachments": [
+    {
+      "fallback": "What kind of magic do cows believe in? MOODOO.",
+      "footer": " - ",
+      "text": "What kind of magic do cows believe in? MOODOO."
+    }
+  ],
+  "response_type": "in_channel",
+  "username": "icanhazdadjoke"
+}

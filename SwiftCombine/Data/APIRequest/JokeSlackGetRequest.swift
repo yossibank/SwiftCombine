@@ -1,15 +1,15 @@
 import Foundation
 
-struct JokeRandomGetRequest: Request {
-    typealias Response = JokeRandomResponse
+struct JokeSlackGetRequest: Request {
+    typealias Response = JokeSlackResponse
     typealias Parameters = EmptyParameters
     typealias PathComponent = EmptyPathComponent
 
     let parameters: Parameters
     var method: HTTPMethod { .get }
-    var path: String { "" }
+    var path: String { "/slack" }
     var testDataPath: URL? {
-        Bundle.main.url(forResource: "GetJoke", withExtension: "json")
+        Bundle.main.url(forResource: "GetJokeSlack", withExtension: "json")
     }
 
     var body: Data?

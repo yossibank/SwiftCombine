@@ -18,8 +18,11 @@ struct TestDataFetchRequest {
                 return .failure(.missingTestJsonDataPath)
             }
 
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+
             let data = try Data(contentsOf: url)
-            let result = try JSONDecoder().decode(responseType.self, from: data)
+            let result = try decoder.decode(responseType.self, from: data)
             return .success(result)
         } catch {
             return .failure(.decodeError(error.localizedDescription))
