@@ -1,25 +1,40 @@
 import CoreData
 
-final class CoreDataRepository {
-    private static var persistentContainer: NSPersistentContainer = {
+protocol CoreDataRepo {
+    associatedtype T: NSManagedObject
+
+    func fetchAll(completion: @escaping (Result<[T], CoreDataError>) -> Void)
+    func entity<T: NSManagedObject>() -> T
+    func add(_ object: T)
+    func delete(_ object: T)
+}
+
+struct CoreDataRepository<T: NSManagedObject>: CoreDataRepo {
+    private let persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Model")
         container.loadPersistentStores { _, error in
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+            if let error = error {
+                Logger.error(message: error.localizedDescription)
             }
         }
         return container
     }()
 
-    private static var context: NSManagedObjectContext {
+    private var context: NSManagedObjectContext {
         persistentContainer.viewContext
     }
-}
 
-// MARK: - Create
+    func fetchAll(completion: @escaping (Result<[T], CoreDataError>) -> Void) {
+        do {
+            let request = NSFetchRequest<T>(entityName: String(describing: T.self))
+            let entity = try context.fetch(request)
+            completion(.success(entity))
+        } catch {
+            completion(.failure(.failed(error.localizedDescription)))
+        }
+    }
 
-extension CoreDataRepository {
-    static func entity<T: NSManagedObject>() -> T {
+    func entity<T: NSManagedObject>() -> T {
         let entity = NSEntityDescription.entity(
             forEntityName: String(describing: T.self),
             in: context
@@ -27,45 +42,32 @@ extension CoreDataRepository {
 
         return T(entity: entity, insertInto: nil)
     }
-}
 
-// MARK: - CRUD
-
-extension CoreDataRepository {
-    static func array<T: NSManagedObject>() -> [T] {
-        do {
-            let request = NSFetchRequest<T>(entityName: String(describing: T.self))
-            return try context.fetch(request)
-        } catch {
-            fatalError(error.localizedDescription)
-        }
-    }
-
-    static func add(_ object: NSManagedObject) {
+    func add(_ object: T) {
         context.insert(object)
+        save()
     }
 
-    static func delete(_ object: NSManagedObject) {
+    func delete(_ object: T) {
         context.delete(object)
+        save()
     }
 }
 
-// MARK: - context CRUD
-
 extension CoreDataRepository {
-    static func save() {
+    func save() {
         guard context.hasChanges else {
             return
         }
 
         do {
             try context.save()
-        } catch let error as NSError {
-            debugPrint("Error: \(error), \(error.userInfo)")
+        } catch {
+            Logger.error(message: error.localizedDescription)
         }
     }
 
-    static func rollback() {
+    func rollback() {
         guard context.hasChanges else {
             return
         }

@@ -18,6 +18,8 @@
 		782477BC281E941F004DEEE5 /* GetJokeSlack.json in Resources */ = {isa = PBXBuildFile; fileRef = 782477BB281E941F004DEEE5 /* GetJokeSlack.json */; };
 		782477BE281E9530004DEEE5 /* JokeSlackModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477BD281E9530004DEEE5 /* JokeSlackModelTests.swift */; };
 		782477C0281E95B9004DEEE5 /* JokeSlackViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477BF281E95B9004DEEE5 /* JokeSlackViewModelTests.swift */; };
+		782477C3281EC83E004DEEE5 /* FruitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477C2281EC83E004DEEE5 /* FruitModel.swift */; };
+		782477C5281ED055004DEEE5 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477C4281ED055004DEEE5 /* CoreDataError.swift */; };
 		783A47F6281502A100DE244A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47F5281502A100DE244A /* Utility.swift */; };
 		783A47F9281503F500DE244A /* JokeRandomModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47F8281503F500DE244A /* JokeRandomModelTests.swift */; };
 		783A47FB2815417B00DE244A /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47FA2815417B00DE244A /* CoreData.swift */; };
@@ -119,6 +121,8 @@
 		782477BB281E941F004DEEE5 /* GetJokeSlack.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetJokeSlack.json; sourceTree = "<group>"; };
 		782477BD281E9530004DEEE5 /* JokeSlackModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackModelTests.swift; sourceTree = "<group>"; };
 		782477BF281E95B9004DEEE5 /* JokeSlackViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackViewModelTests.swift; sourceTree = "<group>"; };
+		782477C2281EC83E004DEEE5 /* FruitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitModel.swift; sourceTree = "<group>"; };
+		782477C4281ED055004DEEE5 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
 		783A47F5281502A100DE244A /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		783A47F8281503F500DE244A /* JokeRandomModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeRandomModelTests.swift; sourceTree = "<group>"; };
 		783A47FA2815417B00DE244A /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
@@ -318,6 +322,14 @@
 			path = Random;
 			sourceTree = "<group>";
 		};
+		782477C1281EC7FE004DEEE5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				782477C2281EC83E004DEEE5 /* FruitModel.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		783A47F42815028F00DE244A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +352,7 @@
 			children = (
 				7859A22C28159AC600E0F08C /* Fruit */,
 				783A47FA2815417B00DE244A /* CoreData.swift */,
+				782477C4281ED055004DEEE5 /* CoreDataError.swift */,
 				783A480928154D8C00DE244A /* CoreDataRepository.swift */,
 				7859A23128159F6100E0F08C /* Model.xcdatamodeld */,
 			);
@@ -349,6 +362,7 @@
 		783A4810281551A100DE244A /* Impl */ = {
 			isa = PBXGroup;
 			children = (
+				782477C1281EC7FE004DEEE5 /* CoreData */,
 				782477B8281E8B04004DEEE5 /* Joke */,
 				782477B9281E8B0F004DEEE5 /* Onboarding */,
 			);
@@ -823,6 +837,7 @@
 				78AAF05A280ABFCD00BF0E3B /* TestDataFetchRequest.swift in Sources */,
 				78AAF07E280B0B2700BF0E3B /* ModelProtocol.swift in Sources */,
 				78AAF058280ABEE600BF0E3B /* URLRequest+Extension.swift in Sources */,
+				782477C5281ED055004DEEE5 /* CoreDataError.swift in Sources */,
 				780D09B528028B7000454705 /* Combine.swift in Sources */,
 				78EC5F8B280BC2FE00C18DF5 /* UIControl+Publisher.swift in Sources */,
 				78EC5F65280BB4E700C18DF5 /* ViewModel.swift in Sources */,
@@ -839,6 +854,7 @@
 				7871EFFE2813DD45004E477D /* JustViewModel.swift in Sources */,
 				78EC5F87280BBD8B00C18DF5 /* AppDataHolder.swift in Sources */,
 				78AAF06E280AD95E00BF0E3B /* PersistedDataHolder.swift in Sources */,
+				782477C3281EC83E004DEEE5 /* FruitModel.swift in Sources */,
 				78AAF05C280AC00400BF0E3B /* APIError.swift in Sources */,
 				78EC5F7F280BBB2300C18DF5 /* ViewControllers.swift in Sources */,
 				7871EFF82813D1CC004E477D /* SubjctViewModel.swift in Sources */,

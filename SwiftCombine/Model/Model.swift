@@ -1,3 +1,7 @@
+// MARK: - CoreData
+
+typealias FruitModel = ModelImpl<Repos.CoreData.Fruit>
+
 // MARK: - Joke
 
 typealias JokeRandomModel = ModelImpl<Repos.Joke.Random>
@@ -9,6 +13,12 @@ typealias GetOnboardingModel = ModelImpl<Repos.Onboarding.GetIsFinished>
 typealias SetOnboardingModel = ModelImpl<Repos.Onboarding.SetIsFinished>
 
 struct Model {
+    struct CoreData {
+        static func Fruit() -> FruitModel {
+            .init(repository: Repos.CoreData.Fruit())
+        }
+    }
+
     struct Joke {
         static func Random(useTestData: Bool = false) -> JokeRandomModel {
             .init(

@@ -1,4 +1,8 @@
 struct Repos {
+    struct CoreData {
+        typealias Fruit = CoreDataRepository<FruitEntity>
+    }
+
     struct Joke {
         typealias Random = Repository<JokeRandomGetRequest>
         typealias Slack = Repository<JokeSlackGetRequest>

@@ -22,7 +22,7 @@ final class CoreDataViewController: UIViewController {
 extension CoreDataViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.fetch()
+        viewModel.fetchAll()
         ui.setupView(rootView: view)
         ui.setupTableView(delegate: self)
         setupEvent()
@@ -39,8 +39,8 @@ private extension CoreDataViewController {
             guard let self = self else { return }
 
             self.ui.clearText()
-            self.viewModel.save()
-            self.viewModel.fetch()
+            self.viewModel.add()
+            self.viewModel.fetchAll()
         }
         .store(in: &cancellables)
     }
@@ -52,11 +52,22 @@ private extension CoreDataViewController {
     }
 
     func bindToView() {
-        viewModel.$items
+        viewModel.$state
             .receive(on: DispatchQueue.main)
-            .removeDuplicates()
-            .sink { [weak self] items in
-                self?.ui.updateDataSource(items: items)
+            .sink { state in
+                switch state {
+                case .standby:
+                    Logger.debug(message: "standby")
+
+                case .loading:
+                    Logger.debug(message: "loading")
+
+                case let .done(response):
+                    Logger.debug(message: "\(response.map(\.name))")
+
+                case let .failed(error):
+                    Logger.debug(message: error.localizedDescription)
+                }
             }
             .store(in: &cancellables)
     }
