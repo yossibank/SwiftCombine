@@ -9,8 +9,8 @@ final class HomeViewModel: ViewModel {
     private let setOnboardingModel: SetOnboardingModel
 
     init(
-        getOnboardingModel: GetOnboardingModel = Model.Onboarding.get(),
-        setOnboardingModel: SetOnboardingModel = Model.Onboarding.set()
+        getOnboardingModel: GetOnboardingModel = Model.Onboarding.Get(),
+        setOnboardingModel: SetOnboardingModel = Model.Onboarding.Set()
     ) {
         self.getOnboardingModel = getOnboardingModel
         self.setOnboardingModel = setOnboardingModel

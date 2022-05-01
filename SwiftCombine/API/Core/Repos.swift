@@ -1,6 +1,8 @@
 struct Repos {
-    typealias Joke = Repository<JokeGetRequest>
-    typealias JokeSlack = Repository<JokeSlackGetRequest>
+    struct Joke {
+        typealias Random = Repository<JokeRandomGetRequest>
+        typealias Slack = Repository<JokeSlackGetRequest>
+    }
 
     struct Onboarding {
         typealias GetIsFinished = Repository<GetOnboardingFinishedRequest>

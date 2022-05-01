@@ -1,6 +1,6 @@
 enum DEBUG_Section: String, CaseIterable {
     case development
-    case viewController
+    case api
     case coreData
     case combine
 
@@ -9,8 +9,8 @@ enum DEBUG_Section: String, CaseIterable {
         case .development:
             return DEBUG_Development.allCases.map { $0.component }
 
-        case .viewController:
-            return DEBUG_Controller.allCases.map { $0.component }
+        case .api:
+            return DEBUG_API.allCases.map { $0.component }
 
         case .coreData:
             return DEBUG_CoreData.allCases.map { $0.component }
@@ -23,7 +23,7 @@ enum DEBUG_Section: String, CaseIterable {
 
 enum DEBUG_Item: Hashable {
     case development(DEBUG_Development)
-    case controller(DEBUG_Controller)
+    case api(DEBUG_API)
     case coreData(DEBUG_CoreData)
     case combine(DEBUG_Combine)
 }
@@ -42,17 +42,17 @@ enum DEBUG_Development: String, CaseIterable, Hashable {
     }
 }
 
-enum DEBUG_Controller: String, CaseIterable, Hashable {
-    case joke
+enum DEBUG_API: String, CaseIterable, Hashable {
+    case jokeRandom
     case jokeSlack
 
     var component: DEBUG_Item {
         switch self {
-        case .joke:
-            return .controller(.joke)
+        case .jokeRandom:
+            return .api(.jokeRandom)
 
         case .jokeSlack:
-            return .controller(.jokeSlack)
+            return .api(.jokeSlack)
         }
     }
 }

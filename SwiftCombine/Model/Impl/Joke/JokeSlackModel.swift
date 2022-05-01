@@ -1,6 +1,6 @@
 import Combine
 
-extension ModelImpl where R == Repos.JokeSlack {
+extension ModelImpl where R == Repos.Joke.Slack {
     func fetch() -> AnyPublisher<JokeSlackResponse, APIError> {
         toPublisher { promise in
             repository.request(

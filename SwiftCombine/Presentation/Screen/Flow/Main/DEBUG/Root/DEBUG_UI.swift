@@ -102,13 +102,13 @@ private extension DEBUG_UI {
                 cell.accessoryView = segment
             }
 
-        case let .controller(content):
+        case let .api(content):
             switch content {
-            case .joke:
-                cell.textLabel?.text = "Joke ViewController"
+            case .jokeRandom:
+                cell.textLabel?.text = "Joke Random"
 
             case .jokeSlack:
-                cell.textLabel?.text = "JokeSlack ViewController"
+                cell.textLabel?.text = "Joke Slack"
             }
 
         case let .coreData(content):

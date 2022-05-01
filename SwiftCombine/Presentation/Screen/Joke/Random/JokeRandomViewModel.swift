@@ -1,22 +1,22 @@
 import Combine
 
-final class JokeViewModel: ViewModel {
-    typealias State = LoadingState<JokeResponse, APIError>
+final class JokeRandomViewModel: ViewModel {
+    typealias State = LoadingState<JokeRandomResponse, APIError>
 
     @Published private(set) var state: State = .standby
 
-    private let model: JokeModel
+    private let model: JokeRandomModel
 
     private var cancellables: Set<AnyCancellable> = .init()
 
-    init(model: JokeModel = Model.Joke()) {
+    init(model: JokeRandomModel = Model.Joke.Random()) {
         self.model = model
     }
 }
 
 // MARK: - internal methods
 
-extension JokeViewModel {
+extension JokeRandomViewModel {
     func fetch() {
         state = .loading
 

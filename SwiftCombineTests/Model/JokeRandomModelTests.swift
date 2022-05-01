@@ -1,15 +1,15 @@
 @testable import SwiftCombine
 import XCTest
 
-final class JokeModelTests: XCTestCase {
+final class JokeRandomModelTests: XCTestCase {
     func testJokeModel() throws {
         let result = try awaitPublisher(
-            Model.Joke(useTestData: true).fetch()
+            Model.Joke.Random(useTestData: true).fetch()
         )
         let expect = try TestDataFetchRequest(
-            testDataJsonPath: JokeGetRequest().testDataPath
+            testDataJsonPath: JokeRandomGetRequest().testDataPath
         )
-        .fetchLocalTestData(responseType: JokeResponse.self)
+        .fetchLocalTestData(responseType: JokeRandomResponse.self)
         .get()
 
         XCTAssertEqual(result, expect)

@@ -2,10 +2,10 @@
 import XCTest
 
 final class RequestTests: XCTestCase {
-    func testGetJoke() {
-        let expectation = XCTestExpectation(description: "get joke")
+    func testGetJokeRandom() {
+        let expectation = XCTestExpectation(description: "Get Joke Random")
 
-        Repos.Joke().request(
+        Repos.Joke.Random().request(
             useTestData: true,
             parameters: .init(),
             pathComponent: .init()

@@ -9,7 +9,7 @@ final class JokeSlackViewModel: ViewModel {
 
     private var cancellables: Set<AnyCancellable> = .init()
 
-    init(model: JokeSlackModel = Model.JokeSlack()) {
+    init(model: JokeSlackModel = Model.Joke.Slack()) {
         self.model = model
     }
 }

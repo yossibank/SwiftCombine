@@ -3,14 +3,14 @@ import UIKit
 
 // MARK: - inject
 
-extension JokeViewController: VCInjectable {
-    typealias VM = JokeViewModel
-    typealias UI = JokeUI
+extension JokeRandomViewController: VCInjectable {
+    typealias VM = JokeRandomViewModel
+    typealias UI = JokeRandomUI
 }
 
 // MARK: - stored properties & init
 
-final class JokeViewController: UIViewController {
+final class JokeRandomViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
 
@@ -19,7 +19,7 @@ final class JokeViewController: UIViewController {
 
 // MARK: - override methods
 
-extension JokeViewController {
+extension JokeRandomViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ui.setupView(rootView: view)
@@ -30,7 +30,7 @@ extension JokeViewController {
 
 // MARK: - private methods
 
-private extension JokeViewController {
+private extension JokeRandomViewController {
     func bindToView() {
         viewModel.$state
             .receive(on: DispatchQueue.main)

@@ -1,6 +1,6 @@
 import UIKit
 
-final class JokeUI {
+final class JokeRandomUI {
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [textView])
         return stackView
@@ -22,7 +22,7 @@ final class JokeUI {
 
 // MARK: - protocol
 
-extension JokeUI: UserInterface {
+extension JokeRandomUI: UserInterface {
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .systemBackground
         

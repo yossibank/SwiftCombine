@@ -57,9 +57,9 @@ extension DEBUG_FlowController: FlowController {
 // MARK: - delegate
 
 extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
-    func didControllerSelected(item: DEBUG_Controller) {
+    func didControllerSelected(item: DEBUG_API) {
         switch item {
-        case .joke:
+        case .jokeRandom:
             let vc = AppControllers.joke()
             navVC.pushViewController(vc, animated: true)
 

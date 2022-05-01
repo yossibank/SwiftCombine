@@ -4,7 +4,7 @@ import UIKit
 // MARK: - screen transition management
 
 protocol DEBUG_ViewControllerDelegate: AnyObject {
-    func didControllerSelected(item: DEBUG_Controller)
+    func didControllerSelected(item: DEBUG_API)
     func didCoreDataSelected(item: DEBUG_CoreData)
     func didCombineSelected(item: DEBUG_Combine)
 }
@@ -71,8 +71,8 @@ extension DEBUG_ViewController: UITableViewDelegate {
         case .development:
             break
 
-        case .viewController:
-            let item = DEBUG_Controller.allCases[indexPath.row]
+        case .api:
+            let item = DEBUG_API.allCases[indexPath.row]
             delegate.didControllerSelected(item: item)
 
         case .coreData:

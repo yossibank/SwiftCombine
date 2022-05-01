@@ -1,7 +1,7 @@
 import Combine
 
-extension ModelImpl where R == Repos.Joke {
-    func fetch() -> AnyPublisher<JokeResponse, APIError> {
+extension ModelImpl where R == Repos.Joke.Random {
+    func fetch() -> AnyPublisher<JokeRandomResponse, APIError> {
         toPublisher { promise in
             repository.request(
                 useTestData: useTestData,

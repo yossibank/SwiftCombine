@@ -1,7 +1,7 @@
 import Foundation
 
-struct JokeGetRequest: Request {
-    typealias Response = JokeResponse
+struct JokeRandomGetRequest: Request {
+    typealias Response = JokeRandomResponse
     typealias Parameters = EmptyParameters
     typealias PathComponent = EmptyPathComponent
 
