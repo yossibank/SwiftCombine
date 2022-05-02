@@ -1,7 +1,7 @@
 import Combine
 
-extension ModelImpl where R == Repos.CoreData.Fruit {
-    func fetchAll() -> AnyPublisher<[FruitEntity], CoreDataError> {
+extension ModelImpl where R == Repos.CoreDataFruit {
+    func fetchAll() -> AnyPublisher<[Fruit], CoreDataError> {
         toPublisher { promise in
             repository.fetchAll { result in
                 switch result {
@@ -16,7 +16,7 @@ extension ModelImpl where R == Repos.CoreData.Fruit {
     }
 
     func add(fruitName: String) {
-        let entity: FruitEntity = repository.entity()
+        let entity: Fruit = repository.entity()
         entity.name = fruitName
         repository.add(entity)
     }

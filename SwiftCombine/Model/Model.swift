@@ -1,6 +1,6 @@
 // MARK: - CoreData
 
-typealias FruitModel = ModelImpl<Repos.CoreData.Fruit>
+typealias FruitModel = ModelImpl<Repos.CoreDataFruit>
 
 // MARK: - Joke
 
@@ -15,7 +15,7 @@ typealias SetOnboardingModel = ModelImpl<Repos.Onboarding.SetIsFinished>
 struct Model {
     struct CoreData {
         static func Fruit() -> FruitModel {
-            .init(repository: Repos.CoreData.Fruit())
+            .init(repository: Repos.CoreDataFruit())
         }
     }
 
