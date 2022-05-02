@@ -4,7 +4,8 @@ import Combine
 final class FruitViewModel: ViewModel {
     typealias State = LoadingState<[FruitEntity], CoreDataError>
 
-    @Published var name: String = ""
+    @Published var addName: String = ""
+    @Published var deleteName: String = ""
     @Published var items: [FruitItem] = []
     @Published private(set) var state: State = .standby
 
@@ -40,6 +41,11 @@ extension FruitViewModel {
     }
 
     func add() {
-        model.add(.init(name: name))
+        model.add(.init(name: addName))
+    }
+
+    func delete() {
+        let predicate = NSPredicate(format: "%K=%@", "name", deleteName)
+        model.delete(predicate: predicate)
     }
 }

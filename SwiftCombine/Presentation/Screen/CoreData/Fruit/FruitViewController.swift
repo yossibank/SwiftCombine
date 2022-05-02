@@ -23,6 +23,7 @@ extension FruitViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.fetchAll()
+        ui.bindUI()
         ui.setupView(rootView: view)
         ui.setupTableView(delegate: self)
         setupEvent()
@@ -35,19 +36,32 @@ extension FruitViewController {
 
 private extension FruitViewController {
     func setupEvent() {
-        ui.saveButtonTapPublisher.sink { [weak self] _ in
+        ui.addButtonTapPublisher.sink { [weak self] _ in
             guard let self = self else { return }
 
-            self.ui.clearText()
+            self.ui.clear()
             self.viewModel.add()
+            self.viewModel.fetchAll()
+        }
+        .store(in: &cancellables)
+
+        ui.deleteButtonTapPublisher.sink { [weak self] _ in
+            guard let self = self else { return }
+
+            self.ui.clear()
+            self.viewModel.delete()
             self.viewModel.fetchAll()
         }
         .store(in: &cancellables)
     }
 
     func bindToViewModel() {
-        ui.nameTextFieldPublisher
-            .assign(to: \.name, on: viewModel)
+        ui.addTextFieldPublisher
+            .assign(to: \.addName, on: viewModel)
+            .store(in: &cancellables)
+
+        ui.deleteTextFieldPublisher
+            .assign(to: \.deleteName, on: viewModel)
             .store(in: &cancellables)
     }
 
