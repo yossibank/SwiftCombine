@@ -16,9 +16,9 @@ extension ModelImpl where R == Repos.CoreDataFruit, M == FruitMapper {
         }
     }
 
-    func add(fruitName: String) {
-        let entity: Fruit = repository.entity()
-        entity.name = fruitName
-        repository.add(entity)
+    func add(_ entity: FruitEntity) {
+        let coreDataEntity: Fruit = repository.create()
+        coreDataEntity.name = entity.name
+        repository.add(coreDataEntity)
     }
 }

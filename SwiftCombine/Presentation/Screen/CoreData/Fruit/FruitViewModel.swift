@@ -40,6 +40,6 @@ extension FruitViewModel {
     }
 
     func add() {
-        model.add(fruitName: name)
+        model.add(.init(name: name))
     }
 }
