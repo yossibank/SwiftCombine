@@ -2,7 +2,7 @@ import CoreData
 import Combine
 
 final class FruitViewModel: ViewModel {
-    typealias State = LoadingState<[Fruit], CoreDataError>
+    typealias State = LoadingState<[FruitEntity], CoreDataError>
 
     @Published var name: String = ""
     @Published var items: [FruitItem] = []

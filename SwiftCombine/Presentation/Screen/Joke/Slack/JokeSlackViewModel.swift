@@ -1,7 +1,7 @@
 import Combine
 
 final class JokeSlackViewModel: ViewModel {
-    typealias State = LoadingState<JokeSlackResponse, APIError>
+    typealias State = LoadingState<JokeSlackEntity, APIError>
 
     @Published private(set) var state: State = .standby
 

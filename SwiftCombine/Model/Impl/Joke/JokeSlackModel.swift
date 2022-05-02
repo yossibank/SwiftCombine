@@ -1,7 +1,7 @@
 import Combine
 
-extension ModelImpl where R == Repos.Joke.Slack {
-    func fetch() -> AnyPublisher<JokeSlackResponse, APIError> {
+extension ModelImpl where R == Repos.Joke.Slack, M == JokeSlackMapper {
+    func fetch() -> AnyPublisher<JokeSlackEntity, APIError> {
         toPublisher { promise in
             repository.request(
                 useTestData: useTestData,
@@ -10,7 +10,8 @@ extension ModelImpl where R == Repos.Joke.Slack {
             ) { result in
                 switch result {
                 case let .success(response):
-                    promise(.success(response))
+                    let entity = mapper.convert(response: response)
+                    promise(.success(entity))
 
                 case let .failure(error):
                     promise(.failure(error))
