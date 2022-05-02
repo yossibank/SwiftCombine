@@ -14,9 +14,9 @@ typealias SetOnboardingModel = ModelImpl<Repos.Onboarding.SetIsFinished, NoMappe
 
 struct Model {
     struct CoreData {
-        static func Fruit() -> FruitModel {
+        static func Fruit(useTestData: Bool = false) -> FruitModel {
             .init(
-                repository: Repos.CoreDataFruit(),
+                repository: Repos.CoreDataFruit(useTestData: useTestData),
                 mapper: FruitMapper()
             )
         }

@@ -10,18 +10,37 @@ protocol CoreDataRepo {
 }
 
 struct CoreDataRepository<T: NSManagedObject>: CoreDataRepo {
-    private let persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Model")
+    private var managedObjectModel: NSManagedObjectModel = {
+        let managedObjectModel = NSManagedObjectModel.mergedModel(from: [Bundle.main])!
+        return managedObjectModel
+    }()
+
+    private var context: NSManagedObjectContext {
+        persistentContainer.viewContext
+    }
+
+    private let persistentContainer: NSPersistentContainer
+    private let useTestData: Bool
+
+    init(useTestData: Bool) {
+        self.useTestData = useTestData
+
+        let container = NSPersistentContainer(name: "Model", managedObjectModel: managedObjectModel)
+
+        if useTestData {
+            let description = NSPersistentStoreDescription()
+            description.type = NSInMemoryStoreType
+            description.shouldAddStoreAsynchronously = false
+            container.persistentStoreDescriptions = [description]
+        }
+
         container.loadPersistentStores { _, error in
             if let error = error {
                 Logger.error(message: error.localizedDescription)
             }
         }
-        return container
-    }()
 
-    private var context: NSManagedObjectContext {
-        persistentContainer.viewContext
+        self.persistentContainer = container
     }
 
     func fetch(
@@ -44,7 +63,7 @@ struct CoreDataRepository<T: NSManagedObject>: CoreDataRepo {
             in: context
         )!
 
-        return T(entity: entity, insertInto: nil)
+        return T(entity: entity, insertInto: context)
     }
 
     func add(_ object: T) {

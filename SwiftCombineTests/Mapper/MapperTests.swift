@@ -3,7 +3,7 @@ import XCTest
 
 final class MapperTests: XCTestCase {
     func testFruitMapper() {
-        let coreDataFruit: Fruit = CoreDataRepository().create()
+        let coreDataFruit: Fruit = CoreDataRepository(useTestData: true).create()
         coreDataFruit.name = "Fruit"
 
         let result = FruitMapper().convert(

@@ -29,6 +29,7 @@
 		782477E4281F9D90004DEEE5 /* NoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477E3281F9D90004DEEE5 /* NoMapper.swift */; };
 		782477E7281FA340004DEEE5 /* MapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477E6281FA340004DEEE5 /* MapperTests.swift */; };
 		782477EB281FF6E9004DEEE5 /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477EA281FF6E9004DEEE5 /* CoreDataTests.swift */; };
+		782477ED28200C93004DEEE5 /* FruitModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477EC28200C93004DEEE5 /* FruitModelTests.swift */; };
 		783A47F6281502A100DE244A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47F5281502A100DE244A /* Utility.swift */; };
 		783A47F9281503F500DE244A /* JokeRandomModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47F8281503F500DE244A /* JokeRandomModelTests.swift */; };
 		783A47FB2815417B00DE244A /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47FA2815417B00DE244A /* CoreData.swift */; };
@@ -141,6 +142,7 @@
 		782477E3281F9D90004DEEE5 /* NoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoMapper.swift; sourceTree = "<group>"; };
 		782477E6281FA340004DEEE5 /* MapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapperTests.swift; sourceTree = "<group>"; };
 		782477EA281FF6E9004DEEE5 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
+		782477EC28200C93004DEEE5 /* FruitModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitModelTests.swift; sourceTree = "<group>"; };
 		783A47F5281502A100DE244A /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		783A47F8281503F500DE244A /* JokeRandomModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeRandomModelTests.swift; sourceTree = "<group>"; };
 		783A47FA2815417B00DE244A /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
@@ -407,6 +409,7 @@
 		783A47F7281503E300DE244A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				782477EC28200C93004DEEE5 /* FruitModelTests.swift */,
 				783A47F8281503F500DE244A /* JokeRandomModelTests.swift */,
 				782477BD281E9530004DEEE5 /* JokeSlackModelTests.swift */,
 			);
@@ -884,6 +887,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				782477ED28200C93004DEEE5 /* FruitModelTests.swift in Sources */,
 				78A11E20281D7C0B00790D24 /* JokeRandomViewModelTests.swift in Sources */,
 				78482225281BCEEA006CEF44 /* UserDefaultsTests.swift in Sources */,
 				783A47F6281502A100DE244A /* Utility.swift in Sources */,
