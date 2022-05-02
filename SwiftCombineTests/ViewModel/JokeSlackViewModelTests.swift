@@ -22,6 +22,7 @@ final class JokeSlackViewModelTests: XCTestCase {
             ).testDataPath
         )
         .fetchLocalTestData(responseType: JokeSlackResponse.self)
+        .map(JokeSlackMapper().convert)
         .get()
 
         XCTAssertEqual(result.count, 1)

@@ -10,6 +10,7 @@ final class JokeSlackModelTests: XCTestCase {
             testDataJsonPath: JokeSlackGetRequest().testDataPath
         )
         .fetchLocalTestData(responseType: JokeSlackResponse.self)
+        .map(JokeSlackMapper().convert)
         .get()
 
         XCTAssertEqual(result, expect)
