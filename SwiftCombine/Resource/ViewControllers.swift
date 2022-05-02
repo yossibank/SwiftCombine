@@ -1,64 +1,68 @@
 import UIKit
 
 struct AppControllers {
-    static func home() -> HomeViewController {
+    static func Home() -> HomeViewController {
         let instance = HomeViewController()
         instance.inject(viewModel: .init(), ui: .init())
         instance.title = "Home"
         return instance
     }
 
-    static func debug() -> DEBUG_ViewController {
+    static func Debug() -> DEBUG_ViewController {
         let instance = DEBUG_ViewController()
         instance.inject(ui: .init())
         instance.title = "DEBUG"
         return instance
     }
 
-    static func joke() -> JokeRandomViewController {
-        let instance = JokeRandomViewController()
-        instance.inject(viewModel: .init(), ui: .init())
-        instance.title = "API"
-        return instance
+    struct CoreData {
+        static func Fruit() -> FruitViewController {
+            let instance = FruitViewController()
+            instance.inject(viewModel: .init(), ui: .init())
+            instance.title = "Fruit"
+            return instance
+        }
     }
 
-    static func jokeSlack() -> JokeSlackViewController {
-        let instance = JokeSlackViewController()
-        instance.inject(viewModel: .init(), ui: .init())
-        instance.title = "Joke Slack"
-        return instance
-    }
+    struct Joke {
+        static func Random() -> JokeRandomViewController {
+            let instance = JokeRandomViewController()
+            instance.inject(viewModel: .init(), ui: .init())
+            instance.title = "API"
+            return instance
+        }
 
-    static func coreData() -> CoreDataViewController {
-        let instance = CoreDataViewController()
-        instance.inject(viewModel: .init(), ui: .init())
-        instance.title = "CoreData"
-        return instance
+        static func Slack() -> JokeSlackViewController {
+            let instance = JokeSlackViewController()
+            instance.inject(viewModel: .init(), ui: .init())
+            instance.title = "Joke Slack"
+            return instance
+        }
     }
 
     struct Combine {
-        static func just() -> JustViewController {
+        static func Just() -> JustViewController {
             let instance = JustViewController()
             instance.inject(viewModel: .init())
             instance.title = "Just"
             return instance
         }
 
-        static func subject() -> SubjectViewController {
+        static func Subject() -> SubjectViewController {
             let instance = SubjectViewController()
             instance.inject(viewModel: .init())
             instance.title = "Subject"
             return instance
         }
 
-        static func future() -> FutureViewController {
+        static func Future() -> FutureViewController {
             let instance = FutureViewController()
             instance.inject(viewModel: .init(), ui: .init())
             instance.title = "Future"
             return instance
         }
 
-        static func deferred() -> DeferredViewController {
+        static func Deferred() -> DeferredViewController {
             let instance = DeferredViewController()
             instance.inject(viewModel: .init(), ui: .init())
             instance.title = "Deferred"

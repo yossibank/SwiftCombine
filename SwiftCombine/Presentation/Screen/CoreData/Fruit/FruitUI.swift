@@ -1,7 +1,7 @@
 import Combine
 import UIKit
 
-final class CoreDataUI {
+final class FruitUI {
     private let inputTextField: UITextField = {
         $0.placeholder = "名前入力"
         $0.borderStyle = .roundedRect
@@ -25,7 +25,7 @@ final class CoreDataUI {
         return $0
     }(UIStackView(arrangedSubviews: [inputTextField, saveButton]))
 
-    private var dataSource: UITableViewDiffableDataSource<CoreDataSection, CoreDataItem>!
+    private var dataSource: UITableViewDiffableDataSource<FruitSection, FruitItem>!
 
     lazy var nameTextFieldPublisher: AnyPublisher<String, Never> = {
         inputTextField.textDidChangePublisher
@@ -38,7 +38,7 @@ final class CoreDataUI {
 
 // MARK: - internal methods
 
-extension CoreDataUI {
+extension FruitUI {
     func setupTableView(delegate: UITableViewDelegate) {
         dataSource = configureDataSource()
 
@@ -57,9 +57,9 @@ extension CoreDataUI {
         }
     }
 
-    func updateDataSource(items: [CoreDataItem]) {
-        var dataSourceSnapshot = NSDiffableDataSourceSnapshot<CoreDataSection, CoreDataItem>()
-        dataSourceSnapshot.appendSections(CoreDataSection.allCases)
+    func updateDataSource(items: [FruitItem]) {
+        var dataSourceSnapshot = NSDiffableDataSourceSnapshot<FruitSection, FruitItem>()
+        dataSourceSnapshot.appendSections(FruitSection.allCases)
         dataSourceSnapshot.appendItems(items, toSection: .main)
         dataSource.apply(dataSourceSnapshot, animatingDifferences: false)
     }
@@ -71,8 +71,8 @@ extension CoreDataUI {
 
 // MARK: - private methods
 
-private extension CoreDataUI {
-    func configureDataSource() -> UITableViewDiffableDataSource<CoreDataSection, CoreDataItem> {
+private extension FruitUI {
+    func configureDataSource() -> UITableViewDiffableDataSource<FruitSection, FruitItem> {
         .init(tableView: tableView) { [weak self] tableView, indexPath, item in
             guard let self = self else {
                 return .init()
@@ -89,7 +89,7 @@ private extension CoreDataUI {
     func makeCell(
         tableView: UITableView,
         indexPath: IndexPath,
-        item: CoreDataItem
+        item: FruitItem
     ) -> UITableViewCell? {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: String(describing: UITableViewCell.self),
@@ -102,7 +102,7 @@ private extension CoreDataUI {
 
 // MARK: - protocol
 
-extension CoreDataUI: UserInterface {
+extension FruitUI: UserInterface {
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .systemBackground
 

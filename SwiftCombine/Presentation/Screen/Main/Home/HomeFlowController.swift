@@ -28,7 +28,7 @@ extension HomeFlowController {
 
 extension HomeFlowController: FlowController {
     func start() {
-        let vc = AppControllers.home()
+        let vc = AppControllers.Home()
         tabBarItem.title = "Home"
         tabBarItem.image = UIImage(systemName: "house")
 

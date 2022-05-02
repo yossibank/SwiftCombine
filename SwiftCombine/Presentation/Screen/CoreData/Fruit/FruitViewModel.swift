@@ -1,11 +1,11 @@
 import CoreData
 import Combine
 
-final class CoreDataViewModel: ViewModel {
+final class FruitViewModel: ViewModel {
     typealias State = LoadingState<[FruitEntity], CoreDataError>
 
     @Published var name: String = ""
-    @Published var items: [CoreDataItem] = []
+    @Published var items: [FruitItem] = []
     @Published private(set) var state: State = .standby
 
     private let model: FruitModel
@@ -19,7 +19,7 @@ final class CoreDataViewModel: ViewModel {
 
 // MARK: - internal methods
 
-extension CoreDataViewModel {
+extension FruitViewModel {
     func fetchAll() {
         state = .loading
 

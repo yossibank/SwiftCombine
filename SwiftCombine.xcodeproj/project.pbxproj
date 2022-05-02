@@ -24,10 +24,10 @@
 		783A47F9281503F500DE244A /* JokeRandomModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47F8281503F500DE244A /* JokeRandomModelTests.swift */; };
 		783A47FB2815417B00DE244A /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47FA2815417B00DE244A /* CoreData.swift */; };
 		783A480A28154D8C00DE244A /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A480928154D8C00DE244A /* CoreDataRepository.swift */; };
-		783A4813281551DC00DE244A /* CoreDataUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4812281551DC00DE244A /* CoreDataUI.swift */; };
-		783A4815281551E500DE244A /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4814281551E500DE244A /* CoreDataViewController.swift */; };
-		783A4817281551EB00DE244A /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4816281551EB00DE244A /* CoreDataViewModel.swift */; };
-		783A4819281552F200DE244A /* CoreDataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4818281552F200DE244A /* CoreDataItem.swift */; };
+		783A4813281551DC00DE244A /* FruitUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4812281551DC00DE244A /* FruitUI.swift */; };
+		783A4815281551E500DE244A /* FruitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4814281551E500DE244A /* FruitViewController.swift */; };
+		783A4817281551EB00DE244A /* FruitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4816281551EB00DE244A /* FruitViewModel.swift */; };
+		783A4819281552F200DE244A /* FruitItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4818281552F200DE244A /* FruitItem.swift */; };
 		78482225281BCEEA006CEF44 /* UserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78482224281BCEEA006CEF44 /* UserDefaultsTests.swift */; };
 		78482229281BD22B006CEF44 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78482228281BD22B006CEF44 /* HomeViewModel.swift */; };
 		7859A2282815912200E0F08C /* UITextField+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7859A2272815912200E0F08C /* UITextField+Publisher.swift */; };
@@ -127,10 +127,10 @@
 		783A47F8281503F500DE244A /* JokeRandomModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeRandomModelTests.swift; sourceTree = "<group>"; };
 		783A47FA2815417B00DE244A /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		783A480928154D8C00DE244A /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
-		783A4812281551DC00DE244A /* CoreDataUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataUI.swift; sourceTree = "<group>"; };
-		783A4814281551E500DE244A /* CoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
-		783A4816281551EB00DE244A /* CoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
-		783A4818281552F200DE244A /* CoreDataItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataItem.swift; sourceTree = "<group>"; };
+		783A4812281551DC00DE244A /* FruitUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitUI.swift; sourceTree = "<group>"; };
+		783A4814281551E500DE244A /* FruitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitViewController.swift; sourceTree = "<group>"; };
+		783A4816281551EB00DE244A /* FruitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitViewModel.swift; sourceTree = "<group>"; };
+		783A4818281552F200DE244A /* FruitItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitItem.swift; sourceTree = "<group>"; };
 		78482224281BCEEA006CEF44 /* UserDefaultsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsTests.swift; sourceTree = "<group>"; };
 		78482228281BD22B006CEF44 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		7859A2272815912200E0F08C /* UITextField+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Publisher.swift"; sourceTree = "<group>"; };
@@ -330,6 +330,17 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		782477C6281F86C0004DEEE5 /* Fruit */ = {
+			isa = PBXGroup;
+			children = (
+				783A4818281552F200DE244A /* FruitItem.swift */,
+				783A4812281551DC00DE244A /* FruitUI.swift */,
+				783A4814281551E500DE244A /* FruitViewController.swift */,
+				783A4816281551EB00DE244A /* FruitViewModel.swift */,
+			);
+			path = Fruit;
+			sourceTree = "<group>";
+		};
 		783A47F42815028F00DE244A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,10 +383,7 @@
 		783A4811281551C400DE244A /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				783A4818281552F200DE244A /* CoreDataItem.swift */,
-				783A4812281551DC00DE244A /* CoreDataUI.swift */,
-				783A4814281551E500DE244A /* CoreDataViewController.swift */,
-				783A4816281551EB00DE244A /* CoreDataViewModel.swift */,
+				782477C6281F86C0004DEEE5 /* Fruit */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -861,7 +869,7 @@
 				782477B0281E81DA004DEEE5 /* JokeSlackModel.swift in Sources */,
 				7859A2282815912200E0F08C /* UITextField+Publisher.swift in Sources */,
 				7871EFF12813CDB7004E477D /* FutureViewModel.swift in Sources */,
-				783A4819281552F200DE244A /* CoreDataItem.swift in Sources */,
+				783A4819281552F200DE244A /* FruitItem.swift in Sources */,
 				78AAF077280AFAFC00BF0E3B /* JokeRandomGetRequest.swift in Sources */,
 				78482229281BD22B006CEF44 /* HomeViewModel.swift in Sources */,
 				78AAF068280AD88E00BF0E3B /* UserDefaultsStorage.swift in Sources */,
@@ -873,7 +881,7 @@
 				78AAF080280B0D1F00BF0E3B /* JokeRandomModel.swift in Sources */,
 				783A47FB2815417B00DE244A /* CoreData.swift in Sources */,
 				78EC5F7D280BB9EF00C18DF5 /* TabBarController.swift in Sources */,
-				783A4813281551DC00DE244A /* CoreDataUI.swift in Sources */,
+				783A4813281551DC00DE244A /* FruitUI.swift in Sources */,
 				78AAF060280AC47500BF0E3B /* DataStructure.swift in Sources */,
 				78A11E1C281D79E500790D24 /* FruitEntity+CoreDataProperties.swift in Sources */,
 				7859A23328159F6100E0F08C /* Model.xcdatamodeld in Sources */,
@@ -884,7 +892,7 @@
 				78EC5F6B280BB50000C18DF5 /* FlowController.swift in Sources */,
 				78EC5F89280BBF3700C18DF5 /* FutureUI.swift in Sources */,
 				786071DE2813AA5C0074ECB8 /* UIView+Layout.swift in Sources */,
-				783A4817281551EB00DE244A /* CoreDataViewModel.swift in Sources */,
+				783A4817281551EB00DE244A /* FruitViewModel.swift in Sources */,
 				782477B3281E8560004DEEE5 /* JokeSlackUI.swift in Sources */,
 				78EC5F93280C25D200C18DF5 /* DEBUG_Item.swift in Sources */,
 				78EC5F6D280BB57B00C18DF5 /* UIViewController+Container.swift in Sources */,
@@ -900,7 +908,7 @@
 				782477AC281E7D33004DEEE5 /* JokeSlackGetRequest.swift in Sources */,
 				78EC5F91280BC90300C18DF5 /* LoadingState.swift in Sources */,
 				788407D02814146700641E27 /* DeferredUI.swift in Sources */,
-				783A4815281551E500DE244A /* CoreDataViewController.swift in Sources */,
+				783A4815281551E500DE244A /* FruitViewController.swift in Sources */,
 				78A11E16281CF57400790D24 /* SetOnboardingModel.swift in Sources */,
 				78EC5F69280BB4F800C18DF5 /* UserInterface.swift in Sources */,
 				78A11E1D281D79E500790D24 /* FruitEntity+CoreDataClass.swift in Sources */,

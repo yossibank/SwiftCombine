@@ -30,7 +30,7 @@ extension DEBUG_FlowController {
 
 extension DEBUG_FlowController: FlowController {
     func start() {
-        let vc = AppControllers.debug()
+        let vc = AppControllers.Debug()
         vc.delegate = self
 
         tabBarItem.title = "DEBUG"
@@ -60,11 +60,11 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
     func didControllerSelected(item: DEBUG_API) {
         switch item {
         case .jokeRandom:
-            let vc = AppControllers.joke()
+            let vc = AppControllers.Joke.Random()
             navVC.pushViewController(vc, animated: true)
 
         case .jokeSlack:
-            let vc = AppControllers.jokeSlack()
+            let vc = AppControllers.Joke.Slack()
             navVC.pushViewController(vc, animated: true)
         }
     }
@@ -72,7 +72,7 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
     func didCoreDataSelected(item: DEBUG_CoreData) {
         switch item {
         case .fruit:
-            let vc = AppControllers.coreData()
+            let vc = AppControllers.CoreData.Fruit()
             navVC.pushViewController(vc, animated: true)
         }
     }
@@ -80,19 +80,19 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
     func didCombineSelected(item: DEBUG_Combine) {
         switch item {
         case .just:
-            let vc = AppControllers.Combine.just()
+            let vc = AppControllers.Combine.Just()
             navVC.pushViewController(vc, animated: true)
 
         case .subject:
-            let vc = AppControllers.Combine.subject()
+            let vc = AppControllers.Combine.Subject()
             navVC.pushViewController(vc, animated: true)
 
         case .future:
-            let vc = AppControllers.Combine.future()
+            let vc = AppControllers.Combine.Future()
             navVC.pushViewController(vc, animated: true)
 
         case .deferred:
-            let vc = AppControllers.Combine.deferred()
+            let vc = AppControllers.Combine.Deferred()
             navVC.pushViewController(vc, animated: true)
         }
     }

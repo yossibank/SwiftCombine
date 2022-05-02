@@ -3,14 +3,14 @@ import UIKit
 
 // MARK: - inject
 
-extension CoreDataViewController: VCInjectable {
-    typealias VM = CoreDataViewModel
-    typealias UI = CoreDataUI
+extension FruitViewController: VCInjectable {
+    typealias VM = FruitViewModel
+    typealias UI = FruitUI
 }
 
 // MARK: - stored properties
 
-final class CoreDataViewController: UIViewController {
+final class FruitViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
 
@@ -19,7 +19,7 @@ final class CoreDataViewController: UIViewController {
 
 // MARK: - override methods
 
-extension CoreDataViewController {
+extension FruitViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.fetchAll()
@@ -33,7 +33,7 @@ extension CoreDataViewController {
 
 // MARK: - private methods
 
-private extension CoreDataViewController {
+private extension FruitViewController {
     func setupEvent() {
         ui.saveButtonTapPublisher.sink { [weak self] _ in
             guard let self = self else { return }
@@ -52,6 +52,13 @@ private extension CoreDataViewController {
     }
 
     func bindToView() {
+        viewModel.$items
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] items in
+                self?.ui.updateDataSource(items: items)
+            }
+            .store(in: &cancellables)
+
         viewModel.$state
             .receive(on: DispatchQueue.main)
             .sink { state in
@@ -75,4 +82,4 @@ private extension CoreDataViewController {
 
 // MARK: - delegate
 
-extension CoreDataViewController: UITableViewDelegate {}
+extension FruitViewController: UITableViewDelegate {}
