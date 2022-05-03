@@ -76,6 +76,9 @@ private extension DEBUG_UI {
             for: indexPath
         )
 
+        cell.textLabel?.text = ""
+        cell.accessoryView = nil
+
         switch item {
         case let .development(content):
             switch content {

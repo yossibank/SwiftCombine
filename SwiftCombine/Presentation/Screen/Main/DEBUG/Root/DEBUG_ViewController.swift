@@ -75,6 +75,14 @@ extension DEBUG_ViewController: UITableViewDelegate {
             let item = DEBUG_API.allCases[indexPath.row]
             delegate.didControllerSelected(item: item)
 
+            guard item == .jokeRandom else {
+                return
+            }
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.ui.updateDataSource()
+            }
+
         case .coreData:
             let item = DEBUG_CoreData.allCases[indexPath.row]
             delegate.didCoreDataSelected(item: item)
