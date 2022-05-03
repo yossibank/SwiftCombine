@@ -1,12 +1,12 @@
 import Combine
 
-extension ModelImpl where R == Repos.Joke.Random, M == JokeMapper {
-    func fetch() -> AnyPublisher<JokeEntity, APIError> {
+extension ModelImpl where R == Repos.Joke.Get, M == JokeMapper {
+    func fetch(jokeId: String) -> AnyPublisher<JokeEntity, APIError> {
         toPublisher { promise in
             repository.request(
                 useTestData: useTestData,
                 parameters: .init(),
-                pathComponent: .init()
+                pathComponent: jokeId
             ) { result in
                 switch result {
                 case let .success(response):

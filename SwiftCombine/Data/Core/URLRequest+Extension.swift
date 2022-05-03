@@ -1,7 +1,6 @@
 import Foundation
 
 extension URLRequest {
-
     var curlString: String {
         guard let url = url else {
             return ""

@@ -30,9 +30,16 @@ enum DEBUG_Item: Hashable {
 
 enum DEBUG_Development: String, CaseIterable, Hashable {
     case server
+    case jokeId
 
     var component: DEBUG_Item {
-        .development(.server)
+        switch self {
+        case .server:
+            return .development(.server)
+
+        case .jokeId:
+            return .development(.jokeId)
+        }
     }
 
     enum ServerItem: String, CaseIterable, Hashable {

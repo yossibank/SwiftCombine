@@ -1,7 +1,7 @@
 import Foundation
 
 struct JokeRandomGetRequest: Request {
-    typealias Response = JokeRandomResponse
+    typealias Response = JokeResponse
     typealias Parameters = EmptyParameters
     typealias PathComponent = EmptyPathComponent
 
@@ -13,6 +13,12 @@ struct JokeRandomGetRequest: Request {
     }
 
     var body: Data?
+
+    var successHandler: (Response) -> Void {
+        { response in
+            AppDataHolder.jokeId = response.id
+        }
+    }
 
     init(
         parameters: Parameters = .init(),

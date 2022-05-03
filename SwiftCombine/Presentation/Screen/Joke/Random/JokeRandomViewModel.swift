@@ -1,7 +1,7 @@
 import Combine
 
 final class JokeRandomViewModel: ViewModel {
-    typealias State = LoadingState<JokeRandomEntity, APIError>
+    typealias State = LoadingState<JokeEntity, APIError>
 
     @Published private(set) var state: State = .standby
 

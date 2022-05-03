@@ -1,5 +1,5 @@
-struct JokeRandomMapper {
-    func convert(response: JokeRandomResponse) -> JokeRandomEntity {
+struct JokeMapper {
+    func convert(response: JokeResponse) -> JokeEntity {
         .init(
             id: response.id,
             joke: response.joke,

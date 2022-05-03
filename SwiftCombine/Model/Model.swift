@@ -4,7 +4,8 @@ typealias FruitModel = ModelImpl<Repos.CoreDataFruit, FruitMapper>
 
 // MARK: - Joke
 
-typealias JokeRandomModel = ModelImpl<Repos.Joke.Random, JokeRandomMapper>
+typealias JokeGetModel = ModelImpl<Repos.Joke.Get, JokeMapper>
+typealias JokeRandomModel = ModelImpl<Repos.Joke.Random, JokeMapper>
 typealias JokeSlackModel = ModelImpl<Repos.Joke.Slack, JokeSlackMapper>
 
 // MARK: - Onboarding
@@ -23,10 +24,18 @@ struct Model {
     }
 
     struct Joke {
+        static func Get(useTestData: Bool = false) -> JokeGetModel {
+            .init(
+                repository: Repos.Joke.Get(),
+                mapper: JokeMapper(),
+                useTestData: useTestData
+            )
+        }
+
         static func Random(useTestData: Bool = false) -> JokeRandomModel {
             .init(
                 repository: Repos.Joke.Random(),
-                mapper: JokeRandomMapper(),
+                mapper: JokeMapper(),
                 useTestData: useTestData
             )
         }

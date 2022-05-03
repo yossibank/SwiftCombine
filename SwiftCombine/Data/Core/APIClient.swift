@@ -2,7 +2,6 @@ import Combine
 import Foundation
 
 struct APIClient {
-
     func request<R: Request, T>(
         item: R,
         useTestData: Bool = false,

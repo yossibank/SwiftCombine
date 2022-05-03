@@ -10,7 +10,7 @@ final class JokeRandomModelTests: XCTestCase {
             testDataJsonPath: JokeRandomGetRequest().testDataPath
         )
         .fetchLocalTestData(responseType: JokeRandomResponse.self)
-        .map(JokeRandomMapper().convert)
+        .map(JokeMapper().convert)
         .get()
 
         XCTAssertEqual(result, expect)

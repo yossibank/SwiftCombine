@@ -22,7 +22,7 @@ final class JokeRandomViewModelTests: XCTestCase {
             ).testDataPath
         )
         .fetchLocalTestData(responseType: JokeRandomResponse.self)
-        .map(JokeRandomMapper().convert)
+        .map(JokeMapper().convert)
         .get()
 
         XCTAssertEqual(result.count, 1)

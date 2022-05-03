@@ -18,7 +18,7 @@ final class MapperTests: XCTestCase {
     }
 
     func testJokeRandomMapper() {
-        let result = JokeRandomMapper().convert(
+        let result = JokeMapper().convert(
             response: .init(
                 id: "11111",
                 joke: "joke joke",
@@ -26,7 +26,7 @@ final class MapperTests: XCTestCase {
             )
         )
 
-        let expect: JokeRandomEntity = .init(
+        let expect: JokeEntity = .init(
             id: "11111",
             joke: "joke joke",
             status: 200

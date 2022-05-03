@@ -45,10 +45,7 @@ extension DEBUG_UI {
             dataSourceSnapshot.appendItems($0.items, toSection: $0)
         }
 
-        dataSource.apply(
-            dataSourceSnapshot,
-            animatingDifferences: false
-        )
+        dataSource.apply(dataSourceSnapshot, animatingDifferences: false)
     }
 }
 
@@ -100,6 +97,9 @@ private extension DEBUG_UI {
                 segment.selectedSegmentIndex = AppDataHolder.serverType.rawValue
 
                 cell.accessoryView = segment
+
+            case .jokeId:
+                cell.textLabel?.text = "保存したJoke ID: \(AppDataHolder.jokeId)"
             }
 
         case let .api(content):

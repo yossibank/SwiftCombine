@@ -1,6 +1,7 @@
 enum UserDefaultKey: String {
     case onboardingFinished
     case serverType
+    case jokeId
 }
 
 struct UserDefaultEnumKey {
