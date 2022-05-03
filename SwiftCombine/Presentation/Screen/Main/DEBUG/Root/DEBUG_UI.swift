@@ -97,7 +97,10 @@ private extension DEBUG_UI {
                 segment.selectedSegmentIndex = AppDataHolder.serverType.rawValue
 
                 cell.accessoryView = segment
+            }
 
+        case let .userDefault(content):
+            switch content {
             case .jokeId:
                 cell.textLabel?.text = "保存したJoke ID: \(AppDataHolder.jokeId)"
             }

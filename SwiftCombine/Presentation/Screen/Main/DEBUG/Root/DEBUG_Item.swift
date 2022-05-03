@@ -1,5 +1,6 @@
 enum DEBUG_Section: String, CaseIterable {
     case development
+    case userDefault
     case api
     case coreData
     case combine
@@ -8,6 +9,9 @@ enum DEBUG_Section: String, CaseIterable {
         switch self {
         case .development:
             return DEBUG_Development.allCases.map { $0.component }
+
+        case .userDefault:
+            return DEBUG_UserDefault.allCases.map { $0.component }
 
         case .api:
             return DEBUG_API.allCases.map { $0.component }
@@ -23,6 +27,7 @@ enum DEBUG_Section: String, CaseIterable {
 
 enum DEBUG_Item: Hashable {
     case development(DEBUG_Development)
+    case userDefault(DEBUG_UserDefault)
     case api(DEBUG_API)
     case coreData(DEBUG_CoreData)
     case combine(DEBUG_Combine)
@@ -30,15 +35,11 @@ enum DEBUG_Item: Hashable {
 
 enum DEBUG_Development: String, CaseIterable, Hashable {
     case server
-    case jokeId
 
     var component: DEBUG_Item {
         switch self {
         case .server:
             return .development(.server)
-
-        case .jokeId:
-            return .development(.jokeId)
         }
     }
 
@@ -46,6 +47,17 @@ enum DEBUG_Development: String, CaseIterable, Hashable {
         case production = "本番"
         case stage = "ステージ"
         case prestage = "プレステージ"
+    }
+}
+
+enum DEBUG_UserDefault: String, CaseIterable, Hashable {
+    case jokeId
+
+    var component: DEBUG_Item {
+        switch self {
+        case .jokeId:
+            return .userDefault(.jokeId)
+        }
     }
 }
 
