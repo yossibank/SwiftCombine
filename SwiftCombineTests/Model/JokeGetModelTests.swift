@@ -7,7 +7,7 @@ final class JokeGetModelTests: XCTestCase {
             Model.Joke.Get(useTestData: true).fetch(jokeId: "R7UfaahVfFd")
         )
         let expect = try TestDataFetchRequest(
-            testDataJsonPath: JokeGetRequest(
+            testDataJsonPath: JokeRequest(
                 pathComponent: "R7UfaahVfFd"
             ).testDataPath
         )

@@ -5,11 +5,11 @@ final class JokeGetViewModel: ViewModel {
 
     @Published private(set) var state: State = .standby
 
-    private let model: JokeGetModel
+    private let model: JokeModel
 
     private var cancellables: Set<AnyCancellable> = .init()
 
-    init(model: JokeGetModel = Model.Joke.Get()) {
+    init(model: JokeModel = Model.Joke.Get()) {
         self.model = model
     }
 }

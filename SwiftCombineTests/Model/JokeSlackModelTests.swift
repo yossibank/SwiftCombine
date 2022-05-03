@@ -7,7 +7,7 @@ final class JokeSlackModelTests: XCTestCase {
             Model.Joke.Slack(useTestData: true).fetch()
         )
         let expect = try TestDataFetchRequest(
-            testDataJsonPath: JokeSlackGetRequest().testDataPath
+            testDataJsonPath: JokeSlackRequest().testDataPath
         )
         .fetchLocalTestData(responseType: JokeSlackResponse.self)
         .map(JokeSlackMapper().convert)

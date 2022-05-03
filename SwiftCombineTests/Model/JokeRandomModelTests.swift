@@ -7,7 +7,7 @@ final class JokeRandomModelTests: XCTestCase {
             Model.Joke.Random(useTestData: true).fetch()
         )
         let expect = try TestDataFetchRequest(
-            testDataJsonPath: JokeRandomGetRequest().testDataPath
+            testDataJsonPath: JokeRandomRequest().testDataPath
         )
         .fetchLocalTestData(responseType: JokeResponse.self)
         .map(JokeMapper().convert)

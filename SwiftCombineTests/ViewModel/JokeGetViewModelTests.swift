@@ -16,7 +16,7 @@ final class JokeGetViewModelTests: XCTestCase {
         let result = try awaitPublisher(publisher)
 
         let expectation = try TestDataFetchRequest(
-            testDataJsonPath: JokeGetRequest(
+            testDataJsonPath: JokeRequest(
                 parameters: .init(),
                 pathComponent: "R7UfaahVfFd"
             ).testDataPath

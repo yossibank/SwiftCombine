@@ -46,6 +46,29 @@ final class RequestTests: XCTestCase {
         wait(for: [expectation], timeout: 3.0)
     }
 
+    func testGetJokeSearch() {
+        let expectation = XCTestExpectation(description: "Get Joke Search")
+
+        Repos.Joke.Search().request(
+            useTestData: true,
+            parameters: .init(),
+            pathComponent: .init()
+        ) { result in
+            switch result {
+            case let .success(response):
+                XCTAssertNotNil(response)
+                XCTAssertEqual(response.status, 200)
+                XCTAssertEqual(response.results.count, 3)
+                expectation.fulfill()
+
+            case let .failure(error):
+                XCTFail(error.localizedDescription)
+            }
+        }
+
+        wait(for: [expectation], timeout: 3.0)
+    }
+
     func testGetJokeSlack() {
         let expectation = XCTestExpectation(description: "Get Joke Slack")
 

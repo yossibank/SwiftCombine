@@ -16,7 +16,7 @@ final class JokeSlackViewModelTests: XCTestCase {
         let result = try awaitPublisher(publisher)
         
         let expectation = try TestDataFetchRequest(
-            testDataJsonPath: JokeSlackGetRequest(
+            testDataJsonPath: JokeSlackRequest(
                 parameters: .init(),
                 pathComponent: .init()
             ).testDataPath

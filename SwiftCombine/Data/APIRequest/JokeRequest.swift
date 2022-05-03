@@ -1,23 +1,25 @@
 import Foundation
 
-struct JokeSlackGetRequest: Request {
-    typealias Response = JokeSlackResponse
+struct JokeRequest: Request {
+    typealias Response = JokeResponse
     typealias Parameters = EmptyParameters
-    typealias PathComponent = EmptyPathComponent
+
+    private let jokeId: String
 
     let parameters: Parameters
     var method: HTTPMethod { .get }
-    var path: String { "/slack" }
+    var path: String { "/j/\(jokeId)" }
     var testDataPath: URL? {
-        Bundle.main.url(forResource: "GetJokeSlack", withExtension: "json")
+        Bundle.main.url(forResource: "GetJoke", withExtension: "json")
     }
 
     var body: Data?
 
     init(
         parameters: Parameters = .init(),
-        pathComponent: PathComponent = .init()
+        pathComponent jokeId: String
     ) {
         self.parameters = parameters
+        self.jokeId = jokeId
     }
 }

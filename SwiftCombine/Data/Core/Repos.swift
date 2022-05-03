@@ -2,9 +2,10 @@ struct Repos {
     typealias CoreDataFruit = CoreDataRepository<Fruit>
 
     struct Joke {
-        typealias Get = Repository<JokeGetRequest>
-        typealias Random = Repository<JokeRandomGetRequest>
-        typealias Slack = Repository<JokeSlackGetRequest>
+        typealias Get = Repository<JokeRequest>
+        typealias Random = Repository<JokeRandomRequest>
+        typealias Search = Repository<JokeSearchRequest>
+        typealias Slack = Repository<JokeSlackRequest>
     }
 
     struct Onboarding {

@@ -16,7 +16,7 @@ final class JokeRandomViewModelTests: XCTestCase {
         let result = try awaitPublisher(publisher)
 
         let expectation = try TestDataFetchRequest(
-            testDataJsonPath: JokeRandomGetRequest(
+            testDataJsonPath: JokeRandomRequest(
                 parameters: .init(),
                 pathComponent: .init()
             ).testDataPath
