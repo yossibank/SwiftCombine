@@ -6,7 +6,6 @@ final class FruitViewModel: ViewModel {
 
     @Published var addName: String = ""
     @Published var deleteName: String = ""
-    @Published var items: [FruitItem] = []
     @Published private(set) var state: State = .standby
 
     private let model: FruitModel
@@ -34,7 +33,6 @@ extension FruitViewModel {
                 Logger.debug(message: "finished")
             }
         } receiveValue: { [weak self] state in
-            self?.items = state.map { .init(title: $0.name) }
             self?.state = .done(state)
         }
         .store(in: &cancellables)

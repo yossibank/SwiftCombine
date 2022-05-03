@@ -78,7 +78,7 @@ struct CoreDataRepository<T: NSManagedObject>: CoreDataRepo {
 }
 
 extension CoreDataRepository {
-    func save() {
+    private func save() {
         guard context.hasChanges else {
             return
         }
@@ -90,7 +90,7 @@ extension CoreDataRepository {
         }
     }
 
-    func rollback() {
+    private func rollback() {
         guard context.hasChanges else {
             return
         }
