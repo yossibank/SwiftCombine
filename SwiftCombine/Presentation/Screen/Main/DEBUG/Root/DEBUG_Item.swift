@@ -50,11 +50,15 @@ enum DEBUG_Development: String, CaseIterable, Hashable {
 }
 
 enum DEBUG_API: String, CaseIterable, Hashable {
+    case jokeGet
     case jokeRandom
     case jokeSlack
 
     var component: DEBUG_Item {
         switch self {
+        case .jokeGet:
+            return .api(.jokeGet)
+
         case .jokeRandom:
             return .api(.jokeRandom)
 

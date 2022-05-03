@@ -25,10 +25,17 @@ struct AppControllers {
     }
 
     struct Joke {
+        static func Get() -> JokeGetViewController {
+            let instance = JokeGetViewController()
+            instance.inject(viewModel: .init(), ui: .init())
+            instance.title = "Joke Get"
+            return instance
+        }
+
         static func Random() -> JokeRandomViewController {
             let instance = JokeRandomViewController()
             instance.inject(viewModel: .init(), ui: .init())
-            instance.title = "API"
+            instance.title = "Joke Random"
             return instance
         }
 

@@ -104,6 +104,9 @@ private extension DEBUG_UI {
 
         case let .api(content):
             switch content {
+            case .jokeGet:
+                cell.textLabel?.text = "Joke Get"
+
             case .jokeRandom:
                 cell.textLabel?.text = "Joke Random"
 
