@@ -1,11 +1,11 @@
 @testable import SwiftCombine
 import XCTest
 
-final class JokeRandomViewModelTests: XCTestCase {
-    private var viewModel: JokeRandomViewModel!
+final class JokeGetViewModelTests: XCTestCase {
+    private var viewModel: JokeGetViewModel!
 
     override func setUpWithError() throws {
-        viewModel = JokeRandomViewModel(model: Model.Joke.Random(useTestData: true))
+        viewModel = JokeGetViewModel(model: Model.Joke.Get(useTestData: true))
     }
 
     func testFetch() throws {
@@ -16,9 +16,9 @@ final class JokeRandomViewModelTests: XCTestCase {
         let result = try awaitPublisher(publisher)
 
         let expectation = try TestDataFetchRequest(
-            testDataJsonPath: JokeRandomGetRequest(
+            testDataJsonPath: JokeGetRequest(
                 parameters: .init(),
-                pathComponent: .init()
+                pathComponent: "R7UfaahVfFd"
             ).testDataPath
         )
         .fetchLocalTestData(responseType: JokeResponse.self)

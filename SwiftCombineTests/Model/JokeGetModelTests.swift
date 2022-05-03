@@ -1,13 +1,15 @@
 @testable import SwiftCombine
 import XCTest
 
-final class JokeRandomModelTests: XCTestCase {
-    func testJokeRandomModel() throws {
+final class JokeGetModelTests: XCTestCase {
+    func testJokeGetModel() throws {
         let result = try awaitPublisher(
-            Model.Joke.Random(useTestData: true).fetch()
+            Model.Joke.Get(useTestData: true).fetch(jokeId: "R7UfaahVfFd")
         )
         let expect = try TestDataFetchRequest(
-            testDataJsonPath: JokeRandomGetRequest().testDataPath
+            testDataJsonPath: JokeGetRequest(
+                pathComponent: "R7UfaahVfFd"
+            ).testDataPath
         )
         .fetchLocalTestData(responseType: JokeResponse.self)
         .map(JokeMapper().convert)

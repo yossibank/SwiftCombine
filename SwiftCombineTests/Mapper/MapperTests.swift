@@ -17,7 +17,7 @@ final class MapperTests: XCTestCase {
         XCTAssertEqual(result, expect)
     }
 
-    func testJokeRandomMapper() {
+    func testJokeMapper() {
         let result = JokeMapper().convert(
             response: .init(
                 id: "11111",

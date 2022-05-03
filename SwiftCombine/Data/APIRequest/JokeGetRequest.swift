@@ -10,7 +10,7 @@ struct JokeGetRequest: Request {
     var method: HTTPMethod { .get }
     var path: String { "/j/\(jokeId)" }
     var testDataPath: URL? {
-        nil
+        Bundle.main.url(forResource: "GetJoke", withExtension: "json")
     }
 
     var body: Data?

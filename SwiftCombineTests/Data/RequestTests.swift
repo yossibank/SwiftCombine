@@ -2,6 +2,28 @@
 import XCTest
 
 final class RequestTests: XCTestCase {
+    func testGetJoke() {
+        let expectation = XCTestExpectation(description: "Get Joke")
+
+        Repos.Joke.Get().request(
+            useTestData: true,
+            parameters: .init(),
+            pathComponent: "R7UfaahVfFd"
+        ) { result in
+            switch result {
+            case let .success(response):
+                XCTAssertNotNil(response)
+                XCTAssertEqual(response.status, 200)
+                expectation.fulfill()
+
+            case let .failure(error):
+                XCTFail(error.localizedDescription)
+            }
+        }
+
+        wait(for: [expectation], timeout: 3.0)
+    }
+    
     func testGetJokeRandom() {
         let expectation = XCTestExpectation(description: "Get Joke Random")
 
