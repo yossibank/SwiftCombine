@@ -20,16 +20,56 @@ final class MapperTests: XCTestCase {
     func testJokeMapper() {
         let result = JokeMapper().convert(
             response: .init(
-                id: "11111",
-                joke: "joke joke",
+                id: "M7wPC5wPKBd",
+                joke: "Did you hear the one about the guy with the broken hearing aid? Neither did he.",
                 status: 200
             )
         )
 
         let expect: JokeEntity = .init(
-            id: "11111",
-            joke: "joke joke",
+            id: "M7wPC5wPKBd",
+            joke: "Did you hear the one about the guy with the broken hearing aid? Neither did he.",
             status: 200
+        )
+
+        XCTAssertEqual(result, expect)
+    }
+
+    func testJokeSearchMapper() {
+        let result = JokeSearchMapper().convert(
+            response: .init(
+                currentPage: 1,
+                limit: 20,
+                nextPage: 2,
+                previousPage: 1,
+                results: [
+                    .init(
+                        id: "M7wPC5wPKBd",
+                        joke: "Did you hear the one about the guy with the broken hearing aid? Neither did he."
+                    )
+                ],
+                searchTerm: "",
+                status: 200,
+                totalJokes: 307,
+                totalPages: 15
+            )
+        )
+
+        let expect: JokeSearchEntity = .init(
+            currentPage: 1,
+            limit: 20,
+            nextPage: 2,
+            previousPage: 1,
+            results: [
+                .init(
+                    id: "M7wPC5wPKBd",
+                    joke: "Did you hear the one about the guy with the broken hearing aid? Neither did he."
+                )
+            ],
+            searchTerm: "",
+            status: 200,
+            totalJokes: 307,
+            totalPages: 15
         )
 
         XCTAssertEqual(result, expect)

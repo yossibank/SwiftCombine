@@ -1,8 +1,8 @@
 @testable import SwiftCombine
 import XCTest
 
-final class JokeGetModelTests: XCTestCase {
-    func testJokeGetModel() throws {
+final class JokeModelTests: XCTestCase {
+    func testJokeModel() throws {
         let result = try awaitPublisher(
             Model.Joke.Get(useTestData: true).fetch(jokeId: "R7UfaahVfFd")
         )
