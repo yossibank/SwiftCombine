@@ -40,7 +40,7 @@ final class TabBarController: UITabBarController {
     func updateTab(_ type: UserDefaultEnumKey.ServerType) {
         let debugTab = viewControllers?[TabType.debug.rawValue]
         let appearance = UITabBarAppearance()
-        appearance.configureWithOpaqueBackground()
+        appearance.configureWithDefaultBackground()
 
         switch type {
         case .production:
@@ -49,11 +49,11 @@ final class TabBarController: UITabBarController {
 
         case .stage:
             debugTab?.tabBarItem.title = "DEBUG(ステージ)"
-            appearance.backgroundColor = .blue.withAlphaComponent(0.5)
+            appearance.backgroundColor = .blue.withAlphaComponent(0.8)
 
         case .prestage:
             debugTab?.tabBarItem.title = "DEBUG(プレステージ)"
-            appearance.backgroundColor = .red.withAlphaComponent(0.5)
+            appearance.backgroundColor = .red.withAlphaComponent(0.8)
         }
 
         tabBar.standardAppearance = appearance

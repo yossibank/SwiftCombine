@@ -44,15 +44,15 @@ private extension JokeGetViewController {
                 case .loading:
                     Logger.debug(message: "loading")
 
-                case let .done(response):
-                    Logger.debug(message: "\(response)")
+                case let .done(entity):
+                    Logger.debug(message: "\(entity)")
 
                     self.ui.text = """
-                    ID: \(response.id)
+                    ID: \(entity.id)
 
-                    Joke: \(response.joke)
+                    Joke: \(entity.joke)
 
-                    Status: \(response.status)
+                    Status: \(entity.status)
                     """
 
                 case let .failed(error):

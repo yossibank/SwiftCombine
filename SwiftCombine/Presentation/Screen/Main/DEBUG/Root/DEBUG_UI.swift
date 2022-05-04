@@ -116,6 +116,9 @@ private extension DEBUG_UI {
             case .jokeRandom:
                 cell.textLabel?.text = "Joke Random"
 
+            case .jokeSearch:
+                cell.textLabel?.text = "Joke Search"
+
             case .jokeSlack:
                 cell.textLabel?.text = "Joke Slack"
             }

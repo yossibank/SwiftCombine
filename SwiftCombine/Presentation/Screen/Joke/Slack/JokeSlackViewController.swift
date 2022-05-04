@@ -44,19 +44,19 @@ private extension JokeSlackViewController {
                 case .loading:
                     Logger.debug(message: "loading")
 
-                case let .done(response):
-                    Logger.debug(message: "\(response)")
+                case let .done(entity):
+                    Logger.debug(message: "\(entity)")
 
                     self.ui.text = """
-                    Attachments:Fallback: \(response.attachments.map(\.fallback))
+                    Attachments:Fallback: \(entity.attachments.map(\.fallback))
 
-                    Attachments:Foooter: \(response.attachments.map(\.footer))
+                    Attachments:Foooter: \(entity.attachments.map(\.footer))
 
-                    Attachments:Text: \(response.attachments.map(\.text))
+                    Attachments:Text: \(entity.attachments.map(\.text))
 
-                    ResponseType: \(response.responseType)
+                    ResponseType: \(entity.responseType)
 
-                    Username: \(response.username)
+                    Username: \(entity.username)
                     """
 
                 case let .failed(error):

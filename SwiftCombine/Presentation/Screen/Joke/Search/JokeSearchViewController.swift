@@ -3,14 +3,14 @@ import UIKit
 
 // MARK: - inject
 
-extension JokeRandomViewController: VCInjectable {
-    typealias VM = JokeRandomViewModel
-    typealias UI = JokeRandomUI
+extension JokeSearchViewController: VCInjectable {
+    typealias VM = JokeSearchViewModel
+    typealias UI = JokeSearchUI
 }
 
-// MARK: - stored properties & init
+// MARK: - stored properties
 
-final class JokeRandomViewController: UIViewController {
+final class JokeSearchViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
 
@@ -19,24 +19,23 @@ final class JokeRandomViewController: UIViewController {
 
 // MARK: - override methods
 
-extension JokeRandomViewController {
+extension JokeSearchViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        ui.setupView(rootView: view)
         viewModel.fetch()
+        ui.setupView(rootView: view)
+        ui.setupTableView(delegate: self)
         bindToView()
     }
 }
 
 // MARK: - private methods
 
-private extension JokeRandomViewController {
+private extension JokeSearchViewController {
     func bindToView() {
         viewModel.$state
             .receive(on: DispatchQueue.main)
             .sink { [weak self] state in
-                guard let self = self else { return }
-
                 switch state {
                 case .standby:
                     Logger.debug(message: "standby")
@@ -45,15 +44,10 @@ private extension JokeRandomViewController {
                     Logger.debug(message: "loading")
 
                 case let .done(entity):
-                    Logger.debug(message: "\(entity)")
-
-                    self.ui.text = """
-                    ID: \(entity.id)
-
-                    Joke: \(entity.joke)
-
-                    Status: \(entity.status)
-                    """
+                    self?.ui.updateDataSource(
+                        items: entity.results.map { .init(id: $0.id, joke: $0.joke) }
+                    )
+                    Logger.debug(message: "\(entity.results.map(\.id))")
 
                 case let .failed(error):
                     Logger.debug(message: error.localizedDescription)
@@ -62,3 +56,7 @@ private extension JokeRandomViewController {
             .store(in: &cancellables)
     }
 }
+
+// MARK: - delegate
+
+extension JokeSearchViewController: UITableViewDelegate {}

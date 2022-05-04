@@ -64,6 +64,7 @@ enum DEBUG_UserDefault: String, CaseIterable, Hashable {
 enum DEBUG_API: String, CaseIterable, Hashable {
     case jokeGet
     case jokeRandom
+    case jokeSearch
     case jokeSlack
 
     var component: DEBUG_Item {
@@ -73,6 +74,9 @@ enum DEBUG_API: String, CaseIterable, Hashable {
 
         case .jokeRandom:
             return .api(.jokeRandom)
+
+        case .jokeSearch:
+            return .api(.jokeSearch)
 
         case .jokeSlack:
             return .api(.jokeSlack)

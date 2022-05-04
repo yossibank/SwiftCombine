@@ -67,6 +67,10 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
             let vc = AppControllers.Joke.Random()
             navVC.pushViewController(vc, animated: true)
 
+        case .jokeSearch:
+            let vc = AppControllers.Joke.Search()
+            navVC.pushViewController(vc, animated: true)
+
         case .jokeSlack:
             let vc = AppControllers.Joke.Slack()
             navVC.pushViewController(vc, animated: true)

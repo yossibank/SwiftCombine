@@ -122,6 +122,11 @@
 		78EC5F97280C272200C18DF5 /* DEBUG_FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F96280C272200C18DF5 /* DEBUG_FlowController.swift */; };
 		78EC5F99280C272F00C18DF5 /* DEBUG_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F98280C272F00C18DF5 /* DEBUG_UI.swift */; };
 		78EC5F9B280C273800C18DF5 /* DEBUG_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F9A280C273800C18DF5 /* DEBUG_ViewController.swift */; };
+		78F67DF428222CE500673BBC /* JokeSearchUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DF328222CE500673BBC /* JokeSearchUI.swift */; };
+		78F67DF628222CF100673BBC /* JokeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DF528222CF100673BBC /* JokeSearchViewController.swift */; };
+		78F67DF828222CF900673BBC /* JokeSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DF728222CF900673BBC /* JokeSearchViewModel.swift */; };
+		78F67DFA28222DA600673BBC /* JokeSearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DF928222DA600673BBC /* JokeSearchItem.swift */; };
+		78F67DFD28222E8E00673BBC /* JokeSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DFC28222E8E00673BBC /* JokeSearchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -253,6 +258,11 @@
 		78EC5F96280C272200C18DF5 /* DEBUG_FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_FlowController.swift; sourceTree = "<group>"; };
 		78EC5F98280C272F00C18DF5 /* DEBUG_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_UI.swift; sourceTree = "<group>"; };
 		78EC5F9A280C273800C18DF5 /* DEBUG_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_ViewController.swift; sourceTree = "<group>"; };
+		78F67DF328222CE500673BBC /* JokeSearchUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchUI.swift; sourceTree = "<group>"; };
+		78F67DF528222CF100673BBC /* JokeSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchViewController.swift; sourceTree = "<group>"; };
+		78F67DF728222CF900673BBC /* JokeSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchViewModel.swift; sourceTree = "<group>"; };
+		78F67DF928222DA600673BBC /* JokeSearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchItem.swift; sourceTree = "<group>"; };
+		78F67DFC28222E8E00673BBC /* JokeSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -795,6 +805,7 @@
 			children = (
 				7819F6002821166300E662EC /* Get */,
 				782477BA281E8CF8004DEEE5 /* Random */,
+				78F67DF228222CD400673BBC /* Search */,
 				782477B1281E8551004DEEE5 /* Slack */,
 			);
 			path = Joke;
@@ -827,6 +838,26 @@
 				7871EFED2813BBB5004E477D /* Root */,
 			);
 			path = DEBUG;
+			sourceTree = "<group>";
+		};
+		78F67DF228222CD400673BBC /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				78F67DFB28222E8500673BBC /* Cell */,
+				78F67DF928222DA600673BBC /* JokeSearchItem.swift */,
+				78F67DF328222CE500673BBC /* JokeSearchUI.swift */,
+				78F67DF528222CF100673BBC /* JokeSearchViewController.swift */,
+				78F67DF728222CF900673BBC /* JokeSearchViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		78F67DFB28222E8500673BBC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				78F67DFC28222E8E00673BBC /* JokeSearchCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -971,10 +1002,12 @@
 				78EC5F65280BB4E700C18DF5 /* ViewModel.swift in Sources */,
 				78EC5F85280BBC6000C18DF5 /* FutureViewController.swift in Sources */,
 				7819F5FF2821155400E662EC /* JokeGetModel.swift in Sources */,
+				78F67DFA28222DA600673BBC /* JokeSearchItem.swift in Sources */,
 				78AAF062280AD6E200BF0E3B /* APIClient.swift in Sources */,
 				78A11E18281D2CCC00790D24 /* TopViewControllerAccessible.swift in Sources */,
 				78AAF056280AB40300BF0E3B /* Request.swift in Sources */,
 				783A480A28154D8C00DE244A /* CoreDataRepository.swift in Sources */,
+				78F67DF628222CF100673BBC /* JokeSearchViewController.swift in Sources */,
 				78A11E14281CF56C00790D24 /* GetOnboardingModel.swift in Sources */,
 				78AAF065280AD70800BF0E3B /* Logger.swift in Sources */,
 				7819F60E28216EDB00E662EC /* JokeSearchRequest.swift in Sources */,
@@ -1007,6 +1040,7 @@
 				783A47FB2815417B00DE244A /* CoreData.swift in Sources */,
 				78EC5F7D280BB9EF00C18DF5 /* TabBarController.swift in Sources */,
 				783A4813281551DC00DE244A /* FruitUI.swift in Sources */,
+				78F67DF828222CF900673BBC /* JokeSearchViewModel.swift in Sources */,
 				78AAF060280AC47500BF0E3B /* DataStructure.swift in Sources */,
 				78A11E1C281D79E500790D24 /* Fruit+CoreDataProperties.swift in Sources */,
 				7859A23328159F6100E0F08C /* Model.xcdatamodeld in Sources */,
@@ -1018,6 +1052,7 @@
 				78EC5F89280BBF3700C18DF5 /* FutureUI.swift in Sources */,
 				786071DE2813AA5C0074ECB8 /* UIView+Layout.swift in Sources */,
 				783A4817281551EB00DE244A /* FruitViewModel.swift in Sources */,
+				78F67DF428222CE500673BBC /* JokeSearchUI.swift in Sources */,
 				782477B3281E8560004DEEE5 /* JokeSlackUI.swift in Sources */,
 				782477E2281F9BF1004DEEE5 /* FruitMapper.swift in Sources */,
 				78EC5F93280C25D200C18DF5 /* DEBUG_Item.swift in Sources */,
@@ -1045,6 +1080,7 @@
 				7819F6022821167600E662EC /* JokeGetUI.swift in Sources */,
 				78EC5F99280C272F00C18DF5 /* DEBUG_UI.swift in Sources */,
 				78AAF071280ADA3B00BF0E3B /* GetOnboardingFinishedRequest.swift in Sources */,
+				78F67DFD28222E8E00673BBC /* JokeSearchCell.swift in Sources */,
 				788407D42814147A00641E27 /* DeferredViewModel.swift in Sources */,
 				78EC5F97280C272200C18DF5 /* DEBUG_FlowController.swift in Sources */,
 				782477B5281E8568004DEEE5 /* JokeSlackViewModel.swift in Sources */,

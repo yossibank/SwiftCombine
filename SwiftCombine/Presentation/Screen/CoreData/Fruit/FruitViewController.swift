@@ -76,11 +76,11 @@ private extension FruitViewController {
                 case .loading:
                     Logger.debug(message: "loading")
 
-                case let .done(response):
+                case let .done(entity):
                     self?.ui.updateDataSource(
-                        items: response.map { .init(title: $0.name) }
+                        items: entity.map { .init(title: $0.name) }
                     )
-                    Logger.debug(message: "\(response.map(\.name))")
+                    Logger.debug(message: "\(entity.map(\.name))")
 
                 case let .failed(error):
                     Logger.debug(message: error.localizedDescription)

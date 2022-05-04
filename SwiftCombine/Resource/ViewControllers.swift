@@ -39,6 +39,13 @@ struct AppControllers {
             return instance
         }
 
+        static func Search() -> JokeSearchViewController {
+            let instance = JokeSearchViewController()
+            instance.inject(viewModel: .init(), ui: .init())
+            instance.title = "Joke Search"
+            return instance
+        }
+
         static func Slack() -> JokeSlackViewController {
             let instance = JokeSlackViewController()
             instance.inject(viewModel: .init(), ui: .init())
