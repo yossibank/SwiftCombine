@@ -99,6 +99,10 @@
 		78CBE26927F31DA200DF1667 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBE26827F31DA200DF1667 /* HomeViewController.swift */; };
 		78CBE26E27F31DA500DF1667 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78CBE26D27F31DA500DF1667 /* Assets.xcassets */; };
 		78CBE27127F31DA500DF1667 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78CBE26F27F31DA500DF1667 /* LaunchScreen.storyboard */; };
+		78E823722822717A00C71BF3 /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E823702822717A00C71BF3 /* Student+CoreDataClass.swift */; };
+		78E823732822717A00C71BF3 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E823712822717A00C71BF3 /* Student+CoreDataProperties.swift */; };
+		78E82376282271DF00C71BF3 /* Club+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E82374282271DF00C71BF3 /* Club+CoreDataClass.swift */; };
+		78E82377282271DF00C71BF3 /* Club+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E82375282271DF00C71BF3 /* Club+CoreDataProperties.swift */; };
 		78EC5F61280BB49E00C18DF5 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F60280BB49E00C18DF5 /* MainFlowController.swift */; };
 		78EC5F65280BB4E700C18DF5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F64280BB4E700C18DF5 /* ViewModel.swift */; };
 		78EC5F67280BB4EE00C18DF5 /* VCInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F66280BB4EE00C18DF5 /* VCInjectable.swift */; };
@@ -237,6 +241,10 @@
 		78CBE26D27F31DA500DF1667 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78CBE27027F31DA500DF1667 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78CBE27227F31DA500DF1667 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78E823702822717A00C71BF3 /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
+		78E823712822717A00C71BF3 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		78E82374282271DF00C71BF3 /* Club+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Club+CoreDataClass.swift"; sourceTree = "<group>"; };
+		78E82375282271DF00C71BF3 /* Club+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Club+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		78EC5F60280BB49E00C18DF5 /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		78EC5F64280BB4E700C18DF5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		78EC5F66280BB4EE00C18DF5 /* VCInjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCInjectable.swift; sourceTree = "<group>"; };
@@ -471,7 +479,9 @@
 		783A47FC281548F800DE244A /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				78E8236F2822714800C71BF3 /* Club */,
 				7859A22C28159AC600E0F08C /* Fruit */,
+				78E8236E2822714200C71BF3 /* Student */,
 				783A47FA2815417B00DE244A /* CoreData.swift */,
 				782477C4281ED055004DEEE5 /* CoreDataError.swift */,
 				783A480928154D8C00DE244A /* CoreDataRepository.swift */,
@@ -759,6 +769,24 @@
 			path = SwiftCombine;
 			sourceTree = "<group>";
 		};
+		78E8236E2822714200C71BF3 /* Student */ = {
+			isa = PBXGroup;
+			children = (
+				78E823702822717A00C71BF3 /* Student+CoreDataClass.swift */,
+				78E823712822717A00C71BF3 /* Student+CoreDataProperties.swift */,
+			);
+			path = Student;
+			sourceTree = "<group>";
+		};
+		78E8236F2822714800C71BF3 /* Club */ = {
+			isa = PBXGroup;
+			children = (
+				78E82374282271DF00C71BF3 /* Club+CoreDataClass.swift */,
+				78E82375282271DF00C71BF3 /* Club+CoreDataProperties.swift */,
+			);
+			path = Club;
+			sourceTree = "<group>";
+		};
 		78EC5F5E280BB42200C18DF5 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1011,12 +1039,14 @@
 				7819F5FF2821155400E662EC /* JokeGetModel.swift in Sources */,
 				78F67DFA28222DA600673BBC /* JokeSearchItem.swift in Sources */,
 				78AAF062280AD6E200BF0E3B /* APIClient.swift in Sources */,
+				78E82377282271DF00C71BF3 /* Club+CoreDataProperties.swift in Sources */,
 				78A11E18281D2CCC00790D24 /* TopViewControllerAccessible.swift in Sources */,
 				78AAF056280AB40300BF0E3B /* Request.swift in Sources */,
 				783A480A28154D8C00DE244A /* CoreDataRepository.swift in Sources */,
 				78F67DF628222CF100673BBC /* JokeSearchViewController.swift in Sources */,
 				78A11E14281CF56C00790D24 /* GetOnboardingModel.swift in Sources */,
 				78AAF065280AD70800BF0E3B /* Logger.swift in Sources */,
+				78E823722822717A00C71BF3 /* Student+CoreDataClass.swift in Sources */,
 				7819F60E28216EDB00E662EC /* JokeSearchRequest.swift in Sources */,
 				782477DC281F9A9C004DEEE5 /* JokeSlackEntity.swift in Sources */,
 				78AAF06B280AD8FE00BF0E3B /* UserDefaultKey.swift in Sources */,
@@ -1073,6 +1103,7 @@
 				782477AE281E7D56004DEEE5 /* JokeSlackResponse.swift in Sources */,
 				7819F6042821167F00E662EC /* JokeGetViewController.swift in Sources */,
 				78EC5F8D280BC7B500C18DF5 /* JokeRandomUI.swift in Sources */,
+				78E82376282271DF00C71BF3 /* Club+CoreDataClass.swift in Sources */,
 				78EC5F8F280BC8C700C18DF5 /* JokeRandomViewModel.swift in Sources */,
 				78EC5F67280BB4EE00C18DF5 /* VCInjectable.swift in Sources */,
 				78EC5F61280BB49E00C18DF5 /* MainFlowController.swift in Sources */,
@@ -1081,6 +1112,7 @@
 				78EC5F91280BC90300C18DF5 /* LoadingState.swift in Sources */,
 				788407D02814146700641E27 /* DeferredUI.swift in Sources */,
 				782477DA281F999F004DEEE5 /* JokeMapper.swift in Sources */,
+				78E823732822717A00C71BF3 /* Student+CoreDataProperties.swift in Sources */,
 				783A4815281551E500DE244A /* FruitViewController.swift in Sources */,
 				78A11E16281CF57400790D24 /* SetOnboardingModel.swift in Sources */,
 				78EC5F69280BB4F800C18DF5 /* UserInterface.swift in Sources */,
