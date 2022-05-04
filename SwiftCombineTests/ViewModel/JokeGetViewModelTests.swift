@@ -5,7 +5,10 @@ final class JokeGetViewModelTests: XCTestCase {
     private var viewModel: JokeGetViewModel!
 
     override func setUpWithError() throws {
-        viewModel = JokeGetViewModel(model: Model.Joke.Get(useTestData: true))
+        viewModel = JokeGetViewModel(
+            model: Model.Joke.Get(useTestData: true),
+            jokeId: "R7UfaahVfFd"
+        )
     }
 
     func testFetch() throws {
