@@ -1,5 +1,7 @@
 import Combine
 
+// MARK: - properties & init
+
 final class JokeGetViewModel: ViewModel {
     typealias State = LoadingState<JokeEntity, APIError>
 

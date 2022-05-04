@@ -1,6 +1,6 @@
 import UIKit
 
-// MARK: - stored properties & init
+// MARK: - properties & init
 
 final class HomeFlowController: UIViewController {
     private let navVC = NavigationController()

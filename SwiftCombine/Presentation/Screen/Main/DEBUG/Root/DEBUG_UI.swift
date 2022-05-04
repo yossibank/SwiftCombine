@@ -1,14 +1,18 @@
 import Combine
 import UIKit
 
+// MARK: - delegate
+
 protocol DEBUG_UI_Delegate: AnyObject {
     func changedServerType(_ type: UserDefaultEnumKey.ServerType)
 }
 
-final class DEBUG_UI {
-    weak var delegate: DEBUG_UI_Delegate!
+// MARK: - properties & init
 
+final class DEBUG_UI {
     private let tableView = UITableView()
+
+    weak var delegate: DEBUG_UI_Delegate!
 
     private var dataSource: UITableViewDiffableDataSource<DEBUG_Section, DEBUG_Item>!
     private var cancellables: Set<AnyCancellable> = .init()

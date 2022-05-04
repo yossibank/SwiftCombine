@@ -1,14 +1,16 @@
 import UIKit
 
+// MARK: - properties & init
+
 final class JokeSearchUI {
+    private let tableView = UITableView()
+
     var isShouldLoading: Bool {
         let offset = tableView.contentOffset.y
         let frameSizeHeight = tableView.frame.size.height
         let contentSizeHeight = tableView.contentSize.height
         return offset + frameSizeHeight > contentSizeHeight && tableView.isDragging
     }
-
-    private let tableView = UITableView()
 
     private var dataSource: UITableViewDiffableDataSource<JokeSearchSection, JokeSearchItem>!
 }
@@ -73,7 +75,6 @@ private extension JokeSearchUI {
         }
 
         cell.configure(item: item)
-
         return cell
     }
 }

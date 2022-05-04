@@ -1,7 +1,7 @@
 import Combine
 import UIKit
 
-// MARK: - stored properties
+// MARK: - properties & init
 
 final class DeferredUI {
     private lazy var futureButton: UIButton = {

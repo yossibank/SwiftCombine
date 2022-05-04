@@ -1,5 +1,7 @@
 import UIKit
 
+// MARK: - properties & init
+
 final class StudentCell: UITableViewCell {
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [numberLabel, nameLabel, ageLabel])

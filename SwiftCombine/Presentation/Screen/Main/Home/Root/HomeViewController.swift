@@ -8,7 +8,7 @@ extension HomeViewController: VCInjectable {
     typealias UI = NoUserInterface
 }
 
-// MARK: - stored properties & init
+// MARK: - properties & init
 
 final class HomeViewController: UIViewController {
     var viewModel: VM!

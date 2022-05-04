@@ -1,6 +1,6 @@
 import UIKit
 
-// MARK: - stored properties & init
+// MARK: - properties & init
 
 final class MainFlowController: UIViewController {
     private let tabController = TabBarController()
@@ -27,8 +27,8 @@ extension MainFlowController {
 // MARK: - internal methods
 
 extension MainFlowController {
-    func updateTab(_ type: UserDefaultEnumKey.ServerType) {
-        tabController.updateTab(type)
+    func configureTab(_ type: UserDefaultEnumKey.ServerType) {
+        tabController.configureTab(type)
     }
 }
 
@@ -41,6 +41,6 @@ extension MainFlowController: FlowController {
 
         flows.forEach { $0.start() }
 
-        updateTab(AppDataHolder.serverType)
+        configureTab(AppDataHolder.serverType)
     }
 }

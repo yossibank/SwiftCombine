@@ -14,7 +14,6 @@ protocol VCInjectable: UIViewController {
 }
 
 extension VCInjectable {
-
     func inject(
         viewModel: VM,
         ui: UI
@@ -25,7 +24,6 @@ extension VCInjectable {
 }
 
 extension VCInjectable where VM == NoViewModel {
-
     func inject(ui: UI) {
         viewModel = VM()
         self.ui = ui
@@ -33,7 +31,6 @@ extension VCInjectable where VM == NoViewModel {
 }
 
 extension VCInjectable where UI == NoUserInterface {
-
     func inject(viewModel: VM) {
         self.viewModel = viewModel
         ui = UI()
@@ -41,7 +38,6 @@ extension VCInjectable where UI == NoUserInterface {
 }
 
 extension VCInjectable where VM == NoViewModel, UI == NoUserInterface {
-
     func inject() {
         viewModel = VM()
         ui = UI()

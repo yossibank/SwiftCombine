@@ -8,7 +8,7 @@ extension JustViewController: VCInjectable {
     typealias UI = NoUserInterface
 }
 
-// MARK: - stored properties & init
+// MARK: - properties & init
 
 final class JustViewController: UIViewController {
     var viewModel: VM!

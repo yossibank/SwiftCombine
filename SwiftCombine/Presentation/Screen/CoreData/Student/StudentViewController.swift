@@ -8,7 +8,7 @@ extension StudentViewController: VCInjectable {
     typealias UI = StudentUI
 }
 
-// MARK: - stored properties
+// MARK: - properties & init
 
 final class StudentViewController: UIViewController {
     var viewModel: VM!
@@ -22,7 +22,7 @@ final class StudentViewController: UIViewController {
 extension StudentViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.fetchAll()
+        viewModel.fetch()
         ui.setupView(rootView: view)
         ui.setupTableView(delegate: self)
         setupEvent()
@@ -40,7 +40,7 @@ private extension StudentViewController {
 
             self.ui.clear()
             self.viewModel.add()
-            self.viewModel.fetchAll()
+            self.viewModel.fetch()
         }
         .store(in: &cancellables)
     }

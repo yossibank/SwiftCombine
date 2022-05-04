@@ -1,6 +1,8 @@
 import CoreData
 import Combine
 
+// MARK: - properties & init
+
 final class FruitViewModel: ViewModel {
     typealias State = LoadingState<[FruitEntity], CoreDataError>
 
@@ -21,7 +23,7 @@ final class FruitViewModel: ViewModel {
 // MARK: - internal methods
 
 extension FruitViewModel {
-    func fetchAll() {
+    func fetch() {
         state = .loading
 
         model.fetch().sink { [weak self] completion in

@@ -16,7 +16,7 @@ extension DEBUG_ViewController: VCInjectable {
     typealias UI = DEBUG_UI
 }
 
-// MARK: - stored properties
+// MARK: - properties & init
 
 final class DEBUG_ViewController: UIViewController {
     var viewModel: VM!
@@ -96,6 +96,6 @@ extension DEBUG_ViewController: UITableViewDelegate {
 
 extension DEBUG_ViewController: DEBUG_UI_Delegate {
     func changedServerType(_ type: UserDefaultEnumKey.ServerType) {
-        (rootViewController as? AppFlowController)?.updateTab(type)
+        (rootViewController as? AppFlowController)?.configureTab(type)
     }
 }

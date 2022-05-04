@@ -1,7 +1,7 @@
 import Combine
 import UIKit
 
-// MARK: - stored properties
+// MARK: - properties & init
 
 final class FutureUI {
     private lazy var countButton: UIButton = {
@@ -18,15 +18,15 @@ final class FutureUI {
         return label
     }()
 
-    lazy var countButtonTapPublisher: UIControl.Publisher<UIButton> = {
-        countButton.publisher(for: .touchUpInside)
-    }()
-
     var text: String? {
         didSet {
             countLabel.text = text
         }
     }
+
+    lazy var countButtonTapPublisher: UIControl.Publisher<UIButton> = {
+        countButton.publisher(for: .touchUpInside)
+    }()
 }
 
 // MARK: - protocol

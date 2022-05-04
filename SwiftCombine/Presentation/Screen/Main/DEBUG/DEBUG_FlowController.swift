@@ -1,6 +1,6 @@
 import UIKit
 
-// MARK: - stored properties
+// MARK: - properties & init
 
 final class DEBUG_FlowController: UIViewController {
     private var serverType: UserDefaultEnumKey.ServerType?
@@ -26,19 +26,9 @@ extension DEBUG_FlowController {
     }
 }
 
-// MARK: - protocol
+// MARK: - internal methods
 
-extension DEBUG_FlowController: FlowController {
-    func start() {
-        let vc = AppControllers.Debug()
-        vc.delegate = self
-
-        tabBarItem.title = "DEBUG"
-        tabBarItem.image = UIImage(systemName: "gamecontroller")
-
-        navVC.viewControllers = [vc]
-    }
-
+extension DEBUG_FlowController {
     func popOver(sourceView: UIView, sourceRect: CGRect) {
         start()
         modalPresentationStyle = .popover
@@ -51,6 +41,20 @@ extension DEBUG_FlowController: FlowController {
         popoverPresentationController?.permittedArrowDirections = .down
         popoverPresentationController?.delegate = self
         serverType = AppDataHolder.serverType
+    }
+}
+
+// MARK: - protocol
+
+extension DEBUG_FlowController: FlowController {
+    func start() {
+        let vc = AppControllers.Debug()
+        vc.delegate = self
+
+        tabBarItem.title = "DEBUG"
+        tabBarItem.image = UIImage(systemName: "gamecontroller")
+
+        navVC.viewControllers = [vc]
     }
 }
 

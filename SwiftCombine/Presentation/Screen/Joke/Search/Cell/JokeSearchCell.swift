@@ -1,5 +1,7 @@
 import UIKit
 
+// MARK: - properties & init
+
 final class JokeSearchCell: UITableViewCell {
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [idLabel, jokeLabel])

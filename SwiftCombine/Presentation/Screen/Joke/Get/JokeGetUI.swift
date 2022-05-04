@@ -1,5 +1,7 @@
 import UIKit
 
+// MARK: - properties & init
+
 final class JokeGetUI {
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [textView])

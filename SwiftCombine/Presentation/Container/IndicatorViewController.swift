@@ -1,5 +1,7 @@
 import UIKit
 
+// MARK: - properties & init
+
 class IndicatorViewController: UIViewController {
     private let indicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()

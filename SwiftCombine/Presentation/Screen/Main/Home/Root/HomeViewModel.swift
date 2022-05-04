@@ -1,5 +1,7 @@
 import Combine
 
+// MARK: - properties & init
+
 final class HomeViewModel: ViewModel {
     @Published var isOn: Bool = false
 

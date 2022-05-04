@@ -1,5 +1,7 @@
 import Combine
 
+// MARK: - properties & init
+
 final class StudentViewModel: ViewModel {
     typealias State = LoadingState<[StudentEntity], CoreDataError>
 
@@ -29,7 +31,7 @@ final class StudentViewModel: ViewModel {
 // MARK: - internal methods
 
 extension StudentViewModel {
-    func fetchAll() {
+    func fetch() {
         state = .loading
 
         model.fetch().sink { [weak self] completion in

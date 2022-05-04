@@ -1,20 +1,26 @@
 import Combine
 import UIKit
 
-final class FruitUI {
-    var isValidAddButton: Bool = false {
-        didSet {
-            addButton.isEnabled = isValidAddButton
-            addButton.alpha = isValidAddButton ? 1.0 : 0.5
-        }
-    }
+// MARK: - properties & init
 
-    var isValidDeleteButton: Bool = false {
-        didSet {
-            deleteButton.isEnabled = isValidDeleteButton
-            deleteButton.alpha = isValidDeleteButton ? 1.0 : 0.5
-        }
-    }
+final class FruitUI {
+    private lazy var stackView: UIStackView = {
+        $0.axis = .horizontal
+        $0.spacing = 32
+        return $0
+    }(UIStackView(arrangedSubviews: [addStackView, deleteStackView]))
+
+    private lazy var addStackView: UIStackView = {
+        $0.axis = .vertical
+        $0.spacing = 32
+        return $0
+    }(UIStackView(arrangedSubviews: [addTextField, addButton]))
+
+    private lazy var deleteStackView: UIStackView = {
+        $0.axis = .vertical
+        $0.spacing = 32
+        return $0
+    }(UIStackView(arrangedSubviews: [deleteTextField, deleteButton]))
 
     private let addTextField: UITextField = {
         $0.placeholder = "保存する名前入力"
@@ -48,26 +54,19 @@ final class FruitUI {
 
     private let tableView = UITableView()
 
-    private lazy var stackView: UIStackView = {
-        $0.axis = .horizontal
-        $0.spacing = 32
-        return $0
-    }(UIStackView(arrangedSubviews: [addStackView, deleteStackView]))
+    var isValidAddButton: Bool = false {
+        didSet {
+            addButton.isEnabled = isValidAddButton
+            addButton.alpha = isValidAddButton ? 1.0 : 0.5
+        }
+    }
 
-    private lazy var addStackView: UIStackView = {
-        $0.axis = .vertical
-        $0.spacing = 32
-        return $0
-    }(UIStackView(arrangedSubviews: [addTextField, addButton]))
-
-    private lazy var deleteStackView: UIStackView = {
-        $0.axis = .vertical
-        $0.spacing = 32
-        return $0
-    }(UIStackView(arrangedSubviews: [deleteTextField, deleteButton]))
-
-    private var dataSource: UITableViewDiffableDataSource<FruitSection, FruitItem>!
-    private var cancellables: Set<AnyCancellable> = .init()
+    var isValidDeleteButton: Bool = false {
+        didSet {
+            deleteButton.isEnabled = isValidDeleteButton
+            deleteButton.alpha = isValidDeleteButton ? 1.0 : 0.5
+        }
+    }
 
     lazy var addTextFieldPublisher: AnyPublisher<String, Never> = {
         addTextField.textDidChangePublisher
@@ -84,6 +83,9 @@ final class FruitUI {
     lazy var deleteButtonTapPublisher: UIControl.Publisher<UIButton> = {
         deleteButton.publisher(for: .touchUpInside)
     }()
+
+    private var dataSource: UITableViewDiffableDataSource<FruitSection, FruitItem>!
+    private var cancellables: Set<AnyCancellable> = .init()    
 }
 
 // MARK: - internal methods

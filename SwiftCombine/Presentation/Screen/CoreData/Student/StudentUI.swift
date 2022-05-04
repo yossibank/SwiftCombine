@@ -1,13 +1,20 @@
 import Combine
 import UIKit
 
+// MARK: - properties & init
+
 final class StudentUI {
-    var isValidButton: Bool = false {
-        didSet {
-            saveButton.isEnabled = isValidButton
-            saveButton.alpha = isValidButton ? 1.0 : 0.5
-        }
-    }
+    private lazy var stackView: UIStackView = {
+        $0.axis = .vertical
+        $0.spacing = 16
+        return $0
+    }(UIStackView(arrangedSubviews: [infoStackView, saveButton]))
+
+    private lazy var infoStackView: UIStackView = {
+        $0.axis = .horizontal
+        $0.spacing = 8
+        return $0
+    }(UIStackView(arrangedSubviews: [nameTextField, ageTextField, numberTextField]))
 
     private let nameTextField: UITextField = {
         $0.placeholder = "生徒名入力"
@@ -36,17 +43,14 @@ final class StudentUI {
         return $0
     }(UIButton())
 
-    private lazy var stackView: UIStackView = {
-        $0.axis = .vertical
-        $0.spacing = 16
-        return $0
-    }(UIStackView(arrangedSubviews: [infoStackView, saveButton]))
+    private let tableView = UITableView()
 
-    private lazy var infoStackView: UIStackView = {
-        $0.axis = .horizontal
-        $0.spacing = 8
-        return $0
-    }(UIStackView(arrangedSubviews: [nameTextField, ageTextField, numberTextField]))
+    var isValidButton: Bool = false {
+        didSet {
+            saveButton.isEnabled = isValidButton
+            saveButton.alpha = isValidButton ? 1.0 : 0.5
+        }
+    }
 
     lazy var nameTextFieldPublisher: AnyPublisher<String, Never> = {
         nameTextField.textDidChangePublisher
@@ -63,8 +67,6 @@ final class StudentUI {
     lazy var saveButtonTapPublisher: UIControl.Publisher<UIButton> = {
         saveButton.publisher(for: .touchUpInside)
     }()
-
-    private let tableView = UITableView()
 
     private var dataSource: UITableViewDiffableDataSource<StudentSection, StudentItem>!
 }
@@ -137,7 +139,6 @@ private extension StudentUI {
         }
 
         cell.configure(item: item)
-
         return cell
     }
 }

@@ -8,7 +8,7 @@ extension JokeGetViewController: VCInjectable {
     typealias UI = JokeGetUI
 }
 
-// MARK: - stored properties & init
+// MARK: - properties & init
 
 final class JokeGetViewController: UIViewController {
     var viewModel: VM!
@@ -22,8 +22,8 @@ final class JokeGetViewController: UIViewController {
 extension JokeGetViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        ui.setupView(rootView: view)
         viewModel.fetch()
+        ui.setupView(rootView: view)
         bindToView()
     }
 }

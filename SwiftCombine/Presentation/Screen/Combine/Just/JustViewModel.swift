@@ -15,9 +15,9 @@ import Combine
  */
 
 final class JustViewModel: ViewModel {
-    private let sample = "Hello World"
-
     private var cancellables: Set<AnyCancellable> = .init()
+
+    private let sample = "Hello World"
 
     func executeNoJust() {
         sample.publisher

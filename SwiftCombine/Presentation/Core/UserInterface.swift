@@ -9,7 +9,6 @@ protocol UserInterface {
 }
 
 extension UserInterface {
-
     func setupNavigationBar(
         navigationBar: UINavigationBar? = nil,
         navigationItem: UINavigationItem? = nil
@@ -22,7 +21,6 @@ extension UserInterface {
 }
 
 final class NoUserInterface: UserInterface {
-
     func setupNavigationBar(
         navigationBar _: UINavigationBar?,
         navigationItem _: UINavigationItem?

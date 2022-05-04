@@ -8,7 +8,7 @@ extension DeferredViewController: VCInjectable {
     typealias UI = DeferredUI
 }
 
-// MARK: - stored properties & init
+// MARK: - properties & init
 
 final class DeferredViewController: UIViewController {
     // インスタンスが生成された時点でDeferredViewModel内のfuturePublisherのprint文が実行されます("Future実行")

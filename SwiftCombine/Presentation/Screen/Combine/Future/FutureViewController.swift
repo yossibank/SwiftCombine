@@ -8,7 +8,7 @@ extension FutureViewController: VCInjectable {
     typealias UI = FutureUI
 }
 
-// MARK: - stored properties & init
+// MARK: - properties & init
 
 final class FutureViewController: UIViewController {
     var viewModel: VM!

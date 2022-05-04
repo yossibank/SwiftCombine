@@ -8,7 +8,7 @@ extension FruitViewController: VCInjectable {
     typealias UI = FruitUI
 }
 
-// MARK: - stored properties
+// MARK: - properties & init
 
 final class FruitViewController: UIViewController {
     var viewModel: VM!
@@ -22,7 +22,7 @@ final class FruitViewController: UIViewController {
 extension FruitViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.fetchAll()
+        viewModel.fetch()
         ui.bindUI()
         ui.setupView(rootView: view)
         ui.setupTableView(delegate: self)
@@ -41,7 +41,7 @@ private extension FruitViewController {
 
             self.ui.clear()
             self.viewModel.add()
-            self.viewModel.fetchAll()
+            self.viewModel.fetch()
         }
         .store(in: &cancellables)
 
@@ -50,7 +50,7 @@ private extension FruitViewController {
 
             self.ui.clear()
             self.viewModel.delete()
-            self.viewModel.fetchAll()
+            self.viewModel.fetch()
         }
         .store(in: &cancellables)
     }

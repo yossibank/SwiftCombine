@@ -12,7 +12,7 @@ extension JokeSearchViewController: VCInjectable {
     typealias UI = JokeSearchUI
 }
 
-// MARK: - stored properties
+// MARK: - properties & init
 
 final class JokeSearchViewController: IndicatorViewController {
     var viewModel: VM!

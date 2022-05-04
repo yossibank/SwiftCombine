@@ -91,7 +91,6 @@ struct Logger {
 }
 
 extension OSLogType: CustomStringConvertible {
-
     public var description: String {
         switch self {
         case .info:

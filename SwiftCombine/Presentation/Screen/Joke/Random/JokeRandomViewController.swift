@@ -8,7 +8,7 @@ extension JokeRandomViewController: VCInjectable {
     typealias UI = JokeRandomUI
 }
 
-// MARK: - stored properties & init
+// MARK: - properties & init
 
 final class JokeRandomViewController: UIViewController {
     var viewModel: VM!
@@ -22,8 +22,8 @@ final class JokeRandomViewController: UIViewController {
 extension JokeRandomViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        ui.setupView(rootView: view)
         viewModel.fetch()
+        ui.setupView(rootView: view)
         bindToView()
     }
 }

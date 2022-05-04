@@ -13,9 +13,9 @@ import Foundation
 final class FutureViewModel: ViewModel {
     @Published var count = 0
 
-    private let endCount = 20
-
     private var cancellables: Set<AnyCancellable> = .init()
+
+    private let endCount = 20
 
     /* コールバック処理にCombineを使わない場合 */
     func startCounting(completionHandler: @escaping () -> Void) {

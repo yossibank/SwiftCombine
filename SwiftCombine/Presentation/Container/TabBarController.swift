@@ -26,18 +26,12 @@ final class TabBarController: UITabBarController {
         )
         tabBar.addGestureRecognizer(longPressGesture)
     }
+}
 
-    @objc private func longPressTabbar(_ sender: UILongPressGestureRecognizer) {
-        #if DEBUG
-        if sender.state == .ended {
-            let flow = DEBUG_FlowController()
-            flow.popOver(sourceView: view, sourceRect: tabBar.frame)
-            present(flow, animated: true)
-        }
-        #endif
-    }
+// MARK: - internal methods
 
-    func updateTab(_ type: UserDefaultEnumKey.ServerType) {
+extension TabBarController {
+    func configureTab(_ type: UserDefaultEnumKey.ServerType) {
         let debugTab = viewControllers?[TabType.debug.rawValue]
         let appearance = UITabBarAppearance()
         appearance.configureWithDefaultBackground()
@@ -61,5 +55,19 @@ final class TabBarController: UITabBarController {
         if #available(iOS 15.0, *) {
             tabBar.scrollEdgeAppearance = appearance
         }
+    }
+}
+
+// MARK: - private methods
+
+private extension TabBarController {
+    @objc func longPressTabbar(_ sender: UILongPressGestureRecognizer) {
+        #if DEBUG
+        if sender.state == .ended {
+            let flow = DEBUG_FlowController()
+            flow.popOver(sourceView: view, sourceRect: tabBar.frame)
+            present(flow, animated: true)
+        }
+        #endif
     }
 }

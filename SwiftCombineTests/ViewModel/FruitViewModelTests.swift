@@ -14,7 +14,7 @@ final class FruitViewModelTests: XCTestCase {
 
         let publisher = viewModel.$state.collect(1).first()
 
-        viewModel.fetchAll()
+        viewModel.fetch()
 
         let result = try awaitPublisher(publisher)
         let expectaion = [FruitEntity(name: "Apple")]
@@ -35,7 +35,7 @@ final class FruitViewModelTests: XCTestCase {
 
         let publisher = viewModel.$state.collect(1).first()
 
-        viewModel.fetchAll()
+        viewModel.fetch()
 
         let result = try awaitPublisher(publisher)
         let expectaion = [FruitEntity(name: "Lemon")]

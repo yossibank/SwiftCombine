@@ -8,7 +8,7 @@ extension SubjectViewController: VCInjectable {
     typealias UI = NoUserInterface
 }
 
-// MARK: - stored properties & init
+// MARK: - properties & init
 
 final class SubjectViewController: UIViewController {
     var viewModel: VM!
