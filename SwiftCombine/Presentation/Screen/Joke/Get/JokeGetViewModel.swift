@@ -6,11 +6,16 @@ final class JokeGetViewModel: ViewModel {
     @Published private(set) var state: State = .standby
 
     private let model: JokeModel
+    private let jokeId: String
 
     private var cancellables: Set<AnyCancellable> = .init()
 
-    init(model: JokeModel = Model.Joke.Get()) {
+    init(
+        model: JokeModel = Model.Joke.Get(),
+        jokeId: String
+    ) {
         self.model = model
+        self.jokeId = jokeId
     }
 }
 
@@ -20,7 +25,7 @@ extension JokeGetViewModel {
     func fetch() {
         state = .loading
 
-        model.fetch(jokeId: AppDataHolder.jokeId).sink { [weak self] completion in
+        model.fetch(jokeId: jokeId).sink { [weak self] completion in
             switch completion {
             case let .failure(error):
                 self?.state = .failed(error)

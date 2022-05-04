@@ -3,6 +3,7 @@ import Combine
 final class JokeSearchViewModel: ViewModel {
     typealias State = LoadingState<JokeSearchEntity, APIError>
 
+    @Published var items: [JokeSearchItem] = []
     @Published private(set) var state: State = .standby
 
     private let model: JokeSearchModel
@@ -30,6 +31,7 @@ extension JokeSearchViewModel {
                 Logger.debug(message: "finished")
             }
         } receiveValue: { [weak self] state in
+            self?.items = state.results.map { .init(id: $0.id, joke: $0.joke) }
             self?.state = .done(state)
         }
         .store(in: &cancellables)

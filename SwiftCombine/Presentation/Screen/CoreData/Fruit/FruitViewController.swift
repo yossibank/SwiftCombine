@@ -66,9 +66,16 @@ private extension FruitViewController {
     }
 
     func bindToView() {
+        viewModel.$items
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] items in
+                self?.ui.updateDataSource(items: items)
+            }
+            .store(in: &cancellables)
+
         viewModel.$state
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] state in
+            .sink { state in
                 switch state {
                 case .standby:
                     Logger.debug(message: "standby")
@@ -77,9 +84,6 @@ private extension FruitViewController {
                     Logger.debug(message: "loading")
 
                 case let .done(entity):
-                    self?.ui.updateDataSource(
-                        items: entity.map { .init(title: $0.name) }
-                    )
                     Logger.debug(message: "\(entity.map(\.name))")
 
                 case let .failed(error):

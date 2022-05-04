@@ -25,9 +25,9 @@ struct AppControllers {
     }
 
     struct Joke {
-        static func Get() -> JokeGetViewController {
+        static func Get(jokeId: String) -> JokeGetViewController {
             let instance = JokeGetViewController()
-            instance.inject(viewModel: .init(), ui: .init())
+            instance.inject(viewModel: .init(jokeId: jokeId), ui: .init())
             instance.title = "Joke Get"
             return instance
         }

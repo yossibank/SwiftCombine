@@ -4,6 +4,7 @@ import Combine
 final class FruitViewModel: ViewModel {
     typealias State = LoadingState<[FruitEntity], CoreDataError>
 
+    @Published var items: [FruitItem] = []
     @Published var addName: String = ""
     @Published var deleteName: String = ""
     @Published private(set) var state: State = .standby
@@ -33,6 +34,7 @@ extension FruitViewModel {
                 Logger.debug(message: "finished")
             }
         } receiveValue: { [weak self] state in
+            self?.items = state.map { .init(title: $0.name) }
             self?.state = .done(state)
         }
         .store(in: &cancellables)

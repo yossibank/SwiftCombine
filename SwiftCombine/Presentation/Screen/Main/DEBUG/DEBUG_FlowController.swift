@@ -60,7 +60,7 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
     func didControllerSelected(item: DEBUG_API) {
         switch item {
         case .jokeGet:
-            let vc = AppControllers.Joke.Get()
+            let vc = AppControllers.Joke.Get(jokeId: AppDataHolder.jokeId)
             navVC.pushViewController(vc, animated: true)
 
         case .jokeRandom:
@@ -69,6 +69,7 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
 
         case .jokeSearch:
             let vc = AppControllers.Joke.Search()
+            vc.delegate = self
             navVC.pushViewController(vc, animated: true)
 
         case .jokeSlack:
@@ -103,6 +104,13 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
             let vc = AppControllers.Combine.Deferred()
             navVC.pushViewController(vc, animated: true)
         }
+    }
+}
+
+extension DEBUG_FlowController: JokeSearchViewControllerDelegate {
+    func didJokeSelected(jokeId: String) {
+        let vc = AppControllers.Joke.Get(jokeId: jokeId)
+        navVC.pushViewController(vc, animated: true)
     }
 }
 

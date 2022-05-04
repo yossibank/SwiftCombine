@@ -1,6 +1,10 @@
 import Combine
 import UIKit
 
+protocol JokeSearchViewControllerDelegate: AnyObject {
+    func didJokeSelected(jokeId: String)
+}
+
 // MARK: - inject
 
 extension JokeSearchViewController: VCInjectable {
@@ -13,6 +17,8 @@ extension JokeSearchViewController: VCInjectable {
 final class JokeSearchViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
+
+    weak var delegate: JokeSearchViewControllerDelegate!
 
     private var cancellables: Set<AnyCancellable> = .init()
 }
@@ -33,9 +39,16 @@ extension JokeSearchViewController {
 
 private extension JokeSearchViewController {
     func bindToView() {
+        viewModel.$items
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] items in
+                self?.ui.updateDataSource(items: items)
+            }
+            .store(in: &cancellables)
+
         viewModel.$state
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] state in
+            .sink { state in
                 switch state {
                 case .standby:
                     Logger.debug(message: "standby")
@@ -44,10 +57,7 @@ private extension JokeSearchViewController {
                     Logger.debug(message: "loading")
 
                 case let .done(entity):
-                    self?.ui.updateDataSource(
-                        items: entity.results.map { .init(id: $0.id, joke: $0.joke) }
-                    )
-                    Logger.debug(message: "\(entity.results.map(\.id))")
+                    Logger.debug(message: "\(entity)")
 
                 case let .failed(error):
                     Logger.debug(message: error.localizedDescription)
@@ -59,4 +69,14 @@ private extension JokeSearchViewController {
 
 // MARK: - delegate
 
-extension JokeSearchViewController: UITableViewDelegate {}
+extension JokeSearchViewController: UITableViewDelegate {
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        tableView.deselectRow(at: indexPath, animated: false)
+
+        let jokeId = viewModel.items[indexPath.row].id
+        delegate.didJokeSelected(jokeId: jokeId)
+    }
+}
