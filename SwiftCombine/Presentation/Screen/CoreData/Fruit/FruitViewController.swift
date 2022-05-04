@@ -57,10 +57,12 @@ private extension FruitViewController {
 
     func bindToViewModel() {
         ui.addTextFieldPublisher
+            .removeDuplicates()
             .assign(to: \.addName, on: viewModel)
             .store(in: &cancellables)
 
         ui.deleteTextFieldPublisher
+            .removeDuplicates()
             .assign(to: \.deleteName, on: viewModel)
             .store(in: &cancellables)
     }
