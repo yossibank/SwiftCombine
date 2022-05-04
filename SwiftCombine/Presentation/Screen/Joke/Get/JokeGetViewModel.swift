@@ -5,10 +5,10 @@ final class JokeGetViewModel: ViewModel {
 
     @Published private(set) var state: State = .standby
 
+    private var cancellables: Set<AnyCancellable> = .init()
+
     private let model: JokeModel
     private let jokeId: String
-
-    private var cancellables: Set<AnyCancellable> = .init()
 
     init(
         model: JokeModel = Model.Joke.Get(),

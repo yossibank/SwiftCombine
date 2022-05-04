@@ -5,9 +5,9 @@ final class JokeRandomViewModel: ViewModel {
 
     @Published private(set) var state: State = .standby
 
-    private let model: JokeRandomModel
-
     private var cancellables: Set<AnyCancellable> = .init()
+
+    private let model: JokeRandomModel
 
     init(model: JokeRandomModel = Model.Joke.Random()) {
         self.model = model

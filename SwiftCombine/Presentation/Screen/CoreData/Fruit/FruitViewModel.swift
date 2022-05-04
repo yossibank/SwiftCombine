@@ -9,9 +9,9 @@ final class FruitViewModel: ViewModel {
     @Published var deleteName: String = ""
     @Published private(set) var state: State = .standby
 
-    private let model: FruitModel
-
     private var cancellables: Set<AnyCancellable> = .init()
+
+    private let model: FruitModel
 
     init(model: FruitModel = Model.CoreData.Fruit()) {
         self.model = model

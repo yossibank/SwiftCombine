@@ -6,9 +6,12 @@ final class JokeSearchViewModel: ViewModel {
     @Published var items: [JokeSearchItem] = []
     @Published private(set) var state: State = .standby
 
-    private let model: JokeSearchModel
-
+    private var nextPage: Int = 1
+    private var previousPage: Int = 1
+    private var totalPages: Int = 1
     private var cancellables: Set<AnyCancellable> = .init()
+
+    private let model: JokeSearchModel
 
     init(model: JokeSearchModel = Model.Joke.Search()) {
         self.model = model
@@ -18,10 +21,14 @@ final class JokeSearchViewModel: ViewModel {
 // MARK: - internal methods
 
 extension JokeSearchViewModel {
-    func fetch() {
+    func fetch(isAdditional: Bool) {
+        guard totalPages - previousPage != 1 else {
+            return
+        }
+
         state = .loading
 
-        model.fetch(parameters: .init()).sink { [weak self] completion in
+        model.fetch(parameters: .init(page: nextPage)).sink { [weak self] completion in
             switch completion {
             case let .failure(error):
                 self?.state = .failed(error)
@@ -31,7 +38,18 @@ extension JokeSearchViewModel {
                 Logger.debug(message: "finished")
             }
         } receiveValue: { [weak self] state in
-            self?.items = state.results.map { .init(id: $0.id, joke: $0.joke) }
+            self?.nextPage = state.nextPage
+            self?.previousPage = state.previousPage
+            self?.totalPages = state.totalPages
+
+            let items = state.results.map { JokeSearchItem(id: $0.id, joke: $0.joke) }
+
+            if isAdditional {
+                self?.items.append(contentsOf: items)
+            } else {
+                self?.items = items
+            }
+
             self?.state = .done(state)
         }
         .store(in: &cancellables)

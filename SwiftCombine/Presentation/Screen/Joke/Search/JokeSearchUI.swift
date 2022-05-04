@@ -1,6 +1,10 @@
 import UIKit
 
 final class JokeSearchUI {
+    var isShouldLoading: Bool {
+        tableView.contentOffset.y + tableView.frame.size.height > tableView.contentSize.height && tableView.isDragging
+    }
+
     private let tableView = UITableView()
 
     private var dataSource: UITableViewDiffableDataSource<JokeSearchSection, JokeSearchItem>!

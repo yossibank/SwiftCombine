@@ -14,12 +14,13 @@ extension JokeSearchViewController: VCInjectable {
 
 // MARK: - stored properties
 
-final class JokeSearchViewController: UIViewController {
+final class JokeSearchViewController: IndicatorViewController {
     var viewModel: VM!
     var ui: UI!
 
     weak var delegate: JokeSearchViewControllerDelegate!
 
+    private var isAddLoading: Bool = false
     private var cancellables: Set<AnyCancellable> = .init()
 }
 
@@ -28,7 +29,7 @@ final class JokeSearchViewController: UIViewController {
 extension JokeSearchViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.fetch()
+        viewModel.fetch(isAdditional: false)
         ui.setupView(rootView: view)
         ui.setupTableView(delegate: self)
         bindToView()
@@ -48,18 +49,23 @@ private extension JokeSearchViewController {
 
         viewModel.$state
             .receive(on: DispatchQueue.main)
-            .sink { state in
+            .sink { [weak self] state in
                 switch state {
                 case .standby:
                     Logger.debug(message: "standby")
 
                 case .loading:
+                    self?.startIndicator()
                     Logger.debug(message: "loading")
 
                 case let .done(entity):
+                    self?.stopIndicator()
+                    self?.isAddLoading = false
                     Logger.debug(message: "\(entity)")
 
                 case let .failed(error):
+                    self?.stopIndicator()
+                    self?.isAddLoading = false
                     Logger.debug(message: error.localizedDescription)
                 }
             }
@@ -78,5 +84,12 @@ extension JokeSearchViewController: UITableViewDelegate {
 
         let jokeId = viewModel.items[indexPath.row].id
         delegate.didJokeSelected(jokeId: jokeId)
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if ui.isShouldLoading && !isAddLoading {
+            isAddLoading = true
+            viewModel.fetch(isAdditional: true)
+        }
     }
 }

@@ -127,6 +127,7 @@
 		78F67DF828222CF900673BBC /* JokeSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DF728222CF900673BBC /* JokeSearchViewModel.swift */; };
 		78F67DFA28222DA600673BBC /* JokeSearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DF928222DA600673BBC /* JokeSearchItem.swift */; };
 		78F67DFD28222E8E00673BBC /* JokeSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DFC28222E8E00673BBC /* JokeSearchCell.swift */; };
+		78F67DFF2822597E00673BBC /* IndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DFE2822597E00673BBC /* IndicatorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -263,6 +264,7 @@
 		78F67DF728222CF900673BBC /* JokeSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchViewModel.swift; sourceTree = "<group>"; };
 		78F67DF928222DA600673BBC /* JokeSearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchItem.swift; sourceTree = "<group>"; };
 		78F67DFC28222E8E00673BBC /* JokeSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchCell.swift; sourceTree = "<group>"; };
+		78F67DFE2822597E00673BBC /* IndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -814,6 +816,7 @@
 		78EC5F79280BB9D800C18DF5 /* Container */ = {
 			isa = PBXGroup;
 			children = (
+				78F67DFE2822597E00673BBC /* IndicatorViewController.swift */,
 				78EC5F7A280BB9E700C18DF5 /* NavigationController.swift */,
 				78EC5F7C280BB9EF00C18DF5 /* TabBarController.swift */,
 			);
@@ -1053,6 +1056,7 @@
 				786071DE2813AA5C0074ECB8 /* UIView+Layout.swift in Sources */,
 				783A4817281551EB00DE244A /* FruitViewModel.swift in Sources */,
 				78F67DF428222CE500673BBC /* JokeSearchUI.swift in Sources */,
+				78F67DFF2822597E00673BBC /* IndicatorViewController.swift in Sources */,
 				782477B3281E8560004DEEE5 /* JokeSlackUI.swift in Sources */,
 				782477E2281F9BF1004DEEE5 /* FruitMapper.swift in Sources */,
 				78EC5F93280C25D200C18DF5 /* DEBUG_Item.swift in Sources */,
