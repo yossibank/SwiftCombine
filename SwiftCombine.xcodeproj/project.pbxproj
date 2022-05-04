@@ -106,6 +106,11 @@
 		78E82379282273C600C71BF3 /* StudentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E82378282273C600C71BF3 /* StudentEntity.swift */; };
 		78E8237B2822741400C71BF3 /* StudentMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8237A2822741400C71BF3 /* StudentMapper.swift */; };
 		78E82382282274BC00C71BF3 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E82381282274BC00C71BF3 /* StudentModel.swift */; };
+		78E8238528228CA300C71BF3 /* StudentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8238428228CA300C71BF3 /* StudentItem.swift */; };
+		78E8238728228CAA00C71BF3 /* StudentUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8238628228CAA00C71BF3 /* StudentUI.swift */; };
+		78E8238928228CB100C71BF3 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8238828228CB100C71BF3 /* StudentViewController.swift */; };
+		78E8238B28228CB700C71BF3 /* StudentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8238A28228CB700C71BF3 /* StudentViewModel.swift */; };
+		78E823912822A2E300C71BF3 /* StudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E823902822A2E300C71BF3 /* StudentCell.swift */; };
 		78EC5F61280BB49E00C18DF5 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F60280BB49E00C18DF5 /* MainFlowController.swift */; };
 		78EC5F65280BB4E700C18DF5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F64280BB4E700C18DF5 /* ViewModel.swift */; };
 		78EC5F67280BB4EE00C18DF5 /* VCInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F66280BB4EE00C18DF5 /* VCInjectable.swift */; };
@@ -251,6 +256,11 @@
 		78E82378282273C600C71BF3 /* StudentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentEntity.swift; sourceTree = "<group>"; };
 		78E8237A2822741400C71BF3 /* StudentMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentMapper.swift; sourceTree = "<group>"; };
 		78E82381282274BC00C71BF3 /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
+		78E8238428228CA300C71BF3 /* StudentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentItem.swift; sourceTree = "<group>"; };
+		78E8238628228CAA00C71BF3 /* StudentUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentUI.swift; sourceTree = "<group>"; };
+		78E8238828228CB100C71BF3 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
+		78E8238A28228CB700C71BF3 /* StudentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewModel.swift; sourceTree = "<group>"; };
+		78E823902822A2E300C71BF3 /* StudentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCell.swift; sourceTree = "<group>"; };
 		78EC5F60280BB49E00C18DF5 /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		78EC5F64280BB4E700C18DF5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		78EC5F66280BB4EE00C18DF5 /* VCInjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCInjectable.swift; sourceTree = "<group>"; };
@@ -507,6 +517,7 @@
 			isa = PBXGroup;
 			children = (
 				782477C6281F86C0004DEEE5 /* Fruit */,
+				78E8238328228C9200C71BF3 /* Student */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -828,6 +839,26 @@
 			path = Joke;
 			sourceTree = "<group>";
 		};
+		78E8238328228C9200C71BF3 /* Student */ = {
+			isa = PBXGroup;
+			children = (
+				78E8238F2822A2DB00C71BF3 /* Cell */,
+				78E8238428228CA300C71BF3 /* StudentItem.swift */,
+				78E8238628228CAA00C71BF3 /* StudentUI.swift */,
+				78E8238828228CB100C71BF3 /* StudentViewController.swift */,
+				78E8238A28228CB700C71BF3 /* StudentViewModel.swift */,
+			);
+			path = Student;
+			sourceTree = "<group>";
+		};
+		78E8238F2822A2DB00C71BF3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				78E823902822A2E300C71BF3 /* StudentCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		78EC5F5E280BB42200C18DF5 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1073,6 +1104,7 @@
 				782477DE281F9AF0004DEEE5 /* JokeSlackMapper.swift in Sources */,
 				782477D7281F9948004DEEE5 /* JokeEntity.swift in Sources */,
 				78EC5F8B280BC2FE00C18DF5 /* UIControl+Publisher.swift in Sources */,
+				78E8238928228CB100C71BF3 /* StudentViewController.swift in Sources */,
 				7819F5FD282111B400E662EC /* JokeRequest.swift in Sources */,
 				782477E0281F9BD8004DEEE5 /* FruitEntity.swift in Sources */,
 				78EC5F65280BB4E700C18DF5 /* ViewModel.swift in Sources */,
@@ -1129,8 +1161,10 @@
 				78AAF07C280B04F200BF0E3B /* Repository.swift in Sources */,
 				78EC5F78280BB7C400C18DF5 /* AppFlowController.swift in Sources */,
 				78EC5F6B280BB50000C18DF5 /* FlowController.swift in Sources */,
+				78E823912822A2E300C71BF3 /* StudentCell.swift in Sources */,
 				78EC5F89280BBF3700C18DF5 /* FutureUI.swift in Sources */,
 				786071DE2813AA5C0074ECB8 /* UIView+Layout.swift in Sources */,
+				78E8238528228CA300C71BF3 /* StudentItem.swift in Sources */,
 				783A4817281551EB00DE244A /* FruitViewModel.swift in Sources */,
 				78F67DF428222CE500673BBC /* JokeSearchUI.swift in Sources */,
 				78F67DFF2822597E00673BBC /* IndicatorViewController.swift in Sources */,
@@ -1166,6 +1200,8 @@
 				78AAF071280ADA3B00BF0E3B /* GetOnboardingFinishedRequest.swift in Sources */,
 				78F67DFD28222E8E00673BBC /* JokeSearchCell.swift in Sources */,
 				788407D42814147A00641E27 /* DeferredViewModel.swift in Sources */,
+				78E8238728228CAA00C71BF3 /* StudentUI.swift in Sources */,
+				78E8238B28228CB700C71BF3 /* StudentViewModel.swift in Sources */,
 				78EC5F97280C272200C18DF5 /* DEBUG_FlowController.swift in Sources */,
 				782477B5281E8568004DEEE5 /* JokeSlackViewModel.swift in Sources */,
 				788407D22814147100641E27 /* DeferredViewController.swift in Sources */,

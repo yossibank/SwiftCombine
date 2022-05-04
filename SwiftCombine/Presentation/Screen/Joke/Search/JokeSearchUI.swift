@@ -2,7 +2,10 @@ import UIKit
 
 final class JokeSearchUI {
     var isShouldLoading: Bool {
-        tableView.contentOffset.y + tableView.frame.size.height > tableView.contentSize.height && tableView.isDragging
+        let offset = tableView.contentOffset.y
+        let frameSizeHeight = tableView.frame.size.height
+        let contentSizeHeight = tableView.contentSize.height
+        return offset + frameSizeHeight > contentSizeHeight && tableView.isDragging
     }
 
     private let tableView = UITableView()

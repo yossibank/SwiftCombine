@@ -22,6 +22,13 @@ struct AppControllers {
             instance.title = "Fruit"
             return instance
         }
+
+        static func Student() -> StudentViewController {
+            let instance = StudentViewController()
+            instance.inject(viewModel: .init(), ui: .init())
+            instance.title = "Student"
+            return instance
+        }
     }
 
     struct Joke {

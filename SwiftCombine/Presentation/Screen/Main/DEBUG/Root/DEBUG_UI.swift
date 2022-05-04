@@ -110,16 +110,16 @@ private extension DEBUG_UI {
 
         case let .api(content):
             switch content {
-            case .jokeGet:
+            case .get:
                 cell.textLabel?.text = "Joke Get"
 
-            case .jokeRandom:
+            case .random:
                 cell.textLabel?.text = "Joke Random"
 
-            case .jokeSearch:
+            case .search:
                 cell.textLabel?.text = "Joke Search"
 
-            case .jokeSlack:
+            case .slack:
                 cell.textLabel?.text = "Joke Slack"
             }
 
@@ -127,6 +127,9 @@ private extension DEBUG_UI {
             switch content {
             case .fruit:
                 cell.textLabel?.text = "Fruit Entity"
+
+            case .student:
+                cell.textLabel?.text = "Student Entity"
             }
 
         case let .combine(content):

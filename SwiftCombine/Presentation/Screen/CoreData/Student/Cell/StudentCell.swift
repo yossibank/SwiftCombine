@@ -1,23 +1,28 @@
 import UIKit
 
-final class JokeSearchCell: UITableViewCell {
+final class StudentCell: UITableViewCell {
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [idLabel, jokeLabel])
-        stackView.axis = .vertical
-        stackView.spacing = 8
+        let stackView = UIStackView(arrangedSubviews: [numberLabel, nameLabel, ageLabel])
+        stackView.axis = .horizontal
+        stackView.spacing = 12
         return stackView
     }()
 
-    private let idLabel: UILabel = {
+    private let numberLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12)
         return label
     }()
 
-    private let jokeLabel: UILabel = {
+    private let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 16)
-        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 16)
+        return label
+    }()
+
+    private let ageLabel: UILabel = {
+        let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 12)
         return label
     }()
 
@@ -34,21 +39,25 @@ final class JokeSearchCell: UITableViewCell {
 
 // MARK: - internal methods
 
-extension JokeSearchCell {
-    func configure(item: JokeSearchItem) {
-        idLabel.text = "ID: \(item.id)"
-        jokeLabel.text = item.joke
+extension StudentCell {
+    func configure(item: StudentItem) {
+        numberLabel.text = "No: \(item.number)"
+        nameLabel.text = item.name
+        ageLabel.text = "年齢: \(item.age)"
     }
 }
 
 // MARK: - private methods
 
-private extension JokeSearchCell {
+private extension StudentCell {
     func setupView() {
         contentView.addSubViews(
             stackView,
 
             constraints:
+                numberLabel.widthAnchor.constraint(equalToConstant: 40),
+                ageLabel.widthAnchor.constraint(equalToConstant: 60),
+
                 stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
                 stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
                 stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),

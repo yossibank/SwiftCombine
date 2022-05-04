@@ -62,33 +62,40 @@ enum DEBUG_UserDefault: String, CaseIterable, Hashable {
 }
 
 enum DEBUG_API: String, CaseIterable, Hashable {
-    case jokeGet
-    case jokeRandom
-    case jokeSearch
-    case jokeSlack
+    case get
+    case random
+    case search
+    case slack
 
     var component: DEBUG_Item {
         switch self {
-        case .jokeGet:
-            return .api(.jokeGet)
+        case .get:
+            return .api(.get)
 
-        case .jokeRandom:
-            return .api(.jokeRandom)
+        case .random:
+            return .api(.random)
 
-        case .jokeSearch:
-            return .api(.jokeSearch)
+        case .search:
+            return .api(.search)
 
-        case .jokeSlack:
-            return .api(.jokeSlack)
+        case .slack:
+            return .api(.slack)
         }
     }
 }
 
 enum DEBUG_CoreData: String, CaseIterable, Hashable {
     case fruit
+    case student
 
     var component: DEBUG_Item {
-        .coreData(.fruit)
+        switch self {
+        case .fruit:
+            return .coreData(.fruit)
+
+        case .student:
+            return .coreData(.student)
+        }
     }
 }
 

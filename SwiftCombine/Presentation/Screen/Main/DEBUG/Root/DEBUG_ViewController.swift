@@ -75,7 +75,7 @@ extension DEBUG_ViewController: UITableViewDelegate {
             let item = DEBUG_API.allCases[indexPath.row]
             delegate.didControllerSelected(item: item)
 
-            guard item == .jokeRandom else {
+            guard item == .random else {
                 return
             }
 

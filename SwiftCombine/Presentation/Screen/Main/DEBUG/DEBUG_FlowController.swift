@@ -59,20 +59,20 @@ extension DEBUG_FlowController: FlowController {
 extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
     func didControllerSelected(item: DEBUG_API) {
         switch item {
-        case .jokeGet:
+        case .get:
             let vc = AppControllers.Joke.Get(jokeId: AppDataHolder.jokeId)
             navVC.pushViewController(vc, animated: true)
 
-        case .jokeRandom:
+        case .random:
             let vc = AppControllers.Joke.Random()
             navVC.pushViewController(vc, animated: true)
 
-        case .jokeSearch:
+        case .search:
             let vc = AppControllers.Joke.Search()
             vc.delegate = self
             navVC.pushViewController(vc, animated: true)
 
-        case .jokeSlack:
+        case .slack:
             let vc = AppControllers.Joke.Slack()
             navVC.pushViewController(vc, animated: true)
         }
@@ -82,6 +82,10 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
         switch item {
         case .fruit:
             let vc = AppControllers.CoreData.Fruit()
+            navVC.pushViewController(vc, animated: true)
+
+        case .student:
+            let vc = AppControllers.CoreData.Student()
             navVC.pushViewController(vc, animated: true)
         }
     }
