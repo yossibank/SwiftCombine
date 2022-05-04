@@ -1,6 +1,7 @@
 // MARK: - CoreData
 
 typealias FruitModel = ModelImpl<Repos.CoreDataFruit, FruitMapper>
+typealias StudentModel = ModelImpl<Repos.CoreDataStudent, StudentMapper>
 
 // MARK: - Joke
 
@@ -20,6 +21,13 @@ struct Model {
             .init(
                 repository: Repos.CoreDataFruit(useTestData: useTestData),
                 mapper: FruitMapper()
+            )
+        }
+
+        static func Student(useTestData: Bool = false) -> StudentModel {
+            .init(
+                repository: Repos.CoreDataStudent(useTestData: useTestData),
+                mapper: StudentMapper()
             )
         }
     }

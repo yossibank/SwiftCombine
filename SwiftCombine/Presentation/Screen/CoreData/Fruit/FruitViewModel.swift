@@ -24,7 +24,7 @@ extension FruitViewModel {
     func fetchAll() {
         state = .loading
 
-        model.fetchAll().sink { [weak self] completion in
+        model.fetch().sink { [weak self] completion in
             switch completion {
             case let .failure(error):
                 self?.state = .failed(error)

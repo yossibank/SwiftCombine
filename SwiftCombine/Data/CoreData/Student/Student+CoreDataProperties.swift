@@ -5,8 +5,8 @@ extension Student {
         return NSFetchRequest<Student>(entityName: "Student")
     }
 
-    @NSManaged public var age: Int32
     @NSManaged public var name: String
+    @NSManaged public var age: Int32
     @NSManaged public var number: Int32
 }
 

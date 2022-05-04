@@ -13,7 +13,7 @@ final class FruitModelTests: XCTestCase {
         model.add(.init(name: "Lemon"))
         model.add(.init(name: "Peach"))
 
-        let result = try awaitPublisher(model.fetchAll())
+        let result = try awaitPublisher(model.fetch())
 
         XCTAssertTrue(result.contains { $0.name == "Apple" })
         XCTAssertEqual(result.count, 3)
@@ -27,7 +27,7 @@ final class FruitModelTests: XCTestCase {
         let predicate = NSPredicate(format: "%K=%@", "name", "Apple")
         model.delete(predicate: predicate)
 
-        let result = try awaitPublisher(model.fetchAll())
+        let result = try awaitPublisher(model.fetch())
 
         XCTAssertFalse(result.contains { $0.name == "Apple" })
         XCTAssertEqual(result.count, 2)

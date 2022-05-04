@@ -3,16 +3,14 @@ import XCTest
 
 final class MapperTests: XCTestCase {
     func testFruitMapper() {
-        let coreDataFruit: Fruit = CoreDataRepository(useTestData: true).create()
-        coreDataFruit.name = "Fruit"
+        let fruit: Fruit = CoreDataRepository(useTestData: true).create()
+        fruit.name = "Fruit"
 
         let result = FruitMapper().convert(
-            response: [coreDataFruit]
+            response: fruit
         )
 
-        let expect: [FruitEntity] = [
-            .init(name: "Fruit")
-        ]
+        let expect: FruitEntity = .init(name: "Fruit")
 
         XCTAssertEqual(result, expect)
     }

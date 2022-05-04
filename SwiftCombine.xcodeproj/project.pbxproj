@@ -103,6 +103,9 @@
 		78E823732822717A00C71BF3 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E823712822717A00C71BF3 /* Student+CoreDataProperties.swift */; };
 		78E82376282271DF00C71BF3 /* Club+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E82374282271DF00C71BF3 /* Club+CoreDataClass.swift */; };
 		78E82377282271DF00C71BF3 /* Club+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E82375282271DF00C71BF3 /* Club+CoreDataProperties.swift */; };
+		78E82379282273C600C71BF3 /* StudentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E82378282273C600C71BF3 /* StudentEntity.swift */; };
+		78E8237B2822741400C71BF3 /* StudentMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8237A2822741400C71BF3 /* StudentMapper.swift */; };
+		78E82382282274BC00C71BF3 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E82381282274BC00C71BF3 /* StudentModel.swift */; };
 		78EC5F61280BB49E00C18DF5 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F60280BB49E00C18DF5 /* MainFlowController.swift */; };
 		78EC5F65280BB4E700C18DF5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F64280BB4E700C18DF5 /* ViewModel.swift */; };
 		78EC5F67280BB4EE00C18DF5 /* VCInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F66280BB4EE00C18DF5 /* VCInjectable.swift */; };
@@ -245,6 +248,9 @@
 		78E823712822717A00C71BF3 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		78E82374282271DF00C71BF3 /* Club+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Club+CoreDataClass.swift"; sourceTree = "<group>"; };
 		78E82375282271DF00C71BF3 /* Club+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Club+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		78E82378282273C600C71BF3 /* StudentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentEntity.swift; sourceTree = "<group>"; };
+		78E8237A2822741400C71BF3 /* StudentMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentMapper.swift; sourceTree = "<group>"; };
+		78E82381282274BC00C71BF3 /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
 		78EC5F60280BB49E00C18DF5 /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		78EC5F64280BB4E700C18DF5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		78EC5F66280BB4EE00C18DF5 /* VCInjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCInjectable.swift; sourceTree = "<group>"; };
@@ -410,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				782477C2281EC83E004DEEE5 /* FruitModel.swift */,
+				78E82381282274BC00C71BF3 /* StudentModel.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -428,10 +435,8 @@
 		782477D5281F993A004DEEE5 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				782477DF281F9BD8004DEEE5 /* FruitEntity.swift */,
-				782477D6281F9948004DEEE5 /* JokeEntity.swift */,
-				7819F6132821729400E662EC /* JokeSearchEntity.swift */,
-				782477DB281F9A9C004DEEE5 /* JokeSlackEntity.swift */,
+				78E8237C2822747F00C71BF3 /* CoreData */,
+				78E8237D2822748800C71BF3 /* Joke */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -439,10 +444,8 @@
 		782477D8281F9965004DEEE5 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				782477E1281F9BF1004DEEE5 /* FruitMapper.swift */,
-				782477D9281F999F004DEEE5 /* JokeMapper.swift */,
-				7819F6112821728600E662EC /* JokeSearchMapper.swift */,
-				782477DD281F9AF0004DEEE5 /* JokeSlackMapper.swift */,
+				78E8237E2822749600C71BF3 /* CoreData */,
+				78E8237F2822749D00C71BF3 /* Joke */,
 				782477E3281F9D90004DEEE5 /* NoMapper.swift */,
 			);
 			path = Mapper;
@@ -787,6 +790,44 @@
 			path = Club;
 			sourceTree = "<group>";
 		};
+		78E8237C2822747F00C71BF3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				782477DF281F9BD8004DEEE5 /* FruitEntity.swift */,
+				78E82378282273C600C71BF3 /* StudentEntity.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		78E8237D2822748800C71BF3 /* Joke */ = {
+			isa = PBXGroup;
+			children = (
+				782477D6281F9948004DEEE5 /* JokeEntity.swift */,
+				7819F6132821729400E662EC /* JokeSearchEntity.swift */,
+				782477DB281F9A9C004DEEE5 /* JokeSlackEntity.swift */,
+			);
+			path = Joke;
+			sourceTree = "<group>";
+		};
+		78E8237E2822749600C71BF3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				782477E1281F9BF1004DEEE5 /* FruitMapper.swift */,
+				78E8237A2822741400C71BF3 /* StudentMapper.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		78E8237F2822749D00C71BF3 /* Joke */ = {
+			isa = PBXGroup;
+			children = (
+				782477D9281F999F004DEEE5 /* JokeMapper.swift */,
+				7819F6112821728600E662EC /* JokeSearchMapper.swift */,
+				782477DD281F9AF0004DEEE5 /* JokeSlackMapper.swift */,
+			);
+			path = Joke;
+			sourceTree = "<group>";
+		};
 		78EC5F5E280BB42200C18DF5 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1058,6 +1099,7 @@
 				78AAF06E280AD95E00BF0E3B /* PersistedDataHolder.swift in Sources */,
 				782477C3281EC83E004DEEE5 /* FruitModel.swift in Sources */,
 				78AAF05C280AC00400BF0E3B /* APIError.swift in Sources */,
+				78E8237B2822741400C71BF3 /* StudentMapper.swift in Sources */,
 				78EC5F7F280BBB2300C18DF5 /* ViewControllers.swift in Sources */,
 				7871EFF82813D1CC004E477D /* SubjctViewModel.swift in Sources */,
 				782477B0281E81DA004DEEE5 /* JokeSlackModel.swift in Sources */,
@@ -1081,6 +1123,7 @@
 				78AAF060280AC47500BF0E3B /* DataStructure.swift in Sources */,
 				78A11E1C281D79E500790D24 /* Fruit+CoreDataProperties.swift in Sources */,
 				7859A23328159F6100E0F08C /* Model.xcdatamodeld in Sources */,
+				78E82382282274BC00C71BF3 /* StudentModel.swift in Sources */,
 				78CBE26927F31DA200DF1667 /* HomeViewController.swift in Sources */,
 				7871EFFC2813DD3E004E477D /* JustViewController.swift in Sources */,
 				78AAF07C280B04F200BF0E3B /* Repository.swift in Sources */,
@@ -1114,6 +1157,7 @@
 				782477DA281F999F004DEEE5 /* JokeMapper.swift in Sources */,
 				78E823732822717A00C71BF3 /* Student+CoreDataProperties.swift in Sources */,
 				783A4815281551E500DE244A /* FruitViewController.swift in Sources */,
+				78E82379282273C600C71BF3 /* StudentEntity.swift in Sources */,
 				78A11E16281CF57400790D24 /* SetOnboardingModel.swift in Sources */,
 				78EC5F69280BB4F800C18DF5 /* UserInterface.swift in Sources */,
 				78A11E1D281D79E500790D24 /* Fruit+CoreDataClass.swift in Sources */,
