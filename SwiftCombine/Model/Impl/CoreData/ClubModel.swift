@@ -1,6 +1,6 @@
 import Combine
 
-extension ModelImpl where R == Repos.CoreDataClub, M == ClubMapper {
+extension ModelImpl where R == Repos.CoreData.GetClub, M == ClubMapper {
     func fetch() -> AnyPublisher<[ClubEntity], CoreDataError> {
         toPublisher { promise in
             repository.fetch() { result in

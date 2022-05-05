@@ -1,7 +1,9 @@
 struct Repos {
-    typealias CoreDataClub = CoreDataRepository<Club>
-    typealias CoreDataFruit = CoreDataRepository<Fruit>
-    typealias CoreDataStudent = CoreDataRepository<Student>
+    struct CoreData {
+        typealias GetClub = CoreDataRepository<Club>
+        typealias GetFruit = CoreDataRepository<Fruit>
+        typealias GetStudent = CoreDataRepository<Student>
+    }
 
     struct Joke {
         typealias Get = Repository<JokeRequest>

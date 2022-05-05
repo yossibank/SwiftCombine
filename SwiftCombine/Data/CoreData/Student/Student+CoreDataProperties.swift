@@ -8,6 +8,7 @@ extension Student {
     @NSManaged public var name: String
     @NSManaged public var age: Int32
     @NSManaged public var number: Int32
+    @NSManaged public var club: Club?
 }
 
 extension Student : Identifiable {}

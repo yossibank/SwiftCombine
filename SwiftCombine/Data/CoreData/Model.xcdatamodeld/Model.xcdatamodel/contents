@@ -5,6 +5,7 @@
         <attribute name="name" attributeType="String"/>
         <attribute name="place" optional="YES" attributeType="String"/>
         <attribute name="schedule" optional="YES" attributeType="String"/>
+        <relationship name="student" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="club" inverseEntity="Student"/>
     </entity>
     <entity name="Fruit" representedClassName="Fruit" syncable="YES">
         <attribute name="name" attributeType="String"/>
@@ -13,10 +14,11 @@
         <attribute name="age" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="number" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="club" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Club" inverseName="student" inverseEntity="Club"/>
     </entity>
     <elements>
+        <element name="Club" positionX="-45" positionY="27" width="128" height="104"/>
         <element name="Fruit" positionX="-54" positionY="-9" width="128" height="44"/>
-        <element name="Student" positionX="-54" positionY="0" width="128" height="74"/>
-        <element name="Club" positionX="-45" positionY="27" width="128" height="89"/>
+        <element name="Student" positionX="-54" positionY="0" width="128" height="89"/>
     </elements>
 </model>

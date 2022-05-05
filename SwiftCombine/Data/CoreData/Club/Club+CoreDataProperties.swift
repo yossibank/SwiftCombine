@@ -9,6 +9,7 @@ extension Club {
     @NSManaged public var money: Int32
     @NSManaged public var place: String?
     @NSManaged public var schedule: String?
+    @NSManaged public var student: NSSet?
 }
 
 extension Club : Identifiable {}
