@@ -24,4 +24,18 @@ extension ModelImpl where R == Repos.CoreDataStudent, M == StudentMapper {
         student.number = Int32(entity.number)
         repository.add(student)
     }
+
+    func delete(predicate: NSPredicate) {
+        repository.fetch(predicate: predicate) { result in
+            switch result {
+            case let .success(response):
+                response.forEach {
+                    repository.delete($0)
+                }
+
+            case let .failure(error):
+                Logger.error(message: error.localizedDescription)
+            }
+        }
+    }
 }

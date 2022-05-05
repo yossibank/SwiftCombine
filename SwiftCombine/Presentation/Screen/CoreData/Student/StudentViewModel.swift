@@ -1,4 +1,5 @@
 import Combine
+import CoreData
 
 // MARK: - properties & init
 
@@ -56,5 +57,10 @@ extension StudentViewModel {
             age: Int(age) ?? 0,
             number: Int(number) ?? 0
         ))
+    }
+
+    func delete(name: String) {
+        let predicate = NSPredicate(format: "%K=%@", "name", name)
+        model.delete(predicate: predicate)
     }
 }

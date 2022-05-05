@@ -24,7 +24,7 @@ extension StudentViewController {
         super.viewDidLoad()
         viewModel.fetch()
         ui.setupView(rootView: view)
-        ui.setupTableView(delegate: self)
+        ui.setupTableView(delegate: self, viewModel: viewModel)
         setupEvent()
         bindToViewModel()
         bindToView()

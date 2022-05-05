@@ -68,14 +68,15 @@ final class StudentUI {
         saveButton.publisher(for: .touchUpInside)
     }()
 
-    private var dataSource: UITableViewDiffableDataSource<StudentSection, StudentItem>!
+    private(set) var dataSource: StudentDataSource!
 }
 
 // MARK: - internal methods
 
 extension StudentUI {
-    func setupTableView(delegate: UITableViewDelegate) {
+    func setupTableView(delegate: UITableViewDelegate, viewModel: StudentViewModel) {
         dataSource = configureDataSource()
+        dataSource.inject(viewModel)
 
         tableView.register(
             StudentCell.self,
@@ -110,7 +111,7 @@ extension StudentUI {
 // MARK: - private methods
 
 private extension StudentUI {
-    func configureDataSource() -> UITableViewDiffableDataSource<StudentSection, StudentItem> {
+    func configureDataSource() -> StudentDataSource {
         .init(tableView: tableView) { [weak self] tableView, indexPath, item in
             guard let self = self else {
                 return .init()
@@ -163,5 +164,32 @@ extension StudentUI: UserInterface {
                 tableView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
                 tableView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor)
         )
+    }
+}
+
+// MARK: - dataSource
+
+final class StudentDataSource: UITableViewDiffableDataSource<StudentSection, StudentItem> {
+    private var viewModel: StudentViewModel!
+
+    func inject(_ viewModel: StudentViewModel) {
+        self.viewModel = viewModel
+    }
+
+    override func tableView(
+        _ tableView: UITableView,
+        canEditRowAt indexPath: IndexPath
+    ) -> Bool {
+        true
+    }
+
+    override func tableView(
+        _ tableView: UITableView,
+        commit editingStyle: UITableViewCell.EditingStyle,
+        forRowAt indexPath: IndexPath
+    ) {
+        let item = viewModel.items[indexPath.row]
+        viewModel.delete(name: item.name)
+        viewModel.fetch()
     }
 }
