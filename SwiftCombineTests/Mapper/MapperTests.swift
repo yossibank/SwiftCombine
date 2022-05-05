@@ -2,6 +2,27 @@
 import XCTest
 
 final class MapperTests: XCTestCase {
+    func testClubMapper() {
+        let club: Club = CoreDataRepository(useTestData: true).create()
+        club.name = "soccer"
+        club.money = 20000
+        club.place = "ground"
+        club.schedule = "monday"
+
+        let result = ClubMapper().convert(
+            response: club
+        )
+
+        let expect: ClubEntity = .init(
+            name: "soccer",
+            money: 20000,
+            place: "ground",
+            schedule: "monday"
+        )
+
+        XCTAssertEqual(result, expect)
+    }
+
     func testFruitMapper() {
         let fruit: Fruit = CoreDataRepository(useTestData: true).create()
         fruit.name = "Fruit"
@@ -11,6 +32,25 @@ final class MapperTests: XCTestCase {
         )
 
         let expect: FruitEntity = .init(name: "Fruit")
+
+        XCTAssertEqual(result, expect)
+    }
+
+    func testStudentMapper() {
+        let student: Student = CoreDataRepository(useTestData: true).create()
+        student.name = "student"
+        student.age = 20
+        student.number = 0
+
+        let result = StudentMapper().convert(
+            response: student
+        )
+
+        let expect: StudentEntity = .init(
+            name: "student",
+            age: 20,
+            number: 0
+        )
 
         XCTAssertEqual(result, expect)
     }

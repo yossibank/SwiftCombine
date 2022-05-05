@@ -25,7 +25,7 @@ final class FruitModelTests: XCTestCase {
         model.add(.init(name: "Peach"))
 
         let predicate = NSPredicate(format: "%K=%@", "name", "Apple")
-        model.delete(predicate: predicate)
+        model.delete(predicate: [predicate])
 
         let result = try awaitPublisher(model.fetch())
 

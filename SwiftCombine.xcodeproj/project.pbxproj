@@ -64,6 +64,8 @@
 		784DBDE02823CDCB0029EF58 /* ClubUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDDF2823CDCB0029EF58 /* ClubUI.swift */; };
 		784DBDE22823CDD30029EF58 /* ClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDE12823CDD30029EF58 /* ClubViewController.swift */; };
 		784DBDE42823CDDA0029EF58 /* ClubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDE32823CDDA0029EF58 /* ClubViewModel.swift */; };
+		784DBDE62823D1D70029EF58 /* StudentModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDE52823D1D70029EF58 /* StudentModelTests.swift */; };
+		784DBDE82823D27F0029EF58 /* StudentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDE72823D27F0029EF58 /* StudentViewModelTests.swift */; };
 		7859A2282815912200E0F08C /* UITextField+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7859A2272815912200E0F08C /* UITextField+Publisher.swift */; };
 		7859A23328159F6100E0F08C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7859A23128159F6100E0F08C /* Model.xcdatamodeld */; };
 		786071DE2813AA5C0074ECB8 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */; };
@@ -220,6 +222,8 @@
 		784DBDDF2823CDCB0029EF58 /* ClubUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubUI.swift; sourceTree = "<group>"; };
 		784DBDE12823CDD30029EF58 /* ClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubViewController.swift; sourceTree = "<group>"; };
 		784DBDE32823CDDA0029EF58 /* ClubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubViewModel.swift; sourceTree = "<group>"; };
+		784DBDE52823D1D70029EF58 /* StudentModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModelTests.swift; sourceTree = "<group>"; };
+		784DBDE72823D27F0029EF58 /* StudentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewModelTests.swift; sourceTree = "<group>"; };
 		7859A2272815912200E0F08C /* UITextField+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Publisher.swift"; sourceTree = "<group>"; };
 		7859A23228159F6100E0F08C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
@@ -500,6 +504,7 @@
 			isa = PBXGroup;
 			children = (
 				782477EC28200C93004DEEE5 /* FruitModelTests.swift */,
+				784DBDE52823D1D70029EF58 /* StudentModelTests.swift */,
 				7819F6092821195100E662EC /* JokeModelTests.swift */,
 				783A47F8281503F500DE244A /* JokeRandomModelTests.swift */,
 				7819F619282179BD00E662EC /* JokeSearchModelTests.swift */,
@@ -690,6 +695,7 @@
 			isa = PBXGroup;
 			children = (
 				7819F5FA2820D36F00E662EC /* FruitViewModelTests.swift */,
+				784DBDE72823D27F0029EF58 /* StudentViewModelTests.swift */,
 				7819F60B282119B600E662EC /* JokeGetViewModelTests.swift */,
 				78A11E1F281D7C0B00790D24 /* JokeRandomViewModelTests.swift */,
 				78F67E0028225AB000673BBC /* JokeSearchViewModelTests.swift */,
@@ -1124,7 +1130,9 @@
 				788407E7281424CA00641E27 /* RequestTests.swift in Sources */,
 				782477E7281FA340004DEEE5 /* MapperTests.swift in Sources */,
 				783A47F9281503F500DE244A /* JokeRandomModelTests.swift in Sources */,
+				784DBDE62823D1D70029EF58 /* StudentModelTests.swift in Sources */,
 				7819F61A282179BD00E662EC /* JokeSearchModelTests.swift in Sources */,
+				784DBDE82823D27F0029EF58 /* StudentViewModelTests.swift in Sources */,
 				78F67E0128225AB000673BBC /* JokeSearchViewModelTests.swift in Sources */,
 				782477C0281E95B9004DEEE5 /* JokeSlackViewModelTests.swift in Sources */,
 				782477BE281E9530004DEEE5 /* JokeSlackModelTests.swift in Sources */,
