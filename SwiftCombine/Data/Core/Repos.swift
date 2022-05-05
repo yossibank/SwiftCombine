@@ -1,4 +1,5 @@
 struct Repos {
+    typealias CoreDataClub = CoreDataRepository<Club>
     typealias CoreDataFruit = CoreDataRepository<Fruit>
     typealias CoreDataStudent = CoreDataRepository<Student>
 

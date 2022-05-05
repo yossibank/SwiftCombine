@@ -7,7 +7,7 @@ extension ModelImpl where R == Repos.CoreDataStudent, M == StudentMapper {
             repository.fetch() { result in
                 switch result {
                 case let .success(response):
-                    let entities = response.map { mapper.convert(response: $0) }
+                    let entities = response.map(mapper.convert)
                     promise(.success(entities))
 
                 case let .failure(error):

@@ -1,5 +1,6 @@
 // MARK: - CoreData
 
+typealias ClubModel = ModelImpl<Repos.CoreDataClub, ClubMapper>
 typealias FruitModel = ModelImpl<Repos.CoreDataFruit, FruitMapper>
 typealias StudentModel = ModelImpl<Repos.CoreDataStudent, StudentMapper>
 
@@ -17,6 +18,13 @@ typealias SetOnboardingModel = ModelImpl<Repos.Onboarding.SetIsFinished, NoMappe
 
 struct Model {
     struct CoreData {
+        static func Club(useTestData: Bool = false) -> ClubModel {
+            .init(
+                repository: Repos.CoreDataClub(useTestData: useTestData),
+                mapper: ClubMapper()
+            )
+        }
+
         static func Fruit(useTestData: Bool = false) -> FruitModel {
             .init(
                 repository: Repos.CoreDataFruit(useTestData: useTestData),

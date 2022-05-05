@@ -16,6 +16,13 @@ struct AppControllers {
     }
 
     struct CoreData {
+        static func Club() -> ClubViewController {
+            let instance = ClubViewController()
+            instance.inject(viewModel: .init(), ui: .init())
+            instance.title = "Club"
+            return instance
+        }
+
         static func Fruit() -> FruitViewController {
             let instance = FruitViewController()
             instance.inject(viewModel: .init(), ui: .init())

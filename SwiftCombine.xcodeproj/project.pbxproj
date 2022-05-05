@@ -57,6 +57,13 @@
 		78482229281BD22B006CEF44 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78482228281BD22B006CEF44 /* HomeViewModel.swift */; };
 		784DBDD22823B81A0029EF58 /* SearchConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDD12823B81A0029EF58 /* SearchConditions.swift */; };
 		784DBDD52823C43B0029EF58 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDD42823C43B0029EF58 /* NavigationButton.swift */; };
+		784DBDD72823CB510029EF58 /* ClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDD62823CB510029EF58 /* ClubModel.swift */; };
+		784DBDD92823CB7F0029EF58 /* ClubMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDD82823CB7F0029EF58 /* ClubMapper.swift */; };
+		784DBDDB2823CB9F0029EF58 /* ClubEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDDA2823CB9F0029EF58 /* ClubEntity.swift */; };
+		784DBDDE2823CDC50029EF58 /* ClubItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDDD2823CDC50029EF58 /* ClubItem.swift */; };
+		784DBDE02823CDCB0029EF58 /* ClubUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDDF2823CDCB0029EF58 /* ClubUI.swift */; };
+		784DBDE22823CDD30029EF58 /* ClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDE12823CDD30029EF58 /* ClubViewController.swift */; };
+		784DBDE42823CDDA0029EF58 /* ClubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDE32823CDDA0029EF58 /* ClubViewModel.swift */; };
 		7859A2282815912200E0F08C /* UITextField+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7859A2272815912200E0F08C /* UITextField+Publisher.swift */; };
 		7859A23328159F6100E0F08C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7859A23128159F6100E0F08C /* Model.xcdatamodeld */; };
 		786071DE2813AA5C0074ECB8 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */; };
@@ -206,6 +213,13 @@
 		78482228281BD22B006CEF44 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		784DBDD12823B81A0029EF58 /* SearchConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConditions.swift; sourceTree = "<group>"; };
 		784DBDD42823C43B0029EF58 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
+		784DBDD62823CB510029EF58 /* ClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubModel.swift; sourceTree = "<group>"; };
+		784DBDD82823CB7F0029EF58 /* ClubMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubMapper.swift; sourceTree = "<group>"; };
+		784DBDDA2823CB9F0029EF58 /* ClubEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubEntity.swift; sourceTree = "<group>"; };
+		784DBDDD2823CDC50029EF58 /* ClubItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubItem.swift; sourceTree = "<group>"; };
+		784DBDDF2823CDCB0029EF58 /* ClubUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubUI.swift; sourceTree = "<group>"; };
+		784DBDE12823CDD30029EF58 /* ClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubViewController.swift; sourceTree = "<group>"; };
+		784DBDE32823CDDA0029EF58 /* ClubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubViewModel.swift; sourceTree = "<group>"; };
 		7859A2272815912200E0F08C /* UITextField+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Publisher.swift"; sourceTree = "<group>"; };
 		7859A23228159F6100E0F08C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
@@ -429,6 +443,7 @@
 		782477C1281EC7FE004DEEE5 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				784DBDD62823CB510029EF58 /* ClubModel.swift */,
 				782477C2281EC83E004DEEE5 /* FruitModel.swift */,
 				78E82381282274BC00C71BF3 /* StudentModel.swift */,
 			);
@@ -521,6 +536,7 @@
 		783A4811281551C400DE244A /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				784DBDDC2823CD9C0029EF58 /* Club */,
 				782477C6281F86C0004DEEE5 /* Fruit */,
 				78E8238328228C9200C71BF3 /* Student */,
 			);
@@ -541,6 +557,17 @@
 				784DBDD42823C43B0029EF58 /* NavigationButton.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		784DBDDC2823CD9C0029EF58 /* Club */ = {
+			isa = PBXGroup;
+			children = (
+				784DBDDD2823CDC50029EF58 /* ClubItem.swift */,
+				784DBDDF2823CDCB0029EF58 /* ClubUI.swift */,
+				784DBDE12823CDD30029EF58 /* ClubViewController.swift */,
+				784DBDE32823CDDA0029EF58 /* ClubViewModel.swift */,
+			);
+			path = Club;
 			sourceTree = "<group>";
 		};
 		7859A22C28159AC600E0F08C /* Fruit */ = {
@@ -817,6 +844,7 @@
 		78E8237C2822747F00C71BF3 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				784DBDDA2823CB9F0029EF58 /* ClubEntity.swift */,
 				782477DF281F9BD8004DEEE5 /* FruitEntity.swift */,
 				78E82378282273C600C71BF3 /* StudentEntity.swift */,
 			);
@@ -836,6 +864,7 @@
 		78E8237E2822749600C71BF3 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				784DBDD82823CB7F0029EF58 /* ClubMapper.swift */,
 				782477E1281F9BF1004DEEE5 /* FruitMapper.swift */,
 				78E8237A2822741400C71BF3 /* StudentMapper.swift */,
 			);
@@ -1132,6 +1161,7 @@
 				78AAF056280AB40300BF0E3B /* Request.swift in Sources */,
 				783A480A28154D8C00DE244A /* CoreDataRepository.swift in Sources */,
 				78F67DF628222CF100673BBC /* JokeSearchViewController.swift in Sources */,
+				784DBDDB2823CB9F0029EF58 /* ClubEntity.swift in Sources */,
 				78A11E14281CF56C00790D24 /* GetOnboardingModel.swift in Sources */,
 				78AAF065280AD70800BF0E3B /* Logger.swift in Sources */,
 				78E823722822717A00C71BF3 /* Student+CoreDataClass.swift in Sources */,
@@ -1139,7 +1169,9 @@
 				782477DC281F9A9C004DEEE5 /* JokeSlackEntity.swift in Sources */,
 				78AAF06B280AD8FE00BF0E3B /* UserDefaultKey.swift in Sources */,
 				78EC5F7B280BB9E700C18DF5 /* NavigationController.swift in Sources */,
+				784DBDE22823CDD30029EF58 /* ClubViewController.swift in Sources */,
 				782477E4281F9D90004DEEE5 /* NoMapper.swift in Sources */,
+				784DBDE42823CDDA0029EF58 /* ClubViewModel.swift in Sources */,
 				78EC5F70280BB66000C18DF5 /* JokeRandomViewController.swift in Sources */,
 				7871EFFE2813DD45004E477D /* JustViewModel.swift in Sources */,
 				78EC5F87280BBD8B00C18DF5 /* AppDataHolder.swift in Sources */,
@@ -1154,6 +1186,7 @@
 				7871EFF12813CDB7004E477D /* FutureViewModel.swift in Sources */,
 				783A4819281552F200DE244A /* FruitItem.swift in Sources */,
 				78AAF077280AFAFC00BF0E3B /* JokeRandomRequest.swift in Sources */,
+				784DBDD92823CB7F0029EF58 /* ClubMapper.swift in Sources */,
 				78482229281BD22B006CEF44 /* HomeViewModel.swift in Sources */,
 				78AAF068280AD88E00BF0E3B /* UserDefaultsStorage.swift in Sources */,
 				78EC5F9B280C273800C18DF5 /* DEBUG_ViewController.swift in Sources */,
@@ -1173,6 +1206,7 @@
 				78E82382282274BC00C71BF3 /* StudentModel.swift in Sources */,
 				78CBE26927F31DA200DF1667 /* HomeViewController.swift in Sources */,
 				7871EFFC2813DD3E004E477D /* JustViewController.swift in Sources */,
+				784DBDE02823CDCB0029EF58 /* ClubUI.swift in Sources */,
 				78AAF07C280B04F200BF0E3B /* Repository.swift in Sources */,
 				78EC5F78280BB7C400C18DF5 /* AppFlowController.swift in Sources */,
 				78EC5F6B280BB50000C18DF5 /* FlowController.swift in Sources */,
@@ -1198,6 +1232,7 @@
 				78E82376282271DF00C71BF3 /* Club+CoreDataClass.swift in Sources */,
 				78EC5F8F280BC8C700C18DF5 /* JokeRandomViewModel.swift in Sources */,
 				78EC5F67280BB4EE00C18DF5 /* VCInjectable.swift in Sources */,
+				784DBDDE2823CDC50029EF58 /* ClubItem.swift in Sources */,
 				78EC5F61280BB49E00C18DF5 /* MainFlowController.swift in Sources */,
 				7819F6062821168900E662EC /* JokeGetViewModel.swift in Sources */,
 				782477AC281E7D33004DEEE5 /* JokeSlackRequest.swift in Sources */,
@@ -1208,6 +1243,7 @@
 				783A4815281551E500DE244A /* FruitViewController.swift in Sources */,
 				78E82379282273C600C71BF3 /* StudentEntity.swift in Sources */,
 				78A11E16281CF57400790D24 /* SetOnboardingModel.swift in Sources */,
+				784DBDD72823CB510029EF58 /* ClubModel.swift in Sources */,
 				78EC5F69280BB4F800C18DF5 /* UserInterface.swift in Sources */,
 				78A11E1D281D79E500790D24 /* Fruit+CoreDataClass.swift in Sources */,
 				7819F6022821167600E662EC /* JokeGetUI.swift in Sources */,

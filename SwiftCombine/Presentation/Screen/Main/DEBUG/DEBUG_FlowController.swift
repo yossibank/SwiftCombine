@@ -90,6 +90,7 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
 
         case .student:
             let vc = AppControllers.CoreData.Student()
+            vc.delegate = self
             navVC.pushViewController(vc, animated: true)
         }
     }
@@ -118,6 +119,13 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
 extension DEBUG_FlowController: JokeSearchViewControllerDelegate {
     func didJokeSelected(jokeId: String) {
         let vc = AppControllers.Joke.Get(jokeId: jokeId)
+        navVC.pushViewController(vc, animated: true)
+    }
+}
+
+extension DEBUG_FlowController: StudentViewControllerDelegate {
+    func didNavigationButtonTapped() {
+        let vc = AppControllers.CoreData.Club()
         navVC.pushViewController(vc, animated: true)
     }
 }

@@ -1,6 +1,10 @@
 import Combine
 import UIKit
 
+protocol StudentViewControllerDelegate: AnyObject {
+    func didNavigationButtonTapped()
+}
+
 // MARK: - inejct
 
 extension StudentViewController: VCInjectable {
@@ -13,6 +17,8 @@ extension StudentViewController: VCInjectable {
 final class StudentViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
+
+    weak var delegate: StudentViewControllerDelegate!
 
     private var cancellables: Set<AnyCancellable> = .init()
 }
@@ -49,7 +55,7 @@ private extension StudentViewController {
         .store(in: &cancellables)
 
         ui.navButtonTapPublisher.sink { [weak self] _ in
-            print("TAP")
+            self?.delegate.didNavigationButtonTapped()
         }
         .store(in: &cancellables)
     }
