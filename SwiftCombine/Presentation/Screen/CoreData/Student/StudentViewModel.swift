@@ -1,5 +1,5 @@
 import Combine
-import CoreData
+import Foundation
 
 // MARK: - properties & init
 
@@ -60,7 +60,7 @@ extension StudentViewModel {
     }
 
     func delete(name: String) {
-        let predicate = NSPredicate(format: "%K=%@", "name", name)
+        let predicate = [NSPredicate(format: "%K = %@", "name", name)]
         model.delete(predicate: predicate)
     }
 }

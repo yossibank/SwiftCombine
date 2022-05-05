@@ -55,6 +55,7 @@
 		783A4819281552F200DE244A /* FruitItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4818281552F200DE244A /* FruitItem.swift */; };
 		78482225281BCEEA006CEF44 /* UserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78482224281BCEEA006CEF44 /* UserDefaultsTests.swift */; };
 		78482229281BD22B006CEF44 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78482228281BD22B006CEF44 /* HomeViewModel.swift */; };
+		784DBDD22823B81A0029EF58 /* SearchConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDD12823B81A0029EF58 /* SearchConditions.swift */; };
 		7859A2282815912200E0F08C /* UITextField+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7859A2272815912200E0F08C /* UITextField+Publisher.swift */; };
 		7859A23328159F6100E0F08C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7859A23128159F6100E0F08C /* Model.xcdatamodeld */; };
 		786071DE2813AA5C0074ECB8 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */; };
@@ -202,6 +203,7 @@
 		783A4818281552F200DE244A /* FruitItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitItem.swift; sourceTree = "<group>"; };
 		78482224281BCEEA006CEF44 /* UserDefaultsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsTests.swift; sourceTree = "<group>"; };
 		78482228281BD22B006CEF44 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		784DBDD12823B81A0029EF58 /* SearchConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConditions.swift; sourceTree = "<group>"; };
 		7859A2272815912200E0F08C /* UITextField+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Publisher.swift"; sourceTree = "<group>"; };
 		7859A23228159F6100E0F08C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
@@ -498,6 +500,7 @@
 				783A47FA2815417B00DE244A /* CoreData.swift */,
 				782477C4281ED055004DEEE5 /* CoreDataError.swift */,
 				783A480928154D8C00DE244A /* CoreDataRepository.swift */,
+				784DBDD12823B81A0029EF58 /* SearchConditions.swift */,
 				7859A23128159F6100E0F08C /* Model.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -1201,6 +1204,7 @@
 				78F67DFD28222E8E00673BBC /* JokeSearchCell.swift in Sources */,
 				788407D42814147A00641E27 /* DeferredViewModel.swift in Sources */,
 				78E8238728228CAA00C71BF3 /* StudentUI.swift in Sources */,
+				784DBDD22823B81A0029EF58 /* SearchConditions.swift in Sources */,
 				78E8238B28228CB700C71BF3 /* StudentViewModel.swift in Sources */,
 				78EC5F97280C272200C18DF5 /* DEBUG_FlowController.swift in Sources */,
 				782477B5281E8568004DEEE5 /* JokeSlackViewModel.swift in Sources */,

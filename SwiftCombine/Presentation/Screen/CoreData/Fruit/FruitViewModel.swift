@@ -1,5 +1,5 @@
-import CoreData
 import Combine
+import Foundation
 
 // MARK: - properties & init
 
@@ -47,7 +47,7 @@ extension FruitViewModel {
     }
 
     func delete() {
-        let predicate = NSPredicate(format: "%K=%@", "name", deleteName)
+        let predicate = [NSPredicate(format: "%K = %@", "name", deleteName)]
         model.delete(predicate: predicate)
     }
 }

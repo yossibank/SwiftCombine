@@ -3,7 +3,7 @@ import CoreData
 protocol CoreDataRepo {
     associatedtype T: NSManagedObject
 
-    func fetch(predicate: NSPredicate?, completion: @escaping (Result<[T], CoreDataError>) -> Void)
+    func fetch(conditions: [SearchCondition], completion: @escaping (Result<[T], CoreDataError>) -> Void)
     func create<T: NSManagedObject>() -> T
     func add(_ object: T)
     func delete(_ object: T)
@@ -44,12 +44,22 @@ struct CoreDataRepository<T: NSManagedObject>: CoreDataRepo {
     }
 
     func fetch(
-        predicate: NSPredicate? = nil,
+        conditions: [SearchCondition] = [],
         completion: @escaping (Result<[T], CoreDataError>) -> Void
     ) {
         do {
             let request = NSFetchRequest<T>(entityName: String(describing: T.self))
-            request.predicate = predicate
+
+            conditions.forEach { condition in
+                switch condition {
+                case let .predicates(contents):
+                    request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: contents)
+
+                case let .sort(content):
+                    request.sortDescriptors = [content]
+                }
+            }
+
             let entity = try context.fetch(request)
             completion(.success(entity))
         } catch {

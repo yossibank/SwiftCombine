@@ -4,7 +4,7 @@ import Foundation
 extension ModelImpl where R == Repos.CoreDataStudent, M == StudentMapper {
     func fetch() -> AnyPublisher<[StudentEntity], CoreDataError> {
         toPublisher { promise in
-            repository.fetch { result in
+            repository.fetch() { result in
                 switch result {
                 case let .success(response):
                     let entities = response.map { mapper.convert(response: $0) }
@@ -25,8 +25,8 @@ extension ModelImpl where R == Repos.CoreDataStudent, M == StudentMapper {
         repository.add(student)
     }
 
-    func delete(predicate: NSPredicate) {
-        repository.fetch(predicate: predicate) { result in
+    func delete(predicate: [NSPredicate]) {
+        repository.fetch(conditions: [.predicates(predicate)]) { result in
             switch result {
             case let .success(response):
                 response.forEach {
