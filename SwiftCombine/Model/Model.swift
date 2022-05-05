@@ -1,8 +1,8 @@
 // MARK: - CoreData
 
-typealias ClubModel = ModelImpl<Repos.CoreData.GetClub, ClubMapper>
-typealias FruitModel = ModelImpl<Repos.CoreData.GetFruit, FruitMapper>
-typealias StudentModel = ModelImpl<Repos.CoreData.GetStudent, StudentMapper>
+typealias ClubModel = ModelImpl<Repos.Local.ClubCoreData, ClubMapper>
+typealias FruitModel = ModelImpl<Repos.Local.FruitCoreData, FruitMapper>
+typealias StudentModel = ModelImpl<Repos.Local.StudentCoreData, StudentMapper>
 
 // MARK: - Joke
 
@@ -20,21 +20,21 @@ struct Model {
     struct CoreData {
         static func Club(useTestData: Bool = false) -> ClubModel {
             .init(
-                repository: Repos.CoreData.GetClub(useTestData: useTestData),
+                repository: Repos.Local.ClubCoreData(useTestData: useTestData),
                 mapper: ClubMapper()
             )
         }
 
         static func Fruit(useTestData: Bool = false) -> FruitModel {
             .init(
-                repository: Repos.CoreData.GetFruit(useTestData: useTestData),
+                repository: Repos.Local.FruitCoreData(useTestData: useTestData),
                 mapper: FruitMapper()
             )
         }
 
         static func Student(useTestData: Bool = false) -> StudentModel {
             .init(
-                repository: Repos.CoreData.GetStudent(useTestData: useTestData),
+                repository: Repos.Local.StudentCoreData(useTestData: useTestData),
                 mapper: StudentMapper()
             )
         }
