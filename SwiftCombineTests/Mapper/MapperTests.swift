@@ -3,7 +3,7 @@ import XCTest
 
 final class MapperTests: XCTestCase {
     func testClubMapper() {
-        let club: Club = CoreDataRepository(useTestData: true).create()
+        let club: Club = CoreDataRepository(useTestData: true).object()
         club.name = "soccer"
         club.money = 20000
         club.place = "ground"
@@ -24,7 +24,7 @@ final class MapperTests: XCTestCase {
     }
 
     func testFruitMapper() {
-        let fruit: Fruit = CoreDataRepository(useTestData: true).create()
+        let fruit: Fruit = CoreDataRepository(useTestData: true).object()
         fruit.name = "Fruit"
 
         let result = FruitMapper().convert(
@@ -37,7 +37,7 @@ final class MapperTests: XCTestCase {
     }
 
     func testStudentMapper() {
-        let student: Student = CoreDataRepository(useTestData: true).create()
+        let student: Student = CoreDataRepository(useTestData: true).object()
         student.name = "student"
         student.age = 20
         student.number = 0

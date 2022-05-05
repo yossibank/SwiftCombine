@@ -4,7 +4,7 @@ protocol CoreDataRepo {
     associatedtype T: NSManagedObject
 
     func fetch(conditions: [SearchCondition], completion: @escaping (Result<[T], CoreDataError>) -> Void)
-    func create<T: NSManagedObject>() -> T
+    func object() -> T
     func add(_ object: T)
     func delete(_ object: T)
 }
@@ -67,7 +67,7 @@ struct CoreDataRepository<T: NSManagedObject>: CoreDataRepo {
         }
     }
 
-    func create<T: NSManagedObject>() -> T {
+    func object() -> T {
         let entity = NSEntityDescription.entity(
             forEntityName: String(describing: T.self),
             in: context

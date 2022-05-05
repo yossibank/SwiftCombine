@@ -47,7 +47,6 @@
 		782477ED28200C93004DEEE5 /* FruitModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477EC28200C93004DEEE5 /* FruitModelTests.swift */; };
 		783A47F6281502A100DE244A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47F5281502A100DE244A /* Utility.swift */; };
 		783A47F9281503F500DE244A /* JokeRandomModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47F8281503F500DE244A /* JokeRandomModelTests.swift */; };
-		783A47FB2815417B00DE244A /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47FA2815417B00DE244A /* CoreData.swift */; };
 		783A480A28154D8C00DE244A /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A480928154D8C00DE244A /* CoreDataRepository.swift */; };
 		783A4813281551DC00DE244A /* FruitUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4812281551DC00DE244A /* FruitUI.swift */; };
 		783A4815281551E500DE244A /* FruitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4814281551E500DE244A /* FruitViewController.swift */; };
@@ -207,7 +206,6 @@
 		782477EC28200C93004DEEE5 /* FruitModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitModelTests.swift; sourceTree = "<group>"; };
 		783A47F5281502A100DE244A /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		783A47F8281503F500DE244A /* JokeRandomModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeRandomModelTests.swift; sourceTree = "<group>"; };
-		783A47FA2815417B00DE244A /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		783A480928154D8C00DE244A /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 		783A4812281551DC00DE244A /* FruitUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitUI.swift; sourceTree = "<group>"; };
 		783A4814281551E500DE244A /* FruitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitViewController.swift; sourceTree = "<group>"; };
@@ -523,7 +521,6 @@
 				78E8236F2822714800C71BF3 /* Club */,
 				7859A22C28159AC600E0F08C /* Fruit */,
 				78E8236E2822714200C71BF3 /* Student */,
-				783A47FA2815417B00DE244A /* CoreData.swift */,
 				782477C4281ED055004DEEE5 /* CoreDataError.swift */,
 				783A480928154D8C00DE244A /* CoreDataRepository.swift */,
 				784DBDD12823B81A0029EF58 /* SearchConditions.swift */,
@@ -1212,7 +1209,6 @@
 				7819F61028216F4D00E662EC /* JokeSearchResponse.swift in Sources */,
 				782477B7281E8571004DEEE5 /* JokeSlackViewController.swift in Sources */,
 				78AAF080280B0D1F00BF0E3B /* JokeRandomModel.swift in Sources */,
-				783A47FB2815417B00DE244A /* CoreData.swift in Sources */,
 				78EC5F7D280BB9EF00C18DF5 /* TabBarController.swift in Sources */,
 				783A4813281551DC00DE244A /* FruitUI.swift in Sources */,
 				78F67DF828222CF900673BBC /* JokeSearchViewModel.swift in Sources */,
