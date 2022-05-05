@@ -24,6 +24,10 @@ extension StudentViewController {
         super.viewDidLoad()
         viewModel.fetch()
         ui.setupView(rootView: view)
+        ui.setupNavigationBar(
+            navigationBar: navigationController?.navigationBar,
+            navigationItem: navigationItem
+        )
         ui.setupTableView(delegate: self, viewModel: viewModel)
         setupEvent()
         bindToViewModel()
@@ -41,6 +45,11 @@ private extension StudentViewController {
             self.ui.clear()
             self.viewModel.add()
             self.viewModel.fetch()
+        }
+        .store(in: &cancellables)
+
+        ui.navButtonTapPublisher.sink { [weak self] _ in
+            print("TAP")
         }
         .store(in: &cancellables)
     }

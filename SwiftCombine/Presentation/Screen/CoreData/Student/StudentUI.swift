@@ -43,6 +43,7 @@ final class StudentUI {
         return $0
     }(UIButton())
 
+    private let navigationButton = Navigationbutton(title: "部活一覧へ")
     private let tableView = UITableView()
 
     var isValidButton: Bool = false {
@@ -66,6 +67,10 @@ final class StudentUI {
 
     lazy var saveButtonTapPublisher: UIControl.Publisher<UIButton> = {
         saveButton.publisher(for: .touchUpInside)
+    }()
+
+    lazy var navButtonTapPublisher: UIControl.Publisher<Navigationbutton> = {
+        navigationButton.publisher(for: .touchUpInside)
     }()
 
     private(set) var dataSource: StudentDataSource!
@@ -164,6 +169,13 @@ extension StudentUI: UserInterface {
                 tableView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
                 tableView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor)
         )
+    }
+
+    func setupNavigationBar(
+        navigationBar: UINavigationBar?,
+        navigationItem: UINavigationItem?
+    ) {
+        navigationItem?.rightBarButtonItem = .init(customView: navigationButton)
     }
 }
 
