@@ -18,23 +18,23 @@ typealias SetOnboardingModel = ModelImpl<Repos.Onboarding.SetIsFinished, NoMappe
 
 struct Model {
     struct CoreData {
-        static func Club(useTestData: Bool = false) -> ClubModel {
+        static func Club() -> ClubModel {
             .init(
-                repository: Repos.Local.ClubCoreData(useTestData: useTestData),
+                repository: Repos.Local.ClubCoreData(),
                 mapper: ClubMapper()
             )
         }
 
-        static func Fruit(useTestData: Bool = false) -> FruitModel {
+        static func Fruit() -> FruitModel {
             .init(
-                repository: Repos.Local.FruitCoreData(useTestData: useTestData),
+                repository: Repos.Local.FruitCoreData(),
                 mapper: FruitMapper()
             )
         }
 
-        static func Student(useTestData: Bool = false) -> StudentModel {
+        static func Student() -> StudentModel {
             .init(
-                repository: Repos.Local.StudentCoreData(useTestData: useTestData),
+                repository: Repos.Local.StudentCoreData(),
                 mapper: StudentMapper()
             )
         }

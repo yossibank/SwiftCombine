@@ -41,8 +41,8 @@ private extension IndicatorViewController {
             indicator,
 
             constraints:
-            indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+                indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         )
     }
 }

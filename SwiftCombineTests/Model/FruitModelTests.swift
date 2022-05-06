@@ -5,7 +5,12 @@ final class FruitModelTests: XCTestCase {
     private var model: FruitModel!
 
     override func setUpWithError() throws {
-        model = Model.CoreData.Fruit(useTestData: true)
+        model = Model.CoreData.Fruit()
+    }
+
+    override func tearDown() {
+        let object: Fruit = .init()
+        CoreDataManager.shared.deleteObject(object)
     }
 
     func testAddFruitModel() throws {
@@ -24,7 +29,7 @@ final class FruitModelTests: XCTestCase {
         model.add(.init(name: "Lemon"))
         model.add(.init(name: "Peach"))
 
-        let predicate = NSPredicate(format: "%K=%@", "name", "Apple")
+        let predicate = NSPredicate(format: "%K = %@", "name", "Apple")
         model.delete(predicate: [predicate])
 
         let result = try awaitPublisher(model.fetch())

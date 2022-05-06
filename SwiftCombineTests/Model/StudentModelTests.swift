@@ -5,7 +5,12 @@ final class StudentModelTests: XCTestCase {
     private var model: StudentModel!
 
     override func setUpWithError() throws {
-        model = Model.CoreData.Student(useTestData: true)
+        model = Model.CoreData.Student()
+    }
+
+    override func tearDown() {
+        let object: Student = .init()
+        CoreDataManager.shared.deleteObject(object)
     }
 
     func testAddStudentModel() throws {
@@ -24,7 +29,7 @@ final class StudentModelTests: XCTestCase {
         model.add(.init(name: "name2", age: 25, number: 1))
         model.add(.init(name: "name3", age: 30, number: 2))
 
-        let predicate = NSPredicate(format: "%K=%@", "name", "name1")
+        let predicate = NSPredicate(format: "%K = %@", "name", "name1")
         model.delete(predicate: [predicate])
 
         let result = try awaitPublisher(model.fetch())

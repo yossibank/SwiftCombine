@@ -47,4 +47,8 @@ extension ClubViewModel {
         }
         .store(in: &cancellables)
     }
+
+    func mock() {
+        model.mock()
+    }
 }

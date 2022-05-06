@@ -5,7 +5,12 @@ final class StudentViewModelTests: XCTestCase {
     private var viewModel: StudentViewModel!
 
     override func setUpWithError() throws {
-        viewModel = StudentViewModel(model: Model.CoreData.Student(useTestData: true))
+        viewModel = StudentViewModel(model: Model.CoreData.Student())
+    }
+
+    override func tearDown() {
+        let object: Student = .init()
+        CoreDataManager.shared.deleteObject(object)
     }
 
     func testAdd() throws {

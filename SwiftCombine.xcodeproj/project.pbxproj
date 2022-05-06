@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		780D09B528028B7000454705 /* Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D09B428028B7000454705 /* Combine.swift */; };
-		780D09B82802908C00454705 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D09B72802908C00454705 /* Publisher.swift */; };
 		7819F5FB2820D36F00E662EC /* FruitViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F5FA2820D36F00E662EC /* FruitViewModelTests.swift */; };
 		7819F5FD282111B400E662EC /* JokeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F5FC282111B400E662EC /* JokeRequest.swift */; };
 		7819F5FF2821155400E662EC /* JokeGetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F5FE2821155400E662EC /* JokeGetModel.swift */; };
@@ -65,8 +63,6 @@
 		784DBDE42823CDDA0029EF58 /* ClubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDE32823CDDA0029EF58 /* ClubViewModel.swift */; };
 		784DBDE62823D1D70029EF58 /* StudentModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDE52823D1D70029EF58 /* StudentModelTests.swift */; };
 		784DBDE82823D27F0029EF58 /* StudentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDE72823D27F0029EF58 /* StudentViewModelTests.swift */; };
-		784DBDEA2823D74A0029EF58 /* ClubModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDE92823D74A0029EF58 /* ClubModelTests.swift */; };
-		784DBDEC2823D7E00029EF58 /* ClubViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDEB2823D7E00029EF58 /* ClubViewModelTests.swift */; };
 		7859A2282815912200E0F08C /* UITextField+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7859A2272815912200E0F08C /* UITextField+Publisher.swift */; };
 		7859A23328159F6100E0F08C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7859A23128159F6100E0F08C /* Model.xcdatamodeld */; };
 		786071DE2813AA5C0074ECB8 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */; };
@@ -81,6 +77,7 @@
 		788407D42814147A00641E27 /* DeferredViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788407D32814147A00641E27 /* DeferredViewModel.swift */; };
 		788407D7281423DE00641E27 /* GetJokeRandom.json in Resources */ = {isa = PBXBuildFile; fileRef = 788407D6281423DE00641E27 /* GetJokeRandom.json */; };
 		788407E7281424CA00641E27 /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788407E6281424CA00641E27 /* RequestTests.swift */; };
+		789F1DE22824CFC800FB0113 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789F1DE12824CFC800FB0113 /* CoreDataManager.swift */; };
 		78A11E14281CF56C00790D24 /* GetOnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A11E13281CF56C00790D24 /* GetOnboardingModel.swift */; };
 		78A11E16281CF57400790D24 /* SetOnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A11E15281CF57400790D24 /* SetOnboardingModel.swift */; };
 		78A11E18281D2CCC00790D24 /* TopViewControllerAccessible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A11E17281D2CCC00790D24 /* TopViewControllerAccessible.swift */; };
@@ -166,8 +163,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		780D09B428028B7000454705 /* Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combine.swift; sourceTree = "<group>"; };
-		780D09B72802908C00454705 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		7819F5FA2820D36F00E662EC /* FruitViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitViewModelTests.swift; sourceTree = "<group>"; };
 		7819F5FC282111B400E662EC /* JokeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeRequest.swift; sourceTree = "<group>"; };
 		7819F5FE2821155400E662EC /* JokeGetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeGetModel.swift; sourceTree = "<group>"; };
@@ -224,8 +219,6 @@
 		784DBDE32823CDDA0029EF58 /* ClubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubViewModel.swift; sourceTree = "<group>"; };
 		784DBDE52823D1D70029EF58 /* StudentModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModelTests.swift; sourceTree = "<group>"; };
 		784DBDE72823D27F0029EF58 /* StudentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewModelTests.swift; sourceTree = "<group>"; };
-		784DBDE92823D74A0029EF58 /* ClubModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubModelTests.swift; sourceTree = "<group>"; };
-		784DBDEB2823D7E00029EF58 /* ClubViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubViewModelTests.swift; sourceTree = "<group>"; };
 		7859A2272815912200E0F08C /* UITextField+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Publisher.swift"; sourceTree = "<group>"; };
 		7859A23228159F6100E0F08C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
@@ -241,6 +234,7 @@
 		788407D6281423DE00641E27 /* GetJokeRandom.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetJokeRandom.json; sourceTree = "<group>"; };
 		788407DC2814247D00641E27 /* SwiftCombineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCombineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		788407E6281424CA00641E27 /* RequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTests.swift; sourceTree = "<group>"; };
+		789F1DE12824CFC800FB0113 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		78A11E13281CF56C00790D24 /* GetOnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOnboardingModel.swift; sourceTree = "<group>"; };
 		78A11E15281CF57400790D24 /* SetOnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetOnboardingModel.swift; sourceTree = "<group>"; };
 		78A11E17281D2CCC00790D24 /* TopViewControllerAccessible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewControllerAccessible.swift; sourceTree = "<group>"; };
@@ -362,23 +356,6 @@
 				78CBE26F27F31DA500DF1667 /* LaunchScreen.storyboard */,
 			);
 			path = Launch;
-			sourceTree = "<group>";
-		};
-		780D09B328028B6500454705 /* Combine */ = {
-			isa = PBXGroup;
-			children = (
-				780D09B428028B7000454705 /* Combine.swift */,
-				780D09B62802907300454705 /* HowToUse */,
-			);
-			path = Combine;
-			sourceTree = "<group>";
-		};
-		780D09B62802907300454705 /* HowToUse */ = {
-			isa = PBXGroup;
-			children = (
-				780D09B72802908C00454705 /* Publisher.swift */,
-			);
-			path = HowToUse;
 			sourceTree = "<group>";
 		};
 		780D09B92802BE2A00454705 /* Data */ = {
@@ -504,7 +481,6 @@
 		783A47F7281503E300DE244A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				784DBDE92823D74A0029EF58 /* ClubModelTests.swift */,
 				782477EC28200C93004DEEE5 /* FruitModelTests.swift */,
 				784DBDE52823D1D70029EF58 /* StudentModelTests.swift */,
 				7819F6092821195100E662EC /* JokeModelTests.swift */,
@@ -522,6 +498,7 @@
 				7859A22C28159AC600E0F08C /* Fruit */,
 				78E8236E2822714200C71BF3 /* Student */,
 				782477C4281ED055004DEEE5 /* CoreDataError.swift */,
+				789F1DE12824CFC800FB0113 /* CoreDataManager.swift */,
 				783A480928154D8C00DE244A /* CoreDataRepository.swift */,
 				784DBDD12823B81A0029EF58 /* SearchConditions.swift */,
 				7859A23128159F6100E0F08C /* Model.xcdatamodeld */,
@@ -695,7 +672,6 @@
 		78A11E1E281D7A6F00790D24 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				784DBDEB2823D7E00029EF58 /* ClubViewModelTests.swift */,
 				7819F5FA2820D36F00E662EC /* FruitViewModelTests.swift */,
 				784DBDE72823D27F0029EF58 /* StudentViewModelTests.swift */,
 				7819F60B282119B600E662EC /* JokeGetViewModelTests.swift */,
@@ -931,7 +907,6 @@
 				78EC5F6C280BB57B00C18DF5 /* UIViewController+Container.swift */,
 				786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */,
 				7871EFE62813B2F8004E477D /* AppUtil */,
-				780D09B328028B6500454705 /* Combine */,
 				78AAF063280AD6F200BF0E3B /* Logger */,
 			);
 			path = Utility;
@@ -1123,7 +1098,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				784DBDEC2823D7E00029EF58 /* ClubViewModelTests.swift in Sources */,
 				782477ED28200C93004DEEE5 /* FruitModelTests.swift in Sources */,
 				78A11E20281D7C0B00790D24 /* JokeRandomViewModelTests.swift in Sources */,
 				7819F60C282119B600E662EC /* JokeGetViewModelTests.swift in Sources */,
@@ -1140,7 +1114,6 @@
 				78F67E0128225AB000673BBC /* JokeSearchViewModelTests.swift in Sources */,
 				782477C0281E95B9004DEEE5 /* JokeSlackViewModelTests.swift in Sources */,
 				782477BE281E9530004DEEE5 /* JokeSlackModelTests.swift in Sources */,
-				784DBDEA2823D74A0029EF58 /* ClubModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1151,13 +1124,11 @@
 				7819F616282173AB00E662EC /* JokeSearchModel.swift in Sources */,
 				78AAF05E280AC43B00BF0E3B /* LocalRequest.swift in Sources */,
 				7871EFF62813D1C6004E477D /* SubjuctViewController.swift in Sources */,
-				780D09B82802908C00454705 /* Publisher.swift in Sources */,
 				784DBDD52823C43B0029EF58 /* NavigationButton.swift in Sources */,
 				78AAF05A280ABFCD00BF0E3B /* TestDataFetchRequest.swift in Sources */,
 				78AAF07E280B0B2700BF0E3B /* ModelProtocol.swift in Sources */,
 				78AAF058280ABEE600BF0E3B /* URLRequest+Extension.swift in Sources */,
 				782477C5281ED055004DEEE5 /* CoreDataError.swift in Sources */,
-				780D09B528028B7000454705 /* Combine.swift in Sources */,
 				782477DE281F9AF0004DEEE5 /* JokeSlackMapper.swift in Sources */,
 				782477D7281F9948004DEEE5 /* JokeEntity.swift in Sources */,
 				78EC5F8B280BC2FE00C18DF5 /* UIControl+Publisher.swift in Sources */,
@@ -1253,6 +1224,7 @@
 				782477DA281F999F004DEEE5 /* JokeMapper.swift in Sources */,
 				78E823732822717A00C71BF3 /* Student+CoreDataProperties.swift in Sources */,
 				783A4815281551E500DE244A /* FruitViewController.swift in Sources */,
+				789F1DE22824CFC800FB0113 /* CoreDataManager.swift in Sources */,
 				78E82379282273C600C71BF3 /* StudentEntity.swift in Sources */,
 				78A11E16281CF57400790D24 /* SetOnboardingModel.swift in Sources */,
 				784DBDD72823CB510029EF58 /* ClubModel.swift in Sources */,

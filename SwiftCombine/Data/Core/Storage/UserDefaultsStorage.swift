@@ -34,6 +34,7 @@ final class UserDefaultsStorage<T: Equatable> {
         set {
             if newValue == defaultValue {
                 userDefaults?.removeObject(forKey: key)
+                return
             }
 
             userDefaults?.set(newValue, forKey: key)

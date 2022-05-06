@@ -10,38 +10,7 @@ protocol CoreDataRepo {
 }
 
 struct CoreDataRepository<T: NSManagedObject>: CoreDataRepo {
-    private var managedObjectModel: NSManagedObjectModel = {
-        let managedObjectModel = NSManagedObjectModel.mergedModel(from: [Bundle.main])!
-        return managedObjectModel
-    }()
-
-    private var context: NSManagedObjectContext {
-        persistentContainer.viewContext
-    }
-
-    private let persistentContainer: NSPersistentContainer
-    private let useTestData: Bool
-
-    init(useTestData: Bool) {
-        self.useTestData = useTestData
-
-        let container = NSPersistentContainer(name: "Model", managedObjectModel: managedObjectModel)
-
-        if useTestData {
-            let description = NSPersistentStoreDescription()
-            description.type = NSInMemoryStoreType
-            description.shouldAddStoreAsynchronously = false
-            container.persistentStoreDescriptions = [description]
-        }
-
-        container.loadPersistentStores { _, error in
-            if let error = error {
-                Logger.error(message: error.localizedDescription)
-            }
-        }
-
-        self.persistentContainer = container
-    }
+    private let context = CoreDataManager.shared.context
 
     func fetch(
         conditions: [SearchCondition] = [],

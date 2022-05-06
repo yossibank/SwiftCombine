@@ -2,8 +2,18 @@
 import XCTest
 
 final class MapperTests: XCTestCase {
+    override func tearDown() {
+        let object1: Club = .init()
+        let object2: Fruit = .init()
+        let object3: Student = .init()
+
+        CoreDataManager.shared.deleteObject(object1)
+        CoreDataManager.shared.deleteObject(object2)
+        CoreDataManager.shared.deleteObject(object3)
+    }
+
     func testClubMapper() {
-        let club: Club = CoreDataRepository(useTestData: true).object()
+        let club: Club = CoreDataRepository().object()
         club.name = "soccer"
         club.money = 20000
         club.place = "ground"
@@ -24,7 +34,7 @@ final class MapperTests: XCTestCase {
     }
 
     func testFruitMapper() {
-        let fruit: Fruit = CoreDataRepository(useTestData: true).object()
+        let fruit: Fruit = CoreDataRepository().object()
         fruit.name = "Fruit"
 
         let result = FruitMapper().convert(
@@ -37,7 +47,7 @@ final class MapperTests: XCTestCase {
     }
 
     func testStudentMapper() {
-        let student: Student = CoreDataRepository(useTestData: true).object()
+        let student: Student = CoreDataRepository().object()
         student.name = "student"
         student.age = 20
         student.number = 0
