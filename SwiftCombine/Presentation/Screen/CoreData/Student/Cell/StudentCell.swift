@@ -43,8 +43,12 @@ final class StudentCell: UITableViewCell {
 
 extension StudentCell {
     func configure(item: StudentItem) {
+        if let clubName = item.clubName {
+            nameLabel.text = "\(item.name)   \(clubName)"
+        } else {
+            nameLabel.text = item.name
+        }
         numberLabel.text = "No: \(item.number)"
-        nameLabel.text = item.name
         ageLabel.text = "年齢: \(item.age)"
     }
 }

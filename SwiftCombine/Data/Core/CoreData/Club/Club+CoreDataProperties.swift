@@ -10,6 +10,10 @@ extension Club {
     @NSManaged public var place: String?
     @NSManaged public var schedule: String?
     @NSManaged public var student: NSSet?
+
+    var students: [Student] {
+        student?.allObjects as? [Student] ?? []
+    }
 }
 
 extension Club : Identifiable {}

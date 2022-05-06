@@ -64,7 +64,11 @@ private extension ClubUI {
             withIdentifier: String(describing: UITableViewCell.self),
             for: indexPath
         )
-        cell.textLabel?.text = "\(item.name)"
+        let studentName = item.students.isEmpty
+            ? ""
+            : item.students.map(\.name).joined(separator: ",")
+
+        cell.textLabel?.text = "\(item.name)   \(studentName)"
         return cell
     }
 }
@@ -80,7 +84,7 @@ extension ClubUI: UserInterface {
 
             constraints:
                 tableView.topAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.bottomAnchor),
+                tableView.bottomAnchor.constraint(equalTo: rootView.safeAreaLayoutGuide.bottomAnchor),
                 tableView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
                 tableView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor)
         )

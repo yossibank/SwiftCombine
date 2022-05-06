@@ -18,11 +18,9 @@ extension ModelImpl where R == Repos.Local.StudentCoreData, M == StudentMapper {
     }
 
     func add(_ entity: StudentEntity) {
-        let student: Student = repository.object()
-        student.name = entity.name
-        student.age = Int32(entity.age)
-        student.number = Int32(entity.number)
-        repository.add(student)
+        let object: Student = repository.object()
+        object.configure(entity)
+        repository.add(object)
     }
 
     func delete(predicate: [NSPredicate]) {

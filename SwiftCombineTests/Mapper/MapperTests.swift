@@ -27,7 +27,8 @@ final class MapperTests: XCTestCase {
             name: "soccer",
             money: 20000,
             place: "ground",
-            schedule: "monday"
+            schedule: "monday",
+            students: []
         )
 
         XCTAssertEqual(result, expect)

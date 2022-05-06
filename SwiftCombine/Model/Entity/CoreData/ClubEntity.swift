@@ -3,4 +3,5 @@ struct ClubEntity: Equatable {
     let money: Int
     let place: String?
     let schedule: String?
+    var students: [StudentEntity]
 }

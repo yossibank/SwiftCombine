@@ -40,7 +40,8 @@ extension ClubViewModel {
                     name: $0.name,
                     money: $0.money,
                     place: $0.place ?? "",
-                    schedule: $0.schedule ?? ""
+                    schedule: $0.schedule ?? "",
+                    students: $0.students.map { .init(name: $0.name) }
                 )
             }
             self?.state = .done(state)

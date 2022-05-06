@@ -45,7 +45,14 @@ extension StudentViewModel {
                 Logger.debug(message: "finished")
             }
         } receiveValue: { [weak self] state in
-            self?.items = state.map { .init(name: $0.name, age: $0.age, number: $0.number) }
+            self?.items = state.map {
+                .init(
+                    name: $0.name,
+                    age: $0.age,
+                    number: $0.number,
+                    clubName: $0.club?.name
+                )
+            }
             self?.state = .done(state)
         }
         .store(in: &cancellables)

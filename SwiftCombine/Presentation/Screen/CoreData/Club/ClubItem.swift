@@ -7,4 +7,9 @@ struct ClubItem: Hashable {
     let money: Int
     let place: String
     let schedule: String
+    let students: [StudentItem]
+
+    struct StudentItem: Hashable {
+        let name: String
+    }
 }
