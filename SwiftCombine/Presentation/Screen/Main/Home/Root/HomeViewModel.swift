@@ -7,15 +7,15 @@ final class HomeViewModel: ViewModel {
 
     private var cancellables: Set<AnyCancellable> = .init()
 
-    private let getOnboardingModel: GetOnboardingModel
-    private let setOnboardingModel: SetOnboardingModel
+    private let getModel: GetOnboardingModel
+    private let setModel: SetOnboardingModel
 
     init(
-        getOnboardingModel: GetOnboardingModel = Model.Onboarding.Get(),
-        setOnboardingModel: SetOnboardingModel = Model.Onboarding.Set()
+        getModel: GetOnboardingModel = Model.Onboarding.Get(),
+        setModel: SetOnboardingModel = Model.Onboarding.Set()
     ) {
-        self.getOnboardingModel = getOnboardingModel
-        self.setOnboardingModel = setOnboardingModel
+        self.getModel = getModel
+        self.setModel = setModel
     }
 }
 
@@ -23,7 +23,7 @@ final class HomeViewModel: ViewModel {
 
 extension HomeViewModel {
     func fetch() {
-        getOnboardingModel.fetch().sink { [weak self] value in
+        getModel.fetch().sink { [weak self] value in
             guard let self = self else { return }
             Logger.debug(message: "PersistedDataHolder.onboardingFinished: \(value)")
             self.isOn = value
@@ -32,7 +32,7 @@ extension HomeViewModel {
     }
 
     func set() {
-        setOnboardingModel.set(isOn)
+        setModel.set(isOn)
             .sink { _ in }
             .store(in: &cancellables)
     }

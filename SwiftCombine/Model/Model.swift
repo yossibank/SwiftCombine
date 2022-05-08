@@ -16,6 +16,11 @@ typealias JokeSlackModel = ModelImpl<Repos.Joke.Slack, JokeSlackMapper>
 typealias GetOnboardingModel = ModelImpl<Repos.Onboarding.GetIsFinished, NoMapper>
 typealias SetOnboardingModel = ModelImpl<Repos.Onboarding.SetIsFinished, NoMapper>
 
+// MARK: - SomeFile
+
+typealias GetSomeFileModel = ModelImpl<Repos.SomeFile.Get, NoMapper>
+typealias SetSomeFileModel = ModelImpl<Repos.SomeFile.Set, NoMapper>
+
 struct Model {
     struct CoreData {
         static func Club() -> ClubModel {
@@ -85,6 +90,22 @@ struct Model {
         static func Set() -> SetOnboardingModel {
             .init(
                 repository: Repos.Onboarding.SetIsFinished(),
+                mapper: NoMapper()
+            )
+        }
+    }
+
+    struct SomeFile {
+        static func Get() -> GetSomeFileModel {
+            .init(
+                repository: Repos.SomeFile.Get(),
+                mapper: NoMapper()
+            )
+        }
+
+        static func Set() -> SetSomeFileModel {
+            .init(
+                repository: Repos.SomeFile.Set(),
                 mapper: NoMapper()
             )
         }

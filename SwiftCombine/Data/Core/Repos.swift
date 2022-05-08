@@ -16,4 +16,9 @@ struct Repos {
         typealias GetIsFinished = Repository<GetOnboardingFinishedRequest>
         typealias SetIsFinished = Repository<SetOnboardingFinishedRequest>
     }
+
+    struct SomeFile {
+        typealias Get = Repository<GetSomeFileRequest>
+        typealias Set = Repository<SetSomeFileRequest>
+    }
 }

@@ -114,6 +114,10 @@
 		78D0EFA12827949C00DBC98D /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFA02827949C00DBC98D /* AppConfig.swift */; };
 		78D0EFA3282798FA00DBC98D /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFA2282798FA00DBC98D /* FileStorage.swift */; };
 		78D0EFA528279C2900DBC98D /* FileName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFA428279C2900DBC98D /* FileName.swift */; };
+		78D0EFA928279CDF00DBC98D /* GetSomeFileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFA828279CDF00DBC98D /* GetSomeFileRequest.swift */; };
+		78D0EFAB28279CE800DBC98D /* SetSomeFIleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFAA28279CE800DBC98D /* SetSomeFIleRequest.swift */; };
+		78D0EFAE28279F5900DBC98D /* GetSomeFileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFAD28279F5900DBC98D /* GetSomeFileModel.swift */; };
+		78D0EFB028279F6000DBC98D /* SetSomeFileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFAF28279F6000DBC98D /* SetSomeFileModel.swift */; };
 		78E823722822717A00C71BF3 /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E823702822717A00C71BF3 /* Student+CoreDataClass.swift */; };
 		78E823732822717A00C71BF3 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E823712822717A00C71BF3 /* Student+CoreDataProperties.swift */; };
 		78E82376282271DF00C71BF3 /* Club+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E82374282271DF00C71BF3 /* Club+CoreDataClass.swift */; };
@@ -278,6 +282,10 @@
 		78D0EFA02827949C00DBC98D /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		78D0EFA2282798FA00DBC98D /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		78D0EFA428279C2900DBC98D /* FileName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileName.swift; sourceTree = "<group>"; };
+		78D0EFA828279CDF00DBC98D /* GetSomeFileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSomeFileRequest.swift; sourceTree = "<group>"; };
+		78D0EFAA28279CE800DBC98D /* SetSomeFIleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSomeFIleRequest.swift; sourceTree = "<group>"; };
+		78D0EFAD28279F5900DBC98D /* GetSomeFileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSomeFileModel.swift; sourceTree = "<group>"; };
+		78D0EFAF28279F6000DBC98D /* SetSomeFileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSomeFileModel.swift; sourceTree = "<group>"; };
 		78E823702822717A00C71BF3 /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
 		78E823712822717A00C71BF3 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		78E82374282271DF00C71BF3 /* Club+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Club+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -524,6 +532,7 @@
 				782477C1281EC7FE004DEEE5 /* CoreData */,
 				782477B8281E8B04004DEEE5 /* Joke */,
 				782477B9281E8B0F004DEEE5 /* Onboarding */,
+				78D0EFAC28279F4600DBC98D /* SomeFile */,
 			);
 			path = Impl;
 			sourceTree = "<group>";
@@ -749,6 +758,7 @@
 		78AAF06F280ADA1500BF0E3B /* LocalRequest */ = {
 			isa = PBXGroup;
 			children = (
+				78D0EFA728279CC200DBC98D /* FileManager */,
 				78D0EFA628279C7D00DBC98D /* UserDefaults */,
 			);
 			path = LocalRequest;
@@ -829,6 +839,24 @@
 				78AAF072280ADA4800BF0E3B /* SetOnboardingFinishedRequest.swift */,
 			);
 			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		78D0EFA728279CC200DBC98D /* FileManager */ = {
+			isa = PBXGroup;
+			children = (
+				78D0EFA828279CDF00DBC98D /* GetSomeFileRequest.swift */,
+				78D0EFAA28279CE800DBC98D /* SetSomeFIleRequest.swift */,
+			);
+			path = FileManager;
+			sourceTree = "<group>";
+		};
+		78D0EFAC28279F4600DBC98D /* SomeFile */ = {
+			isa = PBXGroup;
+			children = (
+				78D0EFAD28279F5900DBC98D /* GetSomeFileModel.swift */,
+				78D0EFAF28279F6000DBC98D /* SetSomeFileModel.swift */,
+			);
+			path = SomeFile;
 			sourceTree = "<group>";
 		};
 		78E8236E2822714200C71BF3 /* Student */ = {
@@ -1267,14 +1295,18 @@
 				78EC5F69280BB4F800C18DF5 /* UserInterface.swift in Sources */,
 				78A11E1D281D79E500790D24 /* Fruit+CoreDataClass.swift in Sources */,
 				7819F6022821167600E662EC /* JokeGetUI.swift in Sources */,
+				78D0EFA928279CDF00DBC98D /* GetSomeFileRequest.swift in Sources */,
 				78EC5F99280C272F00C18DF5 /* DEBUG_UI.swift in Sources */,
 				78AAF071280ADA3B00BF0E3B /* GetOnboardingFinishedRequest.swift in Sources */,
+				78D0EFB028279F6000DBC98D /* SetSomeFileModel.swift in Sources */,
 				78F67DFD28222E8E00673BBC /* JokeSearchCell.swift in Sources */,
 				788407D42814147A00641E27 /* DeferredViewModel.swift in Sources */,
+				78D0EFAE28279F5900DBC98D /* GetSomeFileModel.swift in Sources */,
 				78E8238728228CAA00C71BF3 /* StudentUI.swift in Sources */,
 				784DBDD22823B81A0029EF58 /* SearchConditions.swift in Sources */,
 				78E8238B28228CB700C71BF3 /* StudentViewModel.swift in Sources */,
 				78EC5F97280C272200C18DF5 /* DEBUG_FlowController.swift in Sources */,
+				78D0EFAB28279CE800DBC98D /* SetSomeFIleRequest.swift in Sources */,
 				782477B5281E8568004DEEE5 /* JokeSlackViewModel.swift in Sources */,
 				788407D22814147100641E27 /* DeferredViewController.swift in Sources */,
 				7819F6122821728600E662EC /* JokeSearchMapper.swift in Sources */,

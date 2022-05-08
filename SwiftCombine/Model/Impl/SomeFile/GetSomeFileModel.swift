@@ -1,7 +1,7 @@
 import Combine
 
-extension ModelImpl where R == Repos.Onboarding.GetIsFinished, M == NoMapper {
-    func fetch() -> AnyPublisher<Bool, Never> {
+extension ModelImpl where R == Repos.SomeFile.Get, M == NoMapper {
+    func fetch() -> AnyPublisher<[String], Never> {
         toPublisher { promise in
             if let response = repository.request() {
                 promise(.success(response))
