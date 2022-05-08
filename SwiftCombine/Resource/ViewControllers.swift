@@ -15,6 +15,13 @@ struct AppControllers {
         return instance
     }
 
+    static func SomeFile() -> SomeFileViewController {
+        let instance = SomeFileViewController()
+        instance.inject(viewModel: .init(), ui: .init())
+        instance.title = "SomeFile"
+        return instance
+    }
+
     struct CoreData {
         static func Club() -> ClubViewController {
             let instance = ClubViewController()

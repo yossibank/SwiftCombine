@@ -4,18 +4,18 @@ import UIKit
 // MARK: - properties & init
 
 final class FutureUI {
-    private lazy var countButton: UIButton = {
+    private let countLabel: UILabel = {
+        let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 16)
+        return label
+    }()
+
+    private let countButton: UIButton = {
         let button = UIButton()
         button.setTitle("20カウントで背景色変わる", for: .normal)
         button.backgroundColor = .red
         button.layer.cornerRadius = 8
         return button
-    }()
-
-    private let countLabel: UILabel = {
-        let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 16)
-        return label
     }()
 
     var text: String? {

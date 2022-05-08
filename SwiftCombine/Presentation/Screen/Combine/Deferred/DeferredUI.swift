@@ -4,7 +4,7 @@ import UIKit
 // MARK: - properties & init
 
 final class DeferredUI {
-    private lazy var futureButton: UIButton = {
+    private let futureButton: UIButton = {
         let button = UIButton()
         button.setTitle("Future実行", for: .normal)
         button.backgroundColor = .blue
@@ -12,7 +12,7 @@ final class DeferredUI {
         return button
     }()
 
-    private lazy var deferredButton: UIButton = {
+    private let deferredButton: UIButton = {
         let button = UIButton()
         button.setTitle("Deferred実行", for: .normal)
         button.backgroundColor = .red
