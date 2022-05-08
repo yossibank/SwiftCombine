@@ -121,6 +121,11 @@
 		78D0EFB32827A25D00DBC98D /* SomeFileUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFB22827A25D00DBC98D /* SomeFileUI.swift */; };
 		78D0EFB52827A26400DBC98D /* SomeFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFB42827A26400DBC98D /* SomeFileViewController.swift */; };
 		78D0EFB72827A26E00DBC98D /* SomeFileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFB62827A26E00DBC98D /* SomeFileViewModel.swift */; };
+		78D0EFB92827B5DB00DBC98D /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFB82827B5DB00DBC98D /* KeychainStorage.swift */; };
+		78D0EFBB2827B75200DBC98D /* KeychainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFBA2827B75200DBC98D /* KeychainKey.swift */; };
+		78D0EFBD2827B79600DBC98D /* SecretDataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFBC2827B79600DBC98D /* SecretDataHolder.swift */; };
+		78D0EFC02827B94500DBC98D /* GetAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFBF2827B94500DBC98D /* GetAccessTokenRequest.swift */; };
+		78D0EFC22827B94D00DBC98D /* SetAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFC12827B94D00DBC98D /* SetAccessTokenRequest.swift */; };
 		78E823722822717A00C71BF3 /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E823702822717A00C71BF3 /* Student+CoreDataClass.swift */; };
 		78E823732822717A00C71BF3 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E823712822717A00C71BF3 /* Student+CoreDataProperties.swift */; };
 		78E82376282271DF00C71BF3 /* Club+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E82374282271DF00C71BF3 /* Club+CoreDataClass.swift */; };
@@ -292,6 +297,11 @@
 		78D0EFB22827A25D00DBC98D /* SomeFileUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeFileUI.swift; sourceTree = "<group>"; };
 		78D0EFB42827A26400DBC98D /* SomeFileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeFileViewController.swift; sourceTree = "<group>"; };
 		78D0EFB62827A26E00DBC98D /* SomeFileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeFileViewModel.swift; sourceTree = "<group>"; };
+		78D0EFB82827B5DB00DBC98D /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
+		78D0EFBA2827B75200DBC98D /* KeychainKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKey.swift; sourceTree = "<group>"; };
+		78D0EFBC2827B79600DBC98D /* SecretDataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretDataHolder.swift; sourceTree = "<group>"; };
+		78D0EFBF2827B94500DBC98D /* GetAccessTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccessTokenRequest.swift; sourceTree = "<group>"; };
+		78D0EFC12827B94D00DBC98D /* SetAccessTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAccessTokenRequest.swift; sourceTree = "<group>"; };
 		78E823702822717A00C71BF3 /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
 		78E823712822717A00C71BF3 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		78E82374282271DF00C71BF3 /* Club+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Club+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -740,6 +750,7 @@
 			isa = PBXGroup;
 			children = (
 				78D0EFA2282798FA00DBC98D /* FileStorage.swift */,
+				78D0EFB82827B5DB00DBC98D /* KeychainStorage.swift */,
 				78AAF067280AD88E00BF0E3B /* UserDefaultsStorage.swift */,
 			);
 			path = Storage;
@@ -749,6 +760,7 @@
 			isa = PBXGroup;
 			children = (
 				78D0EFA428279C2900DBC98D /* FileName.swift */,
+				78D0EFBA2827B75200DBC98D /* KeychainKey.swift */,
 				78AAF06A280AD8FE00BF0E3B /* UserDefaultKey.swift */,
 			);
 			path = Configuration;
@@ -758,6 +770,7 @@
 			isa = PBXGroup;
 			children = (
 				78AAF06D280AD95E00BF0E3B /* PersistedDataHolder.swift */,
+				78D0EFBC2827B79600DBC98D /* SecretDataHolder.swift */,
 			);
 			path = DataHolder;
 			sourceTree = "<group>";
@@ -766,6 +779,7 @@
 			isa = PBXGroup;
 			children = (
 				78D0EFA728279CC200DBC98D /* FileManager */,
+				78D0EFBE2827B91100DBC98D /* Keychain */,
 				78D0EFA628279C7D00DBC98D /* UserDefaults */,
 			);
 			path = LocalRequest;
@@ -874,6 +888,15 @@
 				78D0EFB62827A26E00DBC98D /* SomeFileViewModel.swift */,
 			);
 			path = SomeFile;
+			sourceTree = "<group>";
+		};
+		78D0EFBE2827B91100DBC98D /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				78D0EFBF2827B94500DBC98D /* GetAccessTokenRequest.swift */,
+				78D0EFC12827B94D00DBC98D /* SetAccessTokenRequest.swift */,
+			);
+			path = Keychain;
 			sourceTree = "<group>";
 		};
 		78E8236E2822714200C71BF3 /* Student */ = {
@@ -1212,6 +1235,7 @@
 				7819F5FD282111B400E662EC /* JokeRequest.swift in Sources */,
 				782477E0281F9BD8004DEEE5 /* FruitEntity.swift in Sources */,
 				78EC5F65280BB4E700C18DF5 /* ViewModel.swift in Sources */,
+				78D0EFB92827B5DB00DBC98D /* KeychainStorage.swift in Sources */,
 				78EC5F85280BBC6000C18DF5 /* FutureViewController.swift in Sources */,
 				7819F5FF2821155400E662EC /* JokeGetModel.swift in Sources */,
 				78F67DFA28222DA600673BBC /* JokeSearchItem.swift in Sources */,
@@ -1259,6 +1283,7 @@
 				7819F61028216F4D00E662EC /* JokeSearchResponse.swift in Sources */,
 				782477B7281E8571004DEEE5 /* JokeSlackViewController.swift in Sources */,
 				78AAF080280B0D1F00BF0E3B /* JokeRandomModel.swift in Sources */,
+				78D0EFBD2827B79600DBC98D /* SecretDataHolder.swift in Sources */,
 				78EC5F7D280BB9EF00C18DF5 /* TabBarController.swift in Sources */,
 				783A4813281551DC00DE244A /* FruitUI.swift in Sources */,
 				78F67DF828222CF900673BBC /* JokeSearchViewModel.swift in Sources */,
@@ -1267,6 +1292,7 @@
 				7859A23328159F6100E0F08C /* Model.xcdatamodeld in Sources */,
 				78E82382282274BC00C71BF3 /* StudentModel.swift in Sources */,
 				78CBE26927F31DA200DF1667 /* HomeViewController.swift in Sources */,
+				78D0EFC22827B94D00DBC98D /* SetAccessTokenRequest.swift in Sources */,
 				7871EFFC2813DD3E004E477D /* JustViewController.swift in Sources */,
 				784DBDE02823CDCB0029EF58 /* ClubUI.swift in Sources */,
 				78AAF07C280B04F200BF0E3B /* Repository.swift in Sources */,
@@ -1288,6 +1314,7 @@
 				7819F6142821729400E662EC /* JokeSearchEntity.swift in Sources */,
 				78AAF073280ADA4800BF0E3B /* SetOnboardingFinishedRequest.swift in Sources */,
 				78AAF079280AFB5E00BF0E3B /* JokeResponse.swift in Sources */,
+				78D0EFC02827B94500DBC98D /* GetAccessTokenRequest.swift in Sources */,
 				78CBE26527F31DA200DF1667 /* AppDelegate.swift in Sources */,
 				782477AE281E7D56004DEEE5 /* JokeSlackResponse.swift in Sources */,
 				7819F6042821167F00E662EC /* JokeGetViewController.swift in Sources */,
@@ -1324,6 +1351,7 @@
 				78D0EFAE28279F5900DBC98D /* GetSomeFileModel.swift in Sources */,
 				78E8238728228CAA00C71BF3 /* StudentUI.swift in Sources */,
 				784DBDD22823B81A0029EF58 /* SearchConditions.swift in Sources */,
+				78D0EFBB2827B75200DBC98D /* KeychainKey.swift in Sources */,
 				78E8238B28228CB700C71BF3 /* StudentViewModel.swift in Sources */,
 				78EC5F97280C272200C18DF5 /* DEBUG_FlowController.swift in Sources */,
 				78D0EFAB28279CE800DBC98D /* SetSomeFIleRequest.swift in Sources */,

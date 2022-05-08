@@ -4,7 +4,7 @@ enum UserDefaultKey: String {
     case jokeId
 }
 
-struct UserDefaultEnumKey {
+enum UserDefaultEnumKey {
     enum ServerType: Int {
         case production
         case stage

@@ -21,4 +21,9 @@ struct Repos {
         typealias Get = Repository<GetSomeFileRequest>
         typealias Set = Repository<SetSomeFileRequest>
     }
+
+    struct AccessToken {
+        typealias Get = Repository<GetAccessTokenRequest>
+        typealias Set = Repository<SetAccessTokenRequest>
+    }
 }
