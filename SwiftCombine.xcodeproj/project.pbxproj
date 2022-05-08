@@ -776,7 +776,6 @@
 				782477D5281F993A004DEEE5 /* Entity */,
 				783A4810281551A100DE244A /* Impl */,
 				782477D8281F9965004DEEE5 /* Mapper */,
-				78D0EF9C2827923100DBC98D /* Analytics.swift */,
 				78AAF081280B100C00BF0E3B /* Model.swift */,
 				78AAF07D280B0B2700BF0E3B /* ModelProtocol.swift */,
 			);
@@ -910,6 +909,7 @@
 		78EC5F5F280BB43D00C18DF5 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				78D0EF9C2827923100DBC98D /* Analytics.swift */,
 				78D0EF9E2827938D00DBC98D /* FirebaseProvider.swift */,
 				78EC5F90280BC90300C18DF5 /* LoadingState.swift */,
 				78A11E17281D2CCC00790D24 /* TopViewControllerAccessible.swift */,
