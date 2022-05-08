@@ -7,6 +7,7 @@ final class UserDefaultsStorage<T: Equatable> {
         case mock
     }
 
+    // ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nilで判別すればtypeは不要
     private var userDefaults: UserDefaults? {
         switch type {
         case .default:
