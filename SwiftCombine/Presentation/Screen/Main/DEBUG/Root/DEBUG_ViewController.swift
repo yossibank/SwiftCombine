@@ -7,6 +7,7 @@ protocol DEBUG_ViewControllerDelegate: AnyObject {
     func didControllerSelected(item: DEBUG_API)
     func didCoreDataSelected(item: DEBUG_CoreData)
     func didCombineSelected(item: DEBUG_Combine)
+    func didFileStorageSelected(item: DEBUG_FileStorage)
 }
 
 // MARK: - inejct
@@ -90,6 +91,10 @@ extension DEBUG_ViewController: UITableViewDelegate {
         case .combine:
             let item = DEBUG_Combine.allCases[indexPath.row]
             delegate.didCombineSelected(item: item)
+
+        case .fileManager:
+            let item = DEBUG_FileStorage.allCases[indexPath.row]
+            delegate.didFileStorageSelected(item: item)
         }
     }
 }

@@ -5,10 +5,17 @@ import UIKit
 
 final class SomeFileUI {
     private lazy var stackView: UIStackView = {
-        $0.axis = .horizontal
+        $0.axis = .vertical
         $0.spacing = 32
         return $0
-    }(UIStackView(arrangedSubviews: [textField1, textField2, textField3, saveButton]))
+    }(UIStackView(arrangedSubviews: [label, textField1, textField2, textField3, saveButton]))
+
+    private let label: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = .boldSystemFont(ofSize: 14)
+        return label
+    }()
 
     private let textField1: UITextField = {
         $0.placeholder = "保存する内容入力"
@@ -37,15 +44,9 @@ final class SomeFileUI {
         return $0
     }(UIButton())
 
-    private let label: UILabel = {
-        let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 14)
-        return label
-    }()
-
     var someFile: [String] = [] {
         didSet {
-            label.text = "\(someFile)"
+            label.text = someFile.joined(separator: ",")
         }
     }
 
@@ -66,6 +67,16 @@ final class SomeFileUI {
     }()
 }
 
+// MARK: - internal methods
+
+extension SomeFileUI {
+    func clear() {
+        textField1.text = nil
+        textField2.text = nil
+        textField3.text = nil
+    }
+}
+
 // MARK: - protocol
 
 extension SomeFileUI: UserInterface {
@@ -76,9 +87,14 @@ extension SomeFileUI: UserInterface {
             stackView,
 
             constraints:
-                stackView.topAnchor.constraint(equalTo: rootView.topAnchor),
-                stackView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor),
-                stackView.centerXAnchor.constraint(equalTo: rootView.centerXAnchor)
+                stackView.centerYAnchor.constraint(equalTo: rootView.centerYAnchor),
+                stackView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor, constant: 32),
+                stackView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor, constant: -32),
+
+                textField1.heightAnchor.constraint(equalToConstant: 40),
+                textField2.heightAnchor.constraint(equalToConstant: 40),
+                textField3.heightAnchor.constraint(equalToConstant: 40),
+                saveButton.heightAnchor.constraint(equalToConstant: 56)
         )
     }
 }

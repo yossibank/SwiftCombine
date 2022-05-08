@@ -150,6 +150,12 @@ private extension DEBUG_UI {
             case .deferred:
                 cell.textLabel?.text = "Deferred"
             }
+
+        case let .fileManager(content):
+            switch content {
+            case .someFile:
+                cell.textLabel?.text = "SomeFile"
+            }
         }
 
         return cell

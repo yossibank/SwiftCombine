@@ -37,6 +37,7 @@ private extension SomeFileViewController {
         ui.saveButtonTapPublisher.sink { [weak self] _ in
             guard let self = self else { return }
             self.viewModel.set()
+            self.ui.clear()
         }
         .store(in: &cancellables)
     }

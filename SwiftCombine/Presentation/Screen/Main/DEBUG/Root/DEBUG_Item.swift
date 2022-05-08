@@ -4,6 +4,7 @@ enum DEBUG_Section: String, CaseIterable {
     case api
     case coreData
     case combine
+    case fileManager
 
     var items: [DEBUG_Item] {
         switch self {
@@ -21,6 +22,9 @@ enum DEBUG_Section: String, CaseIterable {
 
         case .combine:
             return DEBUG_Combine.allCases.map { $0.component }
+
+        case .fileManager:
+            return DEBUG_FileStorage.allCases.map { $0.component }
         }
     }
 }
@@ -31,6 +35,7 @@ enum DEBUG_Item: Hashable {
     case api(DEBUG_API)
     case coreData(DEBUG_CoreData)
     case combine(DEBUG_Combine)
+    case fileManager(DEBUG_FileStorage)
 }
 
 enum DEBUG_Development: String, CaseIterable, Hashable {
@@ -118,6 +123,17 @@ enum DEBUG_Combine: String, CaseIterable, Hashable {
 
         case .deferred:
             return .combine(.deferred)
+        }
+    }
+}
+
+enum DEBUG_FileStorage: String, CaseIterable, Hashable {
+    case someFile
+
+    var component: DEBUG_Item {
+        switch self {
+        case .someFile:
+            return .fileManager(.someFile)
         }
     }
 }

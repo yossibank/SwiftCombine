@@ -114,6 +114,14 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
             navVC.pushViewController(vc, animated: true)
         }
     }
+
+    func didFileStorageSelected(item: DEBUG_FileStorage) {
+        switch item {
+        case .someFile:
+            let vc = AppControllers.SomeFile()
+            navVC.pushViewController(vc, animated: true)
+        }
+    }
 }
 
 extension DEBUG_FlowController: JokeSearchViewControllerDelegate {

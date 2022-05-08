@@ -28,7 +28,7 @@ extension SomeFileViewModel {
     func fetch() {
         getModel.fetch().sink { [weak self] value in
             guard let self = self else { return }
-            Logger.debug(message: "FileS¥Manager SomeFile: \(value)")
+            Logger.debug(message: "FileManager SomeFile: \(value)")
             self.someFile = value
         }
         .store(in: &cancellables)
