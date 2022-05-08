@@ -6,12 +6,13 @@ protocol ModelProtocol {
 
     var repository: Repository { get }
     var mapper: Mapper { get }
-    var useTestData: Bool { get }
+    var analytics: Analytics { get }
 }
 
 struct ModelImpl<R, M>: ModelProtocol {
     var repository: R
     var mapper: M
+    var analytics: Analytics = .shared
     var useTestData: Bool = false
 
     func toPublisher<T: Equatable, E: Error>(

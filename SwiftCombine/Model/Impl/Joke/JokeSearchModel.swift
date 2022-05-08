@@ -3,6 +3,8 @@ import Combine
 extension ModelImpl where R == Repos.Joke.Search, M == JokeSearchMapper {
     func fetch(parameters: JokeSearchRequest.Parameters) -> AnyPublisher<JokeSearchEntity, APIError> {
         toPublisher { promise in
+            analytics.sendEvent()
+
             repository.request(
                 useTestData: useTestData,
                 parameters: parameters,

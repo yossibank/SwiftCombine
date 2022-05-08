@@ -108,6 +108,10 @@
 		78CBE26927F31DA200DF1667 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBE26827F31DA200DF1667 /* HomeViewController.swift */; };
 		78CBE26E27F31DA500DF1667 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78CBE26D27F31DA500DF1667 /* Assets.xcassets */; };
 		78CBE27127F31DA500DF1667 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78CBE26F27F31DA500DF1667 /* LaunchScreen.storyboard */; };
+		78D0EF9B282791A600DBC98D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 78D0EF9A282791A600DBC98D /* FirebaseAnalytics */; };
+		78D0EF9D2827923100DBC98D /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EF9C2827923100DBC98D /* Analytics.swift */; };
+		78D0EF9F2827938D00DBC98D /* FirebaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EF9E2827938D00DBC98D /* FirebaseProvider.swift */; };
+		78D0EFA12827949C00DBC98D /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFA02827949C00DBC98D /* AppConfig.swift */; };
 		78E823722822717A00C71BF3 /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E823702822717A00C71BF3 /* Student+CoreDataClass.swift */; };
 		78E823732822717A00C71BF3 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E823712822717A00C71BF3 /* Student+CoreDataProperties.swift */; };
 		78E82376282271DF00C71BF3 /* Club+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E82374282271DF00C71BF3 /* Club+CoreDataClass.swift */; };
@@ -267,6 +271,9 @@
 		78CBE26D27F31DA500DF1667 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78CBE27027F31DA500DF1667 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78CBE27227F31DA500DF1667 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78D0EF9C2827923100DBC98D /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
+		78D0EF9E2827938D00DBC98D /* FirebaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseProvider.swift; sourceTree = "<group>"; };
+		78D0EFA02827949C00DBC98D /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		78E823702822717A00C71BF3 /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
 		78E823712822717A00C71BF3 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		78E82374282271DF00C71BF3 /* Club+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Club+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -323,6 +330,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78D0EF9B282791A600DBC98D /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,6 +776,7 @@
 				782477D5281F993A004DEEE5 /* Entity */,
 				783A4810281551A100DE244A /* Impl */,
 				782477D8281F9965004DEEE5 /* Mapper */,
+				78D0EF9C2827923100DBC98D /* Analytics.swift */,
 				78AAF081280B100C00BF0E3B /* Model.swift */,
 				78AAF07D280B0B2700BF0E3B /* ModelProtocol.swift */,
 			);
@@ -795,6 +804,7 @@
 		78CBE26327F31DA200DF1667 /* SwiftCombine */ = {
 			isa = PBXGroup;
 			children = (
+				78D0EFA02827949C00DBC98D /* AppConfig.swift */,
 				78EC5F86280BBD8B00C18DF5 /* AppDataHolder.swift */,
 				78CBE26427F31DA200DF1667 /* AppDelegate.swift */,
 				78EC5F77280BB7C400C18DF5 /* AppFlowController.swift */,
@@ -900,6 +910,7 @@
 		78EC5F5F280BB43D00C18DF5 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				78D0EF9E2827938D00DBC98D /* FirebaseProvider.swift */,
 				78EC5F90280BC90300C18DF5 /* LoadingState.swift */,
 				78A11E17281D2CCC00790D24 /* TopViewControllerAccessible.swift */,
 				78EC5F8A280BC2FE00C18DF5 /* UIControl+Publisher.swift */,
@@ -1027,6 +1038,9 @@
 			dependencies = (
 			);
 			name = SwiftCombine;
+			packageProductDependencies = (
+				78D0EF9A282791A600DBC98D /* FirebaseAnalytics */,
+			);
 			productName = SwiftCombine;
 			productReference = 78CBE26127F31DA200DF1667 /* SwiftCombine.app */;
 			productType = "com.apple.product-type.application";
@@ -1060,6 +1074,9 @@
 				Base,
 			);
 			mainGroup = 78CBE25827F31DA200DF1667;
+			packageReferences = (
+				78D0EF99282791A600DBC98D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 78CBE26227F31DA200DF1667 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1155,6 +1172,7 @@
 				78EC5F7B280BB9E700C18DF5 /* NavigationController.swift in Sources */,
 				784DBDE22823CDD30029EF58 /* ClubViewController.swift in Sources */,
 				782477E4281F9D90004DEEE5 /* NoMapper.swift in Sources */,
+				78D0EF9F2827938D00DBC98D /* FirebaseProvider.swift in Sources */,
 				784DBDE42823CDDA0029EF58 /* ClubViewModel.swift in Sources */,
 				78EC5F70280BB66000C18DF5 /* JokeRandomViewController.swift in Sources */,
 				7871EFFE2813DD45004E477D /* JustViewModel.swift in Sources */,
@@ -1169,6 +1187,7 @@
 				7859A2282815912200E0F08C /* UITextField+Publisher.swift in Sources */,
 				7871EFF12813CDB7004E477D /* FutureViewModel.swift in Sources */,
 				783A4819281552F200DE244A /* FruitItem.swift in Sources */,
+				78D0EFA12827949C00DBC98D /* AppConfig.swift in Sources */,
 				78AAF077280AFAFC00BF0E3B /* JokeRandomRequest.swift in Sources */,
 				784DBDD92823CB7F0029EF58 /* ClubMapper.swift in Sources */,
 				78482229281BD22B006CEF44 /* HomeViewModel.swift in Sources */,
@@ -1219,6 +1238,7 @@
 				78EC5F61280BB49E00C18DF5 /* MainFlowController.swift in Sources */,
 				7819F6062821168900E662EC /* JokeGetViewModel.swift in Sources */,
 				782477AC281E7D33004DEEE5 /* JokeSlackRequest.swift in Sources */,
+				78D0EF9D2827923100DBC98D /* Analytics.swift in Sources */,
 				78EC5F91280BC90300C18DF5 /* LoadingState.swift in Sources */,
 				788407D02814146700641E27 /* DeferredUI.swift in Sources */,
 				782477DA281F999F004DEEE5 /* JokeMapper.swift in Sources */,
@@ -1515,6 +1535,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		78D0EF99282791A600DBC98D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		78D0EF9A282791A600DBC98D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78D0EF99282791A600DBC98D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7859A23128159F6100E0F08C /* Model.xcdatamodeld */ = {

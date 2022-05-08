@@ -3,6 +3,8 @@ import Combine
 extension ModelImpl where R == Repos.Joke.Get, M == JokeMapper {
     func fetch(jokeId: String) -> AnyPublisher<JokeEntity, APIError> {
         toPublisher { promise in
+            analytics.sendEvent()
+
             repository.request(
                 useTestData: useTestData,
                 parameters: .init(),
