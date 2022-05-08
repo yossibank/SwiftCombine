@@ -405,6 +405,7 @@
 				78AAF06C280AD94E00BF0E3B /* DataHolder */,
 				78AAF06F280ADA1500BF0E3B /* LocalRequest */,
 				788407D52814239E00641E27 /* TestData */,
+				78AAF083280B121B00BF0E3B /* Repos.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -730,7 +731,6 @@
 				78AAF05F280AC47500BF0E3B /* DataStructure.swift */,
 				78AAF05D280AC43B00BF0E3B /* LocalRequest.swift */,
 				78AAF07B280B04F200BF0E3B /* Repository.swift */,
-				78AAF083280B121B00BF0E3B /* Repos.swift */,
 				78AAF055280AB40300BF0E3B /* Request.swift */,
 				78AAF059280ABFCD00BF0E3B /* TestDataFetchRequest.swift */,
 				78AAF057280ABEE600BF0E3B /* URLRequest+Extension.swift */,
