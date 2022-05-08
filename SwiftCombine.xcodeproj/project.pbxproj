@@ -112,6 +112,8 @@
 		78D0EF9D2827923100DBC98D /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EF9C2827923100DBC98D /* Analytics.swift */; };
 		78D0EF9F2827938D00DBC98D /* FirebaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EF9E2827938D00DBC98D /* FirebaseProvider.swift */; };
 		78D0EFA12827949C00DBC98D /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFA02827949C00DBC98D /* AppConfig.swift */; };
+		78D0EFA3282798FA00DBC98D /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFA2282798FA00DBC98D /* FileStorage.swift */; };
+		78D0EFA528279C2900DBC98D /* FileName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFA428279C2900DBC98D /* FileName.swift */; };
 		78E823722822717A00C71BF3 /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E823702822717A00C71BF3 /* Student+CoreDataClass.swift */; };
 		78E823732822717A00C71BF3 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E823712822717A00C71BF3 /* Student+CoreDataProperties.swift */; };
 		78E82376282271DF00C71BF3 /* Club+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E82374282271DF00C71BF3 /* Club+CoreDataClass.swift */; };
@@ -274,6 +276,8 @@
 		78D0EF9C2827923100DBC98D /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		78D0EF9E2827938D00DBC98D /* FirebaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseProvider.swift; sourceTree = "<group>"; };
 		78D0EFA02827949C00DBC98D /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		78D0EFA2282798FA00DBC98D /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
+		78D0EFA428279C2900DBC98D /* FileName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileName.swift; sourceTree = "<group>"; };
 		78E823702822717A00C71BF3 /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
 		78E823712822717A00C71BF3 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		78E82374282271DF00C71BF3 /* Club+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Club+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -719,6 +723,7 @@
 		78AAF066280AD88300BF0E3B /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				78D0EFA2282798FA00DBC98D /* FileStorage.swift */,
 				78AAF067280AD88E00BF0E3B /* UserDefaultsStorage.swift */,
 			);
 			path = Storage;
@@ -727,6 +732,7 @@
 		78AAF069280AD8EF00BF0E3B /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				78D0EFA428279C2900DBC98D /* FileName.swift */,
 				78AAF06A280AD8FE00BF0E3B /* UserDefaultKey.swift */,
 			);
 			path = Configuration;
@@ -743,8 +749,7 @@
 		78AAF06F280ADA1500BF0E3B /* LocalRequest */ = {
 			isa = PBXGroup;
 			children = (
-				78AAF070280ADA3B00BF0E3B /* GetOnboardingFinishedRequest.swift */,
-				78AAF072280ADA4800BF0E3B /* SetOnboardingFinishedRequest.swift */,
+				78D0EFA628279C7D00DBC98D /* UserDefaults */,
 			);
 			path = LocalRequest;
 			sourceTree = "<group>";
@@ -815,6 +820,15 @@
 				78CBE27227F31DA500DF1667 /* Info.plist */,
 			);
 			path = SwiftCombine;
+			sourceTree = "<group>";
+		};
+		78D0EFA628279C7D00DBC98D /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				78AAF070280ADA3B00BF0E3B /* GetOnboardingFinishedRequest.swift */,
+				78AAF072280ADA4800BF0E3B /* SetOnboardingFinishedRequest.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		78E8236E2822714200C71BF3 /* Student */ = {
@@ -1214,6 +1228,7 @@
 				78EC5F6B280BB50000C18DF5 /* FlowController.swift in Sources */,
 				78E823912822A2E300C71BF3 /* StudentCell.swift in Sources */,
 				78EC5F89280BBF3700C18DF5 /* FutureUI.swift in Sources */,
+				78D0EFA3282798FA00DBC98D /* FileStorage.swift in Sources */,
 				786071DE2813AA5C0074ECB8 /* UIView+Layout.swift in Sources */,
 				78E8238528228CA300C71BF3 /* StudentItem.swift in Sources */,
 				783A4817281551EB00DE244A /* FruitViewModel.swift in Sources */,
@@ -1231,6 +1246,7 @@
 				782477AE281E7D56004DEEE5 /* JokeSlackResponse.swift in Sources */,
 				7819F6042821167F00E662EC /* JokeGetViewController.swift in Sources */,
 				78EC5F8D280BC7B500C18DF5 /* JokeRandomUI.swift in Sources */,
+				78D0EFA528279C2900DBC98D /* FileName.swift in Sources */,
 				78E82376282271DF00C71BF3 /* Club+CoreDataClass.swift in Sources */,
 				78EC5F8F280BC8C700C18DF5 /* JokeRandomViewModel.swift in Sources */,
 				78EC5F67280BB4EE00C18DF5 /* VCInjectable.swift in Sources */,
