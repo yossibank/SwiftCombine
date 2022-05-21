@@ -108,6 +108,10 @@ extension Request {
             dic[header.rawValue] = header.value
         }
 
+        if let host = URL(string: baseURL + path)?.host {
+            dic["Host"] = host
+        }
+
         return dic
     }
 
