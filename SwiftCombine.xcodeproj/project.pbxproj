@@ -53,6 +53,7 @@
 		783E70EC2842481600165587 /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783E70EB2842481600165587 /* Routing.swift */; };
 		783E70F0284264E400165587 /* DEBUG_Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783E70EF284264E400165587 /* DEBUG_Routing.swift */; };
 		783E70F228426F1500165587 /* JokeSearchRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783E70F128426F1500165587 /* JokeSearchRouting.swift */; };
+		783E70F42842706400165587 /* StudentRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783E70F32842706400165587 /* StudentRouting.swift */; };
 		78482225281BCEEA006CEF44 /* UserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78482224281BCEEA006CEF44 /* UserDefaultsTests.swift */; };
 		78482229281BD22B006CEF44 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78482228281BD22B006CEF44 /* HomeViewModel.swift */; };
 		784DBDD22823B81A0029EF58 /* SearchConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDD12823B81A0029EF58 /* SearchConditions.swift */; };
@@ -225,6 +226,7 @@
 		783E70EB2842481600165587 /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
 		783E70EF284264E400165587 /* DEBUG_Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_Routing.swift; sourceTree = "<group>"; };
 		783E70F128426F1500165587 /* JokeSearchRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchRouting.swift; sourceTree = "<group>"; };
+		783E70F32842706400165587 /* StudentRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRouting.swift; sourceTree = "<group>"; };
 		78482224281BCEEA006CEF44 /* UserDefaultsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsTests.swift; sourceTree = "<group>"; };
 		78482228281BD22B006CEF44 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		784DBDD12823B81A0029EF58 /* SearchConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConditions.swift; sourceTree = "<group>"; };
@@ -944,6 +946,7 @@
 			children = (
 				78E8238F2822A2DB00C71BF3 /* Cell */,
 				78E8238428228CA300C71BF3 /* StudentItem.swift */,
+				783E70F32842706400165587 /* StudentRouting.swift */,
 				78E8238628228CAA00C71BF3 /* StudentUI.swift */,
 				78E8238828228CB100C71BF3 /* StudentViewController.swift */,
 				78E8238A28228CB700C71BF3 /* StudentViewModel.swift */,
@@ -1326,6 +1329,7 @@
 				78EC5F69280BB4F800C18DF5 /* UserInterface.swift in Sources */,
 				78A11E1D281D79E500790D24 /* Fruit+CoreDataClass.swift in Sources */,
 				7819F6022821167600E662EC /* JokeGetUI.swift in Sources */,
+				783E70F42842706400165587 /* StudentRouting.swift in Sources */,
 				78D0EFA928279CDF00DBC98D /* GetSomeFileRequest.swift in Sources */,
 				78EC5F99280C272F00C18DF5 /* DEBUG_UI.swift in Sources */,
 				78AAF071280ADA3B00BF0E3B /* GetOnboardingFinishedRequest.swift in Sources */,

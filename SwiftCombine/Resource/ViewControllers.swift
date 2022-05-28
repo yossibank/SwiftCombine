@@ -39,7 +39,7 @@ struct AppControllers {
 
         static func Student() -> StudentViewController {
             let instance = StudentViewController()
-            instance.inject(viewModel: .init(), ui: .init())
+            instance.inject(viewModel: .init(), ui: .init(), routing: .init())
             instance.title = "Student"
             return instance
         }

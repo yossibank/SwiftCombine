@@ -33,7 +33,6 @@ extension DEBUG_Routing {
 
         case .student:
             let vc = AppControllers.CoreData.Student()
-            vc.delegate = self
             viewController.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -68,12 +67,5 @@ extension DEBUG_Routing {
 
     func update(_ type: UserDefaultEnumKey.ServerType) {
         (viewController.tabBarController as? TabBarController)?.configureTab(type)
-    }
-}
-
-extension DEBUG_Routing: StudentViewControllerDelegate {
-    func showClubScreen() {
-        let vc = AppControllers.CoreData.Club()
-        viewController.navigationController?.pushViewController(vc, animated: true)
     }
 }

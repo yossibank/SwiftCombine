@@ -1,16 +1,12 @@
 import Combine
 import UIKit
 
-protocol StudentViewControllerDelegate: AnyObject {
-    func showClubScreen()
-}
-
 // MARK: - inejct
 
 extension StudentViewController: VCInjectable {
     typealias VM = StudentViewModel
     typealias UI = StudentUI
-    typealias R = NoRouting
+    typealias R = StudentRouting
 }
 
 // MARK: - properties & init
@@ -18,9 +14,7 @@ extension StudentViewController: VCInjectable {
 final class StudentViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
-    var routing: R!
-
-    weak var delegate: StudentViewControllerDelegate!
+    var routing: R! { didSet { routing.viewController = self } }
 
     private var cancellables: Set<AnyCancellable> = .init()
 }
@@ -57,7 +51,7 @@ private extension StudentViewController {
         .store(in: &cancellables)
 
         ui.navButtonTapPublisher.sink { [weak self] _ in
-            self?.delegate.showClubScreen()
+            self?.routing.showClubScreen()
         }
         .store(in: &cancellables)
     }
