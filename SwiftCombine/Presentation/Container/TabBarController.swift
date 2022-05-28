@@ -46,16 +46,13 @@ enum TabBarItem: Int, CaseIterable {
 // MARK: - override methods
 
 final class TabBarController: UITabBarController {
-    enum TabType: Int {
-        case home
-        case debug
-    }
+    private var serverType: UserDefaultEnumKey.ServerType?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setViewControllers(TabBarItem.allCases.map(\.viewController), animated: false)
-        setupView()
         setupEvent()
+        configureTab(AppDataHolder.serverType)
     }
 }
 
@@ -63,9 +60,10 @@ final class TabBarController: UITabBarController {
 
 extension TabBarController {
     func configureTab(_ type: UserDefaultEnumKey.ServerType) {
-        let debugTab = viewControllers?[TabType.debug.rawValue]
+        let debugTab = viewControllers?[TabBarItem.debug.rawValue]
         let appearance = UITabBarAppearance()
         appearance.configureWithDefaultBackground()
+        appearance.shadowColor = .lightGray.withAlphaComponent(0.5)
 
         switch type {
         case .production:
@@ -92,17 +90,6 @@ extension TabBarController {
 // MARK: - private methods
 
 private extension TabBarController {
-    func setupView() {
-        let appearance = UITabBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.shadowColor = .lightGray.withAlphaComponent(0.5)
-        tabBar.standardAppearance = appearance
-
-        if #available(iOS 15.0, *) {
-            tabBar.scrollEdgeAppearance = appearance
-        }
-    }
-
     func setupEvent() {
         let longPressGesture: UILongPressGestureRecognizer = .init(
             target: self,
@@ -114,10 +101,38 @@ private extension TabBarController {
     @objc func longPressTabbar(_ sender: UILongPressGestureRecognizer) {
         #if DEBUG
         if sender.state == .ended {
-            let flow = DEBUG_FlowController()
-            flow.popOver(sourceView: view, sourceRect: tabBar.frame)
-            present(flow, animated: true)
+            let vc = AppControllers.Debug()
+            vc.modalPresentationStyle = .popover
+            vc.preferredContentSize = .init(
+                width: view.frame.width,
+                height: view.frame.height / 2
+            )
+            vc.popoverPresentationController?.sourceView = view
+            vc.popoverPresentationController?.sourceRect = tabBar.frame
+            vc.popoverPresentationController?.permittedArrowDirections = .down
+            vc.popoverPresentationController?.delegate = self
+            serverType = AppDataHolder.serverType
+            present(vc, animated: true)
         }
         #endif
+    }
+}
+
+extension TabBarController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(
+        for controller: UIPresentationController,
+        traitCollection: UITraitCollection
+    ) -> UIModalPresentationStyle {
+        .none
+    }
+
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        guard AppDataHolder.serverType != serverType else {
+            return
+        }
+
+        let window = UIApplication.shared.windows.first { $0.isKeyWindow }
+        window?.rootViewController = TabBarController()
+        window?.makeKeyAndVisible()
     }
 }

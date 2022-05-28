@@ -2,7 +2,7 @@ import Combine
 import UIKit
 
 protocol StudentViewControllerDelegate: AnyObject {
-    func didNavigationButtonTapped()
+    func showClubScreen()
 }
 
 // MARK: - inejct
@@ -57,7 +57,7 @@ private extension StudentViewController {
         .store(in: &cancellables)
 
         ui.navButtonTapPublisher.sink { [weak self] _ in
-            self?.delegate.didNavigationButtonTapped()
+            self?.delegate.showClubScreen()
         }
         .store(in: &cancellables)
     }

@@ -4,7 +4,7 @@ import UIKit
 // MARK: - delegate
 
 protocol DEBUG_UI_Delegate: AnyObject {
-    func changedServerType(_ type: UserDefaultEnumKey.ServerType)
+    func updateServerType(_ type: UserDefaultEnumKey.ServerType)
 }
 
 // MARK: - properties & init
@@ -97,7 +97,7 @@ private extension DEBUG_UI {
 
                 segment.selectedIndexPublisher.sink { [weak self] index in
                     AppDataHolder.serverType = .init(rawValue: index) ?? .stage
-                    self?.delegate.changedServerType(AppDataHolder.serverType)
+                    self?.delegate.updateServerType(AppDataHolder.serverType)
                 }
                 .store(in: &cancellables)
 

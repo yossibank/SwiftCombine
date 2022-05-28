@@ -2,7 +2,7 @@ import Combine
 import UIKit
 
 protocol JokeSearchViewControllerDelegate: AnyObject {
-    func didJokeSelected(jokeId: String)
+    func showJokeGetScreen(jokeId: String)
 }
 
 // MARK: - inject
@@ -85,7 +85,7 @@ extension JokeSearchViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
 
         let jokeId = viewModel.items[indexPath.row].id
-        delegate.didJokeSelected(jokeId: jokeId)
+        delegate.showJokeGetScreen(jokeId: jokeId)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

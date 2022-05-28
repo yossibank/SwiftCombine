@@ -10,7 +10,7 @@ struct AppControllers {
 
     static func Debug() -> DEBUG_ViewController {
         let instance = DEBUG_ViewController()
-        instance.inject(ui: .init())
+        instance.inject(ui: .init(), routing: .init())
         instance.title = "DEBUG"
         return instance
     }
