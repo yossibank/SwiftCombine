@@ -5,7 +5,9 @@ final class JokeRandomViewModelTests: XCTestCase {
     private var viewModel: JokeRandomViewModel!
 
     override func setUpWithError() throws {
-        viewModel = JokeRandomViewModel(model: Model.Joke.Random(useTestData: true))
+        viewModel = JokeRandomViewModel(
+            usecase: Domain.Usecase.Joke.Random(useTestData: true)
+        )
     }
 
     func testFetch() throws {

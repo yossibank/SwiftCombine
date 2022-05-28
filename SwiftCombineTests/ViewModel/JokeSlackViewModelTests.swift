@@ -5,7 +5,9 @@ final class JokeSlackViewModelTests: XCTestCase {
     private var viewModel: JokeSlackViewModel!
 
     override func setUpWithError() throws {
-        viewModel = JokeSlackViewModel(model: Model.Joke.Slack(useTestData: true))
+        viewModel = JokeSlackViewModel(
+            usecase: Domain.Usecase.Joke.Slack(useTestData: true)
+        )
     }
 
     func testFetch() throws {

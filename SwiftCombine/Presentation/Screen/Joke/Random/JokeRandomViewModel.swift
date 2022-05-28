@@ -9,10 +9,10 @@ final class JokeRandomViewModel: ViewModel {
 
     private var cancellables: Set<AnyCancellable> = .init()
 
-    private let model: JokeRandomModel
+    private let usecase: JokeRandomUsecase
 
-    init(model: JokeRandomModel = Model.Joke.Random()) {
-        self.model = model
+    init(usecase: JokeRandomUsecase = Domain.Usecase.Joke.Random()) {
+        self.usecase = usecase
     }
 }
 
@@ -22,7 +22,7 @@ extension JokeRandomViewModel {
     func fetch() {
         state = .loading
 
-        model.fetch().sink { [weak self] completion in
+        usecase.fetch().sink { [weak self] completion in
             switch completion {
             case let .failure(error):
                 self?.state = .failed(error)

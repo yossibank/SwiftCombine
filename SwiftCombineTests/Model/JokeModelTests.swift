@@ -4,7 +4,7 @@ import XCTest
 final class JokeModelTests: XCTestCase {
     func testJokeModel() throws {
         let result = try awaitPublisher(
-            Model.Joke.Get(useTestData: true).fetch(jokeId: "R7UfaahVfFd")
+            Domain.Usecase.Joke.Get(useTestData: true).fetch(jokeId: "R7UfaahVfFd")
         )
         let expect = try TestDataFetchRequest(
             testDataJsonPath: JokeRequest(

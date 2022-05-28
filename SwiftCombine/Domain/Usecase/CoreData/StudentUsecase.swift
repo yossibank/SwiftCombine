@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-extension ModelImpl where R == Repos.Local.StudentCoreData, M == StudentMapper {
+extension UsecaseImpl where R == Repos.Local.StudentCoreData, M == StudentMapper {
     func fetch() -> AnyPublisher<[StudentEntity], CoreDataError> {
         toPublisher { promise in
             repository.fetch() { result in

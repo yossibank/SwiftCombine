@@ -7,15 +7,15 @@ final class HomeViewModel: ViewModel {
 
     private var cancellables: Set<AnyCancellable> = .init()
 
-    private let getModel: GetOnboardingModel
-    private let setModel: SetOnboardingModel
+    private let getUsecase: GetOnboardingUsecase
+    private let setUsecase: SetOnboardingUsecase
 
     init(
-        getModel: GetOnboardingModel = Model.Onboarding.Get(),
-        setModel: SetOnboardingModel = Model.Onboarding.Set()
+        getUsecase: GetOnboardingUsecase = Domain.Usecase.Onboarding.Get(),
+        setUsecase: SetOnboardingUsecase = Domain.Usecase.Onboarding.Set()
     ) {
-        self.getModel = getModel
-        self.setModel = setModel
+        self.getUsecase = getUsecase
+        self.setUsecase = setUsecase
     }
 }
 
@@ -23,7 +23,7 @@ final class HomeViewModel: ViewModel {
 
 extension HomeViewModel {
     func fetch() {
-        getModel.fetch().sink { [weak self] value in
+        getUsecase.fetch().sink { [weak self] value in
             guard let self = self else { return }
             Logger.debug(message: "PersistedDataHolder.onboardingFinished: \(value)")
             self.isOn = value
@@ -32,7 +32,7 @@ extension HomeViewModel {
     }
 
     func set() {
-        setModel.set(isOn)
+        setUsecase.set(isOn)
             .sink { _ in }
             .store(in: &cancellables)
     }

@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-extension ModelImpl where R == Repos.Local.FruitCoreData, M == FruitMapper {
+extension UsecaseImpl where R == Repos.Local.FruitCoreData, M == FruitMapper {
     func fetch() -> AnyPublisher<[FruitEntity], CoreDataError> {
         toPublisher { promise in
             repository.fetch() { result in

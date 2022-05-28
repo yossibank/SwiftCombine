@@ -6,7 +6,7 @@ final class JokeGetViewModelTests: XCTestCase {
 
     override func setUpWithError() throws {
         viewModel = JokeGetViewModel(
-            model: Model.Joke.Get(useTestData: true),
+            usecase: Domain.Usecase.Joke.Get(useTestData: true),
             jokeId: "R7UfaahVfFd"
         )
     }

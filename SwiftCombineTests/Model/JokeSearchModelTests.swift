@@ -4,7 +4,7 @@ import XCTest
 final class JokeSearchModelTests: XCTestCase {
     func testJokeSearchModel() throws {
         let result = try awaitPublisher(
-            Model.Joke.Search(useTestData: true).fetch(parameters: .init())
+            Domain.Usecase.Joke.Search(useTestData: true).fetch(parameters: .init())
         )
         let expect = try TestDataFetchRequest(
             testDataJsonPath: JokeSearchRequest(

@@ -2,10 +2,10 @@
 import XCTest
 
 final class FruitModelTests: XCTestCase {
-    private var model: FruitModel!
+    private var model: FruitUsecase!
 
     override func setUpWithError() throws {
-        model = Model.CoreData.Fruit()
+        model = Domain.Usecase.CoreData.Fruit()
     }
 
     override func tearDown() {

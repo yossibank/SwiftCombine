@@ -1,6 +1,6 @@
 import Combine
 
-protocol ModelProtocol {
+protocol Usecase {
     associatedtype Repository
     associatedtype Mapper
 
@@ -9,7 +9,7 @@ protocol ModelProtocol {
     var analytics: Analytics { get }
 }
 
-struct ModelImpl<R, M>: ModelProtocol {
+struct UsecaseImpl<R, M>: Usecase {
     var repository: R
     var mapper: M
     var analytics: Analytics = .shared

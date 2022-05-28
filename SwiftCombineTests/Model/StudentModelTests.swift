@@ -2,10 +2,10 @@
 import XCTest
 
 final class StudentModelTests: XCTestCase {
-    private var model: StudentModel!
+    private var model: StudentUsecase!
 
     override func setUpWithError() throws {
-        model = Model.CoreData.Student()
+        model = Domain.Usecase.CoreData.Student()
     }
 
     override func tearDown() {

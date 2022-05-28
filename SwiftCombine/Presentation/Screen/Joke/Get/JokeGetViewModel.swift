@@ -9,14 +9,14 @@ final class JokeGetViewModel: ViewModel {
 
     private var cancellables: Set<AnyCancellable> = .init()
 
-    private let model: JokeModel
+    private let usecase: JokeUsecase
     private let jokeId: String
 
     init(
-        model: JokeModel = Model.Joke.Get(),
+        usecase: JokeUsecase = Domain.Usecase.Joke.Get(),
         jokeId: String
     ) {
-        self.model = model
+        self.usecase = usecase
         self.jokeId = jokeId
     }
 }
@@ -27,7 +27,7 @@ extension JokeGetViewModel {
     func fetch() {
         state = .loading
 
-        model.fetch(jokeId: jokeId).sink { [weak self] completion in
+        usecase.fetch(jokeId: jokeId).sink { [weak self] completion in
             switch completion {
             case let .failure(error):
                 self?.state = .failed(error)

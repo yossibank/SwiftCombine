@@ -1,14 +1,14 @@
 import Combine
 
-extension ModelImpl where R == Repos.Joke.Get, M == JokeMapper {
-    func fetch(jokeId: String) -> AnyPublisher<JokeEntity, APIError> {
+extension UsecaseImpl where R == Repos.Joke.Slack, M == JokeSlackMapper {
+    func fetch() -> AnyPublisher<JokeSlackEntity, APIError> {
         toPublisher { promise in
             analytics.sendEvent()
 
             repository.request(
                 useTestData: useTestData,
                 parameters: .init(),
-                pathComponent: jokeId
+                pathComponent: .init()
             ) { result in
                 switch result {
                 case let .success(response):

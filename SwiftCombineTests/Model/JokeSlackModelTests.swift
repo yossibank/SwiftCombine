@@ -4,7 +4,7 @@ import XCTest
 final class JokeSlackModelTests: XCTestCase {
     func testJokeSlackModel() throws {
         let result = try awaitPublisher(
-            Model.Joke.Slack(useTestData: true).fetch()
+            Domain.Usecase.Joke.Slack(useTestData: true).fetch()
         )
         let expect = try TestDataFetchRequest(
             testDataJsonPath: JokeSlackRequest().testDataPath

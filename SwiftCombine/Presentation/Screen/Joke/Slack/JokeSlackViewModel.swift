@@ -9,10 +9,10 @@ final class JokeSlackViewModel: ViewModel {
 
     private var cancellables: Set<AnyCancellable> = .init()
 
-    private let model: JokeSlackModel
+    private let usecase: JokeSlackUsecase
 
-    init(model: JokeSlackModel = Model.Joke.Slack()) {
-        self.model = model
+    init(usecase: JokeSlackUsecase = Domain.Usecase.Joke.Slack()) {
+        self.usecase = usecase
     }
 }
 
@@ -22,7 +22,7 @@ extension JokeSlackViewModel {
     func fetch() {
         state = .loading
 
-        model.fetch().sink { [weak self] completion in
+        usecase.fetch().sink { [weak self] completion in
             switch completion {
             case let .failure(error):
                 self?.state = .failed(error)

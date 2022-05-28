@@ -5,7 +5,9 @@ final class FruitViewModelTests: XCTestCase {
     private var viewModel: FruitViewModel!
 
     override func setUpWithError() throws {
-        viewModel = FruitViewModel(model: Model.CoreData.Fruit())
+        viewModel = FruitViewModel(
+            usecase: Domain.Usecase.CoreData.Fruit()
+        )
     }
 
     func testAdd() throws {

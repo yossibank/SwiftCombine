@@ -22,10 +22,10 @@ final class StudentViewModel: ViewModel {
 
     private var cancellables: Set<AnyCancellable> = .init()
 
-    private let model: StudentModel
+    private let usecase: StudentUsecase
 
-    init(model: StudentModel = Model.CoreData.Student()) {
-        self.model = model
+    init(usecase: StudentUsecase = Domain.Usecase.CoreData.Student()) {
+        self.usecase = usecase
     }
 }
 
@@ -35,7 +35,7 @@ extension StudentViewModel {
     func fetch() {
         state = .loading
 
-        model.fetch().sink { [weak self] completion in
+        usecase.fetch().sink { [weak self] completion in
             switch completion {
             case let .failure(error):
                 self?.state = .failed(error)
@@ -59,7 +59,7 @@ extension StudentViewModel {
     }
 
     func add() {
-        model.add(.init(
+        usecase.add(.init(
             name: name,
             age: Int(age) ?? 0,
             number: Int(number) ?? 0
@@ -68,6 +68,6 @@ extension StudentViewModel {
 
     func delete(name: String) {
         let predicate = [NSPredicate(format: "%K = %@", "name", name)]
-        model.delete(predicate: predicate)
+        usecase.delete(predicate: predicate)
     }
 }
