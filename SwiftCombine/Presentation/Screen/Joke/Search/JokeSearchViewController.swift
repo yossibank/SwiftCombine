@@ -1,16 +1,12 @@
 import Combine
 import UIKit
 
-protocol JokeSearchViewControllerDelegate: AnyObject {
-    func showJokeGetScreen(jokeId: String)
-}
-
 // MARK: - inject
 
 extension JokeSearchViewController: VCInjectable {
     typealias VM = JokeSearchViewModel
     typealias UI = JokeSearchUI
-    typealias R = NoRouting
+    typealias R = JokeSearchRouting
 }
 
 // MARK: - properties & init
@@ -18,9 +14,7 @@ extension JokeSearchViewController: VCInjectable {
 final class JokeSearchViewController: IndicatorViewController {
     var viewModel: VM!
     var ui: UI!
-    var routing: R!
-
-    weak var delegate: JokeSearchViewControllerDelegate!
+    var routing: R! { didSet { routing.viewController = self } }
 
     private var isAddLoading: Bool = false
     private var cancellables: Set<AnyCancellable> = .init()
@@ -85,7 +79,7 @@ extension JokeSearchViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
 
         let jokeId = viewModel.items[indexPath.row].id
-        delegate.showJokeGetScreen(jokeId: jokeId)
+        routing.showJokeGetScreen(jokeId: jokeId)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

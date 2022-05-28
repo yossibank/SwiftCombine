@@ -17,7 +17,6 @@ extension DEBUG_Routing {
 
         case .search:
             let vc = AppControllers.Joke.Search()
-            vc.delegate = self
             viewController.navigationController?.pushViewController(vc, animated: true)
 
         case .slack:
@@ -69,13 +68,6 @@ extension DEBUG_Routing {
 
     func update(_ type: UserDefaultEnumKey.ServerType) {
         (viewController.tabBarController as? TabBarController)?.configureTab(type)
-    }
-}
-
-extension DEBUG_Routing: JokeSearchViewControllerDelegate {
-    func showJokeGetScreen(jokeId: String) {
-        let vc = AppControllers.Joke.Get(jokeId: jokeId)
-        viewController.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
