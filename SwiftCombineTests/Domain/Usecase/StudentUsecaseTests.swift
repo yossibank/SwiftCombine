@@ -2,10 +2,10 @@
 import XCTest
 
 final class StudentModelTests: XCTestCase {
-    private var model: StudentUsecase!
+    private var usecase: StudentUsecase!
 
     override func setUpWithError() throws {
-        model = Domain.Usecase.CoreData.Student()
+        usecase = Domain.Usecase.CoreData.Student()
     }
 
     override func tearDown() {
@@ -14,25 +14,25 @@ final class StudentModelTests: XCTestCase {
     }
 
     func testAddStudentModel() throws {
-        model.add(.init(name: "name1", age: 20, number: 0))
-        model.add(.init(name: "name2", age: 25, number: 1))
-        model.add(.init(name: "name3", age: 30, number: 2))
+        usecase.add(.init(name: "name1", age: 20, number: 0))
+        usecase.add(.init(name: "name2", age: 25, number: 1))
+        usecase.add(.init(name: "name3", age: 30, number: 2))
 
-        let result = try awaitPublisher(model.fetch())
+        let result = try awaitPublisher(usecase.fetch())
 
         XCTAssertTrue(result.contains { $0.name == "name1" })
         XCTAssertEqual(result.count, 3)
     }
 
     func testDeleteStudentModel() throws {
-        model.add(.init(name: "name1", age: 20, number: 0))
-        model.add(.init(name: "name2", age: 25, number: 1))
-        model.add(.init(name: "name3", age: 30, number: 2))
+        usecase.add(.init(name: "name1", age: 20, number: 0))
+        usecase.add(.init(name: "name2", age: 25, number: 1))
+        usecase.add(.init(name: "name3", age: 30, number: 2))
 
         let predicate = NSPredicate(format: "%K = %@", "name", "name1")
-        model.delete(predicate: [predicate])
+        usecase.delete(predicate: [predicate])
 
-        let result = try awaitPublisher(model.fetch())
+        let result = try awaitPublisher(usecase.fetch())
 
         XCTAssertFalse(result.contains { $0.name == "name1" })
         XCTAssertEqual(result.count, 2)

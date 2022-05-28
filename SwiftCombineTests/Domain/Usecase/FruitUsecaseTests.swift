@@ -2,10 +2,10 @@
 import XCTest
 
 final class FruitModelTests: XCTestCase {
-    private var model: FruitUsecase!
+    private var usecase: FruitUsecase!
 
     override func setUpWithError() throws {
-        model = Domain.Usecase.CoreData.Fruit()
+        usecase = Domain.Usecase.CoreData.Fruit()
     }
 
     override func tearDown() {
@@ -14,25 +14,25 @@ final class FruitModelTests: XCTestCase {
     }
 
     func testAddFruitModel() throws {
-        model.add(.init(name: "Apple"))
-        model.add(.init(name: "Lemon"))
-        model.add(.init(name: "Peach"))
+        usecase.add(.init(name: "Apple"))
+        usecase.add(.init(name: "Lemon"))
+        usecase.add(.init(name: "Peach"))
 
-        let result = try awaitPublisher(model.fetch())
+        let result = try awaitPublisher(usecase.fetch())
 
         XCTAssertTrue(result.contains { $0.name == "Apple" })
         XCTAssertEqual(result.count, 3)
     }
 
     func testDeleteFuritModel() throws {
-        model.add(.init(name: "Apple"))
-        model.add(.init(name: "Lemon"))
-        model.add(.init(name: "Peach"))
+        usecase.add(.init(name: "Apple"))
+        usecase.add(.init(name: "Lemon"))
+        usecase.add(.init(name: "Peach"))
 
         let predicate = NSPredicate(format: "%K = %@", "name", "Apple")
-        model.delete(predicate: [predicate])
+        usecase.delete(predicate: [predicate])
 
-        let result = try awaitPublisher(model.fetch())
+        let result = try awaitPublisher(usecase.fetch())
 
         XCTAssertFalse(result.contains { $0.name == "Apple" })
         XCTAssertEqual(result.count, 2)

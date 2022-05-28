@@ -5,7 +5,9 @@ final class StudentViewModelTests: XCTestCase {
     private var viewModel: StudentViewModel!
 
     override func setUpWithError() throws {
-        viewModel = StudentViewModel(usecase: Domain.Usecase.CoreData.Student())
+        viewModel = StudentViewModel(
+            usecase: Domain.Usecase.CoreData.Student()
+        )
     }
 
     override func tearDown() {
