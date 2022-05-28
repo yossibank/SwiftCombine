@@ -6,6 +6,7 @@ import UIKit
 extension SomeFileViewController: VCInjectable {
     typealias VM = SomeFileViewModel
     typealias UI = SomeFileUI
+    typealias R = NoRouting
 }
 
 // MARK: - properties & init
@@ -13,6 +14,7 @@ extension SomeFileViewController: VCInjectable {
 final class SomeFileViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
+    var routing: R!
 
     private var cancellables: Set<AnyCancellable> = .init()
 }

@@ -6,6 +6,7 @@ import UIKit
 extension JokeSlackViewController: VCInjectable {
     typealias VM = JokeSlackViewModel
     typealias UI = JokeSlackUI
+    typealias R = NoRouting
 }
 
 // MARK: - properties & init
@@ -13,6 +14,7 @@ extension JokeSlackViewController: VCInjectable {
 final class JokeSlackViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
+    var routing: R!
 
     private var cancellables: Set<AnyCancellable> = .init()
 }

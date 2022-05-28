@@ -6,6 +6,7 @@ import UIKit
 extension FutureViewController: VCInjectable {
     typealias VM = FutureViewModel
     typealias UI = FutureUI
+    typealias R = NoRouting
 }
 
 // MARK: - properties & init
@@ -13,6 +14,7 @@ extension FutureViewController: VCInjectable {
 final class FutureViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
+    var routing: R!
 
     private var cancellables: Set<AnyCancellable> = .init()
 }

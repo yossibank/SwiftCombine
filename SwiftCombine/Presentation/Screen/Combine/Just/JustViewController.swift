@@ -6,6 +6,7 @@ import UIKit
 extension JustViewController: VCInjectable {
     typealias VM = JustViewModel
     typealias UI = NoUserInterface
+    typealias R = NoRouting
 }
 
 // MARK: - properties & init
@@ -13,6 +14,7 @@ extension JustViewController: VCInjectable {
 final class JustViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
+    var routing: R!
 
     private var cancellables: Set<AnyCancellable> = .init()
 }

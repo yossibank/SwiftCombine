@@ -6,6 +6,7 @@ import UIKit
 extension ClubViewController: VCInjectable {
     typealias VM = ClubViewModel
     typealias UI = ClubUI
+    typealias R = NoRouting
 }
 
 // MARK: - properties & init
@@ -13,6 +14,7 @@ extension ClubViewController: VCInjectable {
 final class ClubViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
+    var routing: R!
 
     private var cancellables: Set<AnyCancellable> = .init()
 }

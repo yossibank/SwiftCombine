@@ -6,6 +6,7 @@ import UIKit
 extension DeferredViewController: VCInjectable {
     typealias VM = DeferredViewModel
     typealias UI = DeferredUI
+    typealias R = NoRouting
 }
 
 // MARK: - properties & init
@@ -14,6 +15,7 @@ final class DeferredViewController: UIViewController {
     // インスタンスが生成された時点でDeferredViewModel内のfuturePublisherのprint文が実行されます("Future実行")
     var viewModel: VM!
     var ui: UI!
+    var routing: R!
 
     private var cancellables: Set<AnyCancellable> = .init()
 }

@@ -10,6 +10,7 @@ protocol StudentViewControllerDelegate: AnyObject {
 extension StudentViewController: VCInjectable {
     typealias VM = StudentViewModel
     typealias UI = StudentUI
+    typealias R = NoRouting
 }
 
 // MARK: - properties & init
@@ -17,6 +18,7 @@ extension StudentViewController: VCInjectable {
 final class StudentViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
+    var routing: R!
 
     weak var delegate: StudentViewControllerDelegate!
 

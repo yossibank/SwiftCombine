@@ -6,6 +6,7 @@ import UIKit
 extension SubjectViewController: VCInjectable {
     typealias VM = SubjectViewModel
     typealias UI = NoUserInterface
+    typealias R = NoRouting
 }
 
 // MARK: - properties & init
@@ -13,6 +14,7 @@ extension SubjectViewController: VCInjectable {
 final class SubjectViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
+    var routing: R!
 
     private var cancellables: Set<AnyCancellable> = .init()
 }

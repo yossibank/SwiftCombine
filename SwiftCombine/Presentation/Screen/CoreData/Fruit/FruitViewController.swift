@@ -6,6 +6,7 @@ import UIKit
 extension FruitViewController: VCInjectable {
     typealias VM = FruitViewModel
     typealias UI = FruitUI
+    typealias R = NoRouting
 }
 
 // MARK: - properties & init
@@ -13,6 +14,7 @@ extension FruitViewController: VCInjectable {
 final class FruitViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
+    var routing: R!
 
     private var cancellables: Set<AnyCancellable> = .init()
 }

@@ -6,6 +6,7 @@ import UIKit
 extension HomeViewController: VCInjectable {
     typealias VM = HomeViewModel
     typealias UI = NoUserInterface
+    typealias R = NoRouting
 }
 
 // MARK: - properties & init
@@ -13,6 +14,7 @@ extension HomeViewController: VCInjectable {
 final class HomeViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
+    var routing: R!
 
     private let mainView: UIView = {
         $0.translatesAutoresizingMaskIntoConstraints = false

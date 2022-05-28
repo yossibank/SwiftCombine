@@ -10,6 +10,7 @@ protocol JokeSearchViewControllerDelegate: AnyObject {
 extension JokeSearchViewController: VCInjectable {
     typealias VM = JokeSearchViewModel
     typealias UI = JokeSearchUI
+    typealias R = NoRouting
 }
 
 // MARK: - properties & init
@@ -17,6 +18,7 @@ extension JokeSearchViewController: VCInjectable {
 final class JokeSearchViewController: IndicatorViewController {
     var viewModel: VM!
     var ui: UI!
+    var routing: R!
 
     weak var delegate: JokeSearchViewControllerDelegate!
 

@@ -15,6 +15,7 @@ protocol DEBUG_ViewControllerDelegate: AnyObject {
 extension DEBUG_ViewController: VCInjectable {
     typealias VM = NoViewModel
     typealias UI = DEBUG_UI
+    typealias R = NoRouting
 }
 
 // MARK: - properties & init
@@ -22,6 +23,7 @@ extension DEBUG_ViewController: VCInjectable {
 final class DEBUG_ViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
+    var routing: R!
 
     weak var delegate: DEBUG_ViewControllerDelegate!
 }

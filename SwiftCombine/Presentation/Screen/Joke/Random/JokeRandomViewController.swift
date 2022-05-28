@@ -6,6 +6,7 @@ import UIKit
 extension JokeRandomViewController: VCInjectable {
     typealias VM = JokeRandomViewModel
     typealias UI = JokeRandomUI
+    typealias R = NoRouting
 }
 
 // MARK: - properties & init
@@ -13,6 +14,7 @@ extension JokeRandomViewController: VCInjectable {
 final class JokeRandomViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
+    var routing: R!
 
     private var cancellables: Set<AnyCancellable> = .init()
 }
