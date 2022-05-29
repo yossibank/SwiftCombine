@@ -1,6 +1,6 @@
 import CoreData
 
-protocol CoreDataRepo {
+protocol CoreDataRepostiroy {
     associatedtype T: NSManagedObject
 
     func fetch(conditions: [SearchCondition], completion: @escaping (Result<[T], CoreDataError>) -> Void)
@@ -9,7 +9,7 @@ protocol CoreDataRepo {
     func delete(_ object: T)
 }
 
-struct CoreDataRepository<T: NSManagedObject>: CoreDataRepo {
+struct CoreDataRepositoryImpl<T: NSManagedObject>: CoreDataRepostiroy {
     private let context = CoreDataManager.shared.context
 
     func fetch(
@@ -56,7 +56,7 @@ struct CoreDataRepository<T: NSManagedObject>: CoreDataRepo {
     }
 }
 
-extension CoreDataRepository {
+extension CoreDataRepositoryImpl {
     private func save() {
         guard context.hasChanges else {
             return

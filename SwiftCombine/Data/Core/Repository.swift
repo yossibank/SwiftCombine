@@ -1,6 +1,6 @@
 import Foundation
 
-protocol Repo {
+protocol Repository {
     associatedtype T: Request
 
     func request(
@@ -16,7 +16,7 @@ protocol Repo {
     ) -> T.Response?
 }
 
-struct Repository<T: Request>: Repo {
+struct RepositoryImpl<T: Request>: Repository {
     func request(
         useTestData: Bool,
         parameters: T.Parameters,

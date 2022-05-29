@@ -1,29 +1,29 @@
 struct Repos {
     struct Local {
-        typealias ClubCoreData = CoreDataRepository<Club>
-        typealias FruitCoreData = CoreDataRepository<Fruit>
-        typealias StudentCoreData = CoreDataRepository<Student>
+        typealias ClubCoreData = CoreDataRepositoryImpl<Club>
+        typealias FruitCoreData = CoreDataRepositoryImpl<Fruit>
+        typealias StudentCoreData = CoreDataRepositoryImpl<Student>
     }
 
     struct Joke {
-        typealias Get = Repository<JokeRequest>
-        typealias Random = Repository<JokeRandomRequest>
-        typealias Search = Repository<JokeSearchRequest>
-        typealias Slack = Repository<JokeSlackRequest>
+        typealias Get = RepositoryImpl<JokeRequest>
+        typealias Random = RepositoryImpl<JokeRandomRequest>
+        typealias Search = RepositoryImpl<JokeSearchRequest>
+        typealias Slack = RepositoryImpl<JokeSlackRequest>
     }
 
     struct Onboarding {
-        typealias GetIsFinished = Repository<GetOnboardingFinishedRequest>
-        typealias SetIsFinished = Repository<SetOnboardingFinishedRequest>
+        typealias GetIsFinished = RepositoryImpl<GetOnboardingFinishedRequest>
+        typealias SetIsFinished = RepositoryImpl<SetOnboardingFinishedRequest>
     }
 
     struct SomeFile {
-        typealias Get = Repository<GetSomeFileRequest>
-        typealias Set = Repository<SetSomeFileRequest>
+        typealias Get = RepositoryImpl<GetSomeFileRequest>
+        typealias Set = RepositoryImpl<SetSomeFileRequest>
     }
 
     struct AccessToken {
-        typealias Get = Repository<GetAccessTokenRequest>
-        typealias Set = Repository<SetAccessTokenRequest>
+        typealias Get = RepositoryImpl<GetAccessTokenRequest>
+        typealias Set = RepositoryImpl<SetAccessTokenRequest>
     }
 }
