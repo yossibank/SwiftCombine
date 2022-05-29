@@ -8,6 +8,8 @@ enum APIRequestHeader: String, CaseIterable {
     case accept = "Accept"
     case userAgent = "User-Agent"
 
+    static let hostName = "Host"
+
     var value: String? {
         switch self {
         case .accept:
@@ -109,7 +111,7 @@ extension Request {
         }
 
         if let host = URL(string: baseURL + path)?.host {
-            dic["Host"] = host
+            dic[APIRequestHeader.hostName] = host
         }
 
         return dic
