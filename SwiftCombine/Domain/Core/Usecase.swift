@@ -4,16 +4,16 @@ struct NoRepository {}
 struct NoMapper {}
 
 protocol Usecase {
-    associatedtype Repository
+    associatedtype Resource
     associatedtype Mapper
 
-    var repository: Repository { get }
+    var resource: Resource { get }
     var mapper: Mapper { get }
     var analytics: Analytics { get }
 }
 
 struct UsecaseImpl<R, M>: Usecase {
-    var repository: R
+    var resource: R
     var mapper: M
     var analytics: Analytics = .shared
     var useTestData: Bool = false

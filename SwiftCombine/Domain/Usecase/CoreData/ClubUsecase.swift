@@ -3,7 +3,7 @@ import Combine
 extension UsecaseImpl where R == Repos.Local.ClubCoreData, M == ClubMapper {
     func fetch() -> AnyPublisher<[ClubEntity], CoreDataError> {
         toPublisher { promise in
-            repository.fetch() { result in
+            resource.fetch() { result in
                 switch result {
                 case let .success(response):
                     let entities = response.map(mapper.convert)
@@ -17,7 +17,7 @@ extension UsecaseImpl where R == Repos.Local.ClubCoreData, M == ClubMapper {
     }
 
     func mock() {
-        let club1 = repository.object()
+        let club1 = resource.object()
         club1.configure(.init(
             name: "サッカー部",
             money: 30000,
@@ -25,9 +25,9 @@ extension UsecaseImpl where R == Repos.Local.ClubCoreData, M == ClubMapper {
             schedule: "火水木",
             students: []
         ))
-        repository.add(club1)
+        resource.add(club1)
 
-        let club2 = repository.object()
+        let club2 = resource.object()
         club2.configure(.init(
             name: "野球部",
             money: 10000,
@@ -35,9 +35,9 @@ extension UsecaseImpl where R == Repos.Local.ClubCoreData, M == ClubMapper {
             schedule: "月金土",
             students: []
         ))
-        repository.add(club2)
+        resource.add(club2)
 
-        let club3 = repository.object()
+        let club3 = resource.object()
         club3.configure(.init(
             name: "体操部",
             money: 8000,
@@ -45,6 +45,6 @@ extension UsecaseImpl where R == Repos.Local.ClubCoreData, M == ClubMapper {
             schedule: "土日",
             students: []
         ))
-        repository.add(club3)
+        resource.add(club3)
     }
 }

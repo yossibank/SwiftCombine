@@ -5,7 +5,7 @@ extension UsecaseImpl where R == Repos.Joke.Random, M == JokeMapper {
         toPublisher { promise in
             analytics.sendEvent()
 
-            repository.request(
+            resource.request(
                 useTestData: useTestData,
                 parameters: .init(),
                 pathComponent: .init()

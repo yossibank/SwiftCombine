@@ -3,21 +3,21 @@ struct Domain {
         struct CoreData {
             static func Club() -> ClubUsecase {
                 .init(
-                    repository: Repos.Local.ClubCoreData(),
+                    resource: Repos.Local.ClubCoreData(),
                     mapper: ClubMapper()
                 )
             }
 
             static func Fruit() -> FruitUsecase {
                 .init(
-                    repository: Repos.Local.FruitCoreData(),
+                    resource: Repos.Local.FruitCoreData(),
                     mapper: FruitMapper()
                 )
             }
 
             static func Student() -> StudentUsecase {
                 .init(
-                    repository: Repos.Local.StudentCoreData(),
+                    resource: Repos.Local.StudentCoreData(),
                     mapper: StudentMapper()
                 )
             }
@@ -26,7 +26,7 @@ struct Domain {
         struct Joke {
             static func Get(useTestData: Bool = false) -> JokeUsecase {
                 .init(
-                    repository: Repos.Joke.Get(),
+                    resource: Repos.Joke.Get(),
                     mapper: JokeMapper(),
                     useTestData: useTestData
                 )
@@ -34,7 +34,7 @@ struct Domain {
 
             static func Random(useTestData: Bool = false) -> JokeRandomUsecase {
                 .init(
-                    repository: Repos.Joke.Random(),
+                    resource: Repos.Joke.Random(),
                     mapper: JokeMapper(),
                     useTestData: useTestData
                 )
@@ -42,7 +42,7 @@ struct Domain {
 
             static func Search(useTestData: Bool = false) -> JokeSearchUsecase {
                 .init(
-                    repository: Repos.Joke.Search(),
+                    resource: Repos.Joke.Search(),
                     mapper: JokeSearchMapper(),
                     useTestData: useTestData
                 )
@@ -50,7 +50,7 @@ struct Domain {
 
             static func Slack(useTestData: Bool = false) -> JokeSlackUsecase {
                 .init(
-                    repository: Repos.Joke.Slack(),
+                    resource: Repos.Joke.Slack(),
                     mapper: JokeSlackMapper(),
                     useTestData: useTestData
                 )
@@ -60,14 +60,14 @@ struct Domain {
         struct Onboarding {
             static func Get() -> GetOnboardingUsecase {
                 .init(
-                    repository: Repos.Onboarding.GetIsFinished(),
+                    resource: Repos.Onboarding.GetIsFinished(),
                     mapper: NoMapper()
                 )
             }
 
             static func Set() -> SetOnboardingUsecase {
                 .init(
-                    repository: Repos.Onboarding.SetIsFinished(),
+                    resource: Repos.Onboarding.SetIsFinished(),
                     mapper: NoMapper()
                 )
             }
@@ -76,14 +76,14 @@ struct Domain {
         struct SomeFile {
             static func Get() -> GetSomeFileUsecase {
                 .init(
-                    repository: Repos.SomeFile.Get(),
+                    resource: Repos.SomeFile.Get(),
                     mapper: NoMapper()
                 )
             }
 
             static func Set() -> SetSomeFileUsecase {
                 .init(
-                    repository: Repos.SomeFile.Set(),
+                    resource: Repos.SomeFile.Set(),
                     mapper: NoMapper()
                 )
             }
