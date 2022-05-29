@@ -1,29 +1,3 @@
-struct NoRepository {}
-struct NoMapper {}
-
-// MARK: - CoreData
-
-typealias ClubUsecase = UsecaseImpl<Repos.Local.ClubCoreData, ClubMapper>
-typealias FruitUsecase = UsecaseImpl<Repos.Local.FruitCoreData, FruitMapper>
-typealias StudentUsecase = UsecaseImpl<Repos.Local.StudentCoreData, StudentMapper>
-
-// MARK: - Joke
-
-typealias JokeUsecase = UsecaseImpl<Repos.Joke.Get, JokeMapper>
-typealias JokeRandomUsecase = UsecaseImpl<Repos.Joke.Random, JokeMapper>
-typealias JokeSearchUsecase = UsecaseImpl<Repos.Joke.Search, JokeSearchMapper>
-typealias JokeSlackUsecase = UsecaseImpl<Repos.Joke.Slack, JokeSlackMapper>
-
-// MARK: - Onboarding
-
-typealias GetOnboardingUsecase = UsecaseImpl<Repos.Onboarding.GetIsFinished, NoMapper>
-typealias SetOnboardingUsecase = UsecaseImpl<Repos.Onboarding.SetIsFinished, NoMapper>
-
-// MARK: - SomeFile
-
-typealias GetSomeFileUsecase = UsecaseImpl<Repos.SomeFile.Get, NoMapper>
-typealias SetSomeFileUsecase = UsecaseImpl<Repos.SomeFile.Set, NoMapper>
-
 struct Domain {
     struct Usecase {
         struct CoreData {
