@@ -44,7 +44,6 @@
 		782477ED28200C93004DEEE5 /* FruitUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477EC28200C93004DEEE5 /* FruitUsecaseTests.swift */; };
 		783A47F6281502A100DE244A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47F5281502A100DE244A /* Utility.swift */; };
 		783A47F9281503F500DE244A /* JokeRandomUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47F8281503F500DE244A /* JokeRandomUsecaseTests.swift */; };
-		783A480A28154D8C00DE244A /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A480928154D8C00DE244A /* CoreDataRepository.swift */; };
 		783A4813281551DC00DE244A /* FruitUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4812281551DC00DE244A /* FruitUI.swift */; };
 		783A4815281551E500DE244A /* FruitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4814281551E500DE244A /* FruitViewController.swift */; };
 		783A4817281551EB00DE244A /* FruitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4816281551EB00DE244A /* FruitViewModel.swift */; };
@@ -54,6 +53,7 @@
 		783E70F0284264E400165587 /* DEBUG_Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783E70EF284264E400165587 /* DEBUG_Routing.swift */; };
 		783E70F228426F1500165587 /* JokeSearchRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783E70F128426F1500165587 /* JokeSearchRouting.swift */; };
 		783E70F42842706400165587 /* StudentRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783E70F32842706400165587 /* StudentRouting.swift */; };
+		783E70F7284348E700165587 /* GetFruitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783E70F6284348E700165587 /* GetFruitRequest.swift */; };
 		78482225281BCEEA006CEF44 /* UserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78482224281BCEEA006CEF44 /* UserDefaultsTests.swift */; };
 		78482229281BD22B006CEF44 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78482228281BD22B006CEF44 /* HomeViewModel.swift */; };
 		784DBDD22823B81A0029EF58 /* SearchConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDD12823B81A0029EF58 /* SearchConditions.swift */; };
@@ -217,7 +217,6 @@
 		782477EC28200C93004DEEE5 /* FruitUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitUsecaseTests.swift; sourceTree = "<group>"; };
 		783A47F5281502A100DE244A /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		783A47F8281503F500DE244A /* JokeRandomUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeRandomUsecaseTests.swift; sourceTree = "<group>"; };
-		783A480928154D8C00DE244A /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 		783A4812281551DC00DE244A /* FruitUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitUI.swift; sourceTree = "<group>"; };
 		783A4814281551E500DE244A /* FruitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitViewController.swift; sourceTree = "<group>"; };
 		783A4816281551EB00DE244A /* FruitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitViewModel.swift; sourceTree = "<group>"; };
@@ -227,6 +226,7 @@
 		783E70EF284264E400165587 /* DEBUG_Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_Routing.swift; sourceTree = "<group>"; };
 		783E70F128426F1500165587 /* JokeSearchRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchRouting.swift; sourceTree = "<group>"; };
 		783E70F32842706400165587 /* StudentRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRouting.swift; sourceTree = "<group>"; };
+		783E70F6284348E700165587 /* GetFruitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFruitRequest.swift; sourceTree = "<group>"; };
 		78482224281BCEEA006CEF44 /* UserDefaultsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsTests.swift; sourceTree = "<group>"; };
 		78482228281BD22B006CEF44 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		784DBDD12823B81A0029EF58 /* SearchConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConditions.swift; sourceTree = "<group>"; };
@@ -535,7 +535,6 @@
 				78E8236E2822714200C71BF3 /* Student */,
 				782477C4281ED055004DEEE5 /* CoreDataError.swift */,
 				789F1DE12824CFC800FB0113 /* CoreDataManager.swift */,
-				783A480928154D8C00DE244A /* CoreDataRepository.swift */,
 				784DBDD12823B81A0029EF58 /* SearchConditions.swift */,
 				7859A23128159F6100E0F08C /* Model.xcdatamodeld */,
 			);
@@ -578,6 +577,14 @@
 				783A47F7281503E300DE244A /* Usecase */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		783E70F5284348D000165587 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				783E70F6284348E700165587 /* GetFruitRequest.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		78482223281BCECE006CEF44 /* Storage */ = {
@@ -763,6 +770,7 @@
 		78AAF06F280ADA1500BF0E3B /* LocalRequest */ = {
 			isa = PBXGroup;
 			children = (
+				783E70F5284348D000165587 /* CoreData */,
 				78D0EFA728279CC200DBC98D /* FileManager */,
 				78D0EFBE2827B91100DBC98D /* Keychain */,
 				78D0EFA628279C7D00DBC98D /* UserDefaults */,
@@ -1231,7 +1239,6 @@
 				78E82377282271DF00C71BF3 /* Club+CoreDataProperties.swift in Sources */,
 				78A11E18281D2CCC00790D24 /* TopViewControllerAccessible.swift in Sources */,
 				78AAF056280AB40300BF0E3B /* Request.swift in Sources */,
-				783A480A28154D8C00DE244A /* CoreDataRepository.swift in Sources */,
 				78F67DF628222CF100673BBC /* JokeSearchViewController.swift in Sources */,
 				784DBDDB2823CB9F0029EF58 /* ClubEntity.swift in Sources */,
 				78A11E14281CF56C00790D24 /* GetOnboardingUsecase.swift in Sources */,
@@ -1248,6 +1255,7 @@
 				7871EFFE2813DD45004E477D /* JustViewModel.swift in Sources */,
 				78EC5F87280BBD8B00C18DF5 /* AppDataHolder.swift in Sources */,
 				78AAF06E280AD95E00BF0E3B /* PersistedDataHolder.swift in Sources */,
+				783E70F7284348E700165587 /* GetFruitRequest.swift in Sources */,
 				782477C3281EC83E004DEEE5 /* FruitUsecase.swift in Sources */,
 				78AAF05C280AC00400BF0E3B /* APIError.swift in Sources */,
 				78D0EFB72827A26E00DBC98D /* SomeFileViewModel.swift in Sources */,

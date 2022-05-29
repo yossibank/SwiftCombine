@@ -1,8 +1,8 @@
 struct Repos {
     struct Local {
-        typealias ClubCoreData = CoreDataRepositoryImpl<Club>
-        typealias FruitCoreData = CoreDataRepositoryImpl<Fruit>
-        typealias StudentCoreData = CoreDataRepositoryImpl<Student>
+        typealias ClubCoreData = RepositoryImpl<Club>
+        typealias FruitCoreData = RepositoryImpl<Fruit>
+        typealias StudentCoreData = RepositoryImpl<Student>
     }
 
     struct Joke {

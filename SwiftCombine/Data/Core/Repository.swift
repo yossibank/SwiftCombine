@@ -1,4 +1,4 @@
-import Foundation
+import CoreData
 
 protocol Repository {
     associatedtype T: Request
@@ -16,7 +16,18 @@ protocol Repository {
     ) -> T.Response?
 }
 
-struct RepositoryImpl<T: Request>: Repository {
+protocol CoreDataRepository {
+    associatedtype T: NSManagedObject
+
+    func fetch(conditions: [SearchCondition], completion: @escaping (Result<[T], CoreDataError>) -> Void)
+    func object() -> T
+    func add(_ object: T)
+    func delete(_ object: T)
+}
+
+struct RepositoryImpl<T> {}
+
+extension RepositoryImpl: Repository where T: Request {
     func request(
         useTestData: Bool,
         parameters: T.Parameters,
@@ -54,7 +65,7 @@ struct RepositoryImpl<T: Request>: Repository {
     }
 }
 
-extension Repository where T.Parameters == EmptyParameters {
+extension RepositoryImpl where T: Request, T.Parameters == EmptyParameters {
     func request(
         useTestData: Bool,
         pathComponent: T.PathComponent,
@@ -81,7 +92,7 @@ extension Repository where T.Parameters == EmptyParameters {
     }
 }
 
-extension Repository where T.PathComponent == EmptyPathComponent {
+extension RepositoryImpl where T: Request, T.PathComponent == EmptyPathComponent {
     func request(
         useTestData: Bool,
         parameters: T.Parameters,
@@ -108,7 +119,7 @@ extension Repository where T.PathComponent == EmptyPathComponent {
     }
 }
 
-extension Repository where T.Parameters == EmptyParameters, T.PathComponent == EmptyPathComponent {
+extension RepositoryImpl where T: Request, T.Parameters == EmptyParameters, T.PathComponent == EmptyPathComponent {
     func request(
         useTestData: Bool,
         completion: @escaping (Result<T.Response, APIError>) -> Void
@@ -129,5 +140,62 @@ extension Repository where T.Parameters == EmptyParameters, T.PathComponent == E
         )
 
         return item.localDataInterceptor(.init())
+    }
+}
+
+extension RepositoryImpl: CoreDataRepository where T: NSManagedObject {
+    func fetch(
+        conditions: [SearchCondition] = [],
+        completion: @escaping (Result<[T], CoreDataError>) -> Void
+    ) {
+        do {
+            let request = NSFetchRequest<T>(entityName: String(describing: T.self))
+
+            conditions.forEach { condition in
+                switch condition {
+                case let .predicates(contents):
+                    request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: contents)
+
+                case let .sort(content):
+                    request.sortDescriptors = [content]
+                }
+            }
+
+            let entity = try CoreDataManager.shared.context.fetch(request)
+            completion(.success(entity))
+        } catch {
+            completion(.failure(.failed(error.localizedDescription)))
+        }
+    }
+
+    func object() -> T {
+        let entity = NSEntityDescription.entity(
+            forEntityName: String(describing: T.self),
+            in: CoreDataManager.shared.context
+        )!
+
+        return T(entity: entity, insertInto: CoreDataManager.shared.context)
+    }
+
+    func add(_ object: T) {
+        CoreDataManager.shared.context.insert(object)
+        save()
+    }
+
+    func delete(_ object: T) {
+        CoreDataManager.shared.context.delete(object)
+        save()
+    }
+
+    private func save() {
+        guard CoreDataManager.shared.context.hasChanges else {
+            return
+        }
+
+        do {
+            try CoreDataManager.shared.context.save()
+        } catch {
+            Logger.error(message: error.localizedDescription)
+        }
     }
 }
