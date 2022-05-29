@@ -36,6 +36,7 @@ final class RequestTests: XCTestCase {
             case let .success(response):
                 XCTAssertNotNil(response)
                 XCTAssertEqual(response.status, 200)
+                AppDataHolder.jokeId = ""
                 expectation.fulfill()
 
             case let .failure(error):

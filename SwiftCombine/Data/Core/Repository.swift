@@ -151,21 +151,21 @@ extension RepositoryImpl: CoreDataRepository where T: NSManagedObject {
         conditions: [SearchCondition] = [],
         completion: @escaping (Result<[T], CoreDataError>) -> Void
     ) {
-        CoreDataStorage().fetch(
+        CoreDataStorage.fetch(
             conditions: conditions,
             completion: completion
         )
     }
 
     func object() -> T {
-        CoreDataStorage().object()
+        CoreDataStorage.object()
     }
 
     func add(_ object: T) {
-        CoreDataStorage().add(object)
+        CoreDataStorage.add(object)
     }
 
     func delete(_ object: T) {
-        CoreDataStorage().delete(object)
+        CoreDataStorage.delete(object)
     }
 }

@@ -4,35 +4,29 @@ import XCTest
 final class UserDefaultsTests: XCTestCase {
     override func tearDown() {
         super.tearDown()
-        UserDefaults(suiteName: "mock")?.removePersistentDomain(forName: "mock")
+        UserDefaults(suiteName: "Test")?.removePersistentDomain(forName: "Test")
     }
 
     func testOnboardingFinished() {
-        @UserDefaultsStorage(UserDefaultKey.onboardingFinished.rawValue, defaultValue: false, type: .mock)
-        var onboardingFinished: Bool
+        XCTAssertEqual(AppDataHolder.jokeId, "")
 
-        XCTAssertFalse(onboardingFinished)
+        AppDataHolder.jokeId = "JOKEJOKE"
+        XCTAssertEqual(AppDataHolder.jokeId, "JOKEJOKE")
 
-        onboardingFinished = true
-        XCTAssertTrue(onboardingFinished)
-
-        onboardingFinished = false
-        XCTAssertFalse(onboardingFinished)
+        AppDataHolder.jokeId = ""
+        XCTAssertEqual(AppDataHolder.jokeId, "")
     }
 
     func testServerType() {
-        @UserDefaultsEnumStorage(UserDefaultKey.serverType.rawValue, defaultValue: .stage, type: .mock)
-        var serverType: UserDefaultEnumKey.ServerType
+        XCTAssertEqual(AppDataHolder.serverType, .stage)
 
-        XCTAssertEqual(serverType, .stage)
+        AppDataHolder.serverType = .production
+        XCTAssertEqual(AppDataHolder.serverType, .production)
 
-        serverType = .production
-        XCTAssertEqual(serverType, .production)
+        AppDataHolder.serverType = .prestage
+        XCTAssertEqual(AppDataHolder.serverType, .prestage)
 
-        serverType = .prestage
-        XCTAssertEqual(serverType, .prestage)
-
-        serverType = .stage
-        XCTAssertEqual(serverType, .stage)
+        AppDataHolder.serverType = .stage
+        XCTAssertEqual(AppDataHolder.serverType, .stage)
     }
 }

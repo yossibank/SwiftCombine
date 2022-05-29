@@ -1,9 +1,11 @@
 import CoreData
 
 struct CoreDataStorage<T: NSManagedObject> {
-    private let context = CoreDataManager.shared.context
+    private static var context: NSManagedObjectContext {
+        CoreDataManager.shared.context
+    }
 
-    func fetch(
+    static func fetch(
         conditions: [SearchCondition] = [],
         completion: @escaping (Result<[T], CoreDataError>) -> Void
     ) {
@@ -27,7 +29,7 @@ struct CoreDataStorage<T: NSManagedObject> {
         }
     }
 
-    func object() -> T {
+    static func object() -> T {
         let entity = NSEntityDescription.entity(
             forEntityName: String(describing: T.self),
             in: context
@@ -36,17 +38,17 @@ struct CoreDataStorage<T: NSManagedObject> {
         return T(entity: entity, insertInto: context)
     }
 
-    func add(_ object: T) {
+    static func add(_ object: T) {
         context.insert(object)
         save()
     }
 
-    func delete(_ object: T) {
+    static func delete(_ object: T) {
         context.delete(object)
         save()
     }
 
-    private func save() {
+    private static func save() {
         guard context.hasChanges else {
             return
         }

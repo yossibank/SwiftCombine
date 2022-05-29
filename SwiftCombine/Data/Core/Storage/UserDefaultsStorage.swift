@@ -2,30 +2,20 @@ import Foundation
 
 @propertyWrapper
 final class UserDefaultsStorage<T: Equatable> {
-    enum UserDefaultsType {
-        case `default`
-        case mock
-    }
-
-    // ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nilで判別すればtypeは不要
-    private var userDefaults: UserDefaults? {
-        switch type {
-        case .default:
-            return UserDefaults.standard
-
-        case .mock:
-            return UserDefaults(suiteName: "mock")
+    private let userDefaults: UserDefaults? = {
+        if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
+            return UserDefaults(suiteName: "Test")
         }
-    }
+
+        return UserDefaults.standard
+    }()
 
     private let key: String
     private let defaultValue: T
-    private let type: UserDefaultsType
 
-    init(_ key: String, defaultValue: T, type: UserDefaultsType = .default) {
+    init(_ key: String, defaultValue: T) {
         self.key = key
         self.defaultValue = defaultValue
-        self.type = type
     }
 
     var wrappedValue: T {
@@ -45,29 +35,20 @@ final class UserDefaultsStorage<T: Equatable> {
 
 @propertyWrapper
 final class UserDefaultsEnumStorage<T: RawRepresentable & Equatable> {
-    enum UserDefaultsType {
-        case `default`
-        case mock
-    }
-
-    private var userDefaults: UserDefaults? {
-        switch type {
-        case .default:
-            return UserDefaults.standard
-
-        case .mock:
+    private let userDefaults: UserDefaults? = {
+        if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
             return UserDefaults(suiteName: "mock")
         }
-    }
+
+        return UserDefaults.standard
+    }()
 
     private let key: String
     private let defaultValue: T
-    private let type: UserDefaultsType
 
-    init(_ key: String, defaultValue: T, type: UserDefaultsType = .default) {
+    init(_ key: String, defaultValue: T) {
         self.key = key
         self.defaultValue = defaultValue
-        self.type = type
     }
 
     var wrappedValue: T {

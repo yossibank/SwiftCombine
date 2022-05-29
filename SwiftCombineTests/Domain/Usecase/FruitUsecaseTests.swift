@@ -9,8 +9,7 @@ final class FruitModelTests: XCTestCase {
     }
 
     override func tearDown() {
-        let object: Fruit = .init()
-        CoreDataManager.shared.deleteObject(object)
+        CoreDataManager.shared.deleteObject(Fruit())
     }
 
     func testAddFruitModel() throws {

@@ -9,8 +9,7 @@ final class StudentModelTests: XCTestCase {
     }
 
     override func tearDown() {
-        let object: Student = .init()
-        CoreDataManager.shared.deleteObject(object)
+        CoreDataManager.shared.deleteObject(Student())
     }
 
     func testAddStudentModel() throws {

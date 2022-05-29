@@ -9,7 +9,7 @@ final class MapperTests: XCTestCase {
     }
 
     func testClubMapper() {
-        let club = CoreDataStorage<Club>().object()
+        let club = CoreDataStorage<Club>.object()
         club.configure(.init(
             name: "soccer",
             money: 20000,
@@ -34,7 +34,7 @@ final class MapperTests: XCTestCase {
     }
 
     func testFruitMapper() {
-        let fruit = CoreDataStorage<Fruit>().object()
+        let fruit = CoreDataStorage<Fruit>.object()
         fruit.configure(.init(
             name: "Fruit"
         ))
@@ -49,7 +49,7 @@ final class MapperTests: XCTestCase {
     }
 
     func testStudentMapper() {
-        let student = CoreDataStorage<Student>().object()
+        let student = CoreDataStorage<Student>.object()
         student.configure(.init(
             name: "student",
             age: 20,
