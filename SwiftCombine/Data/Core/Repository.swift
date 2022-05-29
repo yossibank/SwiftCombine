@@ -19,7 +19,10 @@ protocol Repository {
 protocol CoreDataRepository {
     associatedtype T: NSManagedObject
 
-    func fetch(conditions: [SearchCondition], completion: @escaping (Result<[T], CoreDataError>) -> Void)
+    func fetch(
+        conditions: [SearchCondition],
+        completion: @escaping (Result<[T], CoreDataError>) -> Void
+    )
     func object() -> T
     func add(_ object: T)
     func delete(_ object: T)
@@ -148,54 +151,21 @@ extension RepositoryImpl: CoreDataRepository where T: NSManagedObject {
         conditions: [SearchCondition] = [],
         completion: @escaping (Result<[T], CoreDataError>) -> Void
     ) {
-        do {
-            let request = NSFetchRequest<T>(entityName: String(describing: T.self))
-
-            conditions.forEach { condition in
-                switch condition {
-                case let .predicates(contents):
-                    request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: contents)
-
-                case let .sort(content):
-                    request.sortDescriptors = [content]
-                }
-            }
-
-            let entity = try CoreDataManager.shared.context.fetch(request)
-            completion(.success(entity))
-        } catch {
-            completion(.failure(.failed(error.localizedDescription)))
-        }
+        CoreDataStorage().fetch(
+            conditions: conditions,
+            completion: completion
+        )
     }
 
     func object() -> T {
-        let entity = NSEntityDescription.entity(
-            forEntityName: String(describing: T.self),
-            in: CoreDataManager.shared.context
-        )!
-
-        return T(entity: entity, insertInto: CoreDataManager.shared.context)
+        CoreDataStorage().object()
     }
 
     func add(_ object: T) {
-        CoreDataManager.shared.context.insert(object)
-        save()
+        CoreDataStorage().add(object)
     }
 
     func delete(_ object: T) {
-        CoreDataManager.shared.context.delete(object)
-        save()
-    }
-
-    private func save() {
-        guard CoreDataManager.shared.context.hasChanges else {
-            return
-        }
-
-        do {
-            try CoreDataManager.shared.context.save()
-        } catch {
-            Logger.error(message: error.localizedDescription)
-        }
+        CoreDataStorage().delete(object)
     }
 }

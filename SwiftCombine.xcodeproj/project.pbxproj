@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		781306D72843673F008EF3D6 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781306D62843673F008EF3D6 /* CoreDataStorage.swift */; };
 		7819F5FB2820D36F00E662EC /* FruitViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F5FA2820D36F00E662EC /* FruitViewModelTests.swift */; };
 		7819F5FD282111B400E662EC /* JokeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F5FC282111B400E662EC /* JokeRequest.swift */; };
 		7819F5FF2821155400E662EC /* JokeGetUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F5FE2821155400E662EC /* JokeGetUsecase.swift */; };
@@ -180,6 +181,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		781306D62843673F008EF3D6 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		7819F5FA2820D36F00E662EC /* FruitViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitViewModelTests.swift; sourceTree = "<group>"; };
 		7819F5FC282111B400E662EC /* JokeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeRequest.swift; sourceTree = "<group>"; };
 		7819F5FE2821155400E662EC /* JokeGetUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeGetUsecase.swift; sourceTree = "<group>"; };
@@ -741,6 +743,7 @@
 		78AAF066280AD88300BF0E3B /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				781306D62843673F008EF3D6 /* CoreDataStorage.swift */,
 				78D0EFA2282798FA00DBC98D /* FileStorage.swift */,
 				78D0EFB82827B5DB00DBC98D /* KeychainStorage.swift */,
 				78AAF067280AD88E00BF0E3B /* UserDefaultsStorage.swift */,
@@ -1247,6 +1250,7 @@
 				7819F60E28216EDB00E662EC /* JokeSearchRequest.swift in Sources */,
 				782477DC281F9A9C004DEEE5 /* JokeSlackEntity.swift in Sources */,
 				78AAF06B280AD8FE00BF0E3B /* UserDefaultKey.swift in Sources */,
+				781306D72843673F008EF3D6 /* CoreDataStorage.swift in Sources */,
 				78EC5F7B280BB9E700C18DF5 /* NavigationController.swift in Sources */,
 				784DBDE22823CDD30029EF58 /* ClubViewController.swift in Sources */,
 				78D0EF9F2827938D00DBC98D /* FirebaseProvider.swift in Sources */,
