@@ -1,62 +1,33 @@
 import CoreData
 
-struct CoreDataStorage<T: NSManagedObject> {
-    private static var context: NSManagedObjectContext {
-        CoreDataManager.shared.context
-    }
+@propertyWrapper
+final class CoreDataStorage<T: NSManagedObject> {
+    private let sortDescriptors: [NSSortDescriptor]
+    private let predicate: NSPredicate?
 
-    static func fetch(
-        conditions: [SearchCondition] = [],
-        completion: @escaping (Result<[T], CoreDataError>) -> Void
+    init(
+        sortDescriptors: [NSSortDescriptor] = [],
+        predicate: NSPredicate? = nil
     ) {
-        do {
-            let request = NSFetchRequest<T>(entityName: String(describing: T.self))
-
-            conditions.forEach { condition in
-                switch condition {
-                case let .predicates(contents):
-                    request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: contents)
-
-                case let .sort(content):
-                    request.sortDescriptors = [content]
-                }
-            }
-
-            let entity = try context.fetch(request)
-            completion(.success(entity))
-        } catch {
-            completion(.failure(.failed(error.localizedDescription)))
-        }
+        self.sortDescriptors = sortDescriptors
+        self.predicate = predicate
     }
 
-    static func object() -> T {
-        let entity = NSEntityDescription.entity(
-            forEntityName: String(describing: T.self),
-            in: context
-        )!
-
-        return T(entity: entity, insertInto: context)
+    var wrappedValue: [T] {
+        CoreDataStorageManager.fetch(sortDescriptors: sortDescriptors, predicate: predicate)
     }
+}
 
-    static func add(_ object: T) {
-        context.insert(object)
-        save()
-    }
+private struct CoreDataStorageManager<T: NSManagedObject> {
+    static func fetch(sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?) -> [T] {
+        let fetchRequest = NSFetchRequest<T>(entityName: String(describing: T.self))
+        fetchRequest.sortDescriptors = sortDescriptors
+        fetchRequest.predicate = predicate
 
-    static func delete(_ object: T) {
-        context.delete(object)
-        save()
-    }
-
-    private static func save() {
-        guard context.hasChanges else {
-            return
+        guard let result = try? CoreDataManager.shared.viewContext.fetch(fetchRequest) else {
+            return []
         }
 
-        do {
-            try context.save()
-        } catch {
-            Logger.error(message: error.localizedDescription)
-        }
+        return result
     }
 }

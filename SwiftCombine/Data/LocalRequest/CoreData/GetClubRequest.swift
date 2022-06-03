@@ -1,11 +1,11 @@
-struct GetAccessTokenRequest: LocalRequest {
-    typealias Response = String
+struct GetClubRequest: LocalRequest {
+    typealias Response = [Club]
     typealias Parameters = EmptyParameters
     typealias PathComponent = EmptyPathComponent
 
     var localDataInterceptor: (Parameters) -> Response? {
         { _ in
-            SecretDataHolder.accessToken
+            CoreDataHolder.clubs
         }
     }
 

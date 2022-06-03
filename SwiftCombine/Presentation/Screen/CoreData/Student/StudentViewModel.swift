@@ -4,20 +4,9 @@ import Foundation
 // MARK: - properties & init
 
 final class StudentViewModel: ViewModel {
-    typealias State = LoadingState<[StudentEntity], CoreDataError>
-
-    var isEnabled: AnyPublisher<Bool, Never> {
-        Publishers.CombineLatest3($name, $age, $number)
-            .map { name, age, number in
-                !name.isEmpty && !age.isEmpty && !number.isEmpty
-            }
-            .eraseToAnyPublisher()
-    }
+    typealias State = LoadingState<[StudentEntity], Never>
 
     @Published var items: [StudentItem] = []
-    @Published var name: String = ""
-    @Published var age: String = ""
-    @Published var number: String = ""
     @Published private(set) var state: State = .standby
 
     private var cancellables: Set<AnyCancellable> = .init()
@@ -35,14 +24,13 @@ extension StudentViewModel {
     func fetch() {
         state = .loading
 
-        usecase.fetch().sink { [weak self] completion in
+        usecase.fetch().sink { completion in
             switch completion {
-            case let .failure(error):
-                self?.state = .failed(error)
-                Logger.debug(message: error.localizedDescription)
-
             case .finished:
                 Logger.debug(message: "finished")
+
+            default:
+                break
             }
         } receiveValue: { [weak self] state in
             self?.items = state.map {
@@ -56,18 +44,5 @@ extension StudentViewModel {
             self?.state = .done(state)
         }
         .store(in: &cancellables)
-    }
-
-    func add() {
-        usecase.add(.init(
-            name: name,
-            age: Int(age) ?? 0,
-            number: Int(number) ?? 0
-        ))
-    }
-
-    func delete(name: String) {
-        let predicate = [NSPredicate(format: "%K = %@", "name", name)]
-        usecase.delete(predicate: predicate)
     }
 }

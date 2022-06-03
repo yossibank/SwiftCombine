@@ -9,8 +9,5 @@ struct GetSomeFileRequest: LocalRequest {
         }
     }
 
-    init(
-        parameters: EmptyParameters,
-        pathComponent: EmptyPathComponent
-    ) {}
+    init(parameters: Parameters, pathComponent: PathComponent) {}
 }

@@ -8,4 +8,4 @@ extension Fruit {
     @NSManaged public var name: String
 }
 
-extension Fruit : Identifiable {}
+extension Fruit: Identifiable {}

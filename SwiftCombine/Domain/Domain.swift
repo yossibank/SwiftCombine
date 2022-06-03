@@ -3,21 +3,21 @@ struct Domain {
         struct CoreData {
             static func Club() -> ClubUsecase {
                 .init(
-                    resource: Repos.Local.ClubCoreData(),
+                    resource: Repos.Local.Club(),
                     mapper: ClubMapper()
                 )
             }
 
             static func Fruit() -> FruitUsecase {
                 .init(
-                    resource: Repos.Local.FruitCoreData(),
+                    resource: Repos.Local.Fruit(),
                     mapper: FruitMapper()
                 )
             }
 
             static func Student() -> StudentUsecase {
                 .init(
-                    resource: Repos.Local.StudentCoreData(),
+                    resource: Repos.Local.Student(),
                     mapper: StudentMapper()
                 )
             }

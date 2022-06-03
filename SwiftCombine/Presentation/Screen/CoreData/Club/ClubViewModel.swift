@@ -3,11 +3,9 @@ import Combine
 // MARK: - properties & init
 
 final class ClubViewModel: ViewModel {
-    typealias State = LoadingState<[ClubEntity], CoreDataError>
+    typealias State = LoadingState<[ClubEntity], Never>
 
     @Published var items: [ClubItem] = []
-    @Published var addName: String = ""
-    @Published var deleteName: String = ""
     @Published private(set) var state: State = .standby
 
     private var cancellables: Set<AnyCancellable> = .init()
@@ -25,14 +23,13 @@ extension ClubViewModel {
     func fetch() {
         state = .loading
 
-        usecase.fetch().sink { [weak self] completion in
+        usecase.fetch().sink { completion in
             switch completion {
-            case let .failure(error):
-                self?.state = .failed(error)
-                Logger.debug(message: error.localizedDescription)
-
             case .finished:
                 Logger.debug(message: "finished")
+
+            default:
+                break
             }
         } receiveValue: { [weak self] state in
             self?.items = state.map {
@@ -47,9 +44,5 @@ extension ClubViewModel {
             self?.state = .done(state)
         }
         .store(in: &cancellables)
-    }
-
-    func mock() {
-        usecase.mock()
     }
 }

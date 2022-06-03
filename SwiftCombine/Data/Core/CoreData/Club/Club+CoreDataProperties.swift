@@ -16,4 +16,4 @@ extension Club {
     }
 }
 
-extension Club : Identifiable {}
+extension Club: Identifiable {}

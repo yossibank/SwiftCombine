@@ -34,7 +34,6 @@
 		782477BE281E9530004DEEE5 /* JokeSlackUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477BD281E9530004DEEE5 /* JokeSlackUsecaseTests.swift */; };
 		782477C0281E95B9004DEEE5 /* JokeSlackViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477BF281E95B9004DEEE5 /* JokeSlackViewModelTests.swift */; };
 		782477C3281EC83E004DEEE5 /* FruitUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477C2281EC83E004DEEE5 /* FruitUsecase.swift */; };
-		782477C5281ED055004DEEE5 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477C4281ED055004DEEE5 /* CoreDataError.swift */; };
 		782477D7281F9948004DEEE5 /* JokeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477D6281F9948004DEEE5 /* JokeEntity.swift */; };
 		782477DA281F999F004DEEE5 /* JokeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477D9281F999F004DEEE5 /* JokeMapper.swift */; };
 		782477DC281F9A9C004DEEE5 /* JokeSlackEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477DB281F9A9C004DEEE5 /* JokeSlackEntity.swift */; };
@@ -56,7 +55,6 @@
 		783E70F42842706400165587 /* StudentRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783E70F32842706400165587 /* StudentRouting.swift */; };
 		78482225281BCEEA006CEF44 /* UserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78482224281BCEEA006CEF44 /* UserDefaultsTests.swift */; };
 		78482229281BD22B006CEF44 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78482228281BD22B006CEF44 /* HomeViewModel.swift */; };
-		784DBDD22823B81A0029EF58 /* SearchConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDD12823B81A0029EF58 /* SearchConditions.swift */; };
 		784DBDD52823C43B0029EF58 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDD42823C43B0029EF58 /* NavigationButton.swift */; };
 		784DBDD72823CB510029EF58 /* ClubUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDD62823CB510029EF58 /* ClubUsecase.swift */; };
 		784DBDD92823CB7F0029EF58 /* ClubMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDD82823CB7F0029EF58 /* ClubMapper.swift */; };
@@ -129,6 +127,11 @@
 		78D0EFBD2827B79600DBC98D /* SecretDataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFBC2827B79600DBC98D /* SecretDataHolder.swift */; };
 		78D0EFC02827B94500DBC98D /* GetAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFBF2827B94500DBC98D /* GetAccessTokenRequest.swift */; };
 		78D0EFC22827B94D00DBC98D /* SetAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFC12827B94D00DBC98D /* SetAccessTokenRequest.swift */; };
+		78DEB3B5284A46E700A4ABA0 /* CoreDataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DEB3B4284A46E700A4ABA0 /* CoreDataHolder.swift */; };
+		78DEB3B7284A486400A4ABA0 /* GetFruitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DEB3B6284A486400A4ABA0 /* GetFruitRequest.swift */; };
+		78DEB3B9284A4ACF00A4ABA0 /* CodingUserInfoKey+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DEB3B8284A4ACF00A4ABA0 /* CodingUserInfoKey+Extension.swift */; };
+		78DEB3BB284A4F6200A4ABA0 /* GetStudentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DEB3BA284A4F6200A4ABA0 /* GetStudentRequest.swift */; };
+		78DEB3BD284A4F6B00A4ABA0 /* GetClubRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DEB3BC284A4F6B00A4ABA0 /* GetClubRequest.swift */; };
 		78E823722822717A00C71BF3 /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E823702822717A00C71BF3 /* Student+CoreDataClass.swift */; };
 		78E823732822717A00C71BF3 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E823712822717A00C71BF3 /* Student+CoreDataProperties.swift */; };
 		78E82376282271DF00C71BF3 /* Club+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E82374282271DF00C71BF3 /* Club+CoreDataClass.swift */; };
@@ -207,7 +210,6 @@
 		782477BD281E9530004DEEE5 /* JokeSlackUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackUsecaseTests.swift; sourceTree = "<group>"; };
 		782477BF281E95B9004DEEE5 /* JokeSlackViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackViewModelTests.swift; sourceTree = "<group>"; };
 		782477C2281EC83E004DEEE5 /* FruitUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitUsecase.swift; sourceTree = "<group>"; };
-		782477C4281ED055004DEEE5 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
 		782477D6281F9948004DEEE5 /* JokeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeEntity.swift; sourceTree = "<group>"; };
 		782477D9281F999F004DEEE5 /* JokeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeMapper.swift; sourceTree = "<group>"; };
 		782477DB281F9A9C004DEEE5 /* JokeSlackEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackEntity.swift; sourceTree = "<group>"; };
@@ -229,7 +231,6 @@
 		783E70F32842706400165587 /* StudentRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRouting.swift; sourceTree = "<group>"; };
 		78482224281BCEEA006CEF44 /* UserDefaultsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsTests.swift; sourceTree = "<group>"; };
 		78482228281BD22B006CEF44 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		784DBDD12823B81A0029EF58 /* SearchConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConditions.swift; sourceTree = "<group>"; };
 		784DBDD42823C43B0029EF58 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 		784DBDD62823CB510029EF58 /* ClubUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubUsecase.swift; sourceTree = "<group>"; };
 		784DBDD82823CB7F0029EF58 /* ClubMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubMapper.swift; sourceTree = "<group>"; };
@@ -304,6 +305,11 @@
 		78D0EFBC2827B79600DBC98D /* SecretDataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretDataHolder.swift; sourceTree = "<group>"; };
 		78D0EFBF2827B94500DBC98D /* GetAccessTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccessTokenRequest.swift; sourceTree = "<group>"; };
 		78D0EFC12827B94D00DBC98D /* SetAccessTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAccessTokenRequest.swift; sourceTree = "<group>"; };
+		78DEB3B4284A46E700A4ABA0 /* CoreDataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHolder.swift; sourceTree = "<group>"; };
+		78DEB3B6284A486400A4ABA0 /* GetFruitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFruitRequest.swift; sourceTree = "<group>"; };
+		78DEB3B8284A4ACF00A4ABA0 /* CodingUserInfoKey+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodingUserInfoKey+Extension.swift"; sourceTree = "<group>"; };
+		78DEB3BA284A4F6200A4ABA0 /* GetStudentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStudentRequest.swift; sourceTree = "<group>"; };
+		78DEB3BC284A4F6B00A4ABA0 /* GetClubRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetClubRequest.swift; sourceTree = "<group>"; };
 		78E823702822717A00C71BF3 /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
 		78E823712822717A00C71BF3 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		78E82374282271DF00C71BF3 /* Club+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Club+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -397,6 +403,7 @@
 		780D09B92802BE2A00454705 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				78AAF083280B121B00BF0E3B /* Repos.swift */,
 				78AAF074280AFAB200BF0E3B /* APIRequest */,
 				78AAF075280AFAB800BF0E3B /* APIResponse */,
 				78AAF069280AD8EF00BF0E3B /* Configuration */,
@@ -404,7 +411,6 @@
 				78AAF06C280AD94E00BF0E3B /* DataHolder */,
 				78AAF06F280ADA1500BF0E3B /* LocalRequest */,
 				788407D52814239E00641E27 /* TestData */,
-				78AAF083280B121B00BF0E3B /* Repos.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -530,12 +536,10 @@
 		783A47FC281548F800DE244A /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				78DEB3B8284A4ACF00A4ABA0 /* CodingUserInfoKey+Extension.swift */,
 				78E8236F2822714800C71BF3 /* Club */,
 				7859A22C28159AC600E0F08C /* Fruit */,
 				78E8236E2822714200C71BF3 /* Student */,
-				782477C4281ED055004DEEE5 /* CoreDataError.swift */,
-				789F1DE12824CFC800FB0113 /* CoreDataManager.swift */,
-				784DBDD12823B81A0029EF58 /* SearchConditions.swift */,
 				7859A23128159F6100E0F08C /* Model.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -708,8 +712,6 @@
 		78AAF054280AB3F700BF0E3B /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				783A47FC281548F800DE244A /* CoreData */,
-				78AAF066280AD88300BF0E3B /* Storage */,
 				78AAF061280AD6E200BF0E3B /* APIClient.swift */,
 				78AAF05B280AC00400BF0E3B /* APIError.swift */,
 				78AAF05F280AC47500BF0E3B /* DataStructure.swift */,
@@ -718,6 +720,9 @@
 				78AAF055280AB40300BF0E3B /* Request.swift */,
 				78AAF059280ABFCD00BF0E3B /* TestDataFetchRequest.swift */,
 				78AAF057280ABEE600BF0E3B /* URLRequest+Extension.swift */,
+				783A47FC281548F800DE244A /* CoreData */,
+				78AAF066280AD88300BF0E3B /* Storage */,
+				78DEB3B2284A413400A4ABA0 /* Manager */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -754,6 +759,7 @@
 		78AAF06C280AD94E00BF0E3B /* DataHolder */ = {
 			isa = PBXGroup;
 			children = (
+				78DEB3B4284A46E700A4ABA0 /* CoreDataHolder.swift */,
 				78AAF06D280AD95E00BF0E3B /* PersistedDataHolder.swift */,
 				78D0EFBC2827B79600DBC98D /* SecretDataHolder.swift */,
 			);
@@ -763,6 +769,7 @@
 		78AAF06F280ADA1500BF0E3B /* LocalRequest */ = {
 			isa = PBXGroup;
 			children = (
+				78DEB3B3284A46DA00A4ABA0 /* CoreData */,
 				78D0EFA728279CC200DBC98D /* FileManager */,
 				78D0EFBE2827B91100DBC98D /* Keychain */,
 				78D0EFA628279C7D00DBC98D /* UserDefaults */,
@@ -794,11 +801,11 @@
 		78AAF07A280B047600BF0E3B /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				78AAF081280B100C00BF0E3B /* Domain.swift */,
 				783E70E72842416E00165587 /* Core */,
 				782477D5281F993A004DEEE5 /* Entity */,
 				782477D8281F9965004DEEE5 /* Mapper */,
 				783A4810281551A100DE244A /* Usecase */,
-				78AAF081280B100C00BF0E3B /* Domain.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -881,6 +888,24 @@
 				78D0EFC12827B94D00DBC98D /* SetAccessTokenRequest.swift */,
 			);
 			path = Keychain;
+			sourceTree = "<group>";
+		};
+		78DEB3B2284A413400A4ABA0 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				789F1DE12824CFC800FB0113 /* CoreDataManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		78DEB3B3284A46DA00A4ABA0 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				78DEB3BC284A4F6B00A4ABA0 /* GetClubRequest.swift */,
+				78DEB3B6284A486400A4ABA0 /* GetFruitRequest.swift */,
+				78DEB3BA284A4F6200A4ABA0 /* GetStudentRequest.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		78E8236E2822714200C71BF3 /* Student */ = {
@@ -1215,7 +1240,6 @@
 				784DBDD52823C43B0029EF58 /* NavigationButton.swift in Sources */,
 				78AAF05A280ABFCD00BF0E3B /* TestDataFetchRequest.swift in Sources */,
 				78AAF058280ABEE600BF0E3B /* URLRequest+Extension.swift in Sources */,
-				782477C5281ED055004DEEE5 /* CoreDataError.swift in Sources */,
 				782477DE281F9AF0004DEEE5 /* JokeSlackMapper.swift in Sources */,
 				782477D7281F9948004DEEE5 /* JokeEntity.swift in Sources */,
 				78EC5F8B280BC2FE00C18DF5 /* UIControl+Publisher.swift in Sources */,
@@ -1226,6 +1250,7 @@
 				78D0EFB92827B5DB00DBC98D /* KeychainStorage.swift in Sources */,
 				78EC5F85280BBC6000C18DF5 /* FutureViewController.swift in Sources */,
 				7819F5FF2821155400E662EC /* JokeGetUsecase.swift in Sources */,
+				78DEB3B5284A46E700A4ABA0 /* CoreDataHolder.swift in Sources */,
 				78F67DFA28222DA600673BBC /* JokeSearchItem.swift in Sources */,
 				78AAF062280AD6E200BF0E3B /* APIClient.swift in Sources */,
 				78E82377282271DF00C71BF3 /* Club+CoreDataProperties.swift in Sources */,
@@ -1243,6 +1268,7 @@
 				78EC5F7B280BB9E700C18DF5 /* NavigationController.swift in Sources */,
 				784DBDE22823CDD30029EF58 /* ClubViewController.swift in Sources */,
 				78D0EF9F2827938D00DBC98D /* FirebaseProvider.swift in Sources */,
+				78DEB3B7284A486400A4ABA0 /* GetFruitRequest.swift in Sources */,
 				784DBDE42823CDDA0029EF58 /* ClubViewModel.swift in Sources */,
 				78EC5F70280BB66000C18DF5 /* JokeRandomViewController.swift in Sources */,
 				7871EFFE2813DD45004E477D /* JustViewModel.swift in Sources */,
@@ -1262,6 +1288,7 @@
 				78D0EFA12827949C00DBC98D /* AppConfig.swift in Sources */,
 				78AAF077280AFAFC00BF0E3B /* JokeRandomRequest.swift in Sources */,
 				784DBDD92823CB7F0029EF58 /* ClubMapper.swift in Sources */,
+				78DEB3BD284A4F6B00A4ABA0 /* GetClubRequest.swift in Sources */,
 				78482229281BD22B006CEF44 /* HomeViewModel.swift in Sources */,
 				78AAF068280AD88E00BF0E3B /* UserDefaultsStorage.swift in Sources */,
 				78EC5F9B280C273800C18DF5 /* DEBUG_ViewController.swift in Sources */,
@@ -1271,6 +1298,7 @@
 				7819F61028216F4D00E662EC /* JokeSearchResponse.swift in Sources */,
 				782477B7281E8571004DEEE5 /* JokeSlackViewController.swift in Sources */,
 				78AAF080280B0D1F00BF0E3B /* JokeRandomUsecase.swift in Sources */,
+				78DEB3BB284A4F6200A4ABA0 /* GetStudentRequest.swift in Sources */,
 				78D0EFBD2827B79600DBC98D /* SecretDataHolder.swift in Sources */,
 				78EC5F7D280BB9EF00C18DF5 /* TabBarController.swift in Sources */,
 				783A4813281551DC00DE244A /* FruitUI.swift in Sources */,
@@ -1280,6 +1308,7 @@
 				7859A23328159F6100E0F08C /* Model.xcdatamodeld in Sources */,
 				78E82382282274BC00C71BF3 /* StudentUsecase.swift in Sources */,
 				78CBE26927F31DA200DF1667 /* HomeViewController.swift in Sources */,
+				78DEB3B9284A4ACF00A4ABA0 /* CodingUserInfoKey+Extension.swift in Sources */,
 				78D0EFC22827B94D00DBC98D /* SetAccessTokenRequest.swift in Sources */,
 				7871EFFC2813DD3E004E477D /* JustViewController.swift in Sources */,
 				783E70F228426F1500165587 /* JokeSearchRouting.swift in Sources */,
@@ -1339,7 +1368,6 @@
 				78D0EFB52827A26400DBC98D /* SomeFileViewController.swift in Sources */,
 				78D0EFAE28279F5900DBC98D /* GetSomeFileUsecase.swift in Sources */,
 				78E8238728228CAA00C71BF3 /* StudentUI.swift in Sources */,
-				784DBDD22823B81A0029EF58 /* SearchConditions.swift in Sources */,
 				78D0EFBB2827B75200DBC98D /* KeychainKey.swift in Sources */,
 				78E8238B28228CB700C71BF3 /* StudentViewModel.swift in Sources */,
 				78D0EFAB28279CE800DBC98D /* SetSomeFIleRequest.swift in Sources */,

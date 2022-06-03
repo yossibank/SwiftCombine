@@ -11,4 +11,4 @@ extension Student {
     @NSManaged public var club: Club?
 }
 
-extension Student : Identifiable {}
+extension Student: Identifiable {}

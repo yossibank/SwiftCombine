@@ -1,8 +1,19 @@
 import CoreData
 
 @objc(Fruit)
-public class Fruit: NSManagedObject {
-    func configure(_ entity: FruitEntity) {
-        name = entity.name
+public class Fruit: NSManagedObject, Decodable {
+    enum CodingKeys: CodingKey {
+        case name
+    }
+
+    public required convenience init(from decoder: Decoder) throws {
+        guard let context = decoder.userInfo[.managedObjectContext] as? NSManagedObjectContext else {
+            throw DecoderConfigurationError.missingManagedObjectContext
+        }
+
+        self.init(context: context)
+
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.name = try container.decode(String.self, forKey: .name)
     }
 }

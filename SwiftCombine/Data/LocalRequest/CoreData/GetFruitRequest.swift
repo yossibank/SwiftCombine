@@ -1,11 +1,11 @@
-struct GetAccessTokenRequest: LocalRequest {
-    typealias Response = String
+struct GetFruitRequest: LocalRequest {
+    typealias Response = [Fruit]
     typealias Parameters = EmptyParameters
     typealias PathComponent = EmptyPathComponent
 
     var localDataInterceptor: (Parameters) -> Response? {
         { _ in
-            SecretDataHolder.accessToken
+            CoreDataHolder.fruits
         }
     }
 

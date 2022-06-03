@@ -30,9 +30,8 @@ extension StudentViewController {
             navigationBar: navigationController?.navigationBar,
             navigationItem: navigationItem
         )
-        ui.setupTableView(delegate: self, viewModel: viewModel)
+        ui.setupTableView(delegate: self)
         setupEvent()
-        bindToViewModel()
         bindToView()
     }
 }
@@ -41,46 +40,13 @@ extension StudentViewController {
 
 private extension StudentViewController {
     func setupEvent() {
-        ui.saveButtonTapPublisher.sink { [weak self] _ in
-            guard let self = self else { return }
-
-            self.ui.clear()
-            self.viewModel.add()
-            self.viewModel.fetch()
-        }
-        .store(in: &cancellables)
-
         ui.navButtonTapPublisher.sink { [weak self] _ in
             self?.routing.showClubScreen()
         }
         .store(in: &cancellables)
     }
 
-    func bindToViewModel() {
-        ui.nameTextFieldPublisher
-            .removeDuplicates()
-            .assign(to: \.name, on: viewModel)
-            .store(in: &cancellables)
-
-        ui.ageTextFieldPublisher
-            .removeDuplicates()
-            .assign(to: \.age, on: viewModel)
-            .store(in: &cancellables)
-
-        ui.numberTextFieldPublisher
-            .removeDuplicates()
-            .assign(to: \.number, on: viewModel)
-            .store(in: &cancellables)
-    }
-
     func bindToView() {
-        viewModel.isEnabled
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] isEnabled in
-                self?.ui.isValidButton = isEnabled
-            }
-            .store(in: &cancellables)
-
         viewModel.$items
             .receive(on: DispatchQueue.main)
             .sink { [weak self] items in

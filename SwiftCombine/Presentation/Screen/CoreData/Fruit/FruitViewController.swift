@@ -25,11 +25,8 @@ extension FruitViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.fetch()
-        ui.bindUI()
         ui.setupView(rootView: view)
         ui.setupTableView(delegate: self)
-        setupEvent()
-        bindToViewModel()
         bindToView()
     }
 }
@@ -37,38 +34,6 @@ extension FruitViewController {
 // MARK: - private methods
 
 private extension FruitViewController {
-    func setupEvent() {
-        ui.addButtonTapPublisher.sink { [weak self] _ in
-            guard let self = self else { return }
-
-            self.ui.clear()
-            self.viewModel.add()
-            self.viewModel.fetch()
-        }
-        .store(in: &cancellables)
-
-        ui.deleteButtonTapPublisher.sink { [weak self] _ in
-            guard let self = self else { return }
-
-            self.ui.clear()
-            self.viewModel.delete()
-            self.viewModel.fetch()
-        }
-        .store(in: &cancellables)
-    }
-
-    func bindToViewModel() {
-        ui.addTextFieldPublisher
-            .removeDuplicates()
-            .assign(to: \.addName, on: viewModel)
-            .store(in: &cancellables)
-
-        ui.deleteTextFieldPublisher
-            .removeDuplicates()
-            .assign(to: \.deleteName, on: viewModel)
-            .store(in: &cancellables)
-    }
-
     func bindToView() {
         viewModel.$items
             .receive(on: DispatchQueue.main)

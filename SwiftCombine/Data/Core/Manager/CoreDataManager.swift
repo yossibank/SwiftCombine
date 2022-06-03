@@ -1,15 +1,12 @@
 import CoreData
 
 final class CoreDataManager {
-    private(set) lazy var context: NSManagedObjectContext = {
-        persistentContainer.viewContext
-    }()
+    private(set) lazy var viewContext = persistentContainer.viewContext
 
     private lazy var persistentContainer: NSPersistentContainer = {
-        let managedObjectModel = NSManagedObjectModel.mergedModel(from: [Bundle.main])!
-        let container = NSPersistentContainer(name: "Model", managedObjectModel: managedObjectModel)
+        let container = NSPersistentContainer(name: "Model")
 
-        if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
+        if AppConfig.isTesting {
             let description = NSPersistentStoreDescription()
             description.type = NSInMemoryStoreType
             description.shouldAddStoreAsynchronously = false
@@ -21,6 +18,9 @@ final class CoreDataManager {
                 Logger.error(message: error.localizedDescription)
             }
         }
+
+        container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+        container.viewContext.automaticallyMergesChangesFromParent = true
 
         return container
     }()
@@ -38,13 +38,13 @@ extension CoreDataManager {
                 let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 
                 do {
-                    try context.execute(batchDeleteRequest)
+                    try viewContext.execute(batchDeleteRequest)
                 } catch {
                     Logger.error(message: error.localizedDescription)
                 }
             }
 
-        context.reset()
+        viewContext.reset()
     }
 
     /// テスト用
@@ -52,8 +52,22 @@ extension CoreDataManager {
         let result = NSFetchRequest<T>(entityName: String(describing: T.self))
 
         do {
-            let entity = try context.fetch(result)
-            entity.forEach { context.delete($0) }
+            let entity = try viewContext.fetch(result)
+            entity.forEach { viewContext.delete($0) }
+        } catch {
+            Logger.error(message: error.localizedDescription)
+        }
+    }
+}
+
+extension NSManagedObjectContext {
+    func saveIfNeeded() {
+        if !hasChanges {
+            return
+        }
+
+        do {
+            try save()
         } catch {
             Logger.error(message: error.localizedDescription)
         }

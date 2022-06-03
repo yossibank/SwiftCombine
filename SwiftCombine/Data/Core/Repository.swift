@@ -16,21 +16,7 @@ protocol Repository {
     ) -> T.Response?
 }
 
-protocol CoreDataRepository {
-    associatedtype T: NSManagedObject
-
-    func fetch(
-        conditions: [SearchCondition],
-        completion: @escaping (Result<[T], CoreDataError>) -> Void
-    )
-    func object() -> T
-    func add(_ object: T)
-    func delete(_ object: T)
-}
-
-struct RepositoryImpl<T> {}
-
-extension RepositoryImpl: Repository where T: Request {
+struct RepositoryImpl<T: Request>: Repository {
     func request(
         useTestData: Bool,
         parameters: T.Parameters,
@@ -68,7 +54,7 @@ extension RepositoryImpl: Repository where T: Request {
     }
 }
 
-extension RepositoryImpl where T: Request, T.Parameters == EmptyParameters {
+extension RepositoryImpl where T.Parameters == EmptyParameters {
     func request(
         useTestData: Bool,
         pathComponent: T.PathComponent,
@@ -95,7 +81,7 @@ extension RepositoryImpl where T: Request, T.Parameters == EmptyParameters {
     }
 }
 
-extension RepositoryImpl where T: Request, T.PathComponent == EmptyPathComponent {
+extension RepositoryImpl where T.PathComponent == EmptyPathComponent {
     func request(
         useTestData: Bool,
         parameters: T.Parameters,
@@ -122,7 +108,7 @@ extension RepositoryImpl where T: Request, T.PathComponent == EmptyPathComponent
     }
 }
 
-extension RepositoryImpl where T: Request, T.Parameters == EmptyParameters, T.PathComponent == EmptyPathComponent {
+extension RepositoryImpl where T.Parameters == EmptyParameters, T.PathComponent == EmptyPathComponent {
     func request(
         useTestData: Bool,
         completion: @escaping (Result<T.Response, APIError>) -> Void
@@ -143,29 +129,5 @@ extension RepositoryImpl where T: Request, T.Parameters == EmptyParameters, T.Pa
         )
 
         return item.localDataInterceptor(.init())
-    }
-}
-
-extension RepositoryImpl: CoreDataRepository where T: NSManagedObject {
-    func fetch(
-        conditions: [SearchCondition] = [],
-        completion: @escaping (Result<[T], CoreDataError>) -> Void
-    ) {
-        CoreDataStorage.fetch(
-            conditions: conditions,
-            completion: completion
-        )
-    }
-
-    func object() -> T {
-        CoreDataStorage.object()
-    }
-
-    func add(_ object: T) {
-        CoreDataStorage.add(object)
-    }
-
-    func delete(_ object: T) {
-        CoreDataStorage.delete(object)
     }
 }

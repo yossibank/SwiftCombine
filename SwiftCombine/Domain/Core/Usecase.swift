@@ -31,9 +31,9 @@ struct UsecaseImpl<R, M>: Usecase {
 
 // MARK: - CoreData
 
-typealias ClubUsecase = UsecaseImpl<Repos.Local.ClubCoreData, ClubMapper>
-typealias FruitUsecase = UsecaseImpl<Repos.Local.FruitCoreData, FruitMapper>
-typealias StudentUsecase = UsecaseImpl<Repos.Local.StudentCoreData, StudentMapper>
+typealias ClubUsecase = UsecaseImpl<Repos.Local.Club, ClubMapper>
+typealias FruitUsecase = UsecaseImpl<Repos.Local.Fruit, FruitMapper>
+typealias StudentUsecase = UsecaseImpl<Repos.Local.Student, StudentMapper>
 
 // MARK: - Joke
 
