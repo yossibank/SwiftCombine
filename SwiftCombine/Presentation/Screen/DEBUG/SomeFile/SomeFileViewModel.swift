@@ -10,15 +10,10 @@ final class SomeFileViewModel: ViewModel {
 
     private var cancellables: Set<AnyCancellable> = .init()
 
-    private let getUsecase: GetSomeFileUsecase
-    private let setUsecase: SetSomeFileUsecase
+    private let model: SomeFileModel
 
-    init(
-        getUsecase: GetSomeFileUsecase = Domain.Usecase.SomeFile.Get(),
-        setUsecase: SetSomeFileUsecase = Domain.Usecase.SomeFile.Set()
-    ) {
-        self.getUsecase = getUsecase
-        self.setUsecase = setUsecase
+    init(model: SomeFileModel = SomeFileModel()) {
+        self.model = model
     }
 }
 
@@ -26,7 +21,7 @@ final class SomeFileViewModel: ViewModel {
 
 extension SomeFileViewModel {
     func fetch() {
-        getUsecase.fetch().sink { [weak self] value in
+        model.fetch().sink { [weak self] value in
             guard let self = self else { return }
             Logger.debug(message: "FileManager SomeFile: \(value)")
             self.someFile = value
@@ -43,8 +38,6 @@ extension SomeFileViewModel {
             }
         }
 
-        setUsecase.set(someFile)
-            .sink { _ in }
-            .store(in: &cancellables)
+        model.set(someFile: someFile)
     }
 }

@@ -168,6 +168,7 @@
 		78EDFA1D284BA1E40099823E /* JokeRandomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDFA1C284BA1E40099823E /* JokeRandomModel.swift */; };
 		78EDFA20284BA3830099823E /* JokeSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDFA1F284BA3830099823E /* JokeSearchModel.swift */; };
 		78EDFA22284BA6570099823E /* JokeSlackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDFA21284BA6570099823E /* JokeSlackModel.swift */; };
+		78EDFA29284BAC270099823E /* SomeFileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDFA28284BAC270099823E /* SomeFileModel.swift */; };
 		78F67DF428222CE500673BBC /* JokeSearchUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DF328222CE500673BBC /* JokeSearchUI.swift */; };
 		78F67DF628222CF100673BBC /* JokeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DF528222CF100673BBC /* JokeSearchViewController.swift */; };
 		78F67DF828222CF900673BBC /* JokeSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DF728222CF900673BBC /* JokeSearchViewModel.swift */; };
@@ -351,6 +352,7 @@
 		78EDFA1C284BA1E40099823E /* JokeRandomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeRandomModel.swift; sourceTree = "<group>"; };
 		78EDFA1F284BA3830099823E /* JokeSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchModel.swift; sourceTree = "<group>"; };
 		78EDFA21284BA6570099823E /* JokeSlackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackModel.swift; sourceTree = "<group>"; };
+		78EDFA28284BAC270099823E /* SomeFileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeFileModel.swift; sourceTree = "<group>"; };
 		78F67DF328222CE500673BBC /* JokeSearchUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchUI.swift; sourceTree = "<group>"; };
 		78F67DF528222CF100673BBC /* JokeSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchViewController.swift; sourceTree = "<group>"; };
 		78F67DF728222CF900673BBC /* JokeSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchViewModel.swift; sourceTree = "<group>"; };
@@ -392,12 +394,8 @@
 			isa = PBXGroup;
 			children = (
 				780D09B028016C6400454705 /* Launch */,
-				783A4811281551C400DE244A /* CoreData */,
-				78EC5F80280BBC4300C18DF5 /* Combine */,
-				78EC5F94280C26FF00C18DF5 /* DEBUG */,
 				78EC5F62280BB4AE00C18DF5 /* Home */,
-				78EC5F6E280BB65600C18DF5 /* Joke */,
-				78D0EFB12827A1F300DBC98D /* SomeFile */,
+				78EC5F94280C26FF00C18DF5 /* DEBUG */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -1080,10 +1078,11 @@
 		78EC5F94280C26FF00C18DF5 /* DEBUG */ = {
 			isa = PBXGroup;
 			children = (
-				78EC5F92280C25D200C18DF5 /* DEBUG_Item.swift */,
-				783E70EF284264E400165587 /* DEBUG_Routing.swift */,
-				78EC5F98280C272F00C18DF5 /* DEBUG_UI.swift */,
-				78EC5F9A280C273800C18DF5 /* DEBUG_ViewController.swift */,
+				78EDFA2A284BAE4F0099823E /* Root */,
+				78EC5F6E280BB65600C18DF5 /* Joke */,
+				783A4811281551C400DE244A /* CoreData */,
+				78EC5F80280BBC4300C18DF5 /* Combine */,
+				78D0EFB12827A1F300DBC98D /* SomeFile */,
 			);
 			path = DEBUG;
 			sourceTree = "<group>";
@@ -1113,9 +1112,61 @@
 		78EDFA1E284BA22E0099823E /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				78EDFA19284B88F00099823E /* Joke */,
+				78EDFA23284BAB930099823E /* API */,
+				78EDFA24284BAB9F0099823E /* Local */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		78EDFA23284BAB930099823E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				78EDFA19284B88F00099823E /* Joke */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		78EDFA24284BAB9F0099823E /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				78EDFA25284BABB30099823E /* CoreData */,
+				78EDFA26284BABE80099823E /* FileManager */,
+				78EDFA27284BAC020099823E /* UserDefaults */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		78EDFA25284BABB30099823E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		78EDFA26284BABE80099823E /* FileManager */ = {
+			isa = PBXGroup;
+			children = (
+				78EDFA28284BAC270099823E /* SomeFileModel.swift */,
+			);
+			path = FileManager;
+			sourceTree = "<group>";
+		};
+		78EDFA27284BAC020099823E /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		78EDFA2A284BAE4F0099823E /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				78EC5F92280C25D200C18DF5 /* DEBUG_Item.swift */,
+				783E70EF284264E400165587 /* DEBUG_Routing.swift */,
+				78EC5F98280C272F00C18DF5 /* DEBUG_UI.swift */,
+				78EC5F9A280C273800C18DF5 /* DEBUG_ViewController.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 		78F67DF228222CD400673BBC /* Search */ = {
@@ -1418,6 +1469,7 @@
 				782477B5281E8568004DEEE5 /* JokeSlackViewModel.swift in Sources */,
 				788407D22814147100641E27 /* DeferredViewController.swift in Sources */,
 				7819F6122821728600E662EC /* JokeSearchMapper.swift in Sources */,
+				78EDFA29284BAC270099823E /* SomeFileModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
