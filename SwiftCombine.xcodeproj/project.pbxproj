@@ -165,6 +165,9 @@
 		78EC5F9B280C273800C18DF5 /* DEBUG_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC5F9A280C273800C18DF5 /* DEBUG_ViewController.swift */; };
 		78EDFA18284B86790099823E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDFA17284B86790099823E /* Model.swift */; };
 		78EDFA1B284B88FB0099823E /* JokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDFA1A284B88FB0099823E /* JokeModel.swift */; };
+		78EDFA1D284BA1E40099823E /* JokeRandomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDFA1C284BA1E40099823E /* JokeRandomModel.swift */; };
+		78EDFA20284BA3830099823E /* JokeSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDFA1F284BA3830099823E /* JokeSearchModel.swift */; };
+		78EDFA22284BA6570099823E /* JokeSlackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDFA21284BA6570099823E /* JokeSlackModel.swift */; };
 		78F67DF428222CE500673BBC /* JokeSearchUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DF328222CE500673BBC /* JokeSearchUI.swift */; };
 		78F67DF628222CF100673BBC /* JokeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DF528222CF100673BBC /* JokeSearchViewController.swift */; };
 		78F67DF828222CF900673BBC /* JokeSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DF728222CF900673BBC /* JokeSearchViewModel.swift */; };
@@ -345,6 +348,9 @@
 		78EC5F9A280C273800C18DF5 /* DEBUG_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_ViewController.swift; sourceTree = "<group>"; };
 		78EDFA17284B86790099823E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		78EDFA1A284B88FB0099823E /* JokeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModel.swift; sourceTree = "<group>"; };
+		78EDFA1C284BA1E40099823E /* JokeRandomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeRandomModel.swift; sourceTree = "<group>"; };
+		78EDFA1F284BA3830099823E /* JokeSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchModel.swift; sourceTree = "<group>"; };
+		78EDFA21284BA6570099823E /* JokeSlackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackModel.swift; sourceTree = "<group>"; };
 		78F67DF328222CE500673BBC /* JokeSearchUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchUI.swift; sourceTree = "<group>"; };
 		78F67DF528222CF100673BBC /* JokeSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchViewController.swift; sourceTree = "<group>"; };
 		78F67DF728222CF900673BBC /* JokeSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchViewModel.swift; sourceTree = "<group>"; };
@@ -807,8 +813,6 @@
 			children = (
 				78AAF081280B100C00BF0E3B /* Domain.swift */,
 				783E70E72842416E00165587 /* Core */,
-				782477D5281F993A004DEEE5 /* Entity */,
-				782477D8281F9965004DEEE5 /* Mapper */,
 				783A4810281551A100DE244A /* Usecase */,
 			);
 			path = Domain;
@@ -1088,7 +1092,9 @@
 			isa = PBXGroup;
 			children = (
 				78EDFA17284B86790099823E /* Model.swift */,
-				78EDFA19284B88F00099823E /* Joke */,
+				78EDFA1E284BA22E0099823E /* Core */,
+				782477D5281F993A004DEEE5 /* Entity */,
+				782477D8281F9965004DEEE5 /* Mapper */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1097,8 +1103,19 @@
 			isa = PBXGroup;
 			children = (
 				78EDFA1A284B88FB0099823E /* JokeModel.swift */,
+				78EDFA1C284BA1E40099823E /* JokeRandomModel.swift */,
+				78EDFA1F284BA3830099823E /* JokeSearchModel.swift */,
+				78EDFA21284BA6570099823E /* JokeSlackModel.swift */,
 			);
 			path = Joke;
+			sourceTree = "<group>";
+		};
+		78EDFA1E284BA22E0099823E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				78EDFA19284B88F00099823E /* Joke */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		78F67DF228222CD400673BBC /* Search */ = {
@@ -1256,6 +1273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78EDFA20284BA3830099823E /* JokeSearchModel.swift in Sources */,
 				7819F616282173AB00E662EC /* JokeSearchUsecase.swift in Sources */,
 				78AAF05E280AC43B00BF0E3B /* LocalRequest.swift in Sources */,
 				7871EFF62813D1C6004E477D /* SubjuctViewController.swift in Sources */,
@@ -1293,6 +1311,7 @@
 				784DBDE22823CDD30029EF58 /* ClubViewController.swift in Sources */,
 				78D0EF9F2827938D00DBC98D /* FirebaseProvider.swift in Sources */,
 				78DEB3B7284A486400A4ABA0 /* GetFruitRequest.swift in Sources */,
+				78EDFA1D284BA1E40099823E /* JokeRandomModel.swift in Sources */,
 				784DBDE42823CDDA0029EF58 /* ClubViewModel.swift in Sources */,
 				78EC5F70280BB66000C18DF5 /* JokeRandomViewController.swift in Sources */,
 				7871EFFE2813DD45004E477D /* JustViewModel.swift in Sources */,
@@ -1395,6 +1414,7 @@
 				78D0EFBB2827B75200DBC98D /* KeychainKey.swift in Sources */,
 				78E8238B28228CB700C71BF3 /* StudentViewModel.swift in Sources */,
 				78D0EFAB28279CE800DBC98D /* SetSomeFIleRequest.swift in Sources */,
+				78EDFA22284BA6570099823E /* JokeSlackModel.swift in Sources */,
 				782477B5281E8568004DEEE5 /* JokeSlackViewModel.swift in Sources */,
 				788407D22814147100641E27 /* DeferredViewController.swift in Sources */,
 				7819F6122821728600E662EC /* JokeSearchMapper.swift in Sources */,

@@ -49,8 +49,8 @@ struct AppControllers {
         static func Get(jokeId: String) -> JokeViewController {
             let instance = JokeViewController()
             instance.inject(
-                viewModel: JokeViewModel(model: JokeModel(jokeId: jokeId)),
-                ui: JokeUI()
+                viewModel: .init(model: .init(jokeId: jokeId)),
+                ui: .init()
             )
             instance.title = "Joke Get"
             return instance

@@ -13,10 +13,10 @@ final class JokeSearchViewModel: ViewModel {
     private var totalPages: Int = 1
     private var cancellables: Set<AnyCancellable> = .init()
 
-    private let usecase: JokeSearchUsecase
+    private let model: JokeSearchModel
 
-    init(usecase: JokeSearchUsecase = Domain.Usecase.Joke.Search()) {
-        self.usecase = usecase
+    init(model: JokeSearchModel = JokeSearchModel()) {
+        self.model = model
     }
 }
 
@@ -30,7 +30,7 @@ extension JokeSearchViewModel {
 
         state = .loading
 
-        usecase.fetch(parameters: .init(page: nextPage)).sink { [weak self] completion in
+        model.fetch(parameters: .init(page: nextPage)).sink { [weak self] completion in
             switch completion {
             case let .failure(error):
                 self?.state = .failed(error)
