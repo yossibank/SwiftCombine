@@ -1,20 +1,20 @@
 import Combine
 
-struct JokeSearchModel: Model {
+struct JokeSearchModel: Model, APIRequestable {
+    typealias T = JokeSearchRequest
+
     private let useTestData: Bool
 
     init(useTestData: Bool = false) {
         self.useTestData = useTestData
     }
 
-    func fetch(parameters: JokeSearchRequest.Parameters) -> AnyPublisher<JokeSearchEntity, APIError> {
+    func fetch(parameters: T.Parameters) -> AnyPublisher<JokeSearchEntity, APIError> {
         toPublisher { promise in
-            APIClient().request(
-                item: JokeSearchRequest(
-                    parameters: parameters,
-                    pathComponent: .init()
-                ),
-                useTestData: useTestData
+            request(
+                useTestData: useTestData,
+                parameters: .init(page: parameters.page, limit: parameters.limit, term: parameters.term),
+                pathComponent: .init()
             ) { result in
                 switch result {
                 case let .success(response):

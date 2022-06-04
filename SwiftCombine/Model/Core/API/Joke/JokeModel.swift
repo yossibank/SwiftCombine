@@ -1,6 +1,8 @@
 import Combine
 
-struct JokeModel: Model {
+struct JokeModel: Model, APIRequestable {
+    typealias T = JokeRequest
+
     private let jokeId: String
     private let useTestData: Bool
 
@@ -11,12 +13,10 @@ struct JokeModel: Model {
 
     func fetch() -> AnyPublisher<JokeEntity, APIError> {
         toPublisher { promise in
-            APIClient().request(
-                item: JokeRequest(
-                    parameters: .init(),
-                    pathComponent: jokeId
-                ),
-                useTestData: useTestData
+            request(
+                useTestData: useTestData,
+                parameters: .init(),
+                pathComponent: jokeId
             ) { result in
                 switch result {
                 case let .success(response):

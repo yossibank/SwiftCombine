@@ -11,10 +11,10 @@ final class FruitViewModel: ViewModel {
 
     private var cancellables: Set<AnyCancellable> = .init()
 
-    private let usecase: FruitUsecase
+    private let model: FruitModel
 
-    init(usecase: FruitUsecase = Domain.Usecase.CoreData.Fruit()) {
-        self.usecase = usecase
+    init(model: FruitModel = FruitModel()) {
+        self.model = model
     }
 }
 
@@ -24,7 +24,7 @@ extension FruitViewModel {
     func fetch() {
         state = .loading
 
-        usecase.fetch().sink { completion in
+        model.fetch().sink { completion in
             switch completion {
             case .finished:
                 Logger.debug(message: "finished")

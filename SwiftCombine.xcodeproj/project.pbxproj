@@ -170,6 +170,7 @@
 		78EDFA22284BA6570099823E /* JokeSlackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDFA21284BA6570099823E /* JokeSlackModel.swift */; };
 		78EDFA29284BAC270099823E /* SomeFileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDFA28284BAC270099823E /* SomeFileModel.swift */; };
 		78EDFA2C284BB0EF0099823E /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDFA2B284BB0EF0099823E /* OnboardingModel.swift */; };
+		78EDFA2E284BB3180099823E /* FruitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDFA2D284BB3180099823E /* FruitModel.swift */; };
 		78F67DF428222CE500673BBC /* JokeSearchUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DF328222CE500673BBC /* JokeSearchUI.swift */; };
 		78F67DF628222CF100673BBC /* JokeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DF528222CF100673BBC /* JokeSearchViewController.swift */; };
 		78F67DF828222CF900673BBC /* JokeSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DF728222CF900673BBC /* JokeSearchViewModel.swift */; };
@@ -355,6 +356,7 @@
 		78EDFA21284BA6570099823E /* JokeSlackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackModel.swift; sourceTree = "<group>"; };
 		78EDFA28284BAC270099823E /* SomeFileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeFileModel.swift; sourceTree = "<group>"; };
 		78EDFA2B284BB0EF0099823E /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
+		78EDFA2D284BB3180099823E /* FruitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitModel.swift; sourceTree = "<group>"; };
 		78F67DF328222CE500673BBC /* JokeSearchUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchUI.swift; sourceTree = "<group>"; };
 		78F67DF528222CF100673BBC /* JokeSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchViewController.swift; sourceTree = "<group>"; };
 		78F67DF728222CF900673BBC /* JokeSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchViewModel.swift; sourceTree = "<group>"; };
@@ -1141,6 +1143,7 @@
 		78EDFA25284BABB30099823E /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				78EDFA2D284BB3180099823E /* FruitModel.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -1337,6 +1340,7 @@
 				78AAF058280ABEE600BF0E3B /* URLRequest+Extension.swift in Sources */,
 				782477DE281F9AF0004DEEE5 /* JokeSlackMapper.swift in Sources */,
 				782477D7281F9948004DEEE5 /* JokeEntity.swift in Sources */,
+				78EDFA2E284BB3180099823E /* FruitModel.swift in Sources */,
 				78EC5F8B280BC2FE00C18DF5 /* UIControl+Publisher.swift in Sources */,
 				78E8238928228CB100C71BF3 /* StudentViewController.swift in Sources */,
 				7819F5FD282111B400E662EC /* JokeRequest.swift in Sources */,

@@ -17,3 +17,39 @@ extension Model {
         }.eraseToAnyPublisher()
     }
 }
+
+protocol APIRequestable {
+    associatedtype T: Request
+
+    func request(
+        useTestData: Bool,
+        parameters: T.Parameters,
+        pathComponent: T.PathComponent,
+        completion: @escaping (Result<T.Response, APIError>) -> Void
+    )
+}
+
+extension APIRequestable {
+    func request(
+        useTestData: Bool,
+        parameters: T.Parameters,
+        pathComponent: T.PathComponent,
+        completion: @escaping (Result<T.Response, APIError>) -> Void
+    ) {
+        let item = T(
+            parameters: parameters,
+            pathComponent: pathComponent
+        )
+
+        APIClient().request(item: item, useTestData: useTestData) { result in
+            switch result {
+            case let .success(value):
+                item.successHandler(value)
+
+            case let .failure(error):
+                item.failureHandler(error)
+            }
+            completion(result)
+        }
+    }
+}
