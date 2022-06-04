@@ -2,10 +2,10 @@
 import XCTest
 
 final class JokeGetViewModelTests: XCTestCase {
-    private var viewModel: JokeGetViewModel!
+    private var viewModel: JokeViewModel!
 
     override func setUpWithError() throws {
-        viewModel = JokeGetViewModel(
+        viewModel = JokeViewModel(
             usecase: Domain.Usecase.Joke.Get(useTestData: true),
             jokeId: "R7UfaahVfFd"
         )

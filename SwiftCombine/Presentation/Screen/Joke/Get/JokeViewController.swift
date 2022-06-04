@@ -3,15 +3,15 @@ import UIKit
 
 // MARK: - inject
 
-extension JokeGetViewController: VCInjectable {
-    typealias VM = JokeGetViewModel
-    typealias UI = JokeGetUI
+extension JokeViewController: VCInjectable {
+    typealias VM = JokeViewModel
+    typealias UI = JokeUI
     typealias R = NoRouting
 }
 
 // MARK: - properties & init
 
-final class JokeGetViewController: UIViewController {
+final class JokeViewController: UIViewController {
     var viewModel: VM!
     var ui: UI!
     var routing: R!
@@ -21,7 +21,7 @@ final class JokeGetViewController: UIViewController {
 
 // MARK: - override methods
 
-extension JokeGetViewController {
+extension JokeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.fetch()
@@ -32,7 +32,7 @@ extension JokeGetViewController {
 
 // MARK: - private methods
 
-private extension JokeGetViewController {
+private extension JokeViewController {
     func bindToView() {
         viewModel.$state
             .receive(on: DispatchQueue.main)

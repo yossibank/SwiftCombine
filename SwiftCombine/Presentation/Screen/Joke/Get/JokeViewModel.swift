@@ -2,32 +2,27 @@ import Combine
 
 // MARK: - properties & init
 
-final class JokeGetViewModel: ViewModel {
+final class JokeViewModel: ViewModel {
     typealias State = LoadingState<JokeEntity, APIError>
 
     @Published private(set) var state: State = .standby
 
     private var cancellables: Set<AnyCancellable> = .init()
 
-    private let usecase: JokeUsecase
-    private let jokeId: String
+    private let model: JokeModel
 
-    init(
-        usecase: JokeUsecase = Domain.Usecase.Joke.Get(),
-        jokeId: String
-    ) {
-        self.usecase = usecase
-        self.jokeId = jokeId
+    init(model: JokeModel) {
+        self.model = model
     }
 }
 
 // MARK: - internal methods
 
-extension JokeGetViewModel {
+extension JokeViewModel {
     func fetch() {
         state = .loading
 
-        usecase.fetch(jokeId: jokeId).sink { [weak self] completion in
+        model.fetch().sink { [weak self] completion in
             switch completion {
             case let .failure(error):
                 self?.state = .failed(error)
