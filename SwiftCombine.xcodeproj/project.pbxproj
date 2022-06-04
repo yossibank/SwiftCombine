@@ -169,6 +169,7 @@
 		78EDFA20284BA3830099823E /* JokeSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDFA1F284BA3830099823E /* JokeSearchModel.swift */; };
 		78EDFA22284BA6570099823E /* JokeSlackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDFA21284BA6570099823E /* JokeSlackModel.swift */; };
 		78EDFA29284BAC270099823E /* SomeFileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDFA28284BAC270099823E /* SomeFileModel.swift */; };
+		78EDFA2C284BB0EF0099823E /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EDFA2B284BB0EF0099823E /* OnboardingModel.swift */; };
 		78F67DF428222CE500673BBC /* JokeSearchUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DF328222CE500673BBC /* JokeSearchUI.swift */; };
 		78F67DF628222CF100673BBC /* JokeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DF528222CF100673BBC /* JokeSearchViewController.swift */; };
 		78F67DF828222CF900673BBC /* JokeSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67DF728222CF900673BBC /* JokeSearchViewModel.swift */; };
@@ -353,6 +354,7 @@
 		78EDFA1F284BA3830099823E /* JokeSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchModel.swift; sourceTree = "<group>"; };
 		78EDFA21284BA6570099823E /* JokeSlackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackModel.swift; sourceTree = "<group>"; };
 		78EDFA28284BAC270099823E /* SomeFileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeFileModel.swift; sourceTree = "<group>"; };
+		78EDFA2B284BB0EF0099823E /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		78F67DF328222CE500673BBC /* JokeSearchUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchUI.swift; sourceTree = "<group>"; };
 		78F67DF528222CF100673BBC /* JokeSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchViewController.swift; sourceTree = "<group>"; };
 		78F67DF728222CF900673BBC /* JokeSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchViewModel.swift; sourceTree = "<group>"; };
@@ -1154,6 +1156,7 @@
 		78EDFA27284BAC020099823E /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
+				78EDFA2B284BB0EF0099823E /* OnboardingModel.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -1398,6 +1401,7 @@
 				783A4813281551DC00DE244A /* FruitUI.swift in Sources */,
 				78F67DF828222CF900673BBC /* JokeSearchViewModel.swift in Sources */,
 				78AAF060280AC47500BF0E3B /* DataStructure.swift in Sources */,
+				78EDFA2C284BB0EF0099823E /* OnboardingModel.swift in Sources */,
 				78A11E1C281D79E500790D24 /* Fruit+CoreDataProperties.swift in Sources */,
 				7859A23328159F6100E0F08C /* Model.xcdatamodeld in Sources */,
 				78E82382282274BC00C71BF3 /* StudentUsecase.swift in Sources */,
