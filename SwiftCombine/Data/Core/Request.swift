@@ -56,8 +56,6 @@ protocol Request {
     var queryItems: [URLQueryItem]? { get }
     var body: Data? { get }
     var headers: [String: String] { get }
-    var wantCache: Bool { get }
-    var localDataInterceptor: (Parameters) -> Response? { get }
     var successHandler: (Response) -> Void { get }
     var failureHandler: (Error) -> Void { get }
 
@@ -116,10 +114,6 @@ extension Request {
 
         return dic
     }
-
-    var wantCache: Bool { false }
-
-    var localDataInterceptor: (Parameters) -> Response? {{ _ in nil }}
 
     var successHandler: (Response) -> Void {{ _ in }}
 

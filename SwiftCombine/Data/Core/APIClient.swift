@@ -1,4 +1,3 @@
-import Combine
 import Foundation
 
 struct APIClient {
@@ -18,11 +17,6 @@ struct APIClient {
 
         guard let urlRequest = createURLRequest(item) else {
             completion(.failure(.invalidRequest))
-            return
-        }
-
-        if let cache = URLCache.shared.cachedResponse(for: urlRequest), item.wantCache {
-            decode(data: cache.data, completion: completion)
             return
         }
 

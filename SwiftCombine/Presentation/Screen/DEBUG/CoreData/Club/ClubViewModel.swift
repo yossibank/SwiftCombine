@@ -10,10 +10,10 @@ final class ClubViewModel: ViewModel {
 
     private var cancellables: Set<AnyCancellable> = .init()
 
-    private let usecase: ClubUsecase
+    private let model: ClubModel
 
-    init(usecase: ClubUsecase = Domain.Usecase.CoreData.Club()) {
-        self.usecase = usecase
+    init(model: ClubModel = ClubModel()) {
+        self.model = model
     }
 }
 
@@ -23,7 +23,7 @@ extension ClubViewModel {
     func fetch() {
         state = .loading
 
-        usecase.fetch().sink { completion in
+        model.fetch().sink { completion in
             switch completion {
             case .finished:
                 Logger.debug(message: "finished")

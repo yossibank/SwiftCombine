@@ -11,10 +11,10 @@ final class StudentViewModel: ViewModel {
 
     private var cancellables: Set<AnyCancellable> = .init()
 
-    private let usecase: StudentUsecase
+    private let model: StudentModel
 
-    init(usecase: StudentUsecase = Domain.Usecase.CoreData.Student()) {
-        self.usecase = usecase
+    init(model: StudentModel = StudentModel()) {
+        self.model = model
     }
 }
 
@@ -24,7 +24,7 @@ extension StudentViewModel {
     func fetch() {
         state = .loading
 
-        usecase.fetch().sink { completion in
+        model.fetch().sink { completion in
             switch completion {
             case .finished:
                 Logger.debug(message: "finished")
