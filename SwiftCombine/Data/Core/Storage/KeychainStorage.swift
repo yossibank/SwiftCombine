@@ -10,7 +10,7 @@ final class KeychainStorage<T: LosslessStringConvertible> {
 
     var wrappedValue: T? {
         get {
-            guard let result = Keychain().get(key) else {
+            guard let result = KeychainStorageManager.get(key) else {
                 return nil
             }
 
@@ -18,17 +18,17 @@ final class KeychainStorage<T: LosslessStringConvertible> {
         }
         set {
             guard let new = newValue else {
-                Keychain().remove(key)
+                KeychainStorageManager.remove(key)
                 return
             }
 
-            Keychain().set(String(new), key: key)
+            KeychainStorageManager.set(String(new), key: key)
         }
     }
 }
 
-private struct Keychain {
-    func get(_ key: String) -> String? {
+private struct KeychainStorageManager {
+    static func get(_ key: String) -> String? {
         var query = query(key: key)
         query[String(kSecMatchLimit)] = kSecMatchLimitOne
         query[String(kSecReturnData)] = kCFBooleanTrue
@@ -47,12 +47,12 @@ private struct Keychain {
         return string
     }
 
-    func remove(_ key: String) {
+    static func remove(_ key: String) {
         let query = query(key: key)
         SecItemDelete(query as CFDictionary)
     }
 
-    func set(_ value: String, key: String) {
+    static func set(_ value: String, key: String) {
         guard let data = value.data(using: .utf8, allowLossyConversion: false) else {
             return
         }
@@ -75,7 +75,7 @@ private struct Keychain {
         }
     }
 
-    private func query(key: String) -> [String: Any] {
+    private static func query(key: String) -> [String: Any] {
         var query = [String: Any]()
         query[String(kSecClass)] = String(kSecClassGenericPassword)
         query[String(kSecAttrSynchronizable)] = kSecAttrSynchronizableAny
@@ -84,7 +84,7 @@ private struct Keychain {
         return query
     }
 
-    private func attributes(key: String?, value: Data) -> [String: Any] {
+    private static func attributes(key: String?, value: Data) -> [String: Any] {
         var attributes: [String: Any] = [:]
 
         if let key = key {

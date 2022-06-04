@@ -1,33 +1,68 @@
 import CoreData
 
 @propertyWrapper
-final class CoreDataStorage<T: NSManagedObject> {
+final class FetchCoreData<T: NSManagedObject> {
     private let sortDescriptors: [NSSortDescriptor]
-    private let predicate: NSPredicate?
+    private var predicate: NSPredicate?
+    private let fetchLimit: Int
 
     init(
         sortDescriptors: [NSSortDescriptor] = [],
-        predicate: NSPredicate? = nil
+        predicate: NSPredicate? = nil,
+        fetchLimit: Int = 0
     ) {
         self.sortDescriptors = sortDescriptors
         self.predicate = predicate
+        self.fetchLimit = fetchLimit
+    }
+
+    var projectedValue: NSPredicate? {
+        get {
+            predicate
+        }
+        set {
+            self.predicate = newValue
+        }
     }
 
     var wrappedValue: [T] {
-        CoreDataStorageManager.fetch(sortDescriptors: sortDescriptors, predicate: predicate)
+        CoreDataStorageManager.fetch(
+            sortDescriptors: sortDescriptors,
+            predicate: predicate,
+            fetchLimit: fetchLimit
+        )
     }
 }
 
-private struct CoreDataStorageManager<T: NSManagedObject> {
-    static func fetch(sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?) -> [T] {
+struct CoreDataStorageManager<T: NSManagedObject> {
+    static var context: NSManagedObjectContext {
+        CoreDataManager.shared.context
+    }
+
+    static func fetch(
+        sortDescriptors: [NSSortDescriptor] = [],
+        predicate: NSPredicate? = nil,
+        fetchLimit: Int = 0
+    ) -> [T] {
         let fetchRequest = NSFetchRequest<T>(entityName: String(describing: T.self))
         fetchRequest.sortDescriptors = sortDescriptors
         fetchRequest.predicate = predicate
+        fetchRequest.fetchLimit = fetchLimit
 
-        guard let result = try? CoreDataManager.shared.viewContext.fetch(fetchRequest) else {
+        guard let result = try? context.fetch(fetchRequest) else {
             return []
         }
 
         return result
+    }
+
+    static func insert(object: T) {
+        try? context.obtainPermanentIDs(for: [object])
+        context.saveIfNeeded()
+    }
+
+    static func delete(object: T) {
+        context.delete(object)
+        context.saveIfNeeded()
     }
 }

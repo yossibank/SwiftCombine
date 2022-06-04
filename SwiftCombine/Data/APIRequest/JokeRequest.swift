@@ -15,6 +15,16 @@ struct JokeRequest: Request {
 
     var body: Data?
 
+    var successHandler: (Response) -> Void {
+        { response in
+            guard !CoreDataHolder.fruits.map(\.name).contains(response.joke) else {
+                return
+            }
+
+            CoreDataStorageManager.insert(object: Fruit(name: response.joke))
+        }
+    }
+
     init(
         parameters: Parameters = .init(),
         pathComponent jokeId: String

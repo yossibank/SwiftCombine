@@ -6,6 +6,11 @@ public class Fruit: NSManagedObject, Decodable {
         case name
     }
 
+    public convenience init(name: String) {
+        self.init(context: CoreDataManager.shared.context)
+        self.name = name
+    }
+
     public required convenience init(from decoder: Decoder) throws {
         guard let context = decoder.userInfo[.managedObjectContext] as? NSManagedObjectContext else {
             throw DecoderConfigurationError.missingManagedObjectContext

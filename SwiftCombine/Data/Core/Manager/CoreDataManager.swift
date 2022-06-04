@@ -1,7 +1,7 @@
 import CoreData
 
 final class CoreDataManager {
-    private(set) lazy var viewContext = persistentContainer.viewContext
+    private(set) lazy var context = persistentContainer.viewContext
 
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Model")
@@ -38,31 +38,20 @@ extension CoreDataManager {
                 let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 
                 do {
-                    try viewContext.execute(batchDeleteRequest)
+                    try context.execute(batchDeleteRequest)
                 } catch {
                     Logger.error(message: error.localizedDescription)
                 }
             }
 
-        viewContext.reset()
-    }
-
-    /// テスト用
-    func deleteObject<T: NSManagedObject>(_ object: T) {
-        let result = NSFetchRequest<T>(entityName: String(describing: T.self))
-
-        do {
-            let entity = try viewContext.fetch(result)
-            entity.forEach { viewContext.delete($0) }
-        } catch {
-            Logger.error(message: error.localizedDescription)
-        }
+        context.reset()
     }
 }
 
 extension NSManagedObjectContext {
     func saveIfNeeded() {
         if !hasChanges {
+            Logger.info(message: "contextに対して変更処理が入っていません")
             return
         }
 

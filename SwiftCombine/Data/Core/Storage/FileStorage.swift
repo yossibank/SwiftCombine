@@ -7,7 +7,7 @@ final class FileStorage<T: Codable> {
 
     init(fileName: String) {
         self.file = fileName
-        self.value = LocalStorageManager.getObjectFromFile(fileName: file)
+        self.value = FileStorageManager.getObjectFromFile(fileName: file)
     }
 
     var wrappedValue: T? {
@@ -20,16 +20,16 @@ final class FileStorage<T: Codable> {
             let fileName = file
 
             if let data = newValue {
-                LocalStorageManager.writeObjectToFile(fileName: fileName, jsonEncodable: data)
+                FileStorageManager.writeObjectToFile(fileName: fileName, jsonEncodable: data)
             } else {
                 // setting value to nil will clear cache
-                LocalStorageManager.deleteFile(fileName: fileName)
+                FileStorageManager.deleteFile(fileName: fileName)
             }
         }
     }
 }
 
-private struct LocalStorageManager {
+private struct FileStorageManager {
     private enum PathSearchError: Error {
         case pathNotFound
     }
@@ -128,7 +128,7 @@ private struct LocalStorageManager {
     }
 }
 
-private extension LocalStorageManager {
+private extension FileStorageManager {
     static func retrieveConfiguredFileURL(
         fileName: String,
         excludeFromBackup: Bool = true

@@ -1,19 +1,22 @@
 enum CoreDataHolder {
-    @CoreDataStorage(
+    @FetchCoreData(
         sortDescriptors: [],
-        predicate: nil
+        predicate: nil,
+        fetchLimit: 0
     )
     static var fruits: [Fruit]
 
-    @CoreDataStorage(
+    @FetchCoreData(
         sortDescriptors: [],
-        predicate: nil
+        predicate: nil,
+        fetchLimit: 0
     )
     static var students: [Student]
 
-    @CoreDataStorage(
+    @FetchCoreData(
         sortDescriptors: [.init(keyPath: \Club.name, ascending: true)],
-        predicate: nil
+        predicate: nil,
+        fetchLimit: 0
     )
     static var clubs: [Club]
 }
