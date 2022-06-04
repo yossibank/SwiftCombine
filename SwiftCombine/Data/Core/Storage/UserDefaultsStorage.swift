@@ -37,7 +37,7 @@ final class UserDefaultsStorage<T: Equatable> {
 final class UserDefaultsEnumStorage<T: RawRepresentable & Equatable> {
     private let userDefaults: UserDefaults? = {
         if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
-            return UserDefaults(suiteName: "mock")
+            return UserDefaults(suiteName: "Test")
         }
 
         return UserDefaults.standard

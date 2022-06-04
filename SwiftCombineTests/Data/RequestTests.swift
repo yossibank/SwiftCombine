@@ -5,10 +5,12 @@ final class RequestTests: XCTestCase {
     func testGetJoke() {
         let expectation = XCTestExpectation(description: "Get Joke")
 
-        Repos.Joke.Get().request(
-            useTestData: true,
-            parameters: .init(),
-            pathComponent: "R7UfaahVfFd"
+        APIClient().request(
+            item: JokeRequest(
+                parameters: .init(),
+                pathComponent: .init()
+            ),
+            useTestData: true
         ) { result in
             switch result {
             case let .success(response):
@@ -27,10 +29,12 @@ final class RequestTests: XCTestCase {
     func testGetJokeRandom() {
         let expectation = XCTestExpectation(description: "Get Joke Random")
 
-        Repos.Joke.Random().request(
-            useTestData: true,
-            parameters: .init(),
-            pathComponent: .init()
+        APIClient().request(
+            item: JokeRandomRequest(
+                parameters: .init(),
+                pathComponent: .init()
+            ),
+            useTestData: true
         ) { result in
             switch result {
             case let .success(response):
@@ -50,10 +54,12 @@ final class RequestTests: XCTestCase {
     func testGetJokeSearch() {
         let expectation = XCTestExpectation(description: "Get Joke Search")
 
-        Repos.Joke.Search().request(
-            useTestData: true,
-            parameters: .init(),
-            pathComponent: .init()
+        APIClient().request(
+            item: JokeSearchRequest(
+                parameters: .init(),
+                pathComponent: .init()
+            ),
+            useTestData: true
         ) { result in
             switch result {
             case let .success(response):
@@ -73,10 +79,12 @@ final class RequestTests: XCTestCase {
     func testGetJokeSlack() {
         let expectation = XCTestExpectation(description: "Get Joke Slack")
 
-        Repos.Joke.Slack().request(
-            useTestData: true,
-            parameters: .init(),
-            pathComponent: .init()
+        APIClient().request(
+            item: JokeSlackRequest(
+                parameters: .init(),
+                pathComponent: .init()
+            ),
+            useTestData: true
         ) { result in
             switch result {
             case let .success(response):

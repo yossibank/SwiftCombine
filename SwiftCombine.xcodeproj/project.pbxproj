@@ -8,27 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		781306D72843673F008EF3D6 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781306D62843673F008EF3D6 /* CoreDataStorage.swift */; };
-		7819F5FB2820D36F00E662EC /* FruitViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F5FA2820D36F00E662EC /* FruitViewModelTests.swift */; };
 		7819F5FD282111B400E662EC /* JokeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F5FC282111B400E662EC /* JokeRequest.swift */; };
 		7819F6022821167600E662EC /* JokeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F6012821167600E662EC /* JokeUI.swift */; };
 		7819F6042821167F00E662EC /* JokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F6032821167F00E662EC /* JokeViewController.swift */; };
 		7819F6062821168900E662EC /* JokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F6052821168900E662EC /* JokeViewModel.swift */; };
 		7819F6082821186A00E662EC /* GetJoke.json in Resources */ = {isa = PBXBuildFile; fileRef = 7819F6072821186A00E662EC /* GetJoke.json */; };
-		7819F60A2821195100E662EC /* JokeUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F6092821195100E662EC /* JokeUsecaseTests.swift */; };
-		7819F60C282119B600E662EC /* JokeGetViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F60B282119B600E662EC /* JokeGetViewModelTests.swift */; };
+		7819F60A2821195100E662EC /* JokeModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F6092821195100E662EC /* JokeModelTests.swift */; };
+		7819F60C282119B600E662EC /* JokeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F60B282119B600E662EC /* JokeViewModelTests.swift */; };
 		7819F60E28216EDB00E662EC /* JokeSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F60D28216EDB00E662EC /* JokeSearchRequest.swift */; };
 		7819F61028216F4D00E662EC /* JokeSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F60F28216F4D00E662EC /* JokeSearchResponse.swift */; };
 		7819F6122821728600E662EC /* JokeSearchMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F6112821728600E662EC /* JokeSearchMapper.swift */; };
 		7819F6142821729400E662EC /* JokeSearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F6132821729400E662EC /* JokeSearchEntity.swift */; };
 		7819F6182821761A00E662EC /* GetJokeSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 7819F6172821761900E662EC /* GetJokeSearch.json */; };
-		7819F61A282179BD00E662EC /* JokeSearchUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F619282179BD00E662EC /* JokeSearchUsecaseTests.swift */; };
+		7819F61A282179BD00E662EC /* JokeSearchModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F619282179BD00E662EC /* JokeSearchModelTests.swift */; };
 		782477AC281E7D33004DEEE5 /* JokeSlackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477AB281E7D33004DEEE5 /* JokeSlackRequest.swift */; };
 		782477AE281E7D56004DEEE5 /* JokeSlackResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477AD281E7D56004DEEE5 /* JokeSlackResponse.swift */; };
 		782477B3281E8560004DEEE5 /* JokeSlackUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477B2281E8560004DEEE5 /* JokeSlackUI.swift */; };
 		782477B5281E8568004DEEE5 /* JokeSlackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477B4281E8568004DEEE5 /* JokeSlackViewModel.swift */; };
 		782477B7281E8571004DEEE5 /* JokeSlackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477B6281E8571004DEEE5 /* JokeSlackViewController.swift */; };
 		782477BC281E941F004DEEE5 /* GetJokeSlack.json in Resources */ = {isa = PBXBuildFile; fileRef = 782477BB281E941F004DEEE5 /* GetJokeSlack.json */; };
-		782477BE281E9530004DEEE5 /* JokeSlackUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477BD281E9530004DEEE5 /* JokeSlackUsecaseTests.swift */; };
+		782477BE281E9530004DEEE5 /* JokeSlackModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477BD281E9530004DEEE5 /* JokeSlackModelTests.swift */; };
 		782477C0281E95B9004DEEE5 /* JokeSlackViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477BF281E95B9004DEEE5 /* JokeSlackViewModelTests.swift */; };
 		782477D7281F9948004DEEE5 /* JokeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477D6281F9948004DEEE5 /* JokeEntity.swift */; };
 		782477DA281F999F004DEEE5 /* JokeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477D9281F999F004DEEE5 /* JokeMapper.swift */; };
@@ -37,9 +36,8 @@
 		782477E0281F9BD8004DEEE5 /* FruitEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477DF281F9BD8004DEEE5 /* FruitEntity.swift */; };
 		782477E2281F9BF1004DEEE5 /* FruitMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477E1281F9BF1004DEEE5 /* FruitMapper.swift */; };
 		782477E7281FA340004DEEE5 /* MapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477E6281FA340004DEEE5 /* MapperTests.swift */; };
-		782477ED28200C93004DEEE5 /* FruitUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782477EC28200C93004DEEE5 /* FruitUsecaseTests.swift */; };
 		783A47F6281502A100DE244A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47F5281502A100DE244A /* Utility.swift */; };
-		783A47F9281503F500DE244A /* JokeRandomUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47F8281503F500DE244A /* JokeRandomUsecaseTests.swift */; };
+		783A47F9281503F500DE244A /* JokeRandomModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A47F8281503F500DE244A /* JokeRandomModelTests.swift */; };
 		783A4813281551DC00DE244A /* FruitUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4812281551DC00DE244A /* FruitUI.swift */; };
 		783A4815281551E500DE244A /* FruitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4814281551E500DE244A /* FruitViewController.swift */; };
 		783A4817281551EB00DE244A /* FruitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A4816281551EB00DE244A /* FruitViewModel.swift */; };
@@ -57,8 +55,6 @@
 		784DBDE02823CDCB0029EF58 /* ClubUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDDF2823CDCB0029EF58 /* ClubUI.swift */; };
 		784DBDE22823CDD30029EF58 /* ClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDE12823CDD30029EF58 /* ClubViewController.swift */; };
 		784DBDE42823CDDA0029EF58 /* ClubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDE32823CDDA0029EF58 /* ClubViewModel.swift */; };
-		784DBDE62823D1D70029EF58 /* StudentUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDE52823D1D70029EF58 /* StudentUsecaseTests.swift */; };
-		784DBDE82823D27F0029EF58 /* StudentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784DBDE72823D27F0029EF58 /* StudentViewModelTests.swift */; };
 		7859A2282815912200E0F08C /* UITextField+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7859A2272815912200E0F08C /* UITextField+Publisher.swift */; };
 		7859A23328159F6100E0F08C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7859A23128159F6100E0F08C /* Model.xcdatamodeld */; };
 		786071DE2813AA5C0074ECB8 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */; };
@@ -169,27 +165,26 @@
 
 /* Begin PBXFileReference section */
 		781306D62843673F008EF3D6 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
-		7819F5FA2820D36F00E662EC /* FruitViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitViewModelTests.swift; sourceTree = "<group>"; };
 		7819F5FC282111B400E662EC /* JokeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeRequest.swift; sourceTree = "<group>"; };
 		7819F6012821167600E662EC /* JokeUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeUI.swift; sourceTree = "<group>"; };
 		7819F6032821167F00E662EC /* JokeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewController.swift; sourceTree = "<group>"; };
 		7819F6052821168900E662EC /* JokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewModel.swift; sourceTree = "<group>"; };
 		7819F6072821186A00E662EC /* GetJoke.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetJoke.json; sourceTree = "<group>"; };
-		7819F6092821195100E662EC /* JokeUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeUsecaseTests.swift; sourceTree = "<group>"; };
-		7819F60B282119B600E662EC /* JokeGetViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeGetViewModelTests.swift; sourceTree = "<group>"; };
+		7819F6092821195100E662EC /* JokeModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModelTests.swift; sourceTree = "<group>"; };
+		7819F60B282119B600E662EC /* JokeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewModelTests.swift; sourceTree = "<group>"; };
 		7819F60D28216EDB00E662EC /* JokeSearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchRequest.swift; sourceTree = "<group>"; };
 		7819F60F28216F4D00E662EC /* JokeSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchResponse.swift; sourceTree = "<group>"; };
 		7819F6112821728600E662EC /* JokeSearchMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchMapper.swift; sourceTree = "<group>"; };
 		7819F6132821729400E662EC /* JokeSearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchEntity.swift; sourceTree = "<group>"; };
 		7819F6172821761900E662EC /* GetJokeSearch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetJokeSearch.json; sourceTree = "<group>"; };
-		7819F619282179BD00E662EC /* JokeSearchUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchUsecaseTests.swift; sourceTree = "<group>"; };
+		7819F619282179BD00E662EC /* JokeSearchModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSearchModelTests.swift; sourceTree = "<group>"; };
 		782477AB281E7D33004DEEE5 /* JokeSlackRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackRequest.swift; sourceTree = "<group>"; };
 		782477AD281E7D56004DEEE5 /* JokeSlackResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackResponse.swift; sourceTree = "<group>"; };
 		782477B2281E8560004DEEE5 /* JokeSlackUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackUI.swift; sourceTree = "<group>"; };
 		782477B4281E8568004DEEE5 /* JokeSlackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackViewModel.swift; sourceTree = "<group>"; };
 		782477B6281E8571004DEEE5 /* JokeSlackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackViewController.swift; sourceTree = "<group>"; };
 		782477BB281E941F004DEEE5 /* GetJokeSlack.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetJokeSlack.json; sourceTree = "<group>"; };
-		782477BD281E9530004DEEE5 /* JokeSlackUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackUsecaseTests.swift; sourceTree = "<group>"; };
+		782477BD281E9530004DEEE5 /* JokeSlackModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackModelTests.swift; sourceTree = "<group>"; };
 		782477BF281E95B9004DEEE5 /* JokeSlackViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSlackViewModelTests.swift; sourceTree = "<group>"; };
 		782477D6281F9948004DEEE5 /* JokeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeEntity.swift; sourceTree = "<group>"; };
 		782477D9281F999F004DEEE5 /* JokeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeMapper.swift; sourceTree = "<group>"; };
@@ -198,9 +193,8 @@
 		782477DF281F9BD8004DEEE5 /* FruitEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitEntity.swift; sourceTree = "<group>"; };
 		782477E1281F9BF1004DEEE5 /* FruitMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitMapper.swift; sourceTree = "<group>"; };
 		782477E6281FA340004DEEE5 /* MapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapperTests.swift; sourceTree = "<group>"; };
-		782477EC28200C93004DEEE5 /* FruitUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitUsecaseTests.swift; sourceTree = "<group>"; };
 		783A47F5281502A100DE244A /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
-		783A47F8281503F500DE244A /* JokeRandomUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeRandomUsecaseTests.swift; sourceTree = "<group>"; };
+		783A47F8281503F500DE244A /* JokeRandomModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeRandomModelTests.swift; sourceTree = "<group>"; };
 		783A4812281551DC00DE244A /* FruitUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitUI.swift; sourceTree = "<group>"; };
 		783A4814281551E500DE244A /* FruitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitViewController.swift; sourceTree = "<group>"; };
 		783A4816281551EB00DE244A /* FruitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitViewModel.swift; sourceTree = "<group>"; };
@@ -218,8 +212,6 @@
 		784DBDDF2823CDCB0029EF58 /* ClubUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubUI.swift; sourceTree = "<group>"; };
 		784DBDE12823CDD30029EF58 /* ClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubViewController.swift; sourceTree = "<group>"; };
 		784DBDE32823CDDA0029EF58 /* ClubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubViewModel.swift; sourceTree = "<group>"; };
-		784DBDE52823D1D70029EF58 /* StudentUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentUsecaseTests.swift; sourceTree = "<group>"; };
-		784DBDE72823D27F0029EF58 /* StudentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewModelTests.swift; sourceTree = "<group>"; };
 		7859A2272815912200E0F08C /* UITextField+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Publisher.swift"; sourceTree = "<group>"; };
 		7859A23228159F6100E0F08C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		786071DD2813AA5C0074ECB8 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
@@ -454,17 +446,12 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		783A47F7281503E300DE244A /* Usecase */ = {
+		783A47F7281503E300DE244A /* API */ = {
 			isa = PBXGroup;
 			children = (
-				782477EC28200C93004DEEE5 /* FruitUsecaseTests.swift */,
-				784DBDE52823D1D70029EF58 /* StudentUsecaseTests.swift */,
-				7819F6092821195100E662EC /* JokeUsecaseTests.swift */,
-				783A47F8281503F500DE244A /* JokeRandomUsecaseTests.swift */,
-				7819F619282179BD00E662EC /* JokeSearchUsecaseTests.swift */,
-				782477BD281E9530004DEEE5 /* JokeSlackUsecaseTests.swift */,
+				78EDFA33284BC2760099823E /* Joke */,
 			);
-			path = Usecase;
+			path = API;
 			sourceTree = "<group>";
 		};
 		783A47FC281548F800DE244A /* CoreData */ = {
@@ -489,13 +476,13 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		783E70EA2842474600165587 /* Domain */ = {
+		783E70EA2842474600165587 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				782477E5281FA313004DEEE5 /* Mapper */,
-				783A47F7281503E300DE244A /* Usecase */,
+				783A47F7281503E300DE244A /* API */,
 			);
-			path = Domain;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		78482223281BCECE006CEF44 /* Storage */ = {
@@ -595,7 +582,7 @@
 			isa = PBXGroup;
 			children = (
 				788407E5281424AE00641E27 /* Data */,
-				783E70EA2842474600165587 /* Domain */,
+				783E70EA2842474600165587 /* Model */,
 				78A11E1E281D7A6F00790D24 /* ViewModel */,
 				783A47F42815028F00DE244A /* Utility */,
 			);
@@ -614,9 +601,7 @@
 		78A11E1E281D7A6F00790D24 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				7819F5FA2820D36F00E662EC /* FruitViewModelTests.swift */,
-				784DBDE72823D27F0029EF58 /* StudentViewModelTests.swift */,
-				7819F60B282119B600E662EC /* JokeGetViewModelTests.swift */,
+				7819F60B282119B600E662EC /* JokeViewModelTests.swift */,
 				78A11E1F281D7C0B00790D24 /* JokeRandomViewModelTests.swift */,
 				78F67E0028225AB000673BBC /* JokeSearchViewModelTests.swift */,
 				782477BF281E95B9004DEEE5 /* JokeSlackViewModelTests.swift */,
@@ -1010,6 +995,17 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
+		78EDFA33284BC2760099823E /* Joke */ = {
+			isa = PBXGroup;
+			children = (
+				7819F6092821195100E662EC /* JokeModelTests.swift */,
+				783A47F8281503F500DE244A /* JokeRandomModelTests.swift */,
+				7819F619282179BD00E662EC /* JokeSearchModelTests.swift */,
+				782477BD281E9530004DEEE5 /* JokeSlackModelTests.swift */,
+			);
+			path = Joke;
+			sourceTree = "<group>";
+		};
 		78F67DF228222CD400673BBC /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -1142,22 +1138,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				782477ED28200C93004DEEE5 /* FruitUsecaseTests.swift in Sources */,
 				78A11E20281D7C0B00790D24 /* JokeRandomViewModelTests.swift in Sources */,
-				7819F60C282119B600E662EC /* JokeGetViewModelTests.swift in Sources */,
+				7819F60C282119B600E662EC /* JokeViewModelTests.swift in Sources */,
 				78482225281BCEEA006CEF44 /* UserDefaultsTests.swift in Sources */,
-				7819F60A2821195100E662EC /* JokeUsecaseTests.swift in Sources */,
-				7819F5FB2820D36F00E662EC /* FruitViewModelTests.swift in Sources */,
+				7819F60A2821195100E662EC /* JokeModelTests.swift in Sources */,
 				783A47F6281502A100DE244A /* Utility.swift in Sources */,
 				788407E7281424CA00641E27 /* RequestTests.swift in Sources */,
 				782477E7281FA340004DEEE5 /* MapperTests.swift in Sources */,
-				783A47F9281503F500DE244A /* JokeRandomUsecaseTests.swift in Sources */,
-				784DBDE62823D1D70029EF58 /* StudentUsecaseTests.swift in Sources */,
-				7819F61A282179BD00E662EC /* JokeSearchUsecaseTests.swift in Sources */,
-				784DBDE82823D27F0029EF58 /* StudentViewModelTests.swift in Sources */,
+				783A47F9281503F500DE244A /* JokeRandomModelTests.swift in Sources */,
+				7819F61A282179BD00E662EC /* JokeSearchModelTests.swift in Sources */,
 				78F67E0128225AB000673BBC /* JokeSearchViewModelTests.swift in Sources */,
 				782477C0281E95B9004DEEE5 /* JokeSlackViewModelTests.swift in Sources */,
-				782477BE281E9530004DEEE5 /* JokeSlackUsecaseTests.swift in Sources */,
+				782477BE281E9530004DEEE5 /* JokeSlackModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,13 +1,12 @@
 @testable import SwiftCombine
 import XCTest
 
-final class JokeGetViewModelTests: XCTestCase {
+final class JokeViewModelTests: XCTestCase {
     private var viewModel: JokeViewModel!
 
     override func setUpWithError() throws {
         viewModel = JokeViewModel(
-            usecase: Domain.Usecase.Joke.Get(useTestData: true),
-            jokeId: "R7UfaahVfFd"
+            model: JokeModel(jokeId: "R7UfaahVfFd", useTestData: true)
         )
     }
 

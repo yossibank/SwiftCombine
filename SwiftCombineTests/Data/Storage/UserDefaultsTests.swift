@@ -18,15 +18,15 @@ final class UserDefaultsTests: XCTestCase {
     }
 
     func testServerType() {
-        XCTAssertEqual(AppDataHolder.serverType, .stage)
-
-        AppDataHolder.serverType = .production
         XCTAssertEqual(AppDataHolder.serverType, .production)
+
+        AppDataHolder.serverType = .stage
+        XCTAssertEqual(AppDataHolder.serverType, .stage)
 
         AppDataHolder.serverType = .prestage
         XCTAssertEqual(AppDataHolder.serverType, .prestage)
 
-        AppDataHolder.serverType = .stage
-        XCTAssertEqual(AppDataHolder.serverType, .stage)
+        AppDataHolder.serverType = .production
+        XCTAssertEqual(AppDataHolder.serverType, .production)
     }
 }
