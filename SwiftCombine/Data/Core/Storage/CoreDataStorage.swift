@@ -26,7 +26,7 @@ final class FetchCoreData<T: NSManagedObject> {
     }
 
     var wrappedValue: [T] {
-        CoreDataStorageManager.fetch(
+        CoreDataStorage.fetch(
             sortDescriptors: sortDescriptors,
             predicate: predicate,
             fetchLimit: fetchLimit
@@ -34,7 +34,7 @@ final class FetchCoreData<T: NSManagedObject> {
     }
 }
 
-struct CoreDataStorageManager<T: NSManagedObject> {
+struct CoreDataStorage<T: NSManagedObject> {
     static var context: NSManagedObjectContext {
         CoreDataManager.shared.context
     }

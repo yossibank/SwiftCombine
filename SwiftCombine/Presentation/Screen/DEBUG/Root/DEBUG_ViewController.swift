@@ -91,7 +91,7 @@ extension DEBUG_ViewController: UITableViewDelegate {
 }
 
 extension DEBUG_ViewController: DEBUG_UI_Delegate {
-    func updateServerType(_ type: UserDefaultEnumKey.ServerType) {
+    func updateServerType(_ type: UserDefaultsEnum.ServerType) {
         routing.update(type)
     }
 }

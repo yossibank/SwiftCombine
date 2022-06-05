@@ -46,7 +46,7 @@ enum TabBarItem: Int, CaseIterable {
 // MARK: - override methods
 
 final class TabBarController: UITabBarController {
-    private var serverType: UserDefaultEnumKey.ServerType?
+    private var serverType: UserDefaultsEnum.ServerType?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +59,7 @@ final class TabBarController: UITabBarController {
 // MARK: - internal methods
 
 extension TabBarController {
-    func configureTab(_ type: UserDefaultEnumKey.ServerType) {
+    func configureTab(_ type: UserDefaultsEnum.ServerType) {
         let debugTab = viewControllers?[TabBarItem.debug.rawValue]
         let appearance = UITabBarAppearance()
         appearance.configureWithDefaultBackground()

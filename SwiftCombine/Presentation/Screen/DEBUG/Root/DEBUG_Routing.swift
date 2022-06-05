@@ -65,7 +65,7 @@ extension DEBUG_Routing {
         }
     }
 
-    func update(_ type: UserDefaultEnumKey.ServerType) {
+    func update(_ type: UserDefaultsEnum.ServerType) {
         (viewController.tabBarController as? TabBarController)?.configureTab(type)
     }
 }

@@ -4,7 +4,7 @@ import UIKit
 // MARK: - delegate
 
 protocol DEBUG_UI_Delegate: AnyObject {
-    func updateServerType(_ type: UserDefaultEnumKey.ServerType)
+    func updateServerType(_ type: UserDefaultsEnum.ServerType)
 }
 
 // MARK: - properties & init

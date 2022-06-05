@@ -1,10 +1,10 @@
-enum UserDefaultKey: String {
+enum UserDefaultsKey: String {
     case onboardingFinished
     case serverType
     case jokeId
 }
 
-enum UserDefaultEnumKey {
+enum UserDefaultsEnum {
     enum ServerType: Int {
         case production
         case stage

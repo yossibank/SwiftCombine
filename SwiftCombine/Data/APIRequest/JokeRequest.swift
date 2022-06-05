@@ -21,7 +21,7 @@ struct JokeRequest: Request {
                 return
             }
 
-            CoreDataStorageManager.insert(object: Fruit(name: response.joke))
+            CoreDataStorage.insert(object: Fruit(name: response.joke))
         }
     }
 

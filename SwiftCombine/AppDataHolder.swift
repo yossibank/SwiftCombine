@@ -1,7 +1,7 @@
 struct AppDataHolder {
-    @UserDefaultsEnumStorage(UserDefaultKey.serverType.rawValue, defaultValue: .production)
-    static var serverType: UserDefaultEnumKey.ServerType
+    @UserDefaultsEnumStorage(UserDefaultsKey.serverType.rawValue, defaultValue: .production)
+    static var serverType: UserDefaultsEnum.ServerType
 
-    @UserDefaultsStorage(UserDefaultKey.jokeId.rawValue, defaultValue: "")
+    @UserDefaultsStorage(UserDefaultsKey.jokeId.rawValue, defaultValue: "")
     static var jokeId: String
 }
