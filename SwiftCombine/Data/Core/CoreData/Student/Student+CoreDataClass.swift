@@ -11,8 +11,12 @@ public class Student: NSManagedObject {
         self.number = Int32(number)
     }
 
+    static func find(name: String) -> Student? {
+        CoreDataHolder.students.filter({ $0.name == name }).first
+    }
+
     static func create(name: String, age: Int, number: Int) -> Student {
-        if let student = CoreDataHolder.students.filter({ $0.name == name }).first {
+        if let student = find(name: name) {
             student.age = Int32(age)
             student.number = Int32(number)
             return student

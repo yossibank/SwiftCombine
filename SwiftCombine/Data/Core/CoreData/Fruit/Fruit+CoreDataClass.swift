@@ -9,8 +9,12 @@ public class Fruit: NSManagedObject {
         self.name = name
     }
 
+    static func find(name: String) -> Fruit? {
+        CoreDataHolder.fruits.filter { $0.name == name }.first
+    }
+
     static func create(name: String) -> Fruit {
-        if let fruit = CoreDataHolder.fruits.filter({ $0.name == name }).first {
+        if let fruit = find(name: name) {
             fruit.name = name
             return fruit
         } else {

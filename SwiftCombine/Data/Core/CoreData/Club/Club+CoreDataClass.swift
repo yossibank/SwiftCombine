@@ -12,8 +12,12 @@ public class Club: NSManagedObject {
         self.schedule = schedule
     }
 
+    static func find(name: String) -> Club? {
+        CoreDataHolder.clubs.filter { $0.name == name }.first
+    }
+
     static func create(name: String, money: Int, place: String?, schedule: String?) -> Club {
-        if let club = CoreDataHolder.clubs.filter({ $0.name == name }).first {
+        if let club = find(name: name) {
             club.money = Int32(money)
             club.place = place
             club.schedule = schedule
