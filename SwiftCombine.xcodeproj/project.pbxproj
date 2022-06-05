@@ -103,7 +103,6 @@
 		78D0EFBB2827B75200DBC98D /* KeychainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFBA2827B75200DBC98D /* KeychainKey.swift */; };
 		78D0EFBD2827B79600DBC98D /* SecretDataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0EFBC2827B79600DBC98D /* SecretDataHolder.swift */; };
 		78DEB3B5284A46E700A4ABA0 /* CoreDataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DEB3B4284A46E700A4ABA0 /* CoreDataHolder.swift */; };
-		78DEB3B9284A4ACF00A4ABA0 /* CodingUserInfoKey+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DEB3B8284A4ACF00A4ABA0 /* CodingUserInfoKey+Extension.swift */; };
 		78E823722822717A00C71BF3 /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E823702822717A00C71BF3 /* Student+CoreDataClass.swift */; };
 		78E823732822717A00C71BF3 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E823712822717A00C71BF3 /* Student+CoreDataProperties.swift */; };
 		78E82376282271DF00C71BF3 /* Club+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E82374282271DF00C71BF3 /* Club+CoreDataClass.swift */; };
@@ -262,7 +261,6 @@
 		78D0EFBA2827B75200DBC98D /* KeychainKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKey.swift; sourceTree = "<group>"; };
 		78D0EFBC2827B79600DBC98D /* SecretDataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretDataHolder.swift; sourceTree = "<group>"; };
 		78DEB3B4284A46E700A4ABA0 /* CoreDataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHolder.swift; sourceTree = "<group>"; };
-		78DEB3B8284A4ACF00A4ABA0 /* CodingUserInfoKey+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodingUserInfoKey+Extension.swift"; sourceTree = "<group>"; };
 		78E823702822717A00C71BF3 /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
 		78E823712822717A00C71BF3 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		78E82374282271DF00C71BF3 /* Club+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Club+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -457,7 +455,6 @@
 		783A47FC281548F800DE244A /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				78DEB3B8284A4ACF00A4ABA0 /* CodingUserInfoKey+Extension.swift */,
 				78E8236F2822714800C71BF3 /* Club */,
 				7859A22C28159AC600E0F08C /* Fruit */,
 				78E8236E2822714200C71BF3 /* Student */,
@@ -1224,7 +1221,6 @@
 				78A11E1C281D79E500790D24 /* Fruit+CoreDataProperties.swift in Sources */,
 				7859A23328159F6100E0F08C /* Model.xcdatamodeld in Sources */,
 				78CBE26927F31DA200DF1667 /* HomeViewController.swift in Sources */,
-				78DEB3B9284A4ACF00A4ABA0 /* CodingUserInfoKey+Extension.swift in Sources */,
 				7871EFFC2813DD3E004E477D /* JustViewController.swift in Sources */,
 				783E70F228426F1500165587 /* JokeSearchRouting.swift in Sources */,
 				784DBDE02823CDCB0029EF58 /* ClubUI.swift in Sources */,
