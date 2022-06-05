@@ -17,6 +17,10 @@ struct JokeRandomRequest: Request {
     var successHandler: (Response) -> Void {
         { response in
             AppDataHolder.jokeId = response.id
+
+            CoreDataStorage.insert(
+                object: Fruit.create(name: response.joke)
+            )
         }
     }
 

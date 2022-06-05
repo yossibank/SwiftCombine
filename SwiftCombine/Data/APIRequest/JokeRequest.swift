@@ -17,11 +17,9 @@ struct JokeRequest: Request {
 
     var successHandler: (Response) -> Void {
         { response in
-            guard !CoreDataHolder.fruits.map(\.name).contains(response.joke) else {
-                return
-            }
-
-            CoreDataStorage.insert(object: Fruit(name: response.joke))
+            CoreDataStorage.insert(
+                object: Fruit.create(name: response.joke)
+            )
         }
     }
 

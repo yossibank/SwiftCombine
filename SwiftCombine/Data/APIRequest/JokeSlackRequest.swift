@@ -14,6 +14,18 @@ struct JokeSlackRequest: Request {
 
     var body: Data?
 
+    var successHandler: (Response) -> Void {
+        { response in
+            CoreDataStorage.insert(
+                object: Student.create(
+                    name: response.username,
+                    age: 100,
+                    number: 100
+                )
+            )
+        }
+    }
+
     init(
         parameters: Parameters = .init(),
         pathComponent: PathComponent = .init()
