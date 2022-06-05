@@ -3,7 +3,7 @@ import Foundation
 @propertyWrapper
 final class UserDefaultsStorage<T: Equatable> {
     private let userDefaults: UserDefaults? = {
-        if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
+        if AppConfig.isTesting {
             return UserDefaults(suiteName: "Test")
         }
 
@@ -36,7 +36,7 @@ final class UserDefaultsStorage<T: Equatable> {
 @propertyWrapper
 final class UserDefaultsEnumStorage<T: RawRepresentable & Equatable> {
     private let userDefaults: UserDefaults? = {
-        if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
+        if AppConfig.isTesting {
             return UserDefaults(suiteName: "Test")
         }
 
