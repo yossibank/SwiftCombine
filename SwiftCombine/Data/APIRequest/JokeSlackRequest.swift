@@ -17,12 +17,10 @@ struct JokeSlackRequest: Request {
     var successHandler: (Response) -> Void {
         { response in
             CoreDataStorage.insert(
-                object: Student.create(
-                    entity: .init(
-                        name: response.username,
-                        age: 100,
-                        number: 100
-                    )
+                Student.create(
+                    name: response.username,
+                    age: 100,
+                    number: 100
                 )
             )
         }

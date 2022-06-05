@@ -29,6 +29,12 @@ struct JokeSearchRequest: Request {
 
     var body: Data?
 
+    var successHandler: (Response) -> Void {
+        { response in
+            //
+        }
+    }
+
     init(
         parameters: Parameters,
         pathComponent: PathComponent = .init()

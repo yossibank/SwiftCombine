@@ -9,15 +9,17 @@ public class Fruit: NSManagedObject {
         self.name = name
     }
 
-    static func find(name: String) -> Fruit? {
-        CoreDataHolder.fruits.filter { $0.name == name }.first
-    }
-
-    static func create(entity: FruitEntity) -> Fruit {
-        if let fruit = find(name: entity.name) {
+    static func create(name: String) -> Fruit {
+        if let fruit = find(name: name) {
             return fruit
         } else {
-            return .init(name: entity.name)
+            return .init(name: name)
         }
+    }
+}
+
+private extension Fruit {
+    static func find(name: String) -> Fruit? {
+        CoreDataHolder.fruits.filter { $0.name == name }.first
     }
 }

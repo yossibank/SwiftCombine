@@ -12,23 +12,25 @@ public class Club: NSManagedObject {
         self.schedule = schedule
     }
 
-    static func find(name: String) -> Club? {
-        CoreDataHolder.clubs.filter { $0.name == name }.first
-    }
-
-    static func create(entity: ClubEntity) -> Club {
-        if let club = find(name: entity.name) {
-            club.money = Int32(entity.money)
-            club.place = entity.place
-            club.schedule = entity.schedule
+    static func create(name: String, money: Int, place: String?, schedule: String?) -> Club {
+        if let club = find(name: name) {
+            club.money = Int32(money)
+            club.place = place
+            club.schedule = schedule
             return club
         } else {
             return .init(
-                name: entity.name,
-                money: entity.money,
-                place: entity.place,
-                schedule: entity.schedule
+                name: name,
+                money: money,
+                place: place,
+                schedule: schedule
             )
         }
+    }
+}
+
+private extension Club {
+    static func find(name: String) -> Club? {
+        CoreDataHolder.clubs.filter { $0.name == name }.first
     }
 }

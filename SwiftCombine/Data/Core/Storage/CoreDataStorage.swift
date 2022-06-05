@@ -56,13 +56,12 @@ struct CoreDataStorage<T: NSManagedObject> {
         return result
     }
 
-    static func insert(object: T) {
-        Logger.info(message: "保存されたObjectのIDはTemporaryかどうか: \(object.objectID.isTemporaryID)")
+    static func insert(_ object: T) {
         try? context.obtainPermanentIDs(for: [object])
         context.saveIfNeeded()
     }
 
-    static func delete(object: T) {
+    static func delete(_ object: T) {
         context.delete(object)
         context.saveIfNeeded()
     }
