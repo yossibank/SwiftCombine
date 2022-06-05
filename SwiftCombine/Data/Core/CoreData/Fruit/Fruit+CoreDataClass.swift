@@ -13,12 +13,11 @@ public class Fruit: NSManagedObject {
         CoreDataHolder.fruits.filter { $0.name == name }.first
     }
 
-    static func create(name: String) -> Fruit {
-        if let fruit = find(name: name) {
-            fruit.name = name
+    static func create(entity: FruitEntity) -> Fruit {
+        if let fruit = find(name: entity.name) {
             return fruit
         } else {
-            return .init(name: name)
+            return .init(name: entity.name)
         }
     }
 }

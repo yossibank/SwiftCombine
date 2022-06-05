@@ -19,7 +19,9 @@ struct JokeRandomRequest: Request {
             AppDataHolder.jokeId = response.id
 
             CoreDataStorage.insert(
-                object: Fruit.create(name: response.joke)
+                object: Fruit.create(
+                    entity: .init(name: response.joke)
+                )
             )
         }
     }

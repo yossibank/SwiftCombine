@@ -18,7 +18,9 @@ struct JokeRequest: Request {
     var successHandler: (Response) -> Void {
         { response in
             CoreDataStorage.insert(
-                object: Fruit.create(name: response.joke)
+                object: Fruit.create(
+                    entity: .init(name: response.joke)
+                )
             )
         }
     }

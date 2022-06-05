@@ -15,13 +15,17 @@ public class Student: NSManagedObject {
         CoreDataHolder.students.filter({ $0.name == name }).first
     }
 
-    static func create(name: String, age: Int, number: Int) -> Student {
-        if let student = find(name: name) {
-            student.age = Int32(age)
-            student.number = Int32(number)
+    static func create(entity: StudentEntity) -> Student {
+        if let student = find(name: entity.name) {
+            student.age = Int32(entity.age)
+            student.number = Int32(entity.number)
             return student
         } else {
-            return .init(name: name, age: age, number: number)
+            return .init(
+                name: entity.name,
+                age: entity.age,
+                number: entity.number
+            )
         }
     }
 }

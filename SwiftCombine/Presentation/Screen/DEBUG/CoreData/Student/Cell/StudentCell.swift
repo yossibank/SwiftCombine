@@ -61,7 +61,7 @@ private extension StudentCell {
             stackView,
 
             constraints:
-                numberLabel.widthAnchor.constraint(equalToConstant: 40),
+                numberLabel.widthAnchor.constraint(equalToConstant: 60),
                 ageLabel.widthAnchor.constraint(equalToConstant: 60),
 
                 stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),

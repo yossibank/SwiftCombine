@@ -18,9 +18,11 @@ struct JokeSlackRequest: Request {
         { response in
             CoreDataStorage.insert(
                 object: Student.create(
-                    name: response.username,
-                    age: 100,
-                    number: 100
+                    entity: .init(
+                        name: response.username,
+                        age: 100,
+                        number: 100
+                    )
                 )
             )
         }
