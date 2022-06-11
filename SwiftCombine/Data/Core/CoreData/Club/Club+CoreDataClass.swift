@@ -31,6 +31,6 @@ public class Club: NSManagedObject {
 
 private extension Club {
     static func find(name: String) -> Club? {
-        CoreDataHolder.clubs.filter { $0.name == name }.first
+        ClubCoreDataHolder.all.filter { $0.name == name }.first
     }
 }

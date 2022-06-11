@@ -1,22 +1,17 @@
-enum CoreDataHolder {
-    @FetchCoreData(
-        sortDescriptors: [],
-        predicate: nil,
-        fetchLimit: 0
-    )
-    static var fruits: [Fruit]
+enum FruitCoreDataHolder {
+    @FetchCoreData(fetchLimit: 0)
+    static var all: [Fruit]
 
-    @FetchCoreData(
-        sortDescriptors: [],
-        predicate: nil,
-        fetchLimit: 0
-    )
-    static var students: [Student]
+    @FetchCoreData()
+    static var specify: [Fruit]
+}
 
-    @FetchCoreData(
-        sortDescriptors: [.init(keyPath: \Club.name, ascending: true)],
-        predicate: nil,
-        fetchLimit: 0
-    )
-    static var clubs: [Club]
+enum StudentCoreDataHolder {
+    @FetchCoreData(fetchLimit: 0)
+    static var all: [Student]
+}
+
+enum ClubCoreDataHolder {
+    @FetchCoreData(fetchLimit: 0)
+    static var all: [Club]
 }

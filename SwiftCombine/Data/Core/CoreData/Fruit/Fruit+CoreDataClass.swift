@@ -20,6 +20,7 @@ public class Fruit: NSManagedObject {
 
 private extension Fruit {
     static func find(name: String) -> Fruit? {
-        CoreDataHolder.fruits.filter { $0.name == name }.first
+        FruitCoreDataHolder.$all = .init(format: "name = %@", name)
+        return FruitCoreDataHolder.all.first
     }
 }

@@ -3,32 +3,22 @@ import CoreData
 @propertyWrapper
 final class FetchCoreData<T: NSManagedObject> {
     private let sortDescriptors: [NSSortDescriptor]
-    private var predicate: NSPredicate?
     private let fetchLimit: Int
+
+    var projectedValue: NSPredicate?
 
     init(
         sortDescriptors: [NSSortDescriptor] = [],
-        predicate: NSPredicate? = nil,
         fetchLimit: Int = 0
     ) {
         self.sortDescriptors = sortDescriptors
-        self.predicate = predicate
         self.fetchLimit = fetchLimit
-    }
-
-    var projectedValue: NSPredicate? {
-        get {
-            predicate
-        }
-        set {
-            self.predicate = newValue
-        }
     }
 
     var wrappedValue: [T] {
         CoreDataStorage.fetch(
             sortDescriptors: sortDescriptors,
-            predicate: predicate,
+            predicate: projectedValue,
             fetchLimit: fetchLimit
         )
     }
